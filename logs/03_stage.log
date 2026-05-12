@@ -1,0 +1,12 @@
+[2026-05-12 11:47:23] STAGE3: Downloading 1HVY
+[2026-05-12 11:47:23] STAGE3: Got from RCSB
+[2026-05-12 11:47:23] STAGE3: raw 1hvy size: 896022 bytes
+[2026-05-12 11:47:23] STAGE3: wrote /Users/ario/conserved_site_project/03_structure/protein_chainA.pdb
+[2026-05-12 11:47:23] STAGE3: wrote /Users/ario/conserved_site_project/03_structure/ligand.pdb
+[2026-05-12 11:47:23] STAGE3: wrote /Users/ario/conserved_site_project/03_structure/cofactor.pdb
+[2026-05-12 11:47:23] STAGE3: Adding hydrogens to protein with obabel
+[2026-05-12 11:48:21] STAGE3: protein_h.pdb size 701977
+[2026-05-12 11:48:21] STAGE3: Adding hydrogens to ligand with obabel
+[2026-05-12 11:48:21] STAGE3: ligand_h.pdb size 5576
+[2026-05-12 11:48:21] STAGE3: Selected residues check: 8 requested, 0 missing: []
+[2026-05-12 11:48:21] STAGE3: Stage 3 DONE

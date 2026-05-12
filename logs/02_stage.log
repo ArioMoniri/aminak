@@ -1,0 +1,13 @@
+[2026-05-12 11:46:46] STAGE2: Stage 2 starting
+[2026-05-12 11:46:46] STAGE2: Fetching UniProt P04818 features
+[2026-05-12 11:46:47] STAGE2: UniProt: 14 unique annotated positions
+[2026-05-12 11:46:47] STAGE2: Fetching PDBe ligand monomers for 1HVY
+[2026-05-12 11:46:48] STAGE2: Chain-A target ligands: [('bm1', 'D16'), ('bm2', 'UMP')]
+[2026-05-12 11:46:51] STAGE2: PDBe: 21 unique residues binding UMP/D16
+[2026-05-12 11:46:51] STAGE2: Wrote active_site_residues.csv with 24 residues
+[2026-05-12 11:46:51] STAGE2: Wrote overlap_table.csv
+[2026-05-12 11:46:51] STAGE2: Wrote overlap_figure.png
+[2026-05-12 11:46:51] STAGE2: Augmented with catalytic residue 195
+[2026-05-12 11:46:51] STAGE2: Augmented with catalytic residue 196
+[2026-05-12 11:46:51] STAGE2: Final selected residues (8, threshold top-25% +catalytic): [80, 195, 196, 217, 218, 225, 226, 258]
+[2026-05-12 11:46:51] STAGE2: Stage 2 DONE

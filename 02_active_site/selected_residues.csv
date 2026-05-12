@@ -1,0 +1,9 @@
+ref_position,residue,source,notes,residue_cons,js_score,percentile,selected
+80,F,pdbe,PDBe binding [D16],F,0.1200841395311913,94.56869009584663,True
+195,C,both,Active site: Nucleophile; Binding site: in other chain [dUMP]; PDBe binding [UMP],C,0.0861377968613994,36.74121405750799,True
+196,H,both,Binding site: in other chain [dUMP]; PDBe binding [UMP],H,0.0891701349001626,41.21405750798722,True
+217,G,both,Binding site: in other chain [dUMP]; PDBe binding [UMP],G,0.1180666471733521,92.33226837060704,True
+218,D,both,"Binding site: in other chain [dUMP]; Binding site:  [(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate]; PDBe binding [D16]; PDBe binding [UMP]",D,0.1098041431902682,85.62300319488818,True
+225,F,pdbe,PDBe binding [D16],F,0.107852345277004,79.55271565495208,True
+226,N,both,Binding site: in other chain [dUMP]; PDBe binding [UMP],N,0.1215567001071053,96.48562300319487,True
+258,Y,both,Binding site: in other chain [dUMP]; PDBe binding [D16]; PDBe binding [UMP],Y,0.1069295069409087,77.95527156549521,True

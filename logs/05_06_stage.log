@@ -1,0 +1,16 @@
+[2026-05-12 11:49:57] STAGE5_6: Stage 5: ligand prep
+[2026-05-12 11:49:57] STAGE5_6: obabel ligand→pdbqt rc=0
+[2026-05-12 11:49:57] STAGE5_6: ligand.pdbqt size=2509, has_UNK=False
+[2026-05-12 11:49:57] STAGE5_6: Stage 5 DONE
+[2026-05-12 11:49:57] STAGE5_6: Stage 6: WT docking
+[2026-05-12 11:49:59] STAGE5_6: meeko receptor WT rc=2
+[2026-05-12 11:49:59] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:49:59] STAGE5_6: obabel receptor WT rc=0
+[2026-05-12 11:49:59] STAGE5_6: centroid from 8 CA atoms: [-1.286625   9.1467495 12.0295   ]
+[2026-05-12 11:49:59] STAGE5_6: vina cmd: /opt/homebrew/bin/vina --receptor /Users/ario/conserved_site_project/06_docking_wt/protein_wt.pdbqt --ligand /Users/ario/conserved_site_project/05_ligand/ligand.pdbqt --center_x -1.287 --center_y 9.147 --center_z 12.030 --size_x 22 --size_y 22 --size_z 22 --exhaustiveness 16 --num_modes 20 --seed 42 --out /Users/ario/conserved_site_project/06_docking_wt/wt_poses.pdbqt --cpu 4
+[2026-05-12 11:50:08] STAGE5_6: vina affinities: []
+[2026-05-12 11:50:08] STAGE5_6: top affinity nan kcal/mol, mean_top3 nan, rmsd_to_native 1.08 A
+[2026-05-12 11:50:09] STAGE5_6: wrote wt_topdock.png (741525 bytes)
+[2026-05-12 11:50:09] STAGE5_6: Stage 6 DONE

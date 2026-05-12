@@ -1,0 +1,20 @@
+[2026-05-12 11:44:03] STAGE1: Stage 1 starting
+[2026-05-12 11:44:03] STAGE1: Fetching sequences from UniProt
+[2026-05-12 11:44:04] STAGE1: got P04818 (Homo_sapiens)
+[2026-05-12 11:44:05] STAGE1: got P07607 (Mus_musculus)
+[2026-05-12 11:44:06] STAGE1: got P04394 (Escherichia_coli)
+[2026-05-12 11:44:07] STAGE1: got P04996 (Lactobacillus_casei)
+[2026-05-12 11:44:08] STAGE1: got P0CG53 (Saccharomyces_cerevisiae)
+[2026-05-12 11:44:09] STAGE1: got O44019 (Caenorhabditis_elegans)
+[2026-05-12 11:44:11] STAGE1: FAILED Q9V3K2 (Drosophila_melanogaster)
+[2026-05-12 11:44:13] STAGE1: got P11849 (Bacteriophage_T4)
+[2026-05-12 11:44:14] STAGE1: got P21520 (Plasmodium_falciparum)
+[2026-05-12 11:44:14] STAGE1: Fetched 8 sequences: ['Homo_sapiens', 'Mus_musculus', 'Escherichia_coli', 'Lactobacillus_casei', 'Saccharomyces_cerevisiae', 'Caenorhabditis_elegans', 'Bacteriophage_T4', 'Plasmodium_falciparum']
+[2026-05-12 11:44:14] STAGE1: Wrote input.fa with 8 sequences
+[2026-05-12 11:44:14] STAGE1: Running MAFFT --auto
+[2026-05-12 11:44:17] STAGE1: MAFFT done
+[2026-05-12 11:44:17] STAGE1: Aligned 8 sequences, length 970
+[2026-05-12 11:44:17] STAGE1: Reference is row 0, ungapped length 313
+[2026-05-12 11:44:17] STAGE1: Wrote /Users/ario/conserved_site_project/01_msa/conservation_scores.csv (313 rows)
+[2026-05-12 11:44:18] STAGE1: Wrote /Users/ario/conserved_site_project/01_msa/conservation_plot.png
+[2026-05-12 11:44:18] STAGE1: Stage 1 DONE

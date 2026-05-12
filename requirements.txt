@@ -1,0 +1,17 @@
+biopython==1.87
+rdkit
+prody
+MDAnalysis
+meeko
+gemmi
+pyfamsa
+matplotlib
+matplotlib-venn
+seaborn
+pandas
+numpy
+scipy
+requests
+jinja2
+weasyprint
+python-docx

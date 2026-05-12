@@ -1,0 +1,15 @@
+[2026-05-12 11:48:49] STAGE4: Selected residues: [80, 195, 196, 217, 218, 225, 226, 258]
+[2026-05-12 11:48:49] STAGE4: wrote /Users/ario/conserved_site_project/03_structure/protein_cons.pdb
+[2026-05-12 11:48:49] STAGE4: running pymol script 01_overview
+[2026-05-12 11:48:51] STAGE4: pymol 01_overview: rc=0
+[2026-05-12 11:48:51] STAGE4: running pymol script 02_closeup
+[2026-05-12 11:48:52] STAGE4: pymol 02_closeup: rc=0
+[2026-05-12 11:48:52] STAGE4: running pymol script 03_conservation
+[2026-05-12 11:48:53] STAGE4: pymol 03_conservation: rc=0
+[2026-05-12 11:48:53] STAGE4: running pymol script 04_cavity
+[2026-05-12 11:48:53] STAGE4: pymol 04_cavity: rc=0
+[2026-05-12 11:48:53] STAGE4: OK 01_overview.png (561771 bytes)
+[2026-05-12 11:48:53] STAGE4: OK 02_closeup.png (668353 bytes)
+[2026-05-12 11:48:53] STAGE4: OK 03_conservation.png (517382 bytes)
+[2026-05-12 11:48:53] STAGE4: OK 04_cavity.png (60960 bytes)
+[2026-05-12 11:48:53] STAGE4: Stage 4 DONE

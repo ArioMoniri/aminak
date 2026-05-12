@@ -1,0 +1,15 @@
+{
+  "selected": [
+    80,
+    195,
+    196,
+    217,
+    218,
+    225,
+    226,
+    258
+  ],
+  "threshold_percentile": 25,
+  "n_db": 24,
+  "n_topcons": 79
+}

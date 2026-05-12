@@ -1,0 +1,7 @@
+autodock-vina
+boost@1.85
+glew
+libxml2
+mafft
+open-babel
+pymol

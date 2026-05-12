@@ -1,0 +1,348 @@
+[2026-05-12 11:26:49] Pipeline started. Working dir: /Users/ario/conserved_site_project
+venv created
+Python 3.11.9
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+Successfully installed packaging-26.2 pip-26.1.1 setuptools-82.0.1 wheel-0.47.0
+--- Trying optional/heavy deps ---
+      Directories searched: conda env, /usr/local/include and /usr/include.
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'vina' when getting requirements to build wheel
+--- Brew installs ---
+==> Running `brew cleanup mafft`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+Running these by name will not invoke the version provided by Homebrew.
+Disable this behaviour by setting `HOMEBREW_NO_PATH_SHADOW_CHECK=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+--- Final check ---
+/opt/homebrew/bin/mafft
+/Users/ario/conserved_site_project/.venv/bin/obabel
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/ario/conserved_site_project/.venv/lib/python3.11/site-packages/meeko/__init__.py", line 27, in <module>
+    from .polymer import Polymer
+  File "/Users/ario/conserved_site_project/.venv/lib/python3.11/site-packages/meeko/polymer.py", line 33, in <module>
+    from .chemtempgen import export_chem_templates_to_json
+  File "/Users/ario/conserved_site_project/.venv/lib/python3.11/site-packages/meeko/chemtempgen.py", line 1, in <module>
+    import gemmi
+ModuleNotFoundError: No module named 'gemmi'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'vina'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/ario/conserved_site_project/.venv/lib/python3.11/site-packages/pymol/__init__.py", line 558, in <module>
+    import pymol._cmd
+ImportError: dlopen(/Users/ario/conserved_site_project/.venv/lib/python3.11/site-packages/pymol/_cmd.cpython-311-darwin.so, 0x0002): Library not loaded: @rpath/libxml2.2.dylib
+  Referenced from: <E5AC15DC-1F64-3F79-83A0-2E66C328B776> /Users/ario/conserved_site_project/.venv/lib/python3.11/site-packages/pymol/_cmd.cpython-311-darwin.so
+  Reason: tried: '/Users/Martin/.local/share/mamba/envs/pymol_311/lib/libxml2.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/Martin/.local/share/mamba/envs/pymol_311/lib/libxml2.2.dylib' (no such file), '/Users/Martin/.local/share/mamba/envs/pymol_311/lib/libxml2.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/Martin/.local/share/mamba/envs/pymol_311/lib/libxml2.2.dylib' (no such file), '/Users/ario/.pyenv/versions/3.11.9/lib/libxml2.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/ario/.pyenv/versions/3.11.9/lib/libxml2.2.dylib' (no such file), '/opt/homebrew/lib/libxml2.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/lib/libxml2.2.dylib' (no such file), '/Users/ario/.pyenv/versions/3.11.9/lib/libxml2.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/ario/.pyenv/versions/3.11.9/lib/libxml2.2.dylib' (no such file), '/opt/homebrew/lib/libxml2.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/lib/libxml2.2.dylib' (no such file)
+=== installing gemmi for meeko ===
+=== brew autodock-vina ===
+==> Casks
+autodesk-fusion
+
+To install autodesk-fusion, run:
+  brew install --cask autodesk-fusion
+=== brew pymol via brewsci/bio ===
+The following pymol executables are shadowed by other commands earlier in your PATH:
+  pymol (shadowed by /Users/ario/conserved_site_project/.venv/bin/pymol)
+Running these by name will not invoke the version provided by Homebrew.
+Disable this behaviour by setting `HOMEBREW_NO_PATH_SHADOW_CHECK=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+=== libxml2 for python pymol ===
+/opt/homebrew/opt/libxml2/lib/libxml2.2.dylib
+/opt/homebrew/opt/libxml2/lib/libxml2.dylib
+=== rechecks ===
+vina not found
+/Users/ario/conserved_site_project/.venv/bin/pymol
+/opt/homebrew/bin/mafft
+/Users/ario/conserved_site_project/.venv/bin/obabel
+meeko OK
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/ario/conserved_site_project/.venv/lib/python3.11/site-packages/pymol/__init__.py", line 558, in <module>
+    import pymol._cmd
+ImportError: dlopen(/Users/ario/conserved_site_project/.venv/lib/python3.11/site-packages/pymol/_cmd.cpython-311-darwin.so, 0x0002): Library not loaded: @rpath/libGLEW.2.1.dylib
+  Referenced from: <E5AC15DC-1F64-3F79-83A0-2E66C328B776> /Users/ario/conserved_site_project/.venv/lib/python3.11/site-packages/pymol/_cmd.cpython-311-darwin.so
+  Reason: tried: '/Users/Martin/.local/share/mamba/envs/pymol_311/lib/libGLEW.2.1.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/Martin/.local/share/mamba/envs/pymol_311/lib/libGLEW.2.1.dylib' (no such file), '/Users/Martin/.local/share/mamba/envs/pymol_311/lib/libGLEW.2.1.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/Martin/.local/share/mamba/envs/pymol_311/lib/libGLEW.2.1.dylib' (no such file), '/Users/ario/.pyenv/versions/3.11.9/lib/libGLEW.2.1.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/ario/.pyenv/versions/3.11.9/lib/libGLEW.2.1.dylib' (no such file), '/opt/homebrew/lib/libGLEW.2.1.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/lib/libGLEW.2.1.dylib' (no such file), '/Users/ario/.pyenv/versions/3.11.9/lib/libGLEW.2.1.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/ario/.pyenv/versions/3.11.9/lib/libGLEW.2.1.dylib' (no such file), '/opt/homebrew/lib/libGLEW.2.1.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/lib/libGLEW.2.1.dylib' (no such file), '/opt/homebrew/opt/libxml2/lib/libGLEW.2.1.dylib' (no such file)
+(eval):15: command not found: vina
+[2026-05-12 11:40:23] Environment ready
+vina=/opt/homebrew/bin/vina | pymol=/opt/homebrew/bin/pymol | mafft=/opt/homebrew/bin/mafft | obabel=/Users/ario/conserved_site_project/.venv/bin/obabel
+venv: python: aliased to python3 (Python 3.11.9)
+[2026-05-12 11:41:10] PROTEIN CHOICE: TYMS (Thymidylate Synthase, P04818, 313 aa)
+RATIONALE:
+- Direct CRC link: TYMS is the molecular target of 5-fluorouracil (5-FU), the
+  backbone of CRC chemotherapy for >50 years. TYMS expression predicts 5-FU
+  response and is itself a CRC prognostic marker.
+- Size: 313 aa (within 150-400 aa window).
+- Bound natural substrate: dUMP (2'-deoxyuridine 5'-monophosphate) is present
+  in many human TS PDB structures (e.g., 1HVY, 1HW4, 2RD8). The methylene-
+  THF cofactor or analogs co-bind. dUMP is the true natural substrate, not
+  an inhibitor.
+- Conservation: TYMS is one of the most ancient/conserved enzymes — clear
+  orthologs in Bacteria, Archaea, Fungi, Plants, Animals.
+- Active site is a tight pocket (not a 30 A cleft) with well-defined
+  catalytic residues: Cys195 (nucleophile, Michael addition to C6 of dUMP),
+  Arg50/176/215 (phosphate clamp), His196/Asn226/Tyr135 (proton shuttle &
+  substrate orientation).
+PDB: 1HVY (human TS, 1.9 A, dUMP + raltitrexed). dUMP is the natural substrate;
+the polyglutamylated CB3717/raltitrexed mimics the methylene-THF cofactor.
+[2026-05-12 11:44:03] STAGE1: Stage 1 starting
+[2026-05-12 11:44:03] STAGE1: Fetching sequences from UniProt
+[2026-05-12 11:44:04] STAGE1: got P04818 (Homo_sapiens)
+[2026-05-12 11:44:05] STAGE1: got P07607 (Mus_musculus)
+[2026-05-12 11:44:06] STAGE1: got P04394 (Escherichia_coli)
+[2026-05-12 11:44:07] STAGE1: got P04996 (Lactobacillus_casei)
+[2026-05-12 11:44:08] STAGE1: got P0CG53 (Saccharomyces_cerevisiae)
+[2026-05-12 11:44:09] STAGE1: got O44019 (Caenorhabditis_elegans)
+[2026-05-12 11:44:11] STAGE1: FAILED Q9V3K2 (Drosophila_melanogaster)
+[2026-05-12 11:44:13] STAGE1: got P11849 (Bacteriophage_T4)
+[2026-05-12 11:44:14] STAGE1: got P21520 (Plasmodium_falciparum)
+[2026-05-12 11:44:14] STAGE1: Fetched 8 sequences: ['Homo_sapiens', 'Mus_musculus', 'Escherichia_coli', 'Lactobacillus_casei', 'Saccharomyces_cerevisiae', 'Caenorhabditis_elegans', 'Bacteriophage_T4', 'Plasmodium_falciparum']
+[2026-05-12 11:44:14] STAGE1: Wrote input.fa with 8 sequences
+[2026-05-12 11:44:14] STAGE1: Running MAFFT --auto
+[2026-05-12 11:44:17] STAGE1: MAFFT done
+[2026-05-12 11:44:17] STAGE1: Aligned 8 sequences, length 970
+[2026-05-12 11:44:17] STAGE1: Reference is row 0, ungapped length 313
+[2026-05-12 11:44:17] STAGE1: Wrote /Users/ario/conserved_site_project/01_msa/conservation_scores.csv (313 rows)
+[2026-05-12 11:44:18] STAGE1: Wrote /Users/ario/conserved_site_project/01_msa/conservation_plot.png
+[2026-05-12 11:44:18] STAGE1: Stage 1 DONE
+[2026-05-12 11:45:00] STAGE2: Stage 2 starting
+[2026-05-12 11:45:00] STAGE2: Fetching UniProt P04818 features
+[2026-05-12 11:45:01] STAGE2: UniProt: 14 unique annotated positions
+[2026-05-12 11:45:01] STAGE2: Fetching PDBe binding sites for 1HVY
+[2026-05-12 11:46:08] STAGE2: Stage 2 starting
+[2026-05-12 11:46:08] STAGE2: Fetching UniProt P04818 features
+[2026-05-12 11:46:09] STAGE2: UniProt: 14 unique annotated positions
+[2026-05-12 11:46:09] STAGE2: Fetching PDBe ligand monomers for 1HVY
+[2026-05-12 11:46:10] STAGE2: Chain-A target ligands: [('bm1', 'D16'), ('bm2', 'UMP')]
+[2026-05-12 11:46:13] STAGE2: PDBe: 21 unique residues binding UMP/D16
+[2026-05-12 11:46:13] STAGE2: Wrote active_site_residues.csv with 24 residues
+[2026-05-12 11:46:13] STAGE2: Wrote overlap_table.csv
+[2026-05-12 11:46:13] STAGE2: Wrote overlap_figure.png
+[2026-05-12 11:46:13] STAGE2: Final selected residues (6, threshold top-25%): [80, 217, 218, 225, 226, 258]
+[2026-05-12 11:46:13] STAGE2: Stage 2 DONE
+[2026-05-12 11:46:46] STAGE2: Stage 2 starting
+[2026-05-12 11:46:46] STAGE2: Fetching UniProt P04818 features
+[2026-05-12 11:46:47] STAGE2: UniProt: 14 unique annotated positions
+[2026-05-12 11:46:47] STAGE2: Fetching PDBe ligand monomers for 1HVY
+[2026-05-12 11:46:48] STAGE2: Chain-A target ligands: [('bm1', 'D16'), ('bm2', 'UMP')]
+[2026-05-12 11:46:51] STAGE2: PDBe: 21 unique residues binding UMP/D16
+[2026-05-12 11:46:51] STAGE2: Wrote active_site_residues.csv with 24 residues
+[2026-05-12 11:46:51] STAGE2: Wrote overlap_table.csv
+[2026-05-12 11:46:51] STAGE2: Wrote overlap_figure.png
+[2026-05-12 11:46:51] STAGE2: Augmented with catalytic residue 195
+[2026-05-12 11:46:51] STAGE2: Augmented with catalytic residue 196
+[2026-05-12 11:46:51] STAGE2: Final selected residues (8, threshold top-25% +catalytic): [80, 195, 196, 217, 218, 225, 226, 258]
+[2026-05-12 11:46:51] STAGE2: Stage 2 DONE
+[2026-05-12 11:47:23] STAGE3: Downloading 1HVY
+[2026-05-12 11:47:23] STAGE3: Got from RCSB
+[2026-05-12 11:47:23] STAGE3: raw 1hvy size: 896022 bytes
+[2026-05-12 11:47:23] STAGE3: wrote /Users/ario/conserved_site_project/03_structure/protein_chainA.pdb
+[2026-05-12 11:47:23] STAGE3: wrote /Users/ario/conserved_site_project/03_structure/ligand.pdb
+[2026-05-12 11:47:23] STAGE3: wrote /Users/ario/conserved_site_project/03_structure/cofactor.pdb
+[2026-05-12 11:47:23] STAGE3: Adding hydrogens to protein with obabel
+[2026-05-12 11:48:21] STAGE3: protein_h.pdb size 701977
+[2026-05-12 11:48:21] STAGE3: Adding hydrogens to ligand with obabel
+[2026-05-12 11:48:21] STAGE3: ligand_h.pdb size 5576
+[2026-05-12 11:48:21] STAGE3: Selected residues check: 8 requested, 0 missing: []
+[2026-05-12 11:48:21] STAGE3: Stage 3 DONE
+[2026-05-12 11:48:49] STAGE4: Selected residues: [80, 195, 196, 217, 218, 225, 226, 258]
+[2026-05-12 11:48:49] STAGE4: wrote /Users/ario/conserved_site_project/03_structure/protein_cons.pdb
+[2026-05-12 11:48:49] STAGE4: running pymol script 01_overview
+[2026-05-12 11:48:51] STAGE4: pymol 01_overview: rc=0
+[2026-05-12 11:48:51] STAGE4: running pymol script 02_closeup
+[2026-05-12 11:48:52] STAGE4: pymol 02_closeup: rc=0
+[2026-05-12 11:48:52] STAGE4: running pymol script 03_conservation
+[2026-05-12 11:48:53] STAGE4: pymol 03_conservation: rc=0
+[2026-05-12 11:48:53] STAGE4: running pymol script 04_cavity
+[2026-05-12 11:48:53] STAGE4: pymol 04_cavity: rc=0
+[2026-05-12 11:48:53] STAGE4: OK 01_overview.png (561771 bytes)
+[2026-05-12 11:48:53] STAGE4: OK 02_closeup.png (668353 bytes)
+[2026-05-12 11:48:53] STAGE4: OK 03_conservation.png (517382 bytes)
+[2026-05-12 11:48:53] STAGE4: OK 04_cavity.png (60960 bytes)
+[2026-05-12 11:48:53] STAGE4: Stage 4 DONE
+[2026-05-12 11:49:57] STAGE5_6: Stage 5: ligand prep
+[2026-05-12 11:49:57] STAGE5_6: obabel ligand→pdbqt rc=0
+[2026-05-12 11:49:57] STAGE5_6: ligand.pdbqt size=2509, has_UNK=False
+[2026-05-12 11:49:57] STAGE5_6: Stage 5 DONE
+[2026-05-12 11:49:57] STAGE5_6: Stage 6: WT docking
+[2026-05-12 11:49:59] STAGE5_6: meeko receptor WT rc=2
+[2026-05-12 11:49:59] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:49:59] STAGE5_6: obabel receptor WT rc=0
+[2026-05-12 11:49:59] STAGE5_6: centroid from 8 CA atoms: [-1.286625   9.1467495 12.0295   ]
+[2026-05-12 11:49:59] STAGE5_6: vina cmd: /opt/homebrew/bin/vina --receptor /Users/ario/conserved_site_project/06_docking_wt/protein_wt.pdbqt --ligand /Users/ario/conserved_site_project/05_ligand/ligand.pdbqt --center_x -1.287 --center_y 9.147 --center_z 12.030 --size_x 22 --size_y 22 --size_z 22 --exhaustiveness 16 --num_modes 20 --seed 42 --out /Users/ario/conserved_site_project/06_docking_wt/wt_poses.pdbqt --cpu 4
+[2026-05-12 11:50:08] STAGE5_6: vina affinities: []
+[2026-05-12 11:50:08] STAGE5_6: top affinity nan kcal/mol, mean_top3 nan, rmsd_to_native 1.08 A
+[2026-05-12 11:50:09] STAGE5_6: wrote wt_topdock.png (741525 bytes)
+[2026-05-12 11:50:09] STAGE5_6: Stage 6 DONE
+[2026-05-12 11:52:06] STAGE7: Stage 7 starting
+[2026-05-12 11:52:06] STAGE7: Active site residues: [80, 195, 196, 217, 218, 225, 226, 258]
+[2026-05-12 11:52:07] STAGE7: Control: T170A (distance 32.3 Å from active centroid)
+[2026-05-12 11:52:07] STAGE7: Total mutations to test: 21
+[2026-05-12 11:52:07] STAGE7: [1/21] F80A (single_ala)
+[2026-05-12 11:52:09] STAGE5_6: meeko receptor F80A rc=2
+[2026-05-12 11:52:09] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:10] STAGE5_6: obabel receptor F80A rc=0
+[2026-05-12 11:52:17] STAGE7:   F80A: top=-7.73 Δ=-0.00 rmsd=1.09
+[2026-05-12 11:52:17] STAGE7: [2/21] F80D (single_opposite)
+[2026-05-12 11:52:19] STAGE5_6: meeko receptor F80D rc=2
+[2026-05-12 11:52:19] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:20] STAGE5_6: obabel receptor F80D rc=0
+[2026-05-12 11:52:27] STAGE7:   F80D: top=-7.69 Δ=+0.04 rmsd=1.04
+[2026-05-12 11:52:27] STAGE7: [3/21] C195A (single_ala)
+[2026-05-12 11:52:29] STAGE5_6: meeko receptor C195A rc=2
+[2026-05-12 11:52:29] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:29] STAGE5_6: obabel receptor C195A rc=0
+[2026-05-12 11:52:36] STAGE7:   C195A: top=-8.00 Δ=-0.27 rmsd=0.89
+[2026-05-12 11:52:36] STAGE7: [4/21] C195S (single_opposite)
+[2026-05-12 11:52:39] STAGE5_6: meeko receptor C195S rc=2
+[2026-05-12 11:52:39] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:39] STAGE5_6: obabel receptor C195S rc=0
+[2026-05-12 11:52:46] STAGE7:   C195S: top=-8.11 Δ=-0.38 rmsd=0.55
+[2026-05-12 11:52:46] STAGE7: [5/21] H196A (single_ala)
+[2026-05-12 11:52:48] STAGE5_6: meeko receptor H196A rc=2
+[2026-05-12 11:52:48] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:49] STAGE5_6: obabel receptor H196A rc=0
+[2026-05-12 11:52:56] STAGE7:   H196A: top=-7.61 Δ=+0.12 rmsd=1.08
+[2026-05-12 11:52:56] STAGE7: [6/21] H196F (single_opposite)
+[2026-05-12 11:52:58] STAGE5_6: meeko receptor H196F rc=2
+[2026-05-12 11:52:58] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:59] STAGE5_6: obabel receptor H196F rc=0
+[2026-05-12 11:53:06] STAGE7:   H196F: top=-7.73 Δ=-0.00 rmsd=1.05
+[2026-05-12 11:53:06] STAGE7: [7/21] G217A (single_ala)
+[2026-05-12 11:53:08] STAGE5_6: meeko receptor G217A rc=2
+[2026-05-12 11:53:08] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:08] STAGE5_6: obabel receptor G217A rc=0
+[2026-05-12 11:53:16] STAGE7:   G217A: top=-7.73 Δ=-0.00 rmsd=1.07
+[2026-05-12 11:53:16] STAGE7: [8/21] G217W (single_opposite)
+[2026-05-12 11:53:18] STAGE5_6: meeko receptor G217W rc=2
+[2026-05-12 11:53:18] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:18] STAGE5_6: obabel receptor G217W rc=0
+[2026-05-12 11:53:25] STAGE7:   G217W: top=-7.90 Δ=-0.17 rmsd=1.08
+[2026-05-12 11:53:25] STAGE7: [9/21] D218A (single_ala)
+[2026-05-12 11:53:27] STAGE5_6: meeko receptor D218A rc=2
+[2026-05-12 11:53:27] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:28] STAGE5_6: obabel receptor D218A rc=0
+[2026-05-12 11:53:35] STAGE7:   D218A: top=-7.63 Δ=+0.09 rmsd=1.10
+[2026-05-12 11:53:35] STAGE7: [10/21] D218K (single_opposite)
+[2026-05-12 11:53:37] STAGE5_6: meeko receptor D218K rc=2
+[2026-05-12 11:53:37] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:37] STAGE5_6: obabel receptor D218K rc=0
+[2026-05-12 11:53:46] STAGE7:   D218K: top=-6.61 Δ=+1.12 rmsd=7.34
+[2026-05-12 11:53:46] STAGE7: [11/21] F225A (single_ala)
+[2026-05-12 11:53:48] STAGE5_6: meeko receptor F225A rc=2
+[2026-05-12 11:53:48] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:48] STAGE5_6: obabel receptor F225A rc=0
+[2026-05-12 11:53:55] STAGE7:   F225A: top=-7.70 Δ=+0.03 rmsd=1.09
+[2026-05-12 11:53:55] STAGE7: [12/21] F225D (single_opposite)
+[2026-05-12 11:53:57] STAGE5_6: meeko receptor F225D rc=2
+[2026-05-12 11:53:57] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:58] STAGE5_6: obabel receptor F225D rc=0
+[2026-05-12 11:54:05] STAGE7:   F225D: top=-7.62 Δ=+0.11 rmsd=1.05
+[2026-05-12 11:54:05] STAGE7: [13/21] N226A (single_ala)
+[2026-05-12 11:54:08] STAGE5_6: meeko receptor N226A rc=2
+[2026-05-12 11:54:08] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:08] STAGE5_6: obabel receptor N226A rc=0
+[2026-05-12 11:54:16] STAGE7:   N226A: top=-7.00 Δ=+0.73 rmsd=5.88
+[2026-05-12 11:54:16] STAGE7: [14/21] N226D (single_opposite)
+[2026-05-12 11:54:18] STAGE5_6: meeko receptor N226D rc=2
+[2026-05-12 11:54:18] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:19] STAGE5_6: obabel receptor N226D rc=0
+[2026-05-12 11:54:26] STAGE7:   N226D: top=-7.50 Δ=+0.23 rmsd=1.09
+[2026-05-12 11:54:26] STAGE7: [15/21] Y258A (single_ala)
+[2026-05-12 11:54:29] STAGE5_6: meeko receptor Y258A rc=2
+[2026-05-12 11:54:29] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:29] STAGE5_6: obabel receptor Y258A rc=0
+[2026-05-12 11:54:39] STAGE7:   Y258A: top=-6.89 Δ=+0.84 rmsd=4.51
+[2026-05-12 11:54:39] STAGE7: [16/21] C195A_H196A (double_catalytic_dyad)
+[2026-05-12 11:54:42] STAGE5_6: meeko receptor C195A_H196A rc=2
+[2026-05-12 11:54:42] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:42] STAGE5_6: obabel receptor C195A_H196A rc=0
+[2026-05-12 11:54:51] STAGE7:   C195A_H196A: top=-7.83 Δ=-0.10 rmsd=0.87
+[2026-05-12 11:54:51] STAGE7: [17/21] R175E_R176E (double_arg_clamp_swap)
+[2026-05-12 11:54:54] STAGE5_6: meeko receptor R175E_R176E rc=2
+[2026-05-12 11:54:54] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:54] STAGE5_6: obabel receptor R175E_R176E rc=0
+[2026-05-12 11:55:02] STAGE7:   R175E_R176E: top=-7.69 Δ=+0.04 rmsd=1.05
+[2026-05-12 11:55:02] STAGE7: [18/21] D218N_N226D (double_charge_swap)
+[2026-05-12 11:55:04] STAGE5_6: meeko receptor D218N_N226D rc=2
+[2026-05-12 11:55:04] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:55:05] STAGE5_6: obabel receptor D218N_N226D rc=0
+[2026-05-12 11:55:13] STAGE7:   D218N_N226D: top=-7.53 Δ=+0.20 rmsd=1.07
+[2026-05-12 11:55:13] STAGE7: [19/21] Y258F_F225Y (double_aromatic_swap)
+[2026-05-12 11:55:15] STAGE5_6: meeko receptor Y258F_F225Y rc=2
+[2026-05-12 11:55:15] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:55:15] STAGE5_6: obabel receptor Y258F_F225Y rc=0
+[2026-05-12 11:55:23] STAGE7:   Y258F_F225Y: top=-7.12 Δ=+0.61 rmsd=4.43
+[2026-05-12 11:55:23] STAGE7: [20/21] C195S_H196N (double_polar_neutral)
+[2026-05-12 11:55:25] STAGE5_6: meeko receptor C195S_H196N rc=2
+[2026-05-12 11:55:25] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:55:25] STAGE5_6: obabel receptor C195S_H196N rc=0
+[2026-05-12 11:55:33] STAGE7:   C195S_H196N: top=-7.98 Δ=-0.25 rmsd=0.65
+[2026-05-12 11:55:33] STAGE7: [21/21] CTRL_T170A (control_surface)
+[2026-05-12 11:55:35] STAGE5_6: meeko receptor CTRL_T170A rc=2
+[2026-05-12 11:55:35] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:55:36] STAGE5_6: obabel receptor CTRL_T170A rc=0
+[2026-05-12 11:55:43] STAGE7:   CTRL_T170A: top=-7.69 Δ=+0.04 rmsd=1.05
+[2026-05-12 11:55:43] STAGE7: Wrote /Users/ario/conserved_site_project/07_mut_docking/results_full.csv with 22 rows
+[2026-05-12 11:55:43] STAGE7: Stage 7 DONE
+[2026-05-12 11:56:52] STAGE8: Stage 8 starting
+[2026-05-12 11:56:52] STAGE8: WT top affinity: -7.729
+[2026-05-12 11:56:52] STAGE8: delta_affinity_bar.png done
+[2026-05-12 11:56:52] STAGE8: residue_substitution_heatmap.png done
+[2026-05-12 11:56:52] STAGE8: conservation_vs_effect.png done
+[2026-05-12 11:56:52] STAGE8: analysis.md done
+[2026-05-12 11:56:52] STAGE8: Stage 8 DONE
+[2026-05-12 11:58:24] STAGE9: Stage 9 starting
+[2026-05-12 11:58:24] STAGE9: wrote /Users/ario/conserved_site_project/09_report/report.html
+[2026-05-12 11:58:25] STAGE9: wrote /Users/ario/conserved_site_project/09_report/report.pdf (2650016 bytes)
+[2026-05-12 11:58:25] STAGE9: Stage 9 DONE
+wrote /Users/ario/conserved_site_project/09_report/report.docx (3017739 bytes)

@@ -1,0 +1,153 @@
+[2026-05-12 11:52:06] STAGE7: Stage 7 starting
+[2026-05-12 11:52:06] STAGE7: Active site residues: [80, 195, 196, 217, 218, 225, 226, 258]
+[2026-05-12 11:52:07] STAGE7: Control: T170A (distance 32.3 Å from active centroid)
+[2026-05-12 11:52:07] STAGE7: Total mutations to test: 21
+[2026-05-12 11:52:07] STAGE7: [1/21] F80A (single_ala)
+[2026-05-12 11:52:09] STAGE5_6: meeko receptor F80A rc=2
+[2026-05-12 11:52:09] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:10] STAGE5_6: obabel receptor F80A rc=0
+[2026-05-12 11:52:17] STAGE7:   F80A: top=-7.73 Δ=-0.00 rmsd=1.09
+[2026-05-12 11:52:17] STAGE7: [2/21] F80D (single_opposite)
+[2026-05-12 11:52:19] STAGE5_6: meeko receptor F80D rc=2
+[2026-05-12 11:52:19] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:20] STAGE5_6: obabel receptor F80D rc=0
+[2026-05-12 11:52:27] STAGE7:   F80D: top=-7.69 Δ=+0.04 rmsd=1.04
+[2026-05-12 11:52:27] STAGE7: [3/21] C195A (single_ala)
+[2026-05-12 11:52:29] STAGE5_6: meeko receptor C195A rc=2
+[2026-05-12 11:52:29] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:29] STAGE5_6: obabel receptor C195A rc=0
+[2026-05-12 11:52:36] STAGE7:   C195A: top=-8.00 Δ=-0.27 rmsd=0.89
+[2026-05-12 11:52:36] STAGE7: [4/21] C195S (single_opposite)
+[2026-05-12 11:52:39] STAGE5_6: meeko receptor C195S rc=2
+[2026-05-12 11:52:39] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:39] STAGE5_6: obabel receptor C195S rc=0
+[2026-05-12 11:52:46] STAGE7:   C195S: top=-8.11 Δ=-0.38 rmsd=0.55
+[2026-05-12 11:52:46] STAGE7: [5/21] H196A (single_ala)
+[2026-05-12 11:52:48] STAGE5_6: meeko receptor H196A rc=2
+[2026-05-12 11:52:48] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:49] STAGE5_6: obabel receptor H196A rc=0
+[2026-05-12 11:52:56] STAGE7:   H196A: top=-7.61 Δ=+0.12 rmsd=1.08
+[2026-05-12 11:52:56] STAGE7: [6/21] H196F (single_opposite)
+[2026-05-12 11:52:58] STAGE5_6: meeko receptor H196F rc=2
+[2026-05-12 11:52:58] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:52:59] STAGE5_6: obabel receptor H196F rc=0
+[2026-05-12 11:53:06] STAGE7:   H196F: top=-7.73 Δ=-0.00 rmsd=1.05
+[2026-05-12 11:53:06] STAGE7: [7/21] G217A (single_ala)
+[2026-05-12 11:53:08] STAGE5_6: meeko receptor G217A rc=2
+[2026-05-12 11:53:08] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:08] STAGE5_6: obabel receptor G217A rc=0
+[2026-05-12 11:53:16] STAGE7:   G217A: top=-7.73 Δ=-0.00 rmsd=1.07
+[2026-05-12 11:53:16] STAGE7: [8/21] G217W (single_opposite)
+[2026-05-12 11:53:18] STAGE5_6: meeko receptor G217W rc=2
+[2026-05-12 11:53:18] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:18] STAGE5_6: obabel receptor G217W rc=0
+[2026-05-12 11:53:25] STAGE7:   G217W: top=-7.90 Δ=-0.17 rmsd=1.08
+[2026-05-12 11:53:25] STAGE7: [9/21] D218A (single_ala)
+[2026-05-12 11:53:27] STAGE5_6: meeko receptor D218A rc=2
+[2026-05-12 11:53:27] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:28] STAGE5_6: obabel receptor D218A rc=0
+[2026-05-12 11:53:35] STAGE7:   D218A: top=-7.63 Δ=+0.09 rmsd=1.10
+[2026-05-12 11:53:35] STAGE7: [10/21] D218K (single_opposite)
+[2026-05-12 11:53:37] STAGE5_6: meeko receptor D218K rc=2
+[2026-05-12 11:53:37] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:37] STAGE5_6: obabel receptor D218K rc=0
+[2026-05-12 11:53:46] STAGE7:   D218K: top=-6.61 Δ=+1.12 rmsd=7.34
+[2026-05-12 11:53:46] STAGE7: [11/21] F225A (single_ala)
+[2026-05-12 11:53:48] STAGE5_6: meeko receptor F225A rc=2
+[2026-05-12 11:53:48] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:48] STAGE5_6: obabel receptor F225A rc=0
+[2026-05-12 11:53:55] STAGE7:   F225A: top=-7.70 Δ=+0.03 rmsd=1.09
+[2026-05-12 11:53:55] STAGE7: [12/21] F225D (single_opposite)
+[2026-05-12 11:53:57] STAGE5_6: meeko receptor F225D rc=2
+[2026-05-12 11:53:57] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:53:58] STAGE5_6: obabel receptor F225D rc=0
+[2026-05-12 11:54:05] STAGE7:   F225D: top=-7.62 Δ=+0.11 rmsd=1.05
+[2026-05-12 11:54:05] STAGE7: [13/21] N226A (single_ala)
+[2026-05-12 11:54:08] STAGE5_6: meeko receptor N226A rc=2
+[2026-05-12 11:54:08] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:08] STAGE5_6: obabel receptor N226A rc=0
+[2026-05-12 11:54:16] STAGE7:   N226A: top=-7.00 Δ=+0.73 rmsd=5.88
+[2026-05-12 11:54:16] STAGE7: [14/21] N226D (single_opposite)
+[2026-05-12 11:54:18] STAGE5_6: meeko receptor N226D rc=2
+[2026-05-12 11:54:18] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:19] STAGE5_6: obabel receptor N226D rc=0
+[2026-05-12 11:54:26] STAGE7:   N226D: top=-7.50 Δ=+0.23 rmsd=1.09
+[2026-05-12 11:54:26] STAGE7: [15/21] Y258A (single_ala)
+[2026-05-12 11:54:29] STAGE5_6: meeko receptor Y258A rc=2
+[2026-05-12 11:54:29] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:29] STAGE5_6: obabel receptor Y258A rc=0
+[2026-05-12 11:54:39] STAGE7:   Y258A: top=-6.89 Δ=+0.84 rmsd=4.51
+[2026-05-12 11:54:39] STAGE7: [16/21] C195A_H196A (double_catalytic_dyad)
+[2026-05-12 11:54:42] STAGE5_6: meeko receptor C195A_H196A rc=2
+[2026-05-12 11:54:42] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:42] STAGE5_6: obabel receptor C195A_H196A rc=0
+[2026-05-12 11:54:51] STAGE7:   C195A_H196A: top=-7.83 Δ=-0.10 rmsd=0.87
+[2026-05-12 11:54:51] STAGE7: [17/21] R175E_R176E (double_arg_clamp_swap)
+[2026-05-12 11:54:54] STAGE5_6: meeko receptor R175E_R176E rc=2
+[2026-05-12 11:54:54] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:54:54] STAGE5_6: obabel receptor R175E_R176E rc=0
+[2026-05-12 11:55:02] STAGE7:   R175E_R176E: top=-7.69 Δ=+0.04 rmsd=1.05
+[2026-05-12 11:55:02] STAGE7: [18/21] D218N_N226D (double_charge_swap)
+[2026-05-12 11:55:04] STAGE5_6: meeko receptor D218N_N226D rc=2
+[2026-05-12 11:55:04] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:55:05] STAGE5_6: obabel receptor D218N_N226D rc=0
+[2026-05-12 11:55:13] STAGE7:   D218N_N226D: top=-7.53 Δ=+0.20 rmsd=1.07
+[2026-05-12 11:55:13] STAGE7: [19/21] Y258F_F225Y (double_aromatic_swap)
+[2026-05-12 11:55:15] STAGE5_6: meeko receptor Y258F_F225Y rc=2
+[2026-05-12 11:55:15] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:55:15] STAGE5_6: obabel receptor Y258F_F225Y rc=0
+[2026-05-12 11:55:23] STAGE7:   Y258F_F225Y: top=-7.12 Δ=+0.61 rmsd=4.43
+[2026-05-12 11:55:23] STAGE7: [20/21] C195S_H196N (double_polar_neutral)
+[2026-05-12 11:55:25] STAGE5_6: meeko receptor C195S_H196N rc=2
+[2026-05-12 11:55:25] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:55:25] STAGE5_6: obabel receptor C195S_H196N rc=0
+[2026-05-12 11:55:33] STAGE7:   C195S_H196N: top=-7.98 Δ=-0.25 rmsd=0.65
+[2026-05-12 11:55:33] STAGE7: [21/21] CTRL_T170A (control_surface)
+[2026-05-12 11:55:35] STAGE5_6: meeko receptor CTRL_T170A rc=2
+[2026-05-12 11:55:35] STAGE5_6: meeko failed: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 11:55:36] STAGE5_6: obabel receptor CTRL_T170A rc=0
+[2026-05-12 11:55:43] STAGE7:   CTRL_T170A: top=-7.69 Δ=+0.04 rmsd=1.05
+[2026-05-12 11:55:43] STAGE7: Wrote /Users/ario/conserved_site_project/07_mut_docking/results_full.csv with 22 rows
+[2026-05-12 11:55:43] STAGE7: Stage 7 DONE

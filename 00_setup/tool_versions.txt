@@ -1,0 +1,5 @@
+Python: Python 3.11.9
+Vina: AutoDock Vina v1.2.7
+PyMOL: 3.1.0
+MAFFT: v7.526 (2024/Apr/26)
+OpenBabel: Open Babel 3.1.0 -- Feb 17 2026 -- 07:07:59

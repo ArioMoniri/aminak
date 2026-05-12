@@ -1,0 +1,8 @@
+[2026-05-12 12:24:00] [V2] STAGE4: Stage 4 v2 starting
+[2026-05-12 12:24:00] [V2] STAGE4: wrote b-factor PDB: /Users/ario/conserved_site_project/04b_pymol_v2/protein_dimer_jsd_bfactor.pdb
+[2026-05-12 12:24:01] [V2] STAGE4:   rendered dimer_overview.png rc=0 size=744334
+[2026-05-12 12:24:02] [V2] STAGE4:   rendered active_site_chainA.png rc=0 size=1075627
+[2026-05-12 12:24:03] [V2] STAGE4:   rendered active_site_chainB.png rc=0 size=1113904
+[2026-05-12 12:24:05] [V2] STAGE4:   rendered conservation_surface.png rc=0 size=814827
+[2026-05-12 12:24:06] [V2] STAGE4:   rendered catalytic_dyad.png rc=0 size=1182981
+[2026-05-12 12:24:06] [V2] STAGE4: Stage 4 v2 DONE

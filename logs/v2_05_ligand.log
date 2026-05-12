@@ -1,0 +1,7 @@
+[2026-05-12 12:24:31] [V2] STAGE5: Stage 5 v2 starting
+[2026-05-12 12:24:31] [V2] STAGE5: wrote /Users/ario/conserved_site_project/05b_ligand_v2/dump.pdb
+[2026-05-12 12:24:32] [V2] STAGE5: obabel mol2 rc=0 size=3700
+[2026-05-12 12:24:32] [V2] STAGE5: obabel sdf --gen3d rc=0 size=3589
+[2026-05-12 12:24:32] [V2] STAGE5: obabel pdbqt rc=0 size=2513
+[2026-05-12 12:24:32] [V2] STAGE5: pdbqt has_UNK=False, n_atoms=22
+[2026-05-12 12:24:32] [V2] STAGE5: Stage 5 v2 DONE

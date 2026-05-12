@@ -1,0 +1,31 @@
+[2026-05-12 13:29:16] [V4] STAGE6: Stage 6 v4 starting (multi-seed sweep, affinity-based selection)
+[2026-05-12 13:29:16] [V4] STAGE6: crystal dUMP centroid: [-0.13655, 4.2319, 15.159450000000001]
+[2026-05-12 13:29:18] [V4] STAGE6:   [APO_dimer] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:29:18] [V4] STAGE6:   apo receptor OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 13:29:18] [V4] STAGE6:   [HOLO_dimer] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:29:18] [V4] STAGE6:   holo receptor OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 13:29:18] [V4] STAGE6:   vina[wt_apo] seed=42 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:29:54] [V4] STAGE6:   wt_apo seed42: top=-9.20 n=27 rmsd=0.91
+[2026-05-12 13:29:54] [V4] STAGE6:   vina[wt_apo] seed=7 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:30:32] [V4] STAGE6:   wt_apo seed7: top=-9.13 n=29 rmsd=0.89
+[2026-05-12 13:30:32] [V4] STAGE6:   vina[wt_apo] seed=13 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:31:09] [V4] STAGE6:   wt_apo seed13: top=-9.12 n=28 rmsd=0.86
+[2026-05-12 13:31:09] [V4] STAGE6:   vina[wt_apo] seed=99 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:31:49] [V4] STAGE6:   wt_apo seed99: top=-9.08 n=28 rmsd=0.97
+[2026-05-12 13:31:49] [V4] STAGE6:   vina[wt_apo] seed=256 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:32:25] [V4] STAGE6:   wt_apo seed256: top=-9.19 n=29 rmsd=0.92
+[2026-05-12 13:32:25] [V4] STAGE6:   WT apo BEST seed = 42 (top=-9.20, n_modes=27, rmsd=0.91)
+[2026-05-12 13:32:25] [V4] STAGE6:   WT apo named-pose RMSD vs crystal = 3.802
+[2026-05-12 13:32:25] [V4] STAGE6:   vina[wt_holo] seed=42 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:33:20] [V4] STAGE6:   wt_holo seed42: top=-5.09 n=31 rmsd=12.24
+[2026-05-12 13:33:20] [V4] STAGE6:   vina[wt_holo] seed=7 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:34:14] [V4] STAGE6:   wt_holo seed7: top=-5.22 n=30 rmsd=12.95
+[2026-05-12 13:34:14] [V4] STAGE6:   vina[wt_holo] seed=13 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:35:09] [V4] STAGE6:   wt_holo seed13: top=-5.11 n=30 rmsd=12.23
+[2026-05-12 13:35:09] [V4] STAGE6:   vina[wt_holo] seed=99 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:36:04] [V4] STAGE6:   wt_holo seed99: top=-5.22 n=31 rmsd=12.93
+[2026-05-12 13:36:04] [V4] STAGE6:   vina[wt_holo] seed=256 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:36:58] [V4] STAGE6:   wt_holo seed256: top=-5.24 n=30 rmsd=12.95
+[2026-05-12 13:36:58] [V4] STAGE6:   WT holo BEST seed = 256 (top=-5.24, n_modes=30, rmsd=12.95)
+[2026-05-12 13:36:58] [V4] STAGE6:   WT holo named-pose RMSD vs crystal = 12.917
+[2026-05-12 13:36:58] [V4] STAGE6: Stage 6 v4 DONE

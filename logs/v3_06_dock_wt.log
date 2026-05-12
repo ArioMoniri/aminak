@@ -1,0 +1,59 @@
+[2026-05-12 12:56:42] [V3] STAGE6: Stage 6 v3 starting
+[2026-05-12 12:56:42] [V3] STAGE6:   [cofA] reprotonate rc=0
+[2026-05-12 12:56:43] [V3] STAGE6:   [cofB] reprotonate rc=0
+[2026-05-12 12:56:43] [V3] STAGE6: crystal dUMP centroid: [-0.1365499496459961, 4.231900215148926, 15.159449577331543]
+[2026-05-12 12:56:44] [V3] STAGE6:   [APO_dimer] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 12:56:44] [V3] STAGE6:   apo receptor OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 12:56:44] [V3] STAGE6:   [HOLO_dimer] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 12:56:44] [V3] STAGE6:   holo receptor OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 12:56:44] [V3] STAGE6:   vina[WT_apo_seed42] seed=42 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 12:57:15] [V3] STAGE6:   WT apo seed42: top=-9.20 n=27 rmsd=2.34
+[2026-05-12 12:57:15] [V3] STAGE6:   vina[WT_apo_seed7] seed=7 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 12:57:48] [V3] STAGE6:   WT apo seed7: top=-9.13 n=29 rmsd=2.33
+[2026-05-12 12:57:48] [V3] STAGE6:   WT apo BEST seed = 7 (rmsd=2.33, top=-9.13)
+[2026-05-12 12:57:49] [V3] STAGE6:   vina[WT_holo_seed42] seed=42 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 12:58:37] [V3] STAGE6:   WT holo seed42: top=-8.31 n=3 rmsd=2.08
+[2026-05-12 12:58:37] [V3] STAGE6:   vina[WT_holo_seed7] seed=7 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 12:59:23] [V3] STAGE6:   WT holo seed7: top=-8.31 n=2 rmsd=2.14
+[2026-05-12 12:59:23] [V3] STAGE6:   WT holo BEST seed = 42 (rmsd=2.08, top=-8.31)
+[2026-05-12 12:59:24] [V3] STAGE6: Stage 6 v3 DONE
+[2026-05-12 13:01:22] [V3] STAGE6:   [R50A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:01:22] [V3] STAGE6:   [R50A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:01:48] [V3] STAGE6:   [W109A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:01:48] [V3] STAGE6:   [W109A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:02:17] [V3] STAGE6:   [R175A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:02:17] [V3] STAGE6:   [R175A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:02:47] [V3] STAGE6:   [R176A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:02:47] [V3] STAGE6:   [R176A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:03:17] [V3] STAGE6:   [C195A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:03:17] [V3] STAGE6:   [C195A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:03:45] [V3] STAGE6:   [H196A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:03:45] [V3] STAGE6:   [H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:04:16] [V3] STAGE6:   [Q214A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:04:16] [V3] STAGE6:   [Q214A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:04:47] [V3] STAGE6:   [R215A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:04:48] [V3] STAGE6:   [R215A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:05:18] [V3] STAGE6:   [R50E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:05:19] [V3] STAGE6:   [R50E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:05:45] [V3] STAGE6:   [R175E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:05:46] [V3] STAGE6:   [R175E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:06:16] [V3] STAGE6:   [R176E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:06:17] [V3] STAGE6:   [R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:06:46] [V3] STAGE6:   [C195S_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:06:47] [V3] STAGE6:   [C195S_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:07:14] [V3] STAGE6:   [R215E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:07:15] [V3] STAGE6:   [R215E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:07:45] [V3] STAGE6:   [N226D_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:07:45] [V3] STAGE6:   [N226D_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:08:14] [V3] STAGE6:   [C195A_H196A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:08:15] [V3] STAGE6:   [C195A_H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:08:43] [V3] STAGE6:   [R175E_R176E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:08:43] [V3] STAGE6:   [R175E_R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:09:14] [V3] STAGE6:   [C195S_H196N_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:09:15] [V3] STAGE6:   [C195S_H196N_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:09:42] [V3] STAGE6:   [R215A_N226A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:09:43] [V3] STAGE6:   [R215A_N226A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:10:11] [V3] STAGE6:   [Y258F_F225Y_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:10:12] [V3] STAGE6:   [Y258F_F225Y_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:10:42] [V3] STAGE6:   [T170A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:10:43] [V3] STAGE6:   [T170A_holo] obabel-gasteiger rc=0 max|q|=0.507

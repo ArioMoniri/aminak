@@ -1,0 +1,323 @@
+[2026-05-12 12:27:57] [V2] STAGE7: Stage 7 v2 starting
+[2026-05-12 12:27:58] [V2] STAGE7: ref seq len=313
+[2026-05-12 12:27:58] [V2] STAGE7: Built panel of 20 mutants
+[2026-05-12 12:27:58] [V2] STAGE7: Final panel size: 21
+[2026-05-12 12:27:58] [V2] STAGE7: centroid: [3.4655004 4.7408    7.7776003]
+[2026-05-12 12:27:58] [V2] STAGE7: [1/21] R50A (ala_scan)
+[2026-05-12 12:27:59] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=50 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:27:59] [V2] STAGE7:   ROTAMER_PICK resi=50 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:28:02] [V2] STAGE6:   meeko receptor R50A_apo rc=2
+[2026-05-12 12:28:02] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:03] [V2] STAGE6:   obabel receptor R50A_apo rc=0
+[2026-05-12 12:28:04] [V2] STAGE6:   meeko receptor R50A_holo rc=2
+[2026-05-12 12:28:04] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:05] [V2] STAGE6:   obabel receptor R50A_holo rc=0
+[2026-05-12 12:28:22] [V2] STAGE7:   R50A apo: top=-7.07, ddG=-0.27, rmsd=5.52
+[2026-05-12 12:28:36] [V2] STAGE7:   R50A holo: top=-6.01, ddG=-2.79, rmsd=2.23
+[2026-05-12 12:28:36] [V2] STAGE7: [2/21] W109A (ala_scan)
+[2026-05-12 12:28:36] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=109 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:28:36] [V2] STAGE7:   ROTAMER_PICK resi=109 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:28:39] [V2] STAGE6:   meeko receptor W109A_apo rc=2
+[2026-05-12 12:28:39] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:41] [V2] STAGE6:   obabel receptor W109A_apo rc=0
+[2026-05-12 12:28:42] [V2] STAGE6:   meeko receptor W109A_holo rc=2
+[2026-05-12 12:28:42] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:42] [V2] STAGE6:   obabel receptor W109A_holo rc=0
+[2026-05-12 12:29:00] [V2] STAGE7:   W109A apo: top=-7.85, ddG=-1.05, rmsd=5.83
+[2026-05-12 12:29:15] [V2] STAGE7:   W109A holo: top=-6.19, ddG=-2.97, rmsd=2.23
+[2026-05-12 12:29:15] [V2] STAGE7: [3/21] R175A (ala_scan)
+[2026-05-12 12:29:15] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=175 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:29:15] [V2] STAGE7:   ROTAMER_PICK resi=175 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:29:18] [V2] STAGE6:   meeko receptor R175A_apo rc=2
+[2026-05-12 12:29:18] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:20] [V2] STAGE6:   obabel receptor R175A_apo rc=0
+[2026-05-12 12:29:21] [V2] STAGE6:   meeko receptor R175A_holo rc=2
+[2026-05-12 12:29:21] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:21] [V2] STAGE6:   obabel receptor R175A_holo rc=0
+[2026-05-12 12:29:38] [V2] STAGE7:   R175A apo: top=-7.10, ddG=-0.30, rmsd=5.58
+[2026-05-12 12:29:53] [V2] STAGE7:   R175A holo: top=-6.36, ddG=-3.15, rmsd=2.21
+[2026-05-12 12:29:53] [V2] STAGE7: [4/21] R176A (ala_scan)
+[2026-05-12 12:29:53] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=176 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:29:53] [V2] STAGE7:   ROTAMER_PICK resi=176 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:29:56] [V2] STAGE6:   meeko receptor R176A_apo rc=2
+[2026-05-12 12:29:56] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:58] [V2] STAGE6:   obabel receptor R176A_apo rc=0
+[2026-05-12 12:29:59] [V2] STAGE6:   meeko receptor R176A_holo rc=2
+[2026-05-12 12:29:59] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:59] [V2] STAGE6:   obabel receptor R176A_holo rc=0
+[2026-05-12 12:30:16] [V2] STAGE7:   R176A apo: top=-7.16, ddG=-0.36, rmsd=5.75
+[2026-05-12 12:30:30] [V2] STAGE7:   R176A holo: top=-6.32, ddG=-3.10, rmsd=2.15
+[2026-05-12 12:30:30] [V2] STAGE7: [5/21] C195A (ala_scan)
+[2026-05-12 12:30:31] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=195 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:30:31] [V2] STAGE7:   ROTAMER_PICK resi=195 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:30:34] [V2] STAGE6:   meeko receptor C195A_apo rc=2
+[2026-05-12 12:30:34] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:30:35] [V2] STAGE6:   obabel receptor C195A_apo rc=0
+[2026-05-12 12:30:36] [V2] STAGE6:   meeko receptor C195A_holo rc=2
+[2026-05-12 12:30:36] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:30:37] [V2] STAGE6:   obabel receptor C195A_holo rc=0
+[2026-05-12 12:30:53] [V2] STAGE7:   C195A apo: top=-7.93, ddG=-1.13, rmsd=3.09
+[2026-05-12 12:31:08] [V2] STAGE7:   C195A holo: top=-8.34, ddG=-5.13, rmsd=2.08
+[2026-05-12 12:31:08] [V2] STAGE7: [6/21] H196A (ala_scan)
+[2026-05-12 12:31:08] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=196 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:31:08] [V2] STAGE7:   ROTAMER_PICK resi=196 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:31:11] [V2] STAGE6:   meeko receptor H196A_apo rc=2
+[2026-05-12 12:31:11] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:13] [V2] STAGE6:   obabel receptor H196A_apo rc=0
+[2026-05-12 12:31:14] [V2] STAGE6:   meeko receptor H196A_holo rc=2
+[2026-05-12 12:31:14] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:14] [V2] STAGE6:   obabel receptor H196A_holo rc=0
+[2026-05-12 12:31:31] [V2] STAGE7:   H196A apo: top=-7.18, ddG=-0.38, rmsd=8.05
+[2026-05-12 12:31:45] [V2] STAGE7:   H196A holo: top=-4.38, ddG=-1.17, rmsd=7.48
+[2026-05-12 12:31:45] [V2] STAGE7: [7/21] Q214A (ala_scan)
+[2026-05-12 12:31:46] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=214 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:31:46] [V2] STAGE7:   ROTAMER_PICK resi=214 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:31:49] [V2] STAGE6:   meeko receptor Q214A_apo rc=2
+[2026-05-12 12:31:49] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:50] [V2] STAGE6:   obabel receptor Q214A_apo rc=0
+[2026-05-12 12:31:51] [V2] STAGE6:   meeko receptor Q214A_holo rc=2
+[2026-05-12 12:31:51] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:52] [V2] STAGE6:   obabel receptor Q214A_holo rc=0
+[2026-05-12 12:32:09] [V2] STAGE7:   Q214A apo: top=-6.67, ddG=+0.13, rmsd=5.75
+[2026-05-12 12:32:25] [V2] STAGE7:   Q214A holo: top=-6.35, ddG=-3.14, rmsd=2.18
+[2026-05-12 12:32:25] [V2] STAGE7: [8/21] R215A (ala_scan)
+[2026-05-12 12:32:25] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=215 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:32:25] [V2] STAGE7:   ROTAMER_PICK resi=215 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:32:28] [V2] STAGE6:   meeko receptor R215A_apo rc=2
+[2026-05-12 12:32:28] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:32:29] [V2] STAGE6:   obabel receptor R215A_apo rc=0
+[2026-05-12 12:32:31] [V2] STAGE6:   meeko receptor R215A_holo rc=2
+[2026-05-12 12:32:31] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:32:31] [V2] STAGE6:   obabel receptor R215A_holo rc=0
+[2026-05-12 12:32:47] [V2] STAGE7:   R215A apo: top=-7.84, ddG=-1.04, rmsd=2.25
+[2026-05-12 12:33:03] [V2] STAGE7:   R215A holo: top=-7.15, ddG=-3.93, rmsd=2.19
+[2026-05-12 12:33:03] [V2] STAGE7: [9/21] R50E (opposite)
+[2026-05-12 12:33:04] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=50 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:33:04] [V2] STAGE7:   ROTAMER_PICK resi=50 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:33:07] [V2] STAGE6:   meeko receptor R50E_apo rc=2
+[2026-05-12 12:33:07] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:08] [V2] STAGE6:   obabel receptor R50E_apo rc=0
+[2026-05-12 12:33:10] [V2] STAGE6:   meeko receptor R50E_holo rc=2
+[2026-05-12 12:33:10] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:10] [V2] STAGE6:   obabel receptor R50E_holo rc=0
+[2026-05-12 12:33:27] [V2] STAGE7:   R50E apo: top=-7.00, ddG=-0.20, rmsd=5.76
+[2026-05-12 12:33:41] [V2] STAGE7:   R50E holo: top=-5.39, ddG=-2.17, rmsd=2.18
+[2026-05-12 12:33:41] [V2] STAGE7: [10/21] R175E (opposite)
+[2026-05-12 12:33:41] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=175 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:33:41] [V2] STAGE7:   ROTAMER_PICK resi=175 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:33:44] [V2] STAGE6:   meeko receptor R175E_apo rc=2
+[2026-05-12 12:33:44] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:45] [V2] STAGE6:   obabel receptor R175E_apo rc=0
+[2026-05-12 12:33:47] [V2] STAGE6:   meeko receptor R175E_holo rc=2
+[2026-05-12 12:33:47] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:47] [V2] STAGE6:   obabel receptor R175E_holo rc=0
+[2026-05-12 12:34:05] [V2] STAGE7:   R175E apo: top=-7.10, ddG=-0.30, rmsd=5.58
+[2026-05-12 12:34:19] [V2] STAGE7:   R175E holo: top=-6.36, ddG=-3.15, rmsd=2.21
+[2026-05-12 12:34:19] [V2] STAGE7: [11/21] R176E (opposite)
+[2026-05-12 12:34:19] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=176 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:34:19] [V2] STAGE7:   ROTAMER_PICK resi=176 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:34:22] [V2] STAGE6:   meeko receptor R176E_apo rc=2
+[2026-05-12 12:34:22] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:34:24] [V2] STAGE6:   obabel receptor R176E_apo rc=0
+[2026-05-12 12:34:25] [V2] STAGE6:   meeko receptor R176E_holo rc=2
+[2026-05-12 12:34:25] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:34:25] [V2] STAGE6:   obabel receptor R176E_holo rc=0
+[2026-05-12 12:34:42] [V2] STAGE7:   R176E apo: top=-7.15, ddG=-0.36, rmsd=5.64
+[2026-05-12 12:34:56] [V2] STAGE7:   R176E holo: top=-6.41, ddG=-3.20, rmsd=2.23
+[2026-05-12 12:34:56] [V2] STAGE7: [12/21] C195S (opposite)
+[2026-05-12 12:34:56] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=195 aa=SER best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:34:56] [V2] STAGE7:   ROTAMER_PICK resi=195 aa=SER best_idx=0 strain=1e+30
+[2026-05-12 12:35:00] [V2] STAGE6:   meeko receptor C195S_apo rc=2
+[2026-05-12 12:35:00] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:01] [V2] STAGE6:   obabel receptor C195S_apo rc=0
+[2026-05-12 12:35:02] [V2] STAGE6:   meeko receptor C195S_holo rc=2
+[2026-05-12 12:35:02] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:03] [V2] STAGE6:   obabel receptor C195S_holo rc=0
+[2026-05-12 12:35:20] [V2] STAGE7:   C195S apo: top=-7.85, ddG=-1.05, rmsd=3.09
+[2026-05-12 12:35:36] [V2] STAGE7:   C195S holo: top=-8.00, ddG=-4.79, rmsd=2.17
+[2026-05-12 12:35:36] [V2] STAGE7: [13/21] R215E (opposite)
+[2026-05-12 12:35:36] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=215 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:35:36] [V2] STAGE7:   ROTAMER_PICK resi=215 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:35:39] [V2] STAGE6:   meeko receptor R215E_apo rc=2
+[2026-05-12 12:35:39] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:41] [V2] STAGE6:   obabel receptor R215E_apo rc=0
+[2026-05-12 12:35:42] [V2] STAGE6:   meeko receptor R215E_holo rc=2
+[2026-05-12 12:35:42] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:43] [V2] STAGE6:   obabel receptor R215E_holo rc=0
+[2026-05-12 12:36:01] [V2] STAGE7:   R215E apo: top=-7.31, ddG=-0.51, rmsd=5.88
+[2026-05-12 12:36:18] [V2] STAGE7:   R215E holo: top=-7.24, ddG=-4.02, rmsd=2.19
+[2026-05-12 12:36:18] [V2] STAGE7: [14/21] N226D (opposite)
+[2026-05-12 12:36:18] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=226 aa=ASP best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:36:18] [V2] STAGE7:   ROTAMER_PICK resi=226 aa=ASP best_idx=0 strain=1e+30
+[2026-05-12 12:36:21] [V2] STAGE6:   meeko receptor N226D_apo rc=2
+[2026-05-12 12:36:21] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:36:23] [V2] STAGE6:   obabel receptor N226D_apo rc=0
+[2026-05-12 12:36:24] [V2] STAGE6:   meeko receptor N226D_holo rc=2
+[2026-05-12 12:36:24] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:36:25] [V2] STAGE6:   obabel receptor N226D_holo rc=0
+[2026-05-12 12:36:42] [V2] STAGE7:   N226D apo: top=-7.36, ddG=-0.57, rmsd=5.59
+[2026-05-12 12:36:57] [V2] STAGE7:   N226D holo: top=-5.90, ddG=-2.69, rmsd=2.19
+[2026-05-12 12:36:57] [V2] STAGE7: [15/21] C195A_H196A (double_dyad)
+[2026-05-12 12:36:58] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=195 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:36:58] [V2] STAGE7:   ROTAMER_PICK resi=195 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:36:58] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=196 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:36:58] [V2] STAGE7:   ROTAMER_PICK resi=196 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:37:01] [V2] STAGE6:   meeko receptor C195A_H196A_apo rc=2
+[2026-05-12 12:37:01] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:03] [V2] STAGE6:   obabel receptor C195A_H196A_apo rc=0
+[2026-05-12 12:37:04] [V2] STAGE6:   meeko receptor C195A_H196A_holo rc=2
+[2026-05-12 12:37:04] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:05] [V2] STAGE6:   obabel receptor C195A_H196A_holo rc=0
+[2026-05-12 12:37:20] [V2] STAGE7:   C195A_H196A apo: top=-7.79, ddG=-1.00, rmsd=3.04
+[2026-05-12 12:37:35] [V2] STAGE7:   C195A_H196A holo: top=-7.59, ddG=-4.37, rmsd=3.92
+[2026-05-12 12:37:35] [V2] STAGE7: [16/21] R175E_R176E (double_phosclamp)
+[2026-05-12 12:37:36] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=175 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:37:36] [V2] STAGE7:   ROTAMER_PICK resi=175 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:37:36] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=176 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:37:36] [V2] STAGE7:   ROTAMER_PICK resi=176 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:37:39] [V2] STAGE6:   meeko receptor R175E_R176E_apo rc=2
+[2026-05-12 12:37:39] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:40] [V2] STAGE6:   obabel receptor R175E_R176E_apo rc=0
+[2026-05-12 12:37:42] [V2] STAGE6:   meeko receptor R175E_R176E_holo rc=2
+[2026-05-12 12:37:42] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:42] [V2] STAGE6:   obabel receptor R175E_R176E_holo rc=0
+[2026-05-12 12:37:58] [V2] STAGE7:   R175E_R176E apo: top=-7.15, ddG=-0.36, rmsd=5.64
+[2026-05-12 12:38:13] [V2] STAGE7:   R175E_R176E holo: top=-6.41, ddG=-3.20, rmsd=2.23
+[2026-05-12 12:38:13] [V2] STAGE7: [17/21] C195S_H196N (double_polar_neutral)
+[2026-05-12 12:38:13] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=195 aa=SER best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:38:13] [V2] STAGE7:   ROTAMER_PICK resi=195 aa=SER best_idx=0 strain=1e+30
+[2026-05-12 12:38:13] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=196 aa=ASN best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:38:13] [V2] STAGE7:   ROTAMER_PICK resi=196 aa=ASN best_idx=0 strain=1e+30
+[2026-05-12 12:38:16] [V2] STAGE6:   meeko receptor C195S_H196N_apo rc=2
+[2026-05-12 12:38:16] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:17] [V2] STAGE6:   obabel receptor C195S_H196N_apo rc=0
+[2026-05-12 12:38:19] [V2] STAGE6:   meeko receptor C195S_H196N_holo rc=2
+[2026-05-12 12:38:19] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:19] [V2] STAGE6:   obabel receptor C195S_H196N_holo rc=0
+[2026-05-12 12:38:35] [V2] STAGE7:   C195S_H196N apo: top=-7.84, ddG=-1.04, rmsd=3.01
+[2026-05-12 12:38:50] [V2] STAGE7:   C195S_H196N holo: top=-7.47, ddG=-4.25, rmsd=2.20
+[2026-05-12 12:38:50] [V2] STAGE7: [18/21] R215A_N226A (double_substrate_orient)
+[2026-05-12 12:38:50] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=215 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:38:50] [V2] STAGE7:   ROTAMER_PICK resi=215 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:38:50] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=226 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:38:50] [V2] STAGE7:   ROTAMER_PICK resi=226 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:38:53] [V2] STAGE6:   meeko receptor R215A_N226A_apo rc=2
+[2026-05-12 12:38:53] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:54] [V2] STAGE6:   obabel receptor R215A_N226A_apo rc=0
+[2026-05-12 12:38:56] [V2] STAGE6:   meeko receptor R215A_N226A_holo rc=2
+[2026-05-12 12:38:56] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:56] [V2] STAGE6:   obabel receptor R215A_N226A_holo rc=0
+[2026-05-12 12:39:12] [V2] STAGE7:   R215A_N226A apo: top=-7.13, ddG=-0.33, rmsd=5.64
+[2026-05-12 12:39:27] [V2] STAGE7:   R215A_N226A holo: top=-6.86, ddG=-3.65, rmsd=2.29
+[2026-05-12 12:39:27] [V2] STAGE7: [19/21] Y258F_F225Y (double_aromatic_swap)
+[2026-05-12 12:39:28] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=258 aa=PHE best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:39:28] [V2] STAGE7:   ROTAMER_PICK resi=258 aa=PHE best_idx=0 strain=1e+30
+[2026-05-12 12:39:28] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=225 aa=TYR best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:39:28] [V2] STAGE7:   ROTAMER_PICK resi=225 aa=TYR best_idx=0 strain=1e+30
+[2026-05-12 12:39:31] [V2] STAGE6:   meeko receptor Y258F_F225Y_apo rc=2
+[2026-05-12 12:39:31] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:39:32] [V2] STAGE6:   obabel receptor Y258F_F225Y_apo rc=0
+[2026-05-12 12:39:34] [V2] STAGE6:   meeko receptor Y258F_F225Y_holo rc=2
+[2026-05-12 12:39:34] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:39:34] [V2] STAGE6:   obabel receptor Y258F_F225Y_holo rc=0
+[2026-05-12 12:39:50] [V2] STAGE7:   Y258F_F225Y apo: top=-7.08, ddG=-0.28, rmsd=5.25
+[2026-05-12 12:40:04] [V2] STAGE7:   Y258F_F225Y holo: top=-6.08, ddG=-2.87, rmsd=2.18
+[2026-05-12 12:40:04] [V2] STAGE7: [20/21] T170A (control_surface)
+[2026-05-12 12:40:05] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=170 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:40:05] [V2] STAGE7:   ROTAMER_PICK resi=170 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:40:08] [V2] STAGE6:   meeko receptor T170A_apo rc=2
+[2026-05-12 12:40:08] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:40:09] [V2] STAGE6:   obabel receptor T170A_apo rc=0
+[2026-05-12 12:40:10] [V2] STAGE6:   meeko receptor T170A_holo rc=2
+[2026-05-12 12:40:10] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:40:11] [V2] STAGE6:   obabel receptor T170A_holo rc=0
+[2026-05-12 12:40:27] [V2] STAGE7:   T170A apo: top=-7.10, ddG=-0.30, rmsd=5.58
+[2026-05-12 12:40:41] [V2] STAGE7:   T170A holo: top=-4.49, ddG=-1.27, rmsd=2.53
+[2026-05-12 12:40:41] [V2] STAGE7: [21/21] G217W (explore_g217w)
+[2026-05-12 12:40:41] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=217 aa=TRP best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:40:41] [V2] STAGE7:   ROTAMER_PICK resi=217 aa=TRP best_idx=0 strain=1e+30
+[2026-05-12 12:40:41] [V2] STAGE7:   clashes detected: [(217, 'CG', 252, 'CD2', np.float32(1.4953969)), (217, 'CD1', 252, 'CD2', np.float32(1.3784181)), (217, 'CD2', 214, 'OE1', np.float32(1.6130123))]...
+[2026-05-12 12:40:41] [V2] STAGE7:   G217W has heavy-atom clashes <1.8A — DROPPING per spec
+[2026-05-12 12:40:41] [V2] STAGE7: Wrote /Users/ario/conserved_site_project/07b_mut_docking_v2/mutant_results_v2.csv (40 rows)
+[2026-05-12 12:40:41] [V2] STAGE7: viewer file PyMOL load test: OK (sample=R50A_apo_complex.pdb)
+[2026-05-12 12:40:41] [V2] STAGE7: Stage 7 v2 DONE: 40 successful runs, 1 skipped

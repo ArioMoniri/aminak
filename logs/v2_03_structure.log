@@ -1,0 +1,18 @@
+[2026-05-12 12:23:23] [V2] STAGE3: Stage 3 v2 starting
+[2026-05-12 12:23:23] [V2] STAGE3: using raw 1hvy: /Users/ario/conserved_site_project/03_structure/1hvy.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: CME->CYS conversion: 40 CME lines, 24 kept (heavy), 16 hydroxyethyl atoms dropped
+[2026-05-12 12:23:23] [V2] STAGE3: wrote /Users/ario/conserved_site_project/03b_structure_v2/protein_dimer.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: wrote /Users/ario/conserved_site_project/03b_structure_v2/ligand.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: wrote /Users/ario/conserved_site_project/03b_structure_v2/cofactor_chainA.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: wrote /Users/ario/conserved_site_project/03b_structure_v2/cofactor_chainB.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: protein_dimer_h.pdb size 1406500
+[2026-05-12 12:23:24] [V2] STAGE3: obabel ligand_h rc=0, size 5580
+[2026-05-12 12:23:24] [V2] STAGE3:   cofactor_chainA.pdb -> cofactor_chainA_h.pdb rc=0
+[2026-05-12 12:23:24] [V2] STAGE3:   cofactor_chainB.pdb -> cofactor_chainB_h.pdb rc=0
+[2026-05-12 12:23:24] [V2] STAGE3: chains in dimer_h: ['A', 'B']
+[2026-05-12 12:23:24] [V2] STAGE3:   chain A: 288 residues
+[2026-05-12 12:23:24] [V2] STAGE3:   chain A Cys43 heavy atoms: ['C', 'CA', 'CB', 'N', 'O', 'SG']
+[2026-05-12 12:23:24] [V2] STAGE3:   chain B: 288 residues
+[2026-05-12 12:23:24] [V2] STAGE3:   chain B Cys43 heavy atoms: ['C', 'CA', 'CB', 'N', 'O', 'SG']
+[2026-05-12 12:23:24] [V2] STAGE3: selected residues missing in A: []; in B: []
+[2026-05-12 12:23:24] [V2] STAGE3: Stage 3 v2 DONE

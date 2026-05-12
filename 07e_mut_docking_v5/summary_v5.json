@@ -1,0 +1,14 @@
+{
+  "n_mutants": 20,
+  "n_rows": 40,
+  "skipped": [],
+  "wt_apo_v5": -9.197,
+  "wt_holo_v5": -8.249,
+  "wt_holo_v5_n_modes": 2,
+  "wt_holo_v5_best_seed": 13,
+  "wt_holo_v5_rmsd": 0.33415714865913027,
+  "sign_convention": "delta_vina_vs_wt = top_aff_mut - top_aff_wt_v5; positive = destabilising",
+  "low_confidence_rule": "n_modes < 5 (holo only); excluded from rankings",
+  "apo_source": "reused from v3 (receptor unchanged)",
+  "vina_noise_floor_kcal_per_mol": 0.85
+}

@@ -1,0 +1,181 @@
+{
+  "results": {
+    "apo": {
+      "top_affinity": -9.197,
+      "mean_topk": -8.784333333333333,
+      "rmsd_top_to_native": 0.9115538656601705,
+      "rmsd_top_named": 3.8022171886939864,
+      "n_modes": 27,
+      "best_seed": 42,
+      "selection_rule": "lowest top_affinity, tie-break highest n_modes",
+      "all_affinities": [
+        -9.197,
+        -8.63,
+        -8.526,
+        -8.454,
+        -8.174,
+        -7.966,
+        -7.937,
+        -7.857,
+        -7.838,
+        -7.8,
+        -7.796,
+        -7.794,
+        -7.691,
+        -7.622,
+        -7.594,
+        -7.585,
+        -7.501,
+        -7.442,
+        -7.387,
+        -7.375,
+        -7.372,
+        -7.307,
+        -7.252,
+        -7.246,
+        -7.136,
+        -7.048,
+        -7.022
+      ],
+      "affinity_distribution_width_kcal": 0.12099999999999866,
+      "all_modes_concat_n": 141,
+      "complex_pdb": "/Users/ario/conserved_site_project/06d_docking_wt_v4/wt_apo_complex.pdb",
+      "top_pose_pdb": "/Users/ario/conserved_site_project/06d_docking_wt_v4/wt_apo_top_pose.pdb",
+      "vina_params": {
+        "exhaustiveness": 96,
+        "num_modes": 32,
+        "box_size": 22,
+        "primary_seeds": [
+          42,
+          7,
+          13,
+          99,
+          256
+        ],
+        "fallback_seeds": [
+          1,
+          2025,
+          31337
+        ],
+        "centroid": [
+          -0.13655,
+          4.2319,
+          15.159450000000001
+        ],
+        "centroid_source": "crystal_dump_centroid",
+        "receptor_methods": {
+          "apo": "obabel_gasteiger",
+          "holo": "obabel_gasteiger"
+        },
+        "selection_rule": "lowest top_affinity, tie-break by highest n_modes",
+        "vina_noise_floor_kcal_per_mol": 0.85,
+        "vina_noise_floor_source": "Trott & Olson 2010; Forli et al. 2016"
+      }
+    },
+    "holo": {
+      "top_affinity": -5.242,
+      "mean_topk": -5.116333333333333,
+      "rmsd_top_to_native": 12.947196936016692,
+      "rmsd_top_named": 12.916605045444411,
+      "n_modes": 30,
+      "best_seed": 256,
+      "selection_rule": "lowest top_affinity, tie-break highest n_modes",
+      "all_affinities": [
+        -5.242,
+        -5.054,
+        -5.053,
+        -4.91,
+        -4.886,
+        -4.842,
+        -4.829,
+        -4.796,
+        -4.788,
+        -4.686,
+        -4.685,
+        -4.646,
+        -4.438,
+        -4.411,
+        -4.404,
+        -4.384,
+        -4.377,
+        -4.323,
+        -4.289,
+        -4.288,
+        -4.234,
+        -4.212,
+        -4.147,
+        -4.138,
+        -4.119,
+        -4.1,
+        -4.09,
+        -4.088,
+        -3.998,
+        -3.934
+      ],
+      "affinity_distribution_width_kcal": 0.15000000000000036,
+      "all_modes_concat_n": 152,
+      "complex_pdb": "/Users/ario/conserved_site_project/06d_docking_wt_v4/wt_holo_complex.pdb",
+      "top_pose_pdb": "/Users/ario/conserved_site_project/06d_docking_wt_v4/wt_holo_top_pose.pdb",
+      "vina_params": {
+        "exhaustiveness": 96,
+        "num_modes": 32,
+        "box_size": 22,
+        "primary_seeds": [
+          42,
+          7,
+          13,
+          99,
+          256
+        ],
+        "fallback_seeds": [
+          1,
+          2025,
+          31337
+        ],
+        "centroid": [
+          -0.13655,
+          4.2319,
+          15.159450000000001
+        ],
+        "centroid_source": "crystal_dump_centroid",
+        "receptor_methods": {
+          "apo": "obabel_gasteiger",
+          "holo": "obabel_gasteiger"
+        },
+        "selection_rule": "lowest top_affinity, tie-break by highest n_modes",
+        "vina_noise_floor_kcal_per_mol": 0.85,
+        "vina_noise_floor_source": "Trott & Olson 2010; Forli et al. 2016"
+      }
+    }
+  },
+  "vina_params": {
+    "exhaustiveness": 96,
+    "num_modes": 32,
+    "box_size": 22,
+    "primary_seeds": [
+      42,
+      7,
+      13,
+      99,
+      256
+    ],
+    "fallback_seeds": [
+      1,
+      2025,
+      31337
+    ],
+    "centroid": [
+      -0.13655,
+      4.2319,
+      15.159450000000001
+    ],
+    "centroid_source": "crystal_dump_centroid",
+    "receptor_methods": {
+      "apo": "obabel_gasteiger",
+      "holo": "obabel_gasteiger"
+    },
+    "selection_rule": "lowest top_affinity, tie-break by highest n_modes",
+    "vina_noise_floor_kcal_per_mol": 0.85,
+    "vina_noise_floor_source": "Trott & Olson 2010; Forli et al. 2016"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "n_rows": 42,
+  "n_mutants": 20,
+  "n_apo_rows": 20,
+  "n_holo_rows": 20,
+  "n_mis_docked": 3,
+  "n_low_confidence": 14,
+  "wt_apo_aff_v5": -9.197,
+  "wt_holo_aff_v5": -8.249,
+  "wt_holo_n_modes_v5": 2,
+  "wt_holo_rmsd_vs_crystal": 0.3341571486591302,
+  "vina_noise_floor_kcal_per_mol": 0.85,
+  "vina_noise_floor_source": "Trott & Olson 2010; Forli et al. 2016 (mean of 0.7-1.0)",
+  "pearson_r_apo_holo": -0.7401065909147103,
+  "pearson_p_apo_holo": 0.4695500414252069,
+  "spearman_r_apo_holo": -0.5,
+  "spearman_p_apo_holo": 0.6666666666666666,
+  "spearman_r_filtered_abs_delta_gt_0p3": -0.5,
+  "spearman_p_filtered_abs_delta_gt_0p3": 0.6666666666666666,
+  "n_filtered_for_spearman": 3,
+  "filtered_spearman_in_prose": false,
+  "no_significant_apo_holo_correlation": "True",
+  "n_above_noise_holo": 0,
+  "top5_destab_apo_clean": [
+    {
+      "mutant": "R215E",
+      "category": "opposite",
+      "delta_vina_vs_wt": 0.6109999999999989,
+      "rmsd_to_native": 2.42580130725254,
+      "n_modes": 19
+    },
+    {
+      "mutant": "R50A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.5789999999999988,
+      "rmsd_to_native": 2.4166652516683764,
+      "n_modes": 20
+    },
+    {
+      "mutant": "R215A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.5699999999999985,
+      "rmsd_to_native": 2.2464490849617618,
+      "n_modes": 20
+    },
+    {
+      "mutant": "Q214A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.5449999999999999,
+      "rmsd_to_native": 2.356671062897535,
+      "n_modes": 19
+    },
+    {
+      "mutant": "N226D",
+      "category": "opposite",
+      "delta_vina_vs_wt": 0.4199999999999999,
+      "rmsd_to_native": 2.397877221341776,
+      "n_modes": 20
+    }
+  ],
+  "top5_destab_holo_clean": [
+    {
+      "mutant": "R215A_N226A",
+      "category": "double_substrate_orient",
+      "delta_vina_vs_wt": 0.7720000000000002,
+      "rmsd_to_native": 0.6035608917085333,
+      "n_modes": 9
+    },
+    {
+      "mutant": "H196A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.4910000000000005,
+      "rmsd_to_native": 0.3375956901383665,
+      "n_modes": 5
+    },
+    {
+      "mutant": "R215E",
+      "category": "opposite",
+      "delta_vina_vs_wt": 0.4700000000000006,
+      "rmsd_to_native": 0.3911965618458323,
+      "n_modes": 5
+    },
+    {
+      "mutant": "R215A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.4430000000000005,
+      "rmsd_to_native": 0.4048995554455452,
+      "n_modes": 5
+    }
+  ],
+  "top3_destab_holo_clean": [
+    {
+      "mutant": "R215A_N226A",
+      "category": "double_substrate_orient",
+      "delta_vina_vs_wt": 0.7720000000000002,
+      "rmsd_to_native": 0.6035608917085333,
+      "n_modes": 9
+    },
+    {
+      "mutant": "H196A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.4910000000000005,
+      "rmsd_to_native": 0.3375956901383665,
+      "n_modes": 5
+    },
+    {
+      "mutant": "R215E",
+      "category": "opposite",
+      "delta_vina_vs_wt": 0.4700000000000006,
+      "rmsd_to_native": 0.3911965618458323,
+      "n_modes": 5
+    }
+  ],
+  "filters_applied": "exclude mis_docked (RMSD>3) and low_confidence (n_modes<5)",
+  "holo_filter_note": "WT holo RMSD vs crystal = 0.334 A; standard mis_docked (RMSD > 3 A vs crystal) applies. v4-style dual-RMSD-reference is not needed in v5.",
+  "sign_convention": "delta_vina_vs_wt = top_aff_mut - top_aff_wt_v5; positive = destabilising"
+}

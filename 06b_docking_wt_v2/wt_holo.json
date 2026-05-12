@@ -1,0 +1,18 @@
+{
+  "top_affinity": -3.215,
+  "mean_top3": -1.6883333333333335,
+  "rmsd_top_to_native": 4.3175370678684235,
+  "n_poses": 3,
+  "centroid": [
+    3.4655003547668457,
+    4.740799903869629,
+    7.777600288391113
+  ],
+  "all_affinities": [
+    -3.215,
+    -1.355,
+    -0.495
+  ],
+  "complex_pdb": "/Users/ario/conserved_site_project/06b_docking_wt_v2/wt_holo_complex.pdb",
+  "top_pose_pdb": "/Users/ario/conserved_site_project/06b_docking_wt_v2/wt_holo_top_pose.pdb"
+}

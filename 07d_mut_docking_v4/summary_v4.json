@@ -1,0 +1,13 @@
+{
+  "n_mutants": 20,
+  "n_rows": 40,
+  "skipped": [],
+  "wt_apo_v4": -9.197,
+  "wt_holo_v4": -5.242,
+  "wt_holo_v4_n_modes": 30,
+  "wt_holo_v4_best_seed": 256,
+  "sign_convention": "delta_vina_vs_wt = top_aff_mut - top_aff_wt_v4; positive = destabilising",
+  "low_confidence_rule": "n_modes < 5 (holo only); excluded from rankings",
+  "apo_source": "reused from v3 (receptor unchanged)",
+  "vina_noise_floor_kcal_per_mol": 0.85
+}

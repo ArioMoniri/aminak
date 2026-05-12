@@ -1,0 +1,34 @@
+{
+  "top_affinity": -6.798,
+  "mean_top3": -6.583000000000001,
+  "rmsd_top_to_native": 5.601688235999002,
+  "n_poses": 19,
+  "centroid": [
+    3.4655003547668457,
+    4.740799903869629,
+    7.777600288391113
+  ],
+  "all_affinities": [
+    -6.798,
+    -6.505,
+    -6.446,
+    -6.371,
+    -6.346,
+    -6.304,
+    -6.096,
+    -6.009,
+    -5.992,
+    -5.866,
+    -5.82,
+    -5.751,
+    -5.332,
+    -5.233,
+    -4.729,
+    -4.483,
+    -4.47,
+    -4.388,
+    -3.927
+  ],
+  "complex_pdb": "/Users/ario/conserved_site_project/06b_docking_wt_v2/wt_apo_complex.pdb",
+  "top_pose_pdb": "/Users/ario/conserved_site_project/06b_docking_wt_v2/wt_apo_top_pose.pdb"
+}

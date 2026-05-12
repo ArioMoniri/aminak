@@ -1,0 +1,86 @@
+[2026-05-12 13:37:54] [V4] STAGE7: Stage 7 v4 starting
+[2026-05-12 13:37:54] [V4] STAGE7: Found 20 mutants from v3
+[2026-05-12 13:37:54] [V4] STAGE7: centroid (crystal dUMP): [-0.13655, 4.2319, 15.159450000000001]
+[2026-05-12 13:37:54] [V4] STAGE7: WT v4 apo aff = -9.20, WT v4 holo aff = -5.24
+[2026-05-12 13:37:54] [V4] STAGE7: [1/20] C195A (ala_scan)
+[2026-05-12 13:37:55] [V4] STAGE7:   [C195A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:38:10] [V4] STAGE7:   C195A holo: top=-6.99 delta=-1.75 n=12 rmsd=3.77 mis_docked=True low_conf=False
+[2026-05-12 13:38:10] [V4] STAGE7:   C195A apo (reused v3): top=-9.46 delta=-0.26 n=20 rmsd=2.09
+[2026-05-12 13:38:10] [V4] STAGE7: [2/20] C195A_H196A (double_dyad)
+[2026-05-12 13:38:11] [V4] STAGE7:   [C195A_H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:38:25] [V4] STAGE7:   C195A_H196A holo: top=-7.88 delta=-2.64 n=2 rmsd=4.25 mis_docked=True low_conf=True
+[2026-05-12 13:38:25] [V4] STAGE7:   C195A_H196A apo (reused v3): top=-9.12 delta=+0.08 n=20 rmsd=2.11
+[2026-05-12 13:38:25] [V4] STAGE7: [3/20] C195S (opposite)
+[2026-05-12 13:38:26] [V4] STAGE7:   [C195S_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:38:42] [V4] STAGE7:   C195S holo: top=-6.05 delta=-0.81 n=18 rmsd=3.49 mis_docked=True low_conf=False
+[2026-05-12 13:38:42] [V4] STAGE7:   C195S apo (reused v3): top=-9.55 delta=-0.36 n=20 rmsd=2.14
+[2026-05-12 13:38:42] [V4] STAGE7: [4/20] C195S_H196N (double_polar_neutral)
+[2026-05-12 13:38:42] [V4] STAGE7:   [C195S_H196N_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:38:58] [V4] STAGE7:   C195S_H196N holo: top=-6.28 delta=-1.04 n=19 rmsd=4.12 mis_docked=True low_conf=False
+[2026-05-12 13:38:58] [V4] STAGE7:   C195S_H196N apo (reused v3): top=-9.34 delta=-0.14 n=20 rmsd=2.08
+[2026-05-12 13:38:58] [V4] STAGE7: [5/20] H196A (ala_scan)
+[2026-05-12 13:38:59] [V4] STAGE7:   [H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:39:16] [V4] STAGE7:   H196A holo: top=-5.16 delta=+0.09 n=19 rmsd=11.76 mis_docked=True low_conf=False
+[2026-05-12 13:39:16] [V4] STAGE7:   H196A apo (reused v3): top=-8.86 delta=+0.34 n=19 rmsd=2.31
+[2026-05-12 13:39:16] [V4] STAGE7: [6/20] N226D (opposite)
+[2026-05-12 13:39:16] [V4] STAGE7:   [N226D_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:39:33] [V4] STAGE7:   N226D holo: top=-5.08 delta=+0.16 n=17 rmsd=13.00 mis_docked=True low_conf=False
+[2026-05-12 13:39:33] [V4] STAGE7:   N226D apo (reused v3): top=-8.78 delta=+0.42 n=20 rmsd=2.40
+[2026-05-12 13:39:33] [V4] STAGE7: [7/20] Q214A (ala_scan)
+[2026-05-12 13:39:34] [V4] STAGE7:   [Q214A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:39:49] [V4] STAGE7:   Q214A holo: top=-5.08 delta=+0.16 n=20 rmsd=12.91 mis_docked=True low_conf=False
+[2026-05-12 13:39:49] [V4] STAGE7:   Q214A apo (reused v3): top=-8.65 delta=+0.54 n=19 rmsd=2.36
+[2026-05-12 13:39:49] [V4] STAGE7: [8/20] R175A (ala_scan)
+[2026-05-12 13:39:50] [V4] STAGE7:   [R175A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:40:07] [V4] STAGE7:   R175A holo: top=-5.12 delta=+0.13 n=19 rmsd=11.82 mis_docked=True low_conf=False
+[2026-05-12 13:40:07] [V4] STAGE7:   R175A apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.30
+[2026-05-12 13:40:07] [V4] STAGE7: [9/20] R175E (opposite)
+[2026-05-12 13:40:07] [V4] STAGE7:   [R175E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:40:24] [V4] STAGE7:   R175E holo: top=-5.10 delta=+0.14 n=18 rmsd=12.19 mis_docked=True low_conf=False
+[2026-05-12 13:40:24] [V4] STAGE7:   R175E apo (reused v3): top=-9.04 delta=+0.16 n=20 rmsd=2.39
+[2026-05-12 13:40:24] [V4] STAGE7: [10/20] R175E_R176E (double_phosclamp)
+[2026-05-12 13:40:24] [V4] STAGE7:   [R175E_R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:40:41] [V4] STAGE7:   R175E_R176E holo: top=-5.04 delta=+0.20 n=19 rmsd=12.19 mis_docked=True low_conf=False
+[2026-05-12 13:40:41] [V4] STAGE7:   R175E_R176E apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.31
+[2026-05-12 13:40:41] [V4] STAGE7: [11/20] R176A (ala_scan)
+[2026-05-12 13:40:42] [V4] STAGE7:   [R176A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:40:58] [V4] STAGE7:   R176A holo: top=-5.06 delta=+0.18 n=19 rmsd=11.79 mis_docked=True low_conf=False
+[2026-05-12 13:40:58] [V4] STAGE7:   R176A apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.31
+[2026-05-12 13:40:58] [V4] STAGE7: [12/20] R176E (opposite)
+[2026-05-12 13:40:58] [V4] STAGE7:   [R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:41:15] [V4] STAGE7:   R176E holo: top=-5.04 delta=+0.20 n=19 rmsd=12.19 mis_docked=True low_conf=False
+[2026-05-12 13:41:15] [V4] STAGE7:   R176E apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.31
+[2026-05-12 13:41:15] [V4] STAGE7: [13/20] R215A (ala_scan)
+[2026-05-12 13:41:16] [V4] STAGE7:   [R215A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:41:31] [V4] STAGE7:   R215A holo: top=-6.53 delta=-1.29 n=15 rmsd=3.78 mis_docked=True low_conf=False
+[2026-05-12 13:41:31] [V4] STAGE7:   R215A apo (reused v3): top=-8.63 delta=+0.57 n=20 rmsd=2.25
+[2026-05-12 13:41:31] [V4] STAGE7: [14/20] R215A_N226A (double_substrate_orient)
+[2026-05-12 13:41:32] [V4] STAGE7:   [R215A_N226A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:41:47] [V4] STAGE7:   R215A_N226A holo: top=-6.46 delta=-1.22 n=14 rmsd=3.79 mis_docked=True low_conf=False
+[2026-05-12 13:41:47] [V4] STAGE7:   R215A_N226A apo (reused v3): top=-8.05 delta=+1.15 n=20 rmsd=5.34
+[2026-05-12 13:41:47] [V4] STAGE7: [15/20] R215E (opposite)
+[2026-05-12 13:41:48] [V4] STAGE7:   [R215E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:42:03] [V4] STAGE7:   R215E holo: top=-6.76 delta=-1.51 n=8 rmsd=3.77 mis_docked=True low_conf=False
+[2026-05-12 13:42:03] [V4] STAGE7:   R215E apo (reused v3): top=-8.59 delta=+0.61 n=19 rmsd=2.43
+[2026-05-12 13:42:03] [V4] STAGE7: [16/20] R50A (ala_scan)
+[2026-05-12 13:42:03] [V4] STAGE7:   [R50A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:42:16] [V4] STAGE7:   R50A holo: top=-6.86 delta=-1.62 n=20 rmsd=8.66 mis_docked=True low_conf=False
+[2026-05-12 13:42:16] [V4] STAGE7:   R50A apo (reused v3): top=-8.62 delta=+0.58 n=20 rmsd=2.42
+[2026-05-12 13:42:16] [V4] STAGE7: [17/20] R50E (opposite)
+[2026-05-12 13:42:16] [V4] STAGE7:   [R50E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:42:30] [V4] STAGE7:   R50E holo: top=-6.84 delta=-1.59 n=19 rmsd=5.78 mis_docked=True low_conf=False
+[2026-05-12 13:42:30] [V4] STAGE7:   R50E apo (reused v3): top=-8.78 delta=+0.41 n=20 rmsd=2.35
+[2026-05-12 13:42:30] [V4] STAGE7: [18/20] T170A (control_surface)
+[2026-05-12 13:42:31] [V4] STAGE7:   [T170A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:42:47] [V4] STAGE7:   T170A holo: top=-5.07 delta=+0.17 n=20 rmsd=12.94 mis_docked=True low_conf=False
+[2026-05-12 13:42:47] [V4] STAGE7:   T170A apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.30
+[2026-05-12 13:42:47] [V4] STAGE7: [19/20] W109A (ala_scan)
+[2026-05-12 13:42:48] [V4] STAGE7:   [W109A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:43:02] [V4] STAGE7:   W109A holo: top=-7.04 delta=-1.80 n=19 rmsd=8.40 mis_docked=True low_conf=False
+[2026-05-12 13:43:02] [V4] STAGE7:   W109A apo (reused v3): top=-8.88 delta=+0.32 n=19 rmsd=2.46
+[2026-05-12 13:43:02] [V4] STAGE7: [20/20] Y258F_F225Y (double_aromatic_swap)
+[2026-05-12 13:43:03] [V4] STAGE7:   [Y258F_F225Y_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:43:20] [V4] STAGE7:   Y258F_F225Y holo: top=-5.14 delta=+0.11 n=18 rmsd=11.77 mis_docked=True low_conf=False
+[2026-05-12 13:43:20] [V4] STAGE7:   Y258F_F225Y apo (reused v3): top=-8.88 delta=+0.32 n=20 rmsd=2.45
+[2026-05-12 13:43:20] [V4] STAGE7: wrote /Users/ario/conserved_site_project/07d_mut_docking_v4/mutant_results_v4.csv (42 rows including WT reference)
+[2026-05-12 13:43:20] [V4] STAGE7: Stage 7 v4 DONE: 40 rows, 0 skipped

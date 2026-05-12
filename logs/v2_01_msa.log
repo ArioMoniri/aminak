@@ -1,0 +1,44 @@
+[2026-05-12 12:21:25] [V2] STAGE1: Stage 1 v2 starting
+[2026-05-12 12:21:25] [V2] STAGE1: Fetching P04818 (Homo_sapiens)
+[2026-05-12 12:21:27] [V2] STAGE1:   ACCEPT P04818 (Homo_sapiens): ok(len=313)
+[2026-05-12 12:21:27] [V2] STAGE1: Fetching P07607 (Mus_musculus)
+[2026-05-12 12:21:28] [V2] STAGE1:   ACCEPT P07607 (Mus_musculus): ok(len=307)
+[2026-05-12 12:21:28] [V2] STAGE1: Fetching P45352 (Rattus_norvegicus)
+[2026-05-12 12:21:29] [V2] STAGE1:   ACCEPT P45352 (Rattus_norvegicus): ok(len=307)
+[2026-05-12 12:21:29] [V2] STAGE1: Fetching P0A884 (Escherichia_coli)
+[2026-05-12 12:21:31] [V2] STAGE1:   ACCEPT P0A884 (Escherichia_coli): ok(len=264)
+[2026-05-12 12:21:31] [V2] STAGE1: Fetching P00469 (Lactobacillus_casei)
+[2026-05-12 12:21:32] [V2] STAGE1:   ACCEPT P00469 (Lactobacillus_casei): ok(len=316)
+[2026-05-12 12:21:32] [V2] STAGE1: Fetching P06785 (Saccharomyces_cerevisiae)
+[2026-05-12 12:21:33] [V2] STAGE1:   ACCEPT P06785 (Saccharomyces_cerevisiae): ok(len=304)
+[2026-05-12 12:21:33] [V2] STAGE1: Fetching Q9N588 (Caenorhabditis_elegans)
+[2026-05-12 12:21:34] [V2] STAGE1:   REJECT Q9N588 (Caenorhabditis_elegans): no_TS_motif; trying search fallback
+[2026-05-12 12:21:35] [V2] STAGE1: Fetching O76511 (Drosophila_melanogaster)
+[2026-05-12 12:21:36] [V2] STAGE1:   ACCEPT O76511 (Drosophila_melanogaster): ok(len=321)
+[2026-05-12 12:21:36] [V2] STAGE1: Fetching Q05762 (Arabidopsis_thaliana)
+[2026-05-12 12:21:37] [V2] STAGE1:   Arabidopsis_thaliana bifunctional trim: 519 -> 315 aa
+[2026-05-12 12:21:37] [V2] STAGE1:   ACCEPT Q05762 (Arabidopsis_thaliana): ok(len=315)
+[2026-05-12 12:21:37] [V2] STAGE1: Fetching P00471 (Bacteriophage_T4)
+[2026-05-12 12:21:39] [V2] STAGE1:   ACCEPT P00471 (Bacteriophage_T4): ok(len=286)
+[2026-05-12 12:21:39] [V2] STAGE1: Fetching P13922 (Plasmodium_falciparum)
+[2026-05-12 12:21:40] [V2] STAGE1:   Plasmodium_falciparum bifunctional trim: 608 -> 315 aa
+[2026-05-12 12:21:40] [V2] STAGE1:   ACCEPT P13922 (Plasmodium_falciparum): ok(len=315)
+[2026-05-12 12:21:40] [V2] STAGE1: Final ortholog set: 10 valid, 1 rejected
+[2026-05-12 12:21:40] [V2] STAGE1:   rejected: Q9N588 Caenorhabditis_elegans (too_long(1059))
+[2026-05-12 12:21:40] [V2] STAGE1: Wrote /Users/ario/conserved_site_project/01b_msa_v2/input.fa with 10 sequences
+[2026-05-12 12:21:40] [V2] STAGE1: Running MAFFT --auto
+[2026-05-12 12:21:40] [V2] STAGE1: MAFFT done
+[2026-05-12 12:21:40] [V2] STAGE1: Aligned 10 sequences, length 399
+[2026-05-12 12:21:40] [V2] STAGE1: Reference row 0, ungapped len 313
+[2026-05-12 12:21:40] [V2] STAGE1: Wrote /Users/ario/conserved_site_project/01b_msa_v2/conservation_scores.csv (313 rows, 306 eligible for percentile)
+[2026-05-12 12:21:40] [V2] STAGE1: Sanity check (catalytic / known):
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 50 (R): js=0.219, pct=94.1, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 175 (R): js=0.209, pct=89.5, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 176 (R): js=0.210, pct=90.8, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 195 (C): js=0.253, pct=100.0, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 196 (H): js=0.227, pct=96.1, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 215 (R): js=0.219, pct=94.4, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 226 (N): js=0.229, pct=97.1, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 258 (Y): js=0.178, pct=64.1, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1: Wrote /Users/ario/conserved_site_project/01b_msa_v2/conservation_plot.png
+[2026-05-12 12:21:40] [V2] STAGE1: Stage 1 v2 DONE

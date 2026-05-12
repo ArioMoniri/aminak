@@ -1,0 +1,57 @@
+{
+  "top_affinity": -8.314,
+  "mean_topk": -6.7253333333333325,
+  "rmsd_top_to_native": 2.080992554979759,
+  "n_modes": 3,
+  "n_poses": 3,
+  "best_seed": 42,
+  "all_affinities": [
+    -8.314,
+    -6.095,
+    -5.767
+  ],
+  "all_seed_results": {
+    "42": {
+      "top": -8.314,
+      "mean_topk": -6.7253333333333325,
+      "rmsd": 2.080992554979759,
+      "n_modes": 3,
+      "all_affinities": [
+        -8.314,
+        -6.095,
+        -5.767
+      ],
+      "out_pdbqt": "/Users/ario/conserved_site_project/06c_docking_wt_v3/wt_holo_seed42.pdbqt"
+    },
+    "7": {
+      "top": -8.309,
+      "mean_topk": -7.211,
+      "rmsd": 2.1360824621761143,
+      "n_modes": 2,
+      "all_affinities": [
+        -8.309,
+        -6.113
+      ],
+      "out_pdbqt": "/Users/ario/conserved_site_project/06c_docking_wt_v3/wt_holo_seed7.pdbqt"
+    }
+  },
+  "complex_pdb": "/Users/ario/conserved_site_project/06c_docking_wt_v3/wt_holo_complex.pdb",
+  "top_pose_pdb": "/Users/ario/conserved_site_project/06c_docking_wt_v3/wt_holo_top_pose.pdb",
+  "vina_params": {
+    "exhaustiveness": 96,
+    "num_modes": 32,
+    "box_size": 22,
+    "seed_primary": 42,
+    "seed_sanity": 7,
+    "centroid": [
+      -0.1365499496459961,
+      4.231900215148926,
+      15.159449577331543
+    ],
+    "centroid_source": "crystal_dump_centroid",
+    "receptor_methods": {
+      "apo": "obabel_gasteiger",
+      "holo": "obabel_gasteiger"
+    }
+  }
+}

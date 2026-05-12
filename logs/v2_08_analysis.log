@@ -1,0 +1,10 @@
+[2026-05-12 12:41:14] [V2] STAGE8: Stage 8 v2 starting
+[2026-05-12 12:41:14] [V2] STAGE8: loaded 40 rows
+[2026-05-12 12:41:14] [V2] STAGE8: wrote pivot: ['mutant', 'category', 'ddG_vs_wt_apo', 'ddG_vs_wt_holo', 'rmsd_to_native_apo', 'rmsd_to_native_holo', 'top_affinity_apo', 'top_affinity_holo']
+[2026-05-12 12:41:14] [V2] STAGE8: top apo destabilizers: [['Q214A', 0.1299999999999999], ['R50E', -0.2039999999999997], ['R50A', -0.2690000000000001], ['Y258F_F225Y', -0.2830000000000003], ['R175E', -0.3029999999999999]]
+[2026-05-12 12:41:14] [V2] STAGE8: top holo destabilizers: [['H196A', -1.1690000000000005], ['T170A', -1.2700000000000005], ['R50E', -2.173], ['N226D', -2.6879999999999997], ['R50A', -2.7910000000000004]]
+[2026-05-12 12:41:14] [V2] STAGE8: wrote ddg_apo_holo.png
+[2026-05-12 12:41:14] [V2] STAGE8: wrote ddg_apo_vs_holo.png
+[2026-05-12 12:41:14] [V2] STAGE8: wrote ddg_by_category.png
+[2026-05-12 12:41:14] [V2] STAGE8: summary: {'n_mutants_total': 20, 'n_apo': 20, 'n_holo': 20, 'wt_apo_aff': -6.798, 'wt_holo_aff': -3.215, 'top5_destabilising_apo': [{'mutant': 'Q214A', 'ddG_vs_wt': 0.1299999999999999}, {'mutant': 'R50E', 'ddG_vs_wt': -0.2039999999999997}, {'mutant': 'R50A', 'ddG_vs_wt': -0.2690000000000001}, {'mutant': 'Y258F_F225Y', 'ddG_vs_wt': -0.2830000000000003}, {'mutant': 'R175E', 'ddG_vs_wt': -0.3029999999999999}], 'top5_destabilising_holo': [{'mutant': 'H196A', 'ddG_vs_wt': -1.1690000000000005}, {'mutant': 'T170A', 'ddG_vs_wt': -1.2700000000000005}, {'mutant': 'R50E', 'ddG_vs_wt': -2.173}, {'mutant': 'N226D', 'ddG_vs_wt': -2.6879999999999997}, {'mutant': 'R50A', 'ddG_vs_wt': -2.7910000000000004}], 'apo_holo_correlation': 0.6337560620851608}
+[2026-05-12 12:41:14] [V2] STAGE8: Stage 8 v2 DONE

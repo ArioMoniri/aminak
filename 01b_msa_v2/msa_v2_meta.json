@@ -1,0 +1,56 @@
+{
+  "valid_orthologs": [
+    [
+      "P04818",
+      "Homo_sapiens"
+    ],
+    [
+      "P07607",
+      "Mus_musculus"
+    ],
+    [
+      "P45352",
+      "Rattus_norvegicus"
+    ],
+    [
+      "P0A884",
+      "Escherichia_coli"
+    ],
+    [
+      "P00469",
+      "Lactobacillus_casei"
+    ],
+    [
+      "P06785",
+      "Saccharomyces_cerevisiae"
+    ],
+    [
+      "O76511",
+      "Drosophila_melanogaster"
+    ],
+    [
+      "Q05762",
+      "Arabidopsis_thaliana"
+    ],
+    [
+      "P00471",
+      "Bacteriophage_T4"
+    ],
+    [
+      "P13922",
+      "Plasmodium_falciparum"
+    ]
+  ],
+  "rejected": [
+    [
+      "Q9N588",
+      "Caenorhabditis_elegans",
+      "too_long(1059)"
+    ]
+  ],
+  "n_aligned": 10,
+  "aln_length": 399,
+  "ref_idx": 0,
+  "p90_threshold": 0.20946536878717104,
+  "n_eligible_columns": 306
+}

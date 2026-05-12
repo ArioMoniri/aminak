@@ -1,0 +1,11 @@
+{
+  "n_panel": 20,
+  "n_completed": 40,
+  "skipped": [],
+  "wt_apo": -9.127,
+  "wt_holo": -8.314,
+  "sign_convention": "delta_vina_vs_wt = top_aff_mut - top_aff_wt; positive = destabilising",
+  "mean_topk_rule": "mean(affinities[:min(3, n_modes)])",
+  "mis_docked_threshold_A": 3.0,
+  "rotamer_method": "PyMOL Mutagenesis Wizard frame=1 + sculpt 3x20 cycles"
+}

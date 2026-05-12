@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>R175A (holo) — dUMP top pose only</title>
+<script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+<style>
+ body { font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+        margin: 0; padding: 0 16px 12px 16px; background:#0c1116; color:#e8eef5; }
+ h1 { font-size: 17px; font-weight: 600; margin: 12px 0 4px; color:#9ad5ff; }
+ .meta { font-size: 12px; color:#aab8c8; margin: 0 0 8px; line-height:1.4; }
+ .panel { background:#1a2230; border:1px solid #283344; border-radius:8px;
+          padding:0; overflow:hidden; }
+ .legend { font-size: 11.5px; color:#cad5e6; padding: 6px 12px; border-top:1px solid #283344; }
+ .legend span { display:inline-block; padding: 2px 8px; border-radius: 4px;
+                margin: 2px 4px 2px 0; }
+ .nav a { color:#9ad5ff; margin-right: 12px; font-size: 12px; text-decoration:none; }
+ .nav a:hover { text-decoration:underline; }
+</style>
+</head><body>
+<div class="nav" style="margin: 10px 0 4px;">
+  <a href="index.html">← Index</a>
+  <a href="https://github.com/ArioMoniri/aminak">GitHub</a>
+</div>
+<h1>R175A (holo) — dUMP top pose only</h1>
+<div class="meta">Just the top docked dUMP pose (no receptor) for fast comparison.</div>
+<div class="panel">
+ <div id="viewer" style="width:100%; max-width:800px; height:560px; margin:auto; position:relative;"></div>
+ <div class="legend">
+  <span style="background:#1d3a5a;color:#cfe6ff;">Receptor cartoon</span>
+  <span style="background:#5a3a1d;color:#ffe6cf;">Active-site sticks</span>
+  <span style="background:#3b1d5a;color:#dccfff;">dUMP (UMP)</span>
+  
+ </div>
+</div>
+<script>
+const pdbText = `HETATM    1  C1' UMP X 414      -0.897   5.578  15.331  1.00  0.00           C
+HETATM    2  C2' UMP X 414      -1.672   4.435  14.737  1.00  0.00           C
+HETATM    3  C3' UMP X 414      -2.116   3.596  15.939  1.00  0.00           C
+HETATM    4  C4' UMP X 414      -1.019   3.734  16.817  1.00  0.00           C
+HETATM    5  O4' UMP X 414      -0.500   5.074  16.554  1.00  0.00           O
+HETATM    6  N1  UMP X 414       0.158   6.161  14.504  1.00  0.00           N
+HETATM    7  C2  UMP X 414      -0.172   6.755  13.290  1.00  0.00           C
+HETATM    8  N3  UMP X 414       0.838   7.487  12.696  1.00  0.00           N
+HETATM    9  C4  UMP X 414       2.064   7.778  13.290  1.00  0.00           C
+HETATM   10  C5  UMP X 414       2.403   7.124  14.511  1.00  0.00           C
+HETATM   11  C6  UMP X 414       1.574   6.080  15.037  1.00  0.00           C
+HETATM   12  O2  UMP X 414      -1.274   6.645  12.756  1.00  0.00           O
+HETATM   13  O4  UMP X 414       2.835   8.577  12.770  1.00  0.00           O
+HETATM   14  O3' UMP X 414      -3.305   4.178  16.533  1.00  0.00           O
+HETATM   15  C5' UMP X 414       0.114   2.741  16.631  1.00  0.00           C
+HETATM   16  O5' UMP X 414      -0.330   1.517  17.265  1.00  0.00           O
+HETATM   17  P   UMP X 414      -0.074   0.062  16.737  1.00  0.00           P
+HETATM   18  OP1 UMP X 414      -0.855  -0.073  15.495  1.00  0.00           O
+HETATM   19  OP2 UMP X 414       1.346  -0.086  16.436  1.00  0.00           O
+HETATM   20  OP3 UMP X 414      -0.557  -0.904  17.711  1.00  0.00           O
+END
+`;
+const viewer = $3Dmol.createViewer("viewer", {backgroundColor: "0x0c1116"});
+viewer.addModel(pdbText, "pdb");
+// Receptor cartoon
+viewer.setStyle({}, {cartoon: {colorscheme: 'spectrum', opacity: 0.80}});
+// Active-site residues coloured by chain
+const activeResi = [50,80,87,109,135,170,175,176,195,196,214,215,217,218,221,225,226,258];
+viewer.setStyle({resi: activeResi}, {stick: {colorscheme: 'amino', radius: 0.18},
+                                       cartoon: {colorscheme: 'spectrum'}});
+// Ligand (dUMP)
+viewer.setStyle({resn: 'UMP'}, {stick: {colorscheme: 'magentaCarbon', radius: 0.22}});
+
+viewer.zoomTo({resn: 'UMP'});
+viewer.zoom(0.85);
+viewer.render();
+</script>
+</body></html>

@@ -1,0 +1,16 @@
+{
+  "method": "in-place reprotonation: heavy-atom coords from 1HVY HETATM D16, RDKit bond-order assignment from reference SMILES, carboxylate deprotonation, AddHs(addCoords=True). NO Kabsch, NO 3D embedding, NO heavy-atom move > 0.001 A.",
+  "source_pdb": "/Users/ario/conserved_site_project/03_structure/1hvy.pdb",
+  "template_sdf": "/Users/ario/conserved_site_project/03d_structure_v4/D16_ideal.sdf",
+  "canonical_smiles_chainA": "Cc1nc(=O)c2cc(CN(C)c3ccc(C(=O)N[C@@H](CCC(=O)[O-])C(=O)[O-])s3)ccc2[nH]1",
+  "canonical_smiles_chainB": "Cc1nc(=O)c2cc(CN(C)c3ccc(C(=O)N[C@@H](CCC(=O)[O-])C(=O)[O-])s3)ccc2[nH]1",
+  "n_carboxylates_deprotonated": 2,
+  "rmsd_chainA_vs_1hvy_A": 0.0,
+  "rmsd_chainB_vs_1hvy_B": 0.0,
+  "md5_chainA": "0e0b87ba50dcda7d9239b5dba806b290",
+  "md5_chainB": "1aea7b012749ab7ade8b1f724ec45982",
+  "clashes_chainA_lt_1p8A": [],
+  "clashes_chainB_lt_1p8A": [],
+  "v4_md5_chainA": "e6f06a08f8910fff680286de98c2e1d2",
+  "v4_diff_md5": true
+}

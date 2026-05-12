@@ -1,0 +1,9 @@
+[2026-05-12 14:16:48] [V5] STAGE8: Stage 8 v5 starting
+[2026-05-12 14:16:48] [V5] STAGE8: loaded 42 rows (including WT reference)
+[2026-05-12 14:16:48] [V5] STAGE8: WT holo RMSD vs crystal = 0.334 A; standard mis_docked (RMSD > 3 A vs crystal) applies. v4-style dual-RMSD-reference is not needed in v5.
+[2026-05-12 14:16:48] [V5] STAGE8: top apo destab (clean): [['R215E', 0.6109999999999989], ['R50A', 0.5789999999999988], ['R215A', 0.5699999999999985], ['Q214A', 0.5449999999999999], ['N226D', 0.4199999999999999]]
+[2026-05-12 14:16:48] [V5] STAGE8: top holo destab (clean): [['R215A_N226A', 0.7720000000000002], ['H196A', 0.4910000000000005], ['R215E', 0.4700000000000006], ['R215A', 0.4430000000000005]]
+[2026-05-12 14:16:48] [V5] STAGE8:   n mutants holo |Δ| > 0.85: 0
+[2026-05-12 14:16:48] [V5] STAGE8: Pearson r = -0.7401065909147103, Spearman ρ = -0.5, null_correlation=True
+[2026-05-12 14:16:48] [V5] STAGE8: n above noise (holo): 0
+[2026-05-12 14:16:48] [V5] STAGE8: Stage 8 v5 DONE

@@ -1,0 +1,88 @@
+[2026-05-12 13:01:17] [V3] STAGE7: Stage 7 v3 starting
+[2026-05-12 13:01:18] [V3] STAGE7: ref seq len=313
+[2026-05-12 13:01:18] [V3] STAGE7: Built panel of 20 mutants (no G217W)
+[2026-05-12 13:01:18] [V3] STAGE7: centroid (crystal dUMP): [-0.1365499496459961, 4.231900215148926, 15.159449577331543]
+[2026-05-12 13:01:18] [V3] STAGE7: WT apo aff = -9.13, WT holo aff = -8.31
+[2026-05-12 13:01:18] [V3] STAGE7: [1/20] R50A (ala_scan)
+[2026-05-12 13:01:19] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:01:33] [V3] STAGE7:   R50A apo: top=-8.62 delta=+0.51 n=20 rmsd=2.42 mis_docked=False
+[2026-05-12 13:01:44] [V3] STAGE7:   R50A holo: top=-7.61 delta=+0.70 n=20 rmsd=2.09 mis_docked=False
+[2026-05-12 13:01:44] [V3] STAGE7: [2/20] W109A (ala_scan)
+[2026-05-12 13:01:45] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:01:59] [V3] STAGE7:   W109A apo: top=-8.88 delta=+0.25 n=19 rmsd=2.46 mis_docked=False
+[2026-05-12 13:02:13] [V3] STAGE7:   W109A holo: top=-8.08 delta=+0.23 n=3 rmsd=2.17 mis_docked=False
+[2026-05-12 13:02:13] [V3] STAGE7: [3/20] R175A (ala_scan)
+[2026-05-12 13:02:13] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:02:28] [V3] STAGE7:   R175A apo: top=-9.02 delta=+0.11 n=20 rmsd=2.30 mis_docked=False
+[2026-05-12 13:02:43] [V3] STAGE7:   R175A holo: top=-8.24 delta=+0.07 n=2 rmsd=2.13 mis_docked=False
+[2026-05-12 13:02:43] [V3] STAGE7: [4/20] R176A (ala_scan)
+[2026-05-12 13:02:44] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:02:59] [V3] STAGE7:   R176A apo: top=-9.02 delta=+0.11 n=20 rmsd=2.31 mis_docked=False
+[2026-05-12 13:03:13] [V3] STAGE7:   R176A holo: top=-8.24 delta=+0.07 n=2 rmsd=2.13 mis_docked=False
+[2026-05-12 13:03:13] [V3] STAGE7: [5/20] C195A (ala_scan)
+[2026-05-12 13:03:14] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:03:29] [V3] STAGE7:   C195A apo: top=-9.46 delta=-0.33 n=20 rmsd=2.09 mis_docked=False
+[2026-05-12 13:03:41] [V3] STAGE7:   C195A holo: top=-10.61 delta=-2.29 n=3 rmsd=2.15 mis_docked=False
+[2026-05-12 13:03:41] [V3] STAGE7: [6/20] H196A (ala_scan)
+[2026-05-12 13:03:42] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:03:56] [V3] STAGE7:   H196A apo: top=-8.86 delta=+0.27 n=19 rmsd=2.31 mis_docked=False
+[2026-05-12 13:04:12] [V3] STAGE7:   H196A holo: top=-7.81 delta=+0.50 n=4 rmsd=2.18 mis_docked=False
+[2026-05-12 13:04:12] [V3] STAGE7: [7/20] Q214A (ala_scan)
+[2026-05-12 13:04:12] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:04:27] [V3] STAGE7:   Q214A apo: top=-8.65 delta=+0.48 n=19 rmsd=2.36 mis_docked=False
+[2026-05-12 13:04:43] [V3] STAGE7:   Q214A holo: top=-8.26 delta=+0.06 n=2 rmsd=2.13 mis_docked=False
+[2026-05-12 13:04:43] [V3] STAGE7: [8/20] R215A (ala_scan)
+[2026-05-12 13:04:44] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:04:59] [V3] STAGE7:   R215A apo: top=-8.63 delta=+0.50 n=20 rmsd=2.25 mis_docked=False
+[2026-05-12 13:05:14] [V3] STAGE7:   R215A holo: top=-7.89 delta=+0.42 n=4 rmsd=2.18 mis_docked=False
+[2026-05-12 13:05:14] [V3] STAGE7: [9/20] R50E (opposite)
+[2026-05-12 13:05:15] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:05:30] [V3] STAGE7:   R50E apo: top=-8.78 delta=+0.35 n=20 rmsd=2.35 mis_docked=False
+[2026-05-12 13:05:42] [V3] STAGE7:   R50E holo: top=-7.40 delta=+0.91 n=20 rmsd=6.93 mis_docked=True
+[2026-05-12 13:05:42] [V3] STAGE7: [10/20] R175E (opposite)
+[2026-05-12 13:05:42] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:05:57] [V3] STAGE7:   R175E apo: top=-9.04 delta=+0.09 n=20 rmsd=2.39 mis_docked=False
+[2026-05-12 13:06:12] [V3] STAGE7:   R175E holo: top=-8.29 delta=+0.03 n=2 rmsd=2.05 mis_docked=False
+[2026-05-12 13:06:12] [V3] STAGE7: [11/20] R176E (opposite)
+[2026-05-12 13:06:13] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:06:28] [V3] STAGE7:   R176E apo: top=-9.02 delta=+0.11 n=20 rmsd=2.31 mis_docked=False
+[2026-05-12 13:06:43] [V3] STAGE7:   R176E holo: top=-8.29 delta=+0.03 n=2 rmsd=2.15 mis_docked=False
+[2026-05-12 13:06:43] [V3] STAGE7: [12/20] C195S (opposite)
+[2026-05-12 13:06:43] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:06:58] [V3] STAGE7:   C195S apo: top=-9.55 delta=-0.42 n=20 rmsd=2.14 mis_docked=False
+[2026-05-12 13:07:11] [V3] STAGE7:   C195S holo: top=-10.29 delta=-1.98 n=2 rmsd=2.17 mis_docked=False
+[2026-05-12 13:07:11] [V3] STAGE7: [13/20] R215E (opposite)
+[2026-05-12 13:07:11] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:07:11] [V3] STAGE7:   1 clashes <1.8A: [(215, 'OE2', 197, 'CB', 0.5643286108970642)]
+[2026-05-12 13:07:26] [V3] STAGE7:   R215E apo: top=-8.59 delta=+0.54 n=19 rmsd=2.43 mis_docked=False
+[2026-05-12 13:07:41] [V3] STAGE7:   R215E holo: top=-7.86 delta=+0.45 n=4 rmsd=2.10 mis_docked=False
+[2026-05-12 13:07:41] [V3] STAGE7: [14/20] N226D (opposite)
+[2026-05-12 13:07:42] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:07:56] [V3] STAGE7:   N226D apo: top=-8.78 delta=+0.35 n=20 rmsd=2.40 mis_docked=False
+[2026-05-12 13:08:11] [V3] STAGE7:   N226D holo: top=-7.87 delta=+0.44 n=2 rmsd=2.13 mis_docked=False
+[2026-05-12 13:08:11] [V3] STAGE7: [15/20] C195A_H196A (double_dyad)
+[2026-05-12 13:08:11] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:08:26] [V3] STAGE7:   C195A_H196A apo: top=-9.12 delta=+0.01 n=20 rmsd=2.11 mis_docked=False
+[2026-05-12 13:08:39] [V3] STAGE7:   C195A_H196A holo: top=-10.16 delta=-1.84 n=3 rmsd=2.13 mis_docked=False
+[2026-05-12 13:08:39] [V3] STAGE7: [16/20] R175E_R176E (double_phosclamp)
+[2026-05-12 13:08:40] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:08:55] [V3] STAGE7:   R175E_R176E apo: top=-9.02 delta=+0.11 n=20 rmsd=2.31 mis_docked=False
+[2026-05-12 13:09:11] [V3] STAGE7:   R175E_R176E holo: top=-8.30 delta=+0.02 n=2 rmsd=2.14 mis_docked=False
+[2026-05-12 13:09:11] [V3] STAGE7: [17/20] C195S_H196N (double_polar_neutral)
+[2026-05-12 13:09:11] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:09:26] [V3] STAGE7:   C195S_H196N apo: top=-9.34 delta=-0.21 n=20 rmsd=2.08 mis_docked=False
+[2026-05-12 13:09:38] [V3] STAGE7:   C195S_H196N holo: top=-9.84 delta=-1.53 n=4 rmsd=2.07 mis_docked=False
+[2026-05-12 13:09:38] [V3] STAGE7: [18/20] R215A_N226A (double_substrate_orient)
+[2026-05-12 13:09:39] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:09:54] [V3] STAGE7:   R215A_N226A apo: top=-8.05 delta=+1.08 n=20 rmsd=5.34 mis_docked=True
+[2026-05-12 13:10:08] [V3] STAGE7:   R215A_N226A holo: top=-7.59 delta=+0.73 n=4 rmsd=2.31 mis_docked=False
+[2026-05-12 13:10:08] [V3] STAGE7: [19/20] Y258F_F225Y (double_aromatic_swap)
+[2026-05-12 13:10:08] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:10:23] [V3] STAGE7:   Y258F_F225Y apo: top=-8.88 delta=+0.25 n=20 rmsd=2.45 mis_docked=False
+[2026-05-12 13:10:39] [V3] STAGE7:   Y258F_F225Y holo: top=-8.12 delta=+0.20 n=2 rmsd=2.14 mis_docked=False
+[2026-05-12 13:10:39] [V3] STAGE7: [20/20] T170A (control_surface)
+[2026-05-12 13:10:39] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:10:54] [V3] STAGE7:   T170A apo: top=-9.02 delta=+0.11 n=20 rmsd=2.30 mis_docked=False
+[2026-05-12 13:11:09] [V3] STAGE7:   T170A holo: top=-8.29 delta=+0.03 n=3 rmsd=2.18 mis_docked=False
+[2026-05-12 13:11:09] [V3] STAGE7: wrote /Users/ario/conserved_site_project/07c_mut_docking_v3/mutant_results_v3.csv (40 rows)
+[2026-05-12 13:11:09] [V3] STAGE7: Stage 7 v3 DONE: 40 runs, 0 skipped

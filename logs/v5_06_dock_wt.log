@@ -1,0 +1,27 @@
+[2026-05-12 14:02:21] [V5] STAGE6: Stage 6 v5 starting
+[2026-05-12 14:02:21] [V5] STAGE6:   centroid (crystal dUMP): [-0.13655, 4.2319, 15.159450000000001]
+[2026-05-12 14:02:21] [V5] STAGE6:   apo PDBQT copied from v4 (max|q|=0.507)
+[2026-05-12 14:02:22] [V5] STAGE6:   [HOLO_dimer_v5] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:02:22] [V5] STAGE6:   holo PDBQT OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 14:02:22] [V5] STAGE6:   WT apo (reused from v4): top=-9.20 rmsd=0.91
+[2026-05-12 14:02:22] [V5] STAGE6:   vina[wt_holo] seed=42 exh=96
+[2026-05-12 14:03:08] [V5] STAGE6:   wt_holo seed42: top=-8.21 n=2 rmsd=0.32
+[2026-05-12 14:03:08] [V5] STAGE6:   vina[wt_holo] seed=7 exh=96
+[2026-05-12 14:03:54] [V5] STAGE6:   wt_holo seed7: top=-8.23 n=2 rmsd=0.33
+[2026-05-12 14:03:54] [V5] STAGE6:   vina[wt_holo] seed=13 exh=96
+[2026-05-12 14:04:41] [V5] STAGE6:   wt_holo seed13: top=-8.25 n=2 rmsd=0.33
+[2026-05-12 14:04:41] [V5] STAGE6:   vina[wt_holo] seed=99 exh=96
+[2026-05-12 14:05:25] [V5] STAGE6:   wt_holo seed99: top=-8.22 n=2 rmsd=0.33
+[2026-05-12 14:05:25] [V5] STAGE6:   vina[wt_holo] seed=256 exh=96
+[2026-05-12 14:06:10] [V5] STAGE6:   wt_holo seed256: top=-8.21 n=3 rmsd=0.34
+[2026-05-12 14:06:10] [V5] STAGE6:   WT holo: max n_modes=3 <10, escalating to exh=128
+[2026-05-12 14:06:10] [V5] STAGE6:   vina[wt_holo] seed=1 exh=128
+[2026-05-12 14:07:09] [V5] STAGE6:   wt_holo seed1: top=-8.22 n=2 rmsd=0.33
+[2026-05-12 14:07:09] [V5] STAGE6:   vina[wt_holo] seed=2025 exh=128
+[2026-05-12 14:08:10] [V5] STAGE6:   wt_holo seed2025: top=-8.22 n=2 rmsd=0.33
+[2026-05-12 14:08:10] [V5] STAGE6:   vina[wt_holo] seed=31337 exh=128
+[2026-05-12 14:09:11] [V5] STAGE6:   wt_holo seed31337: top=-8.25 n=2 rmsd=0.33
+[2026-05-12 14:09:11] [V5] STAGE6:   WT holo: after fallback, max n_modes=3
+[2026-05-12 14:09:11] [V5] STAGE6:   WT holo BEST seed = 13 top=-8.25 n_modes=2 rmsd=0.33
+[2026-05-12 14:09:11] [V5] STAGE6:   WT holo named-pose RMSD vs crystal = 0.999
+[2026-05-12 14:09:11] [V5] STAGE6: Stage 6 v5 DONE

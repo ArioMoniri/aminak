@@ -1,0 +1,28 @@
+ref_position,residue,source,notes,residue_cons,js_score,gap_fraction,aln_col,percentile
+50,R,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],R,0.2191657346607824,0.0,67,94.11764705882352
+51,T,pdbe,PDBe binding [D16/B],T,0.2029323389599186,0.0,68,86.60130718954248
+80,F,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B],F,0.1652192970481509,0.0,99,53.59477124183007
+87,E,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B],E,0.1817840827538074,0.0,106,70.58823529411765
+108,I,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B],I,0.2020011467530494,0.0,134,85.94771241830065
+109,W,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B]; PDBe binding [UMP/B],W,0.2359335997301578,0.0,135,98.69281045751634
+112,N,pdbe,PDBe binding [D16/B],N,0.1661041302813059,0.0,138,54.90196078431373
+175,R,both,Binding site:  [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],R,0.2092818197593191,0.0,239,89.54248366013073
+176,R,both,Binding site:  [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],R,0.2097985292685058,0.0,240,90.84967320261438
+192,L,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B]; PDBe binding [UMP/A],L,0.1909453188573761,0.0,256,79.73856209150327
+195,C,both,Active site: Nucleophile; Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],C,0.2529874968925927,0.0,259,100.0
+196,H,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],H,0.2269898905277595,0.0,260,96.07843137254902
+214,Q,pdbe,PDBe binding [UMP/A]; PDBe binding [UMP/B],Q,0.2324689716366386,0.0,287,98.36601307189542
+215,R,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],R,0.2193991644803075,0.0,288,94.44444444444444
+216,S,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],S,0.1888011419745828,0.0,289,78.10457516339869
+217,G,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],G,0.1696074824703341,0.0,290,57.18954248366013
+218,D,both,"Binding site: in other chain [dUMP]; Binding site:  [(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate]; PDBe binding [D16/A]; PDBe binding [D16/B]; PDBe binding [UMP/A]; PDBe binding [UMP/B]",D,0.1830225559390521,0.0,291,71.56862745098039
+221,L,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B],L,0.1855854776477337,0.0,294,73.20261437908496
+222,G,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B]; PDBe binding [UMP/A],G,0.1880932598428413,0.0,295,75.81699346405229
+225,F,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B],F,0.2305266311800626,0.0,298,97.7124183006536
+226,N,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],N,0.2287083594318911,0.0,299,97.05882352941175
+256,H,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],H,0.2025640134657462,0.0,329,86.27450980392157
+257,I,uniprot,Binding site: in other chain [dUMP],I,0.1925285614075915,0.0,330,81.37254901960785
+258,Y,both,Binding site: in other chain [dUMP]; PDBe binding [D16/A]; PDBe binding [D16/B]; PDBe binding [UMP/A]; PDBe binding [UMP/B],Y,0.177603256531685,0.0,331,64.05228758169935
+308,K,pdbe,PDBe binding [D16/B],K,0.1715504385392206,0.0,393,59.47712418300654
+311,M,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B],M,0.1810913502449218,0.0,396,68.95424836601308
+312,A,both,"Binding site:  [(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate]; PDBe binding [D16/A]; PDBe binding [D16/B]",A,0.1811966510364985,0.0,397,69.28104575163398

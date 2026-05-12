@@ -1,0 +1,11 @@
+[2026-05-12 12:22:29] [V2] STAGE2: Stage 2 v2 starting
+[2026-05-12 12:22:31] [V2] STAGE2: UniProt: 14 annotated positions
+[2026-05-12 12:22:32] [V2] STAGE2: chain-A/B target ligands: [('bm1', 'D16', 'A'), ('bm4', 'D16', 'B'), ('bm2', 'UMP', 'A'), ('bm5', 'UMP', 'B')]
+[2026-05-12 12:22:37] [V2] STAGE2: PDBe: 26 unique residues binding UMP/D16
+[2026-05-12 12:22:37] [V2] STAGE2: Wrote active_site_residues.csv (27 rows)
+[2026-05-12 12:22:37] [V2] STAGE2: Wrote overlap_table.csv
+[2026-05-12 12:22:37] [V2] STAGE2: DB-annotated set: 27; top25%: 77; top10%: 31
+[2026-05-12 12:22:37] [V2] STAGE2: DB ∩ top25%: 17; DB ∩ top10%: 9
+[2026-05-12 12:22:37] [V2] STAGE2: Capped to 10 highest-cons: [50, 109, 175, 176, 195, 196, 214, 215, 225, 226]
+[2026-05-12 12:22:37] [V2] STAGE2: Final selected (10, threshold top-25%): [50, 109, 175, 176, 195, 196, 214, 215, 225, 226]
+[2026-05-12 12:22:37] [V2] STAGE2: Stage 2 v2 DONE

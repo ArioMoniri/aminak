@@ -1,0 +1,12 @@
+{
+  "n_panel": 21,
+  "n_completed": 40,
+  "skipped": [
+    [
+      "G217W",
+      "g217w_clash:8"
+    ]
+  ],
+  "wt_apo": -6.798,
+  "wt_holo": -3.215
+}

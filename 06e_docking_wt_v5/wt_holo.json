@@ -1,0 +1,130 @@
+{
+  "top_affinity": -8.249,
+  "mean_topk": -7.147,
+  "rmsd_top_to_native": 0.33415714865913027,
+  "rmsd_top_named": 0.9986371713490338,
+  "n_modes": 2,
+  "best_seed": 13,
+  "all_affinities": [
+    -8.249,
+    -6.045
+  ],
+  "all_seed_results": {
+    "42": {
+      "top": -8.213,
+      "mean_topk": -7.1305,
+      "rmsd": 0.32419500304600624,
+      "n_modes": 2,
+      "all_affinities": [
+        -8.213,
+        -6.048
+      ]
+    },
+    "7": {
+      "top": -8.229,
+      "mean_topk": -7.153,
+      "rmsd": 0.33130152429471255,
+      "n_modes": 2,
+      "all_affinities": [
+        -8.229,
+        -6.077
+      ]
+    },
+    "13": {
+      "top": -8.249,
+      "mean_topk": -7.147,
+      "rmsd": 0.33415714865913027,
+      "n_modes": 2,
+      "all_affinities": [
+        -8.249,
+        -6.045
+      ]
+    },
+    "99": {
+      "top": -8.219,
+      "mean_topk": -7.131,
+      "rmsd": 0.3264234213410551,
+      "n_modes": 2,
+      "all_affinities": [
+        -8.219,
+        -6.043
+      ]
+    },
+    "256": {
+      "top": -8.214,
+      "mean_topk": -6.698333333333333,
+      "rmsd": 0.33795236350704816,
+      "n_modes": 3,
+      "all_affinities": [
+        -8.214,
+        -6.026,
+        -5.855
+      ]
+    },
+    "1": {
+      "top": -8.223,
+      "mean_topk": -7.128500000000001,
+      "rmsd": 0.33178389050705887,
+      "n_modes": 2,
+      "all_affinities": [
+        -8.223,
+        -6.034
+      ]
+    },
+    "2025": {
+      "top": -8.219,
+      "mean_topk": -7.132999999999999,
+      "rmsd": 0.3298446604085021,
+      "n_modes": 2,
+      "all_affinities": [
+        -8.219,
+        -6.047
+      ]
+    },
+    "31337": {
+      "top": -8.247,
+      "mean_topk": -7.1530000000000005,
+      "rmsd": 0.3337933492447087,
+      "n_modes": 2,
+      "all_affinities": [
+        -8.247,
+        -6.059
+      ]
+    }
+  },
+  "affinity_distribution_width_kcal": 0.036000000000001364,
+  "complex_pdb": "/Users/ario/conserved_site_project/06e_docking_wt_v5/wt_holo_complex.pdb",
+  "top_pose_pdb": "/Users/ario/conserved_site_project/06e_docking_wt_v5/wt_holo_top_pose.pdb",
+  "vina_params": {
+    "exhaustiveness": 96,
+    "num_modes": 32,
+    "box_size": 22,
+    "primary_seeds": [
+      42,
+      7,
+      13,
+      99,
+      256
+    ],
+    "fallback_seeds": [
+      1,
+      2025,
+      31337
+    ],
+    "centroid": [
+      -0.13655,
+      4.2319,
+      15.159450000000001
+    ],
+    "receptor_methods": {
+      "apo": "reused_from_v4",
+      "holo": "obabel_gasteiger"
+    },
+    "selection_rule": "lowest top_affinity, tie-break highest n_modes",
+    "vina_noise_floor_kcal_per_mol": 0.85,
+    "actual_exhaustiveness_used": {
+      "apo": null,
+      "holo": 128
+    }
+  }
+}

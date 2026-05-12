@@ -1,0 +1,7 @@
+{
+  "source_sdf": "https://files.rcsb.org/ligands/download/D16_ideal.sdf",
+  "method": "RDKit Reionizer + explicit -COOH -> COO- + AddHs(addCoords=True)",
+  "alignment": "Kabsch by element-order if matches, else nearest-element-match",
+  "canonical_smiles": "[O-]C(=O)CC[C@@H](C(=O)[O-])NC(=O)c1ccc(s1)N(Cc1ccc2c(c1)c(=O)nc([nH]2)C)C",
+  "n_carboxylates_deprotonated": 2
+}

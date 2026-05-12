@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>dUMP — natural substrate</title>
+<script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+<style>
+ body { font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+        margin: 0; padding: 0 16px 12px 16px; background:#0c1116; color:#e8eef5; }
+ h1 { font-size: 17px; font-weight: 600; margin: 12px 0 4px; color:#9ad5ff; }
+ .meta { font-size: 12px; color:#aab8c8; margin: 0 0 8px; line-height:1.4; }
+ .panel { background:#1a2230; border:1px solid #283344; border-radius:8px;
+          padding:0; overflow:hidden; }
+ .legend { font-size: 11.5px; color:#cad5e6; padding: 6px 12px; border-top:1px solid #283344; }
+ .legend span { display:inline-block; padding: 2px 8px; border-radius: 4px;
+                margin: 2px 4px 2px 0; }
+ .nav a { color:#9ad5ff; margin-right: 12px; font-size: 12px; text-decoration:none; }
+ .nav a:hover { text-decoration:underline; }
+</style>
+</head><body>
+<div class="nav" style="margin: 10px 0 4px;">
+  <a href="index.html">← Index</a>
+  <a href="https://github.com/ArioMoniri/aminak">GitHub</a>
+</div>
+<h1>dUMP — natural substrate</h1>
+<div class="meta">2&#x27;-deoxyuridine 5&#x27;-monophosphate. Available in PDB, MOL2, SDF, PDBQT under 05b_ligand_v2/.</div>
+<div class="panel">
+ <div id="viewer" style="width:100%; max-width:800px; height:560px; margin:auto; position:relative;"></div>
+ <div class="legend">
+  <span style="background:#1d3a5a;color:#cfe6ff;">Receptor cartoon</span>
+  <span style="background:#5a3a1d;color:#ffe6cf;">Active-site sticks</span>
+  <span style="background:#3b1d5a;color:#dccfff;">dUMP (UMP)</span>
+  
+ </div>
+</div>
+<script>
+const pdbText = `HETATM    1  N1  UMP A 314       0.023   5.978  14.270  1.00 17.91           N  
+HETATM    2  C2  UMP A 314      -0.321   6.890  13.276  1.00 16.26           C  
+HETATM    3  N3  UMP A 314       0.739   7.552  12.689  1.00 15.68           N  
+HETATM    4  C4  UMP A 314       2.062   7.476  13.120  1.00 15.75           C  
+HETATM    5  C5  UMP A 314       2.403   6.504  14.106  1.00 17.73           C  
+HETATM    6  C6  UMP A 314       1.445   5.527  14.534  1.00 18.60           C  
+HETATM    7  O2  UMP A 314      -1.479   7.103  12.920  1.00 14.40           O  
+HETATM    8  O4  UMP A 314       2.913   8.227  12.657  1.00 15.84           O  
+HETATM    9  C1' UMP A 314      -1.022   5.412  15.120  1.00 16.45           C  
+HETATM   10  C2' UMP A 314      -1.693   4.159  14.630  1.00 15.41           C  
+HETATM   11  C3' UMP A 314      -2.126   3.422  15.901  1.00 15.68           C  
+HETATM   12  C4' UMP A 314      -1.077   3.732  16.794  1.00 16.80           C  
+HETATM   13  O3' UMP A 314      -3.375   3.977  16.389  1.00 15.11           O  
+HETATM   14  O4' UMP A 314      -0.641   5.071  16.403  1.00 21.93           O  
+HETATM   15  C5' UMP A 314       0.128   2.810  16.754  1.00 16.82           C  
+HETATM   16  O5' UMP A 314      -0.320   1.556  17.325  1.00 16.69           O  
+HETATM   17  P   UMP A 314      -0.123   0.135  16.691  1.00 14.97           P  
+HETATM   18  OP1 UMP A 314      -0.762  -0.823  17.610  1.00 17.55           O  
+HETATM   19  OP2 UMP A 314      -0.802   0.097  15.400  1.00 14.15           O  
+HETATM   20  OP3 UMP A 314       1.297  -0.167  16.600  1.00 13.78           O  
+TER      21      UMP A 314                                                       
+END   
+`;
+const viewer = $3Dmol.createViewer("viewer", {backgroundColor: "0x0c1116"});
+viewer.addModel(pdbText, "pdb");
+// Receptor cartoon
+viewer.setStyle({}, {cartoon: {colorscheme: 'spectrum', opacity: 0.80}});
+// Active-site residues coloured by chain
+const activeResi = [50,80,87,109,135,170,175,176,195,196,214,215,217,218,221,225,226,258];
+viewer.setStyle({resi: activeResi}, {stick: {colorscheme: 'amino', radius: 0.18},
+                                       cartoon: {colorscheme: 'spectrum'}});
+// Ligand (dUMP)
+viewer.setStyle({resn: 'UMP'}, {stick: {colorscheme: 'magentaCarbon', radius: 0.22}});
+
+viewer.zoomTo({resn: 'UMP'});
+viewer.zoom(0.85);
+viewer.render();
+</script>
+</body></html>

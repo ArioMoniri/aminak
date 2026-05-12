@@ -346,3 +346,993 @@ mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
 [2026-05-12 11:58:25] STAGE9: wrote /Users/ario/conserved_site_project/09_report/report.pdf (2650016 bytes)
 [2026-05-12 11:58:25] STAGE9: Stage 9 DONE
 wrote /Users/ario/conserved_site_project/09_report/report.docx (3017739 bytes)
+[V2] 2026-05-12 12:17:58 Pipeline v2 starting
+[2026-05-12 12:19:10] [V2] STAGE1: Stage 1 v2 starting
+[2026-05-12 12:19:10] [V2] STAGE1: Fetching P04818 (Homo_sapiens)
+[2026-05-12 12:19:11] [V2] STAGE1:   ACCEPT P04818 (Homo_sapiens): ok(len=313)
+[2026-05-12 12:19:11] [V2] STAGE1: Fetching P07607 (Mus_musculus)
+[2026-05-12 12:19:12] [V2] STAGE1:   ACCEPT P07607 (Mus_musculus): ok(len=307)
+[2026-05-12 12:19:12] [V2] STAGE1: Fetching P45352 (Rattus_norvegicus)
+[2026-05-12 12:19:13] [V2] STAGE1:   ACCEPT P45352 (Rattus_norvegicus): ok(len=307)
+[2026-05-12 12:19:13] [V2] STAGE1: Fetching P0A884 (Escherichia_coli)
+[2026-05-12 12:19:15] [V2] STAGE1:   REJECT P0A884 (Escherichia_coli): no_TS_motif; trying search fallback
+[2026-05-12 12:19:16] [V2] STAGE1: Fetching P00469 (Lactobacillus_casei)
+[2026-05-12 12:19:17] [V2] STAGE1:   REJECT P00469 (Lactobacillus_casei): no_TS_motif; trying search fallback
+[2026-05-12 12:19:18] [V2] STAGE1: Fetching P07807 (Saccharomyces_cerevisiae)
+[2026-05-12 12:19:19] [V2] STAGE1:   REJECT P07807 (Saccharomyces_cerevisiae): no_TS_motif; trying search fallback
+[2026-05-12 12:19:21] [V2] STAGE1: Fetching Q23381 (Caenorhabditis_elegans)
+[2026-05-12 12:19:22] [V2] STAGE1:   REJECT Q23381 (Caenorhabditis_elegans): no_TS_motif; trying search fallback
+[2026-05-12 12:19:23] [V2] STAGE1: Fetching Q9V3K2 (Drosophila_melanogaster)
+[2026-05-12 12:19:24] [V2] STAGE1: fetch Q9V3K2 status 200
+[2026-05-12 12:19:25] [V2] STAGE1: fetch Q9V3K2 status 200
+[2026-05-12 12:19:26] [V2] STAGE1: fetch Q9V3K2 status 200
+[2026-05-12 12:19:26] [V2] STAGE1:   primary fetch failed for Q9V3K2, trying search fallback
+[2026-05-12 12:19:28] [V2] STAGE1:   REJECT Q9V3K2 (Drosophila_melanogaster): no_TS_motif; trying search fallback
+[2026-05-12 12:19:29] [V2] STAGE1: Fetching Q05762 (Arabidopsis_thaliana)
+[2026-05-12 12:19:30] [V2] STAGE1:   REJECT Q05762 (Arabidopsis_thaliana): no_TS_motif; trying search fallback
+[2026-05-12 12:19:31] [V2] STAGE1: Fetching P04019 (Bacteriophage_T4)
+[2026-05-12 12:19:33] [V2] STAGE1:   REJECT P04019 (Bacteriophage_T4): no_TS_motif; trying search fallback
+[2026-05-12 12:19:34] [V2] STAGE1: Fetching P13922 (Plasmodium_falciparum)
+[2026-05-12 12:19:35] [V2] STAGE1:   Pf TS trim: 608 -> 328 aa
+[2026-05-12 12:19:35] [V2] STAGE1:   REJECT P13922 (Plasmodium_falciparum): no_TS_motif; trying search fallback
+[2026-05-12 12:19:37] [V2] STAGE1: Final ortholog set: 3 valid, 8 rejected
+[2026-05-12 12:19:37] [V2] STAGE1:   rejected: P0A884 Escherichia_coli (no_TS_motif)
+[2026-05-12 12:19:37] [V2] STAGE1:   rejected: P00469 Lactobacillus_casei (no_TS_motif)
+[2026-05-12 12:19:37] [V2] STAGE1:   rejected: P07807 Saccharomyces_cerevisiae (no_TS_motif)
+[2026-05-12 12:19:37] [V2] STAGE1:   rejected: Q23381 Caenorhabditis_elegans (too_long(1059))
+[2026-05-12 12:19:37] [V2] STAGE1:   rejected: Q9V3K2 Drosophila_melanogaster (no_TS_motif)
+[2026-05-12 12:19:37] [V2] STAGE1:   rejected: Q05762 Arabidopsis_thaliana (no_TS_motif)
+[2026-05-12 12:19:37] [V2] STAGE1:   rejected: P04019 Bacteriophage_T4 (no_TS_motif)
+[2026-05-12 12:19:37] [V2] STAGE1:   rejected: P13922 Plasmodium_falciparum (no_TS_motif)
+[2026-05-12 12:19:37] [V2] STAGE1: WARNING: only 3 orthologs (target was >=10), proceeding anyway
+[2026-05-12 12:19:37] [V2] STAGE1: FATAL: fewer than 5 sequences validated
+[2026-05-12 12:21:25] [V2] STAGE1: Stage 1 v2 starting
+[2026-05-12 12:21:25] [V2] STAGE1: Fetching P04818 (Homo_sapiens)
+[2026-05-12 12:21:27] [V2] STAGE1:   ACCEPT P04818 (Homo_sapiens): ok(len=313)
+[2026-05-12 12:21:27] [V2] STAGE1: Fetching P07607 (Mus_musculus)
+[2026-05-12 12:21:28] [V2] STAGE1:   ACCEPT P07607 (Mus_musculus): ok(len=307)
+[2026-05-12 12:21:28] [V2] STAGE1: Fetching P45352 (Rattus_norvegicus)
+[2026-05-12 12:21:29] [V2] STAGE1:   ACCEPT P45352 (Rattus_norvegicus): ok(len=307)
+[2026-05-12 12:21:29] [V2] STAGE1: Fetching P0A884 (Escherichia_coli)
+[2026-05-12 12:21:31] [V2] STAGE1:   ACCEPT P0A884 (Escherichia_coli): ok(len=264)
+[2026-05-12 12:21:31] [V2] STAGE1: Fetching P00469 (Lactobacillus_casei)
+[2026-05-12 12:21:32] [V2] STAGE1:   ACCEPT P00469 (Lactobacillus_casei): ok(len=316)
+[2026-05-12 12:21:32] [V2] STAGE1: Fetching P06785 (Saccharomyces_cerevisiae)
+[2026-05-12 12:21:33] [V2] STAGE1:   ACCEPT P06785 (Saccharomyces_cerevisiae): ok(len=304)
+[2026-05-12 12:21:33] [V2] STAGE1: Fetching Q9N588 (Caenorhabditis_elegans)
+[2026-05-12 12:21:34] [V2] STAGE1:   REJECT Q9N588 (Caenorhabditis_elegans): no_TS_motif; trying search fallback
+[2026-05-12 12:21:35] [V2] STAGE1: Fetching O76511 (Drosophila_melanogaster)
+[2026-05-12 12:21:36] [V2] STAGE1:   ACCEPT O76511 (Drosophila_melanogaster): ok(len=321)
+[2026-05-12 12:21:36] [V2] STAGE1: Fetching Q05762 (Arabidopsis_thaliana)
+[2026-05-12 12:21:37] [V2] STAGE1:   Arabidopsis_thaliana bifunctional trim: 519 -> 315 aa
+[2026-05-12 12:21:37] [V2] STAGE1:   ACCEPT Q05762 (Arabidopsis_thaliana): ok(len=315)
+[2026-05-12 12:21:37] [V2] STAGE1: Fetching P00471 (Bacteriophage_T4)
+[2026-05-12 12:21:39] [V2] STAGE1:   ACCEPT P00471 (Bacteriophage_T4): ok(len=286)
+[2026-05-12 12:21:39] [V2] STAGE1: Fetching P13922 (Plasmodium_falciparum)
+[2026-05-12 12:21:40] [V2] STAGE1:   Plasmodium_falciparum bifunctional trim: 608 -> 315 aa
+[2026-05-12 12:21:40] [V2] STAGE1:   ACCEPT P13922 (Plasmodium_falciparum): ok(len=315)
+[2026-05-12 12:21:40] [V2] STAGE1: Final ortholog set: 10 valid, 1 rejected
+[2026-05-12 12:21:40] [V2] STAGE1:   rejected: Q9N588 Caenorhabditis_elegans (too_long(1059))
+[2026-05-12 12:21:40] [V2] STAGE1: Wrote /Users/ario/conserved_site_project/01b_msa_v2/input.fa with 10 sequences
+[2026-05-12 12:21:40] [V2] STAGE1: Running MAFFT --auto
+[2026-05-12 12:21:40] [V2] STAGE1: MAFFT done
+[2026-05-12 12:21:40] [V2] STAGE1: Aligned 10 sequences, length 399
+[2026-05-12 12:21:40] [V2] STAGE1: Reference row 0, ungapped len 313
+[2026-05-12 12:21:40] [V2] STAGE1: Wrote /Users/ario/conserved_site_project/01b_msa_v2/conservation_scores.csv (313 rows, 306 eligible for percentile)
+[2026-05-12 12:21:40] [V2] STAGE1: Sanity check (catalytic / known):
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 50 (R): js=0.219, pct=94.1, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 175 (R): js=0.209, pct=89.5, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 176 (R): js=0.210, pct=90.8, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 195 (C): js=0.253, pct=100.0, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 196 (H): js=0.227, pct=96.1, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 215 (R): js=0.219, pct=94.4, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 226 (N): js=0.229, pct=97.1, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1:   pos 258 (Y): js=0.178, pct=64.1, gap_frac=0.00
+[2026-05-12 12:21:40] [V2] STAGE1: Wrote /Users/ario/conserved_site_project/01b_msa_v2/conservation_plot.png
+[2026-05-12 12:21:40] [V2] STAGE1: Stage 1 v2 DONE
+[2026-05-12 12:22:29] [V2] STAGE2: Stage 2 v2 starting
+[2026-05-12 12:22:31] [V2] STAGE2: UniProt: 14 annotated positions
+[2026-05-12 12:22:32] [V2] STAGE2: chain-A/B target ligands: [('bm1', 'D16', 'A'), ('bm4', 'D16', 'B'), ('bm2', 'UMP', 'A'), ('bm5', 'UMP', 'B')]
+[2026-05-12 12:22:37] [V2] STAGE2: PDBe: 26 unique residues binding UMP/D16
+[2026-05-12 12:22:37] [V2] STAGE2: Wrote active_site_residues.csv (27 rows)
+[2026-05-12 12:22:37] [V2] STAGE2: Wrote overlap_table.csv
+[2026-05-12 12:22:37] [V2] STAGE2: DB-annotated set: 27; top25%: 77; top10%: 31
+[2026-05-12 12:22:37] [V2] STAGE2: DB ∩ top25%: 17; DB ∩ top10%: 9
+[2026-05-12 12:22:37] [V2] STAGE2: Capped to 10 highest-cons: [50, 109, 175, 176, 195, 196, 214, 215, 225, 226]
+[2026-05-12 12:22:37] [V2] STAGE2: Final selected (10, threshold top-25%): [50, 109, 175, 176, 195, 196, 214, 215, 225, 226]
+[2026-05-12 12:22:37] [V2] STAGE2: Stage 2 v2 DONE
+[2026-05-12 12:23:23] [V2] STAGE3: Stage 3 v2 starting
+[2026-05-12 12:23:23] [V2] STAGE3: using raw 1hvy: /Users/ario/conserved_site_project/03_structure/1hvy.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: CME->CYS conversion: 40 CME lines, 24 kept (heavy), 16 hydroxyethyl atoms dropped
+[2026-05-12 12:23:23] [V2] STAGE3: wrote /Users/ario/conserved_site_project/03b_structure_v2/protein_dimer.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: wrote /Users/ario/conserved_site_project/03b_structure_v2/ligand.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: wrote /Users/ario/conserved_site_project/03b_structure_v2/cofactor_chainA.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: wrote /Users/ario/conserved_site_project/03b_structure_v2/cofactor_chainB.pdb
+[2026-05-12 12:23:23] [V2] STAGE3: protein_dimer_h.pdb size 1406500
+[2026-05-12 12:23:24] [V2] STAGE3: obabel ligand_h rc=0, size 5580
+[2026-05-12 12:23:24] [V2] STAGE3:   cofactor_chainA.pdb -> cofactor_chainA_h.pdb rc=0
+[2026-05-12 12:23:24] [V2] STAGE3:   cofactor_chainB.pdb -> cofactor_chainB_h.pdb rc=0
+[2026-05-12 12:23:24] [V2] STAGE3: chains in dimer_h: ['A', 'B']
+[2026-05-12 12:23:24] [V2] STAGE3:   chain A: 288 residues
+[2026-05-12 12:23:24] [V2] STAGE3:   chain A Cys43 heavy atoms: ['C', 'CA', 'CB', 'N', 'O', 'SG']
+[2026-05-12 12:23:24] [V2] STAGE3:   chain B: 288 residues
+[2026-05-12 12:23:24] [V2] STAGE3:   chain B Cys43 heavy atoms: ['C', 'CA', 'CB', 'N', 'O', 'SG']
+[2026-05-12 12:23:24] [V2] STAGE3: selected residues missing in A: []; in B: []
+[2026-05-12 12:23:24] [V2] STAGE3: Stage 3 v2 DONE
+[2026-05-12 12:24:00] [V2] STAGE4: Stage 4 v2 starting
+[2026-05-12 12:24:00] [V2] STAGE4: wrote b-factor PDB: /Users/ario/conserved_site_project/04b_pymol_v2/protein_dimer_jsd_bfactor.pdb
+[2026-05-12 12:24:01] [V2] STAGE4:   rendered dimer_overview.png rc=0 size=744334
+[2026-05-12 12:24:02] [V2] STAGE4:   rendered active_site_chainA.png rc=0 size=1075627
+[2026-05-12 12:24:03] [V2] STAGE4:   rendered active_site_chainB.png rc=0 size=1113904
+[2026-05-12 12:24:05] [V2] STAGE4:   rendered conservation_surface.png rc=0 size=814827
+[2026-05-12 12:24:06] [V2] STAGE4:   rendered catalytic_dyad.png rc=0 size=1182981
+[2026-05-12 12:24:06] [V2] STAGE4: Stage 4 v2 DONE
+[2026-05-12 12:24:31] [V2] STAGE5: Stage 5 v2 starting
+[2026-05-12 12:24:31] [V2] STAGE5: wrote /Users/ario/conserved_site_project/05b_ligand_v2/dump.pdb
+[2026-05-12 12:24:32] [V2] STAGE5: obabel mol2 rc=0 size=3700
+[2026-05-12 12:24:32] [V2] STAGE5: obabel sdf --gen3d rc=0 size=3589
+[2026-05-12 12:24:32] [V2] STAGE5: obabel pdbqt rc=0 size=2513
+[2026-05-12 12:24:32] [V2] STAGE5: pdbqt has_UNK=False, n_atoms=22
+[2026-05-12 12:24:32] [V2] STAGE5: Stage 5 v2 DONE
+[2026-05-12 12:25:33] [V2] STAGE6: Stage 6 v2 starting
+[2026-05-12 12:25:33] [V2] STAGE6: chain-A active site centroid from 10 CA: [3.4655004 4.7408    7.7776003]
+[2026-05-12 12:25:35] [V2] STAGE6:   meeko receptor APO_dimer rc=2
+[2026-05-12 12:25:35] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:25:36] [V2] STAGE6:   obabel receptor APO_dimer rc=0
+[2026-05-12 12:25:38] [V2] STAGE6:   meeko receptor HOLO_dimer rc=2
+[2026-05-12 12:25:38] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:25:38] [V2] STAGE6:   obabel receptor HOLO_dimer rc=0
+[2026-05-12 12:25:38] [V2] STAGE6:   vina WT_apo: cmd=/opt/homebrew/bin/vina --receptor /Users/ario/conserved_site_project/06b_docking_wt_v2/protein_dimer_apo.pdbqt --ligand ... center=(3.47,4.74,7.78)
+[2026-05-12 12:25:55] [V2] STAGE6:   WT apo affinities (from PDBQT): [-6.798, -6.505, -6.446, -6.371, -6.346]
+[2026-05-12 12:25:55] [V2] STAGE6:   WT apo: top=-6.80, mean_top3=-6.58, RMSD=5.60
+[2026-05-12 12:25:55] [V2] STAGE6:   vina WT_holo: cmd=/opt/homebrew/bin/vina --receptor /Users/ario/conserved_site_project/06b_docking_wt_v2/protein_dimer_holo.pdbqt --ligand ... center=(3.47,4.74,7.78)
+[2026-05-12 12:26:09] [V2] STAGE6:   WT holo affinities (from PDBQT): [-3.215, -1.355, -0.495]
+[2026-05-12 12:26:10] [V2] STAGE6:   WT holo: top=-3.21, mean_top3=-1.69, RMSD=4.32
+[2026-05-12 12:26:10] [V2] STAGE6: Stage 6 v2 DONE
+[2026-05-12 12:27:57] [V2] STAGE7: Stage 7 v2 starting
+[2026-05-12 12:27:58] [V2] STAGE7: ref seq len=313
+[2026-05-12 12:27:58] [V2] STAGE7: Built panel of 20 mutants
+[2026-05-12 12:27:58] [V2] STAGE7: Final panel size: 21
+[2026-05-12 12:27:58] [V2] STAGE7: centroid: [3.4655004 4.7408    7.7776003]
+[2026-05-12 12:27:58] [V2] STAGE7: [1/21] R50A (ala_scan)
+[2026-05-12 12:27:59] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=50 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:27:59] [V2] STAGE7:   ROTAMER_PICK resi=50 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:28:02] [V2] STAGE6:   meeko receptor R50A_apo rc=2
+[2026-05-12 12:28:02] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:03] [V2] STAGE6:   obabel receptor R50A_apo rc=0
+[2026-05-12 12:28:04] [V2] STAGE6:   meeko receptor R50A_holo rc=2
+[2026-05-12 12:28:04] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:05] [V2] STAGE6:   obabel receptor R50A_holo rc=0
+[2026-05-12 12:28:22] [V2] STAGE7:   R50A apo: top=-7.07, ddG=-0.27, rmsd=5.52
+[2026-05-12 12:28:36] [V2] STAGE7:   R50A holo: top=-6.01, ddG=-2.79, rmsd=2.23
+[2026-05-12 12:28:36] [V2] STAGE7: [2/21] W109A (ala_scan)
+[2026-05-12 12:28:36] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=109 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:28:36] [V2] STAGE7:   ROTAMER_PICK resi=109 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:28:39] [V2] STAGE6:   meeko receptor W109A_apo rc=2
+[2026-05-12 12:28:39] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:41] [V2] STAGE6:   obabel receptor W109A_apo rc=0
+[2026-05-12 12:28:42] [V2] STAGE6:   meeko receptor W109A_holo rc=2
+[2026-05-12 12:28:42] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:42] [V2] STAGE6:   obabel receptor W109A_holo rc=0
+[2026-05-12 12:29:00] [V2] STAGE7:   W109A apo: top=-7.85, ddG=-1.05, rmsd=5.83
+[2026-05-12 12:29:15] [V2] STAGE7:   W109A holo: top=-6.19, ddG=-2.97, rmsd=2.23
+[2026-05-12 12:29:15] [V2] STAGE7: [3/21] R175A (ala_scan)
+[2026-05-12 12:29:15] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=175 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:29:15] [V2] STAGE7:   ROTAMER_PICK resi=175 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:29:18] [V2] STAGE6:   meeko receptor R175A_apo rc=2
+[2026-05-12 12:29:18] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:20] [V2] STAGE6:   obabel receptor R175A_apo rc=0
+[2026-05-12 12:29:21] [V2] STAGE6:   meeko receptor R175A_holo rc=2
+[2026-05-12 12:29:21] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:21] [V2] STAGE6:   obabel receptor R175A_holo rc=0
+[2026-05-12 12:29:38] [V2] STAGE7:   R175A apo: top=-7.10, ddG=-0.30, rmsd=5.58
+[2026-05-12 12:29:53] [V2] STAGE7:   R175A holo: top=-6.36, ddG=-3.15, rmsd=2.21
+[2026-05-12 12:29:53] [V2] STAGE7: [4/21] R176A (ala_scan)
+[2026-05-12 12:29:53] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=176 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:29:53] [V2] STAGE7:   ROTAMER_PICK resi=176 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:29:56] [V2] STAGE6:   meeko receptor R176A_apo rc=2
+[2026-05-12 12:29:56] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:58] [V2] STAGE6:   obabel receptor R176A_apo rc=0
+[2026-05-12 12:29:59] [V2] STAGE6:   meeko receptor R176A_holo rc=2
+[2026-05-12 12:29:59] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:59] [V2] STAGE6:   obabel receptor R176A_holo rc=0
+[2026-05-12 12:30:16] [V2] STAGE7:   R176A apo: top=-7.16, ddG=-0.36, rmsd=5.75
+[2026-05-12 12:30:30] [V2] STAGE7:   R176A holo: top=-6.32, ddG=-3.10, rmsd=2.15
+[2026-05-12 12:30:30] [V2] STAGE7: [5/21] C195A (ala_scan)
+[2026-05-12 12:30:31] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=195 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:30:31] [V2] STAGE7:   ROTAMER_PICK resi=195 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:30:34] [V2] STAGE6:   meeko receptor C195A_apo rc=2
+[2026-05-12 12:30:34] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:30:35] [V2] STAGE6:   obabel receptor C195A_apo rc=0
+[2026-05-12 12:30:36] [V2] STAGE6:   meeko receptor C195A_holo rc=2
+[2026-05-12 12:30:36] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:30:37] [V2] STAGE6:   obabel receptor C195A_holo rc=0
+[2026-05-12 12:30:53] [V2] STAGE7:   C195A apo: top=-7.93, ddG=-1.13, rmsd=3.09
+[2026-05-12 12:31:08] [V2] STAGE7:   C195A holo: top=-8.34, ddG=-5.13, rmsd=2.08
+[2026-05-12 12:31:08] [V2] STAGE7: [6/21] H196A (ala_scan)
+[2026-05-12 12:31:08] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=196 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:31:08] [V2] STAGE7:   ROTAMER_PICK resi=196 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:31:11] [V2] STAGE6:   meeko receptor H196A_apo rc=2
+[2026-05-12 12:31:11] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:13] [V2] STAGE6:   obabel receptor H196A_apo rc=0
+[2026-05-12 12:31:14] [V2] STAGE6:   meeko receptor H196A_holo rc=2
+[2026-05-12 12:31:14] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:14] [V2] STAGE6:   obabel receptor H196A_holo rc=0
+[2026-05-12 12:31:31] [V2] STAGE7:   H196A apo: top=-7.18, ddG=-0.38, rmsd=8.05
+[2026-05-12 12:31:45] [V2] STAGE7:   H196A holo: top=-4.38, ddG=-1.17, rmsd=7.48
+[2026-05-12 12:31:45] [V2] STAGE7: [7/21] Q214A (ala_scan)
+[2026-05-12 12:31:46] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=214 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:31:46] [V2] STAGE7:   ROTAMER_PICK resi=214 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:31:49] [V2] STAGE6:   meeko receptor Q214A_apo rc=2
+[2026-05-12 12:31:49] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:50] [V2] STAGE6:   obabel receptor Q214A_apo rc=0
+[2026-05-12 12:31:51] [V2] STAGE6:   meeko receptor Q214A_holo rc=2
+[2026-05-12 12:31:51] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:52] [V2] STAGE6:   obabel receptor Q214A_holo rc=0
+[2026-05-12 12:32:09] [V2] STAGE7:   Q214A apo: top=-6.67, ddG=+0.13, rmsd=5.75
+[2026-05-12 12:32:25] [V2] STAGE7:   Q214A holo: top=-6.35, ddG=-3.14, rmsd=2.18
+[2026-05-12 12:32:25] [V2] STAGE7: [8/21] R215A (ala_scan)
+[2026-05-12 12:32:25] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=215 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:32:25] [V2] STAGE7:   ROTAMER_PICK resi=215 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:32:28] [V2] STAGE6:   meeko receptor R215A_apo rc=2
+[2026-05-12 12:32:28] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:32:29] [V2] STAGE6:   obabel receptor R215A_apo rc=0
+[2026-05-12 12:32:31] [V2] STAGE6:   meeko receptor R215A_holo rc=2
+[2026-05-12 12:32:31] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:32:31] [V2] STAGE6:   obabel receptor R215A_holo rc=0
+[2026-05-12 12:32:47] [V2] STAGE7:   R215A apo: top=-7.84, ddG=-1.04, rmsd=2.25
+[2026-05-12 12:33:03] [V2] STAGE7:   R215A holo: top=-7.15, ddG=-3.93, rmsd=2.19
+[2026-05-12 12:33:03] [V2] STAGE7: [9/21] R50E (opposite)
+[2026-05-12 12:33:04] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=50 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:33:04] [V2] STAGE7:   ROTAMER_PICK resi=50 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:33:07] [V2] STAGE6:   meeko receptor R50E_apo rc=2
+[2026-05-12 12:33:07] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:08] [V2] STAGE6:   obabel receptor R50E_apo rc=0
+[2026-05-12 12:33:10] [V2] STAGE6:   meeko receptor R50E_holo rc=2
+[2026-05-12 12:33:10] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:10] [V2] STAGE6:   obabel receptor R50E_holo rc=0
+[2026-05-12 12:33:27] [V2] STAGE7:   R50E apo: top=-7.00, ddG=-0.20, rmsd=5.76
+[2026-05-12 12:33:41] [V2] STAGE7:   R50E holo: top=-5.39, ddG=-2.17, rmsd=2.18
+[2026-05-12 12:33:41] [V2] STAGE7: [10/21] R175E (opposite)
+[2026-05-12 12:33:41] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=175 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:33:41] [V2] STAGE7:   ROTAMER_PICK resi=175 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:33:44] [V2] STAGE6:   meeko receptor R175E_apo rc=2
+[2026-05-12 12:33:44] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:45] [V2] STAGE6:   obabel receptor R175E_apo rc=0
+[2026-05-12 12:33:47] [V2] STAGE6:   meeko receptor R175E_holo rc=2
+[2026-05-12 12:33:47] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:47] [V2] STAGE6:   obabel receptor R175E_holo rc=0
+[2026-05-12 12:34:05] [V2] STAGE7:   R175E apo: top=-7.10, ddG=-0.30, rmsd=5.58
+[2026-05-12 12:34:19] [V2] STAGE7:   R175E holo: top=-6.36, ddG=-3.15, rmsd=2.21
+[2026-05-12 12:34:19] [V2] STAGE7: [11/21] R176E (opposite)
+[2026-05-12 12:34:19] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=176 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:34:19] [V2] STAGE7:   ROTAMER_PICK resi=176 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:34:22] [V2] STAGE6:   meeko receptor R176E_apo rc=2
+[2026-05-12 12:34:22] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:34:24] [V2] STAGE6:   obabel receptor R176E_apo rc=0
+[2026-05-12 12:34:25] [V2] STAGE6:   meeko receptor R176E_holo rc=2
+[2026-05-12 12:34:25] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:34:25] [V2] STAGE6:   obabel receptor R176E_holo rc=0
+[2026-05-12 12:34:42] [V2] STAGE7:   R176E apo: top=-7.15, ddG=-0.36, rmsd=5.64
+[2026-05-12 12:34:56] [V2] STAGE7:   R176E holo: top=-6.41, ddG=-3.20, rmsd=2.23
+[2026-05-12 12:34:56] [V2] STAGE7: [12/21] C195S (opposite)
+[2026-05-12 12:34:56] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=195 aa=SER best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:34:56] [V2] STAGE7:   ROTAMER_PICK resi=195 aa=SER best_idx=0 strain=1e+30
+[2026-05-12 12:35:00] [V2] STAGE6:   meeko receptor C195S_apo rc=2
+[2026-05-12 12:35:00] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:01] [V2] STAGE6:   obabel receptor C195S_apo rc=0
+[2026-05-12 12:35:02] [V2] STAGE6:   meeko receptor C195S_holo rc=2
+[2026-05-12 12:35:02] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:03] [V2] STAGE6:   obabel receptor C195S_holo rc=0
+[2026-05-12 12:35:20] [V2] STAGE7:   C195S apo: top=-7.85, ddG=-1.05, rmsd=3.09
+[2026-05-12 12:35:36] [V2] STAGE7:   C195S holo: top=-8.00, ddG=-4.79, rmsd=2.17
+[2026-05-12 12:35:36] [V2] STAGE7: [13/21] R215E (opposite)
+[2026-05-12 12:35:36] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=215 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:35:36] [V2] STAGE7:   ROTAMER_PICK resi=215 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:35:39] [V2] STAGE6:   meeko receptor R215E_apo rc=2
+[2026-05-12 12:35:39] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:41] [V2] STAGE6:   obabel receptor R215E_apo rc=0
+[2026-05-12 12:35:42] [V2] STAGE6:   meeko receptor R215E_holo rc=2
+[2026-05-12 12:35:42] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:43] [V2] STAGE6:   obabel receptor R215E_holo rc=0
+[2026-05-12 12:36:01] [V2] STAGE7:   R215E apo: top=-7.31, ddG=-0.51, rmsd=5.88
+[2026-05-12 12:36:18] [V2] STAGE7:   R215E holo: top=-7.24, ddG=-4.02, rmsd=2.19
+[2026-05-12 12:36:18] [V2] STAGE7: [14/21] N226D (opposite)
+[2026-05-12 12:36:18] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=226 aa=ASP best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:36:18] [V2] STAGE7:   ROTAMER_PICK resi=226 aa=ASP best_idx=0 strain=1e+30
+[2026-05-12 12:36:21] [V2] STAGE6:   meeko receptor N226D_apo rc=2
+[2026-05-12 12:36:21] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:36:23] [V2] STAGE6:   obabel receptor N226D_apo rc=0
+[2026-05-12 12:36:24] [V2] STAGE6:   meeko receptor N226D_holo rc=2
+[2026-05-12 12:36:24] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:36:25] [V2] STAGE6:   obabel receptor N226D_holo rc=0
+[2026-05-12 12:36:42] [V2] STAGE7:   N226D apo: top=-7.36, ddG=-0.57, rmsd=5.59
+[2026-05-12 12:36:57] [V2] STAGE7:   N226D holo: top=-5.90, ddG=-2.69, rmsd=2.19
+[2026-05-12 12:36:57] [V2] STAGE7: [15/21] C195A_H196A (double_dyad)
+[2026-05-12 12:36:58] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=195 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:36:58] [V2] STAGE7:   ROTAMER_PICK resi=195 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:36:58] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=196 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:36:58] [V2] STAGE7:   ROTAMER_PICK resi=196 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:37:01] [V2] STAGE6:   meeko receptor C195A_H196A_apo rc=2
+[2026-05-12 12:37:01] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:03] [V2] STAGE6:   obabel receptor C195A_H196A_apo rc=0
+[2026-05-12 12:37:04] [V2] STAGE6:   meeko receptor C195A_H196A_holo rc=2
+[2026-05-12 12:37:04] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:05] [V2] STAGE6:   obabel receptor C195A_H196A_holo rc=0
+[2026-05-12 12:37:20] [V2] STAGE7:   C195A_H196A apo: top=-7.79, ddG=-1.00, rmsd=3.04
+[2026-05-12 12:37:35] [V2] STAGE7:   C195A_H196A holo: top=-7.59, ddG=-4.37, rmsd=3.92
+[2026-05-12 12:37:35] [V2] STAGE7: [16/21] R175E_R176E (double_phosclamp)
+[2026-05-12 12:37:36] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=175 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:37:36] [V2] STAGE7:   ROTAMER_PICK resi=175 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:37:36] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=176 aa=GLU best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:37:36] [V2] STAGE7:   ROTAMER_PICK resi=176 aa=GLU best_idx=0 strain=1e+30
+[2026-05-12 12:37:39] [V2] STAGE6:   meeko receptor R175E_R176E_apo rc=2
+[2026-05-12 12:37:39] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:40] [V2] STAGE6:   obabel receptor R175E_R176E_apo rc=0
+[2026-05-12 12:37:42] [V2] STAGE6:   meeko receptor R175E_R176E_holo rc=2
+[2026-05-12 12:37:42] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:42] [V2] STAGE6:   obabel receptor R175E_R176E_holo rc=0
+[2026-05-12 12:37:58] [V2] STAGE7:   R175E_R176E apo: top=-7.15, ddG=-0.36, rmsd=5.64
+[2026-05-12 12:38:13] [V2] STAGE7:   R175E_R176E holo: top=-6.41, ddG=-3.20, rmsd=2.23
+[2026-05-12 12:38:13] [V2] STAGE7: [17/21] C195S_H196N (double_polar_neutral)
+[2026-05-12 12:38:13] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=195 aa=SER best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:38:13] [V2] STAGE7:   ROTAMER_PICK resi=195 aa=SER best_idx=0 strain=1e+30
+[2026-05-12 12:38:13] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=196 aa=ASN best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:38:13] [V2] STAGE7:   ROTAMER_PICK resi=196 aa=ASN best_idx=0 strain=1e+30
+[2026-05-12 12:38:16] [V2] STAGE6:   meeko receptor C195S_H196N_apo rc=2
+[2026-05-12 12:38:16] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:17] [V2] STAGE6:   obabel receptor C195S_H196N_apo rc=0
+[2026-05-12 12:38:19] [V2] STAGE6:   meeko receptor C195S_H196N_holo rc=2
+[2026-05-12 12:38:19] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:19] [V2] STAGE6:   obabel receptor C195S_H196N_holo rc=0
+[2026-05-12 12:38:35] [V2] STAGE7:   C195S_H196N apo: top=-7.84, ddG=-1.04, rmsd=3.01
+[2026-05-12 12:38:50] [V2] STAGE7:   C195S_H196N holo: top=-7.47, ddG=-4.25, rmsd=2.20
+[2026-05-12 12:38:50] [V2] STAGE7: [18/21] R215A_N226A (double_substrate_orient)
+[2026-05-12 12:38:50] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=215 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:38:50] [V2] STAGE7:   ROTAMER_PICK resi=215 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:38:50] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=226 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:38:50] [V2] STAGE7:   ROTAMER_PICK resi=226 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:38:53] [V2] STAGE6:   meeko receptor R215A_N226A_apo rc=2
+[2026-05-12 12:38:53] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:54] [V2] STAGE6:   obabel receptor R215A_N226A_apo rc=0
+[2026-05-12 12:38:56] [V2] STAGE6:   meeko receptor R215A_N226A_holo rc=2
+[2026-05-12 12:38:56] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:56] [V2] STAGE6:   obabel receptor R215A_N226A_holo rc=0
+[2026-05-12 12:39:12] [V2] STAGE7:   R215A_N226A apo: top=-7.13, ddG=-0.33, rmsd=5.64
+[2026-05-12 12:39:27] [V2] STAGE7:   R215A_N226A holo: top=-6.86, ddG=-3.65, rmsd=2.29
+[2026-05-12 12:39:27] [V2] STAGE7: [19/21] Y258F_F225Y (double_aromatic_swap)
+[2026-05-12 12:39:28] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=258 aa=PHE best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:39:28] [V2] STAGE7:   ROTAMER_PICK resi=258 aa=PHE best_idx=0 strain=1e+30
+[2026-05-12 12:39:28] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=225 aa=TYR best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:39:28] [V2] STAGE7:   ROTAMER_PICK resi=225 aa=TYR best_idx=0 strain=1e+30
+[2026-05-12 12:39:31] [V2] STAGE6:   meeko receptor Y258F_F225Y_apo rc=2
+[2026-05-12 12:39:31] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:39:32] [V2] STAGE6:   obabel receptor Y258F_F225Y_apo rc=0
+[2026-05-12 12:39:34] [V2] STAGE6:   meeko receptor Y258F_F225Y_holo rc=2
+[2026-05-12 12:39:34] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:39:34] [V2] STAGE6:   obabel receptor Y258F_F225Y_holo rc=0
+[2026-05-12 12:39:50] [V2] STAGE7:   Y258F_F225Y apo: top=-7.08, ddG=-0.28, rmsd=5.25
+[2026-05-12 12:40:04] [V2] STAGE7:   Y258F_F225Y holo: top=-6.08, ddG=-2.87, rmsd=2.18
+[2026-05-12 12:40:04] [V2] STAGE7: [20/21] T170A (control_surface)
+[2026-05-12 12:40:05] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=170 aa=ALA best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:40:05] [V2] STAGE7:   ROTAMER_PICK resi=170 aa=ALA best_idx=0 strain=1e+30
+[2026-05-12 12:40:08] [V2] STAGE6:   meeko receptor T170A_apo rc=2
+[2026-05-12 12:40:08] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:40:09] [V2] STAGE6:   obabel receptor T170A_apo rc=0
+[2026-05-12 12:40:10] [V2] STAGE6:   meeko receptor T170A_holo rc=2
+[2026-05-12 12:40:10] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:40:11] [V2] STAGE6:   obabel receptor T170A_holo rc=0
+[2026-05-12 12:40:27] [V2] STAGE7:   T170A apo: top=-7.10, ddG=-0.30, rmsd=5.58
+[2026-05-12 12:40:41] [V2] STAGE7:   T170A holo: top=-4.49, ddG=-1.27, rmsd=2.53
+[2026-05-12 12:40:41] [V2] STAGE7: [21/21] G217W (explore_g217w)
+[2026-05-12 12:40:41] [V2] STAGE7:   PyMOL>print("ROTAMER_PICK resi=217 aa=TRP best_idx=" + str(best_idx) + " strain=" + str(best_strain))
+[2026-05-12 12:40:41] [V2] STAGE7:   ROTAMER_PICK resi=217 aa=TRP best_idx=0 strain=1e+30
+[2026-05-12 12:40:41] [V2] STAGE7:   clashes detected: [(217, 'CG', 252, 'CD2', np.float32(1.4953969)), (217, 'CD1', 252, 'CD2', np.float32(1.3784181)), (217, 'CD2', 214, 'OE1', np.float32(1.6130123))]...
+[2026-05-12 12:40:41] [V2] STAGE7:   G217W has heavy-atom clashes <1.8A — DROPPING per spec
+[2026-05-12 12:40:41] [V2] STAGE7: Wrote /Users/ario/conserved_site_project/07b_mut_docking_v2/mutant_results_v2.csv (40 rows)
+[2026-05-12 12:40:41] [V2] STAGE7: viewer file PyMOL load test: OK (sample=R50A_apo_complex.pdb)
+[2026-05-12 12:40:41] [V2] STAGE7: Stage 7 v2 DONE: 40 successful runs, 1 skipped
+[2026-05-12 12:41:14] [V2] STAGE8: Stage 8 v2 starting
+[2026-05-12 12:41:14] [V2] STAGE8: loaded 40 rows
+[2026-05-12 12:41:14] [V2] STAGE8: wrote pivot: ['mutant', 'category', 'ddG_vs_wt_apo', 'ddG_vs_wt_holo', 'rmsd_to_native_apo', 'rmsd_to_native_holo', 'top_affinity_apo', 'top_affinity_holo']
+[2026-05-12 12:41:14] [V2] STAGE8: top apo destabilizers: [['Q214A', 0.1299999999999999], ['R50E', -0.2039999999999997], ['R50A', -0.2690000000000001], ['Y258F_F225Y', -0.2830000000000003], ['R175E', -0.3029999999999999]]
+[2026-05-12 12:41:14] [V2] STAGE8: top holo destabilizers: [['H196A', -1.1690000000000005], ['T170A', -1.2700000000000005], ['R50E', -2.173], ['N226D', -2.6879999999999997], ['R50A', -2.7910000000000004]]
+[2026-05-12 12:41:14] [V2] STAGE8: wrote ddg_apo_holo.png
+[2026-05-12 12:41:14] [V2] STAGE8: wrote ddg_apo_vs_holo.png
+[2026-05-12 12:41:14] [V2] STAGE8: wrote ddg_by_category.png
+[2026-05-12 12:41:14] [V2] STAGE8: summary: {'n_mutants_total': 20, 'n_apo': 20, 'n_holo': 20, 'wt_apo_aff': -6.798, 'wt_holo_aff': -3.215, 'top5_destabilising_apo': [{'mutant': 'Q214A', 'ddG_vs_wt': 0.1299999999999999}, {'mutant': 'R50E', 'ddG_vs_wt': -0.2039999999999997}, {'mutant': 'R50A', 'ddG_vs_wt': -0.2690000000000001}, {'mutant': 'Y258F_F225Y', 'ddG_vs_wt': -0.2830000000000003}, {'mutant': 'R175E', 'ddG_vs_wt': -0.3029999999999999}], 'top5_destabilising_holo': [{'mutant': 'H196A', 'ddG_vs_wt': -1.1690000000000005}, {'mutant': 'T170A', 'ddG_vs_wt': -1.2700000000000005}, {'mutant': 'R50E', 'ddG_vs_wt': -2.173}, {'mutant': 'N226D', 'ddG_vs_wt': -2.6879999999999997}, {'mutant': 'R50A', 'ddG_vs_wt': -2.7910000000000004}], 'apo_holo_correlation': 0.6337560620851608}
+[2026-05-12 12:41:14] [V2] STAGE8: Stage 8 v2 DONE
+[2026-05-12 12:41:19] [V2] STAGE9: Stage 9 v2 starting
+[2026-05-12 12:41:52] [V2] STAGE9: Stage 9 v2 starting
+[2026-05-12 12:41:53] [V2] STAGE9: wrote /Users/ario/conserved_site_project/09b_report_v2/report.html
+[2026-05-12 12:41:54] [V2] STAGE9: wrote /Users/ario/conserved_site_project/09b_report_v2/report.pdf (3849031 bytes)
+[2026-05-12 12:41:54] [V2] STAGE9: wrote /Users/ario/conserved_site_project/09b_report_v2/report.docx (4007762 bytes)
+[2026-05-12 12:41:54] [V2] STAGE9: Stage 9 v2 DONE
+[V2] 2026-05-12 12:42:03 Pipeline v2 COMPLETE - all 9 stages done
+[2026-05-12 12:56:42] [V3] STAGE6: Stage 6 v3 starting
+[2026-05-12 12:56:42] [V3] STAGE6:   [cofA] reprotonate rc=0
+[2026-05-12 12:56:43] [V3] STAGE6:   [cofB] reprotonate rc=0
+[2026-05-12 12:56:43] [V3] STAGE6: crystal dUMP centroid: [-0.1365499496459961, 4.231900215148926, 15.159449577331543]
+[2026-05-12 12:56:44] [V3] STAGE6:   [APO_dimer] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 12:56:44] [V3] STAGE6:   apo receptor OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 12:56:44] [V3] STAGE6:   [HOLO_dimer] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 12:56:44] [V3] STAGE6:   holo receptor OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 12:56:44] [V3] STAGE6:   vina[WT_apo_seed42] seed=42 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 12:57:15] [V3] STAGE6:   WT apo seed42: top=-9.20 n=27 rmsd=2.34
+[2026-05-12 12:57:15] [V3] STAGE6:   vina[WT_apo_seed7] seed=7 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 12:57:48] [V3] STAGE6:   WT apo seed7: top=-9.13 n=29 rmsd=2.33
+[2026-05-12 12:57:48] [V3] STAGE6:   WT apo BEST seed = 7 (rmsd=2.33, top=-9.13)
+[2026-05-12 12:57:49] [V3] STAGE6:   vina[WT_holo_seed42] seed=42 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 12:58:37] [V3] STAGE6:   WT holo seed42: top=-8.31 n=3 rmsd=2.08
+[2026-05-12 12:58:37] [V3] STAGE6:   vina[WT_holo_seed7] seed=7 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 12:59:23] [V3] STAGE6:   WT holo seed7: top=-8.31 n=2 rmsd=2.14
+[2026-05-12 12:59:23] [V3] STAGE6:   WT holo BEST seed = 42 (rmsd=2.08, top=-8.31)
+[2026-05-12 12:59:24] [V3] STAGE6: Stage 6 v3 DONE
+[2026-05-12 13:01:17] [V3] STAGE7: Stage 7 v3 starting
+[2026-05-12 13:01:18] [V3] STAGE7: ref seq len=313
+[2026-05-12 13:01:18] [V3] STAGE7: Built panel of 20 mutants (no G217W)
+[2026-05-12 13:01:18] [V3] STAGE7: centroid (crystal dUMP): [-0.1365499496459961, 4.231900215148926, 15.159449577331543]
+[2026-05-12 13:01:18] [V3] STAGE7: WT apo aff = -9.13, WT holo aff = -8.31
+[2026-05-12 13:01:18] [V3] STAGE7: [1/20] R50A (ala_scan)
+[2026-05-12 13:01:19] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:01:22] [V3] STAGE6:   [R50A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:01:22] [V3] STAGE6:   [R50A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:01:33] [V3] STAGE7:   R50A apo: top=-8.62 delta=+0.51 n=20 rmsd=2.42 mis_docked=False
+[2026-05-12 13:01:44] [V3] STAGE7:   R50A holo: top=-7.61 delta=+0.70 n=20 rmsd=2.09 mis_docked=False
+[2026-05-12 13:01:44] [V3] STAGE7: [2/20] W109A (ala_scan)
+[2026-05-12 13:01:45] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:01:48] [V3] STAGE6:   [W109A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:01:48] [V3] STAGE6:   [W109A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:01:59] [V3] STAGE7:   W109A apo: top=-8.88 delta=+0.25 n=19 rmsd=2.46 mis_docked=False
+[2026-05-12 13:02:13] [V3] STAGE7:   W109A holo: top=-8.08 delta=+0.23 n=3 rmsd=2.17 mis_docked=False
+[2026-05-12 13:02:13] [V3] STAGE7: [3/20] R175A (ala_scan)
+[2026-05-12 13:02:13] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:02:17] [V3] STAGE6:   [R175A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:02:17] [V3] STAGE6:   [R175A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:02:28] [V3] STAGE7:   R175A apo: top=-9.02 delta=+0.11 n=20 rmsd=2.30 mis_docked=False
+[2026-05-12 13:02:43] [V3] STAGE7:   R175A holo: top=-8.24 delta=+0.07 n=2 rmsd=2.13 mis_docked=False
+[2026-05-12 13:02:43] [V3] STAGE7: [4/20] R176A (ala_scan)
+[2026-05-12 13:02:44] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:02:47] [V3] STAGE6:   [R176A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:02:47] [V3] STAGE6:   [R176A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:02:59] [V3] STAGE7:   R176A apo: top=-9.02 delta=+0.11 n=20 rmsd=2.31 mis_docked=False
+[2026-05-12 13:03:13] [V3] STAGE7:   R176A holo: top=-8.24 delta=+0.07 n=2 rmsd=2.13 mis_docked=False
+[2026-05-12 13:03:13] [V3] STAGE7: [5/20] C195A (ala_scan)
+[2026-05-12 13:03:14] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:03:17] [V3] STAGE6:   [C195A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:03:17] [V3] STAGE6:   [C195A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:03:29] [V3] STAGE7:   C195A apo: top=-9.46 delta=-0.33 n=20 rmsd=2.09 mis_docked=False
+[2026-05-12 13:03:41] [V3] STAGE7:   C195A holo: top=-10.61 delta=-2.29 n=3 rmsd=2.15 mis_docked=False
+[2026-05-12 13:03:41] [V3] STAGE7: [6/20] H196A (ala_scan)
+[2026-05-12 13:03:42] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:03:45] [V3] STAGE6:   [H196A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:03:45] [V3] STAGE6:   [H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:03:56] [V3] STAGE7:   H196A apo: top=-8.86 delta=+0.27 n=19 rmsd=2.31 mis_docked=False
+[2026-05-12 13:04:12] [V3] STAGE7:   H196A holo: top=-7.81 delta=+0.50 n=4 rmsd=2.18 mis_docked=False
+[2026-05-12 13:04:12] [V3] STAGE7: [7/20] Q214A (ala_scan)
+[2026-05-12 13:04:12] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:04:16] [V3] STAGE6:   [Q214A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:04:16] [V3] STAGE6:   [Q214A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:04:27] [V3] STAGE7:   Q214A apo: top=-8.65 delta=+0.48 n=19 rmsd=2.36 mis_docked=False
+[2026-05-12 13:04:43] [V3] STAGE7:   Q214A holo: top=-8.26 delta=+0.06 n=2 rmsd=2.13 mis_docked=False
+[2026-05-12 13:04:43] [V3] STAGE7: [8/20] R215A (ala_scan)
+[2026-05-12 13:04:44] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:04:47] [V3] STAGE6:   [R215A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:04:48] [V3] STAGE6:   [R215A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:04:59] [V3] STAGE7:   R215A apo: top=-8.63 delta=+0.50 n=20 rmsd=2.25 mis_docked=False
+[2026-05-12 13:05:14] [V3] STAGE7:   R215A holo: top=-7.89 delta=+0.42 n=4 rmsd=2.18 mis_docked=False
+[2026-05-12 13:05:14] [V3] STAGE7: [9/20] R50E (opposite)
+[2026-05-12 13:05:15] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:05:18] [V3] STAGE6:   [R50E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:05:19] [V3] STAGE6:   [R50E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:05:30] [V3] STAGE7:   R50E apo: top=-8.78 delta=+0.35 n=20 rmsd=2.35 mis_docked=False
+[2026-05-12 13:05:42] [V3] STAGE7:   R50E holo: top=-7.40 delta=+0.91 n=20 rmsd=6.93 mis_docked=True
+[2026-05-12 13:05:42] [V3] STAGE7: [10/20] R175E (opposite)
+[2026-05-12 13:05:42] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:05:45] [V3] STAGE6:   [R175E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:05:46] [V3] STAGE6:   [R175E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:05:57] [V3] STAGE7:   R175E apo: top=-9.04 delta=+0.09 n=20 rmsd=2.39 mis_docked=False
+[2026-05-12 13:06:12] [V3] STAGE7:   R175E holo: top=-8.29 delta=+0.03 n=2 rmsd=2.05 mis_docked=False
+[2026-05-12 13:06:12] [V3] STAGE7: [11/20] R176E (opposite)
+[2026-05-12 13:06:13] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:06:16] [V3] STAGE6:   [R176E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:06:17] [V3] STAGE6:   [R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:06:28] [V3] STAGE7:   R176E apo: top=-9.02 delta=+0.11 n=20 rmsd=2.31 mis_docked=False
+[2026-05-12 13:06:43] [V3] STAGE7:   R176E holo: top=-8.29 delta=+0.03 n=2 rmsd=2.15 mis_docked=False
+[2026-05-12 13:06:43] [V3] STAGE7: [12/20] C195S (opposite)
+[2026-05-12 13:06:43] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:06:46] [V3] STAGE6:   [C195S_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:06:47] [V3] STAGE6:   [C195S_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:06:58] [V3] STAGE7:   C195S apo: top=-9.55 delta=-0.42 n=20 rmsd=2.14 mis_docked=False
+[2026-05-12 13:07:11] [V3] STAGE7:   C195S holo: top=-10.29 delta=-1.98 n=2 rmsd=2.17 mis_docked=False
+[2026-05-12 13:07:11] [V3] STAGE7: [13/20] R215E (opposite)
+[2026-05-12 13:07:11] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:07:11] [V3] STAGE7:   1 clashes <1.8A: [(215, 'OE2', 197, 'CB', 0.5643286108970642)]
+[2026-05-12 13:07:14] [V3] STAGE6:   [R215E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:07:15] [V3] STAGE6:   [R215E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:07:26] [V3] STAGE7:   R215E apo: top=-8.59 delta=+0.54 n=19 rmsd=2.43 mis_docked=False
+[2026-05-12 13:07:41] [V3] STAGE7:   R215E holo: top=-7.86 delta=+0.45 n=4 rmsd=2.10 mis_docked=False
+[2026-05-12 13:07:41] [V3] STAGE7: [14/20] N226D (opposite)
+[2026-05-12 13:07:42] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:07:45] [V3] STAGE6:   [N226D_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:07:45] [V3] STAGE6:   [N226D_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:07:56] [V3] STAGE7:   N226D apo: top=-8.78 delta=+0.35 n=20 rmsd=2.40 mis_docked=False
+[2026-05-12 13:08:11] [V3] STAGE7:   N226D holo: top=-7.87 delta=+0.44 n=2 rmsd=2.13 mis_docked=False
+[2026-05-12 13:08:11] [V3] STAGE7: [15/20] C195A_H196A (double_dyad)
+[2026-05-12 13:08:11] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:08:14] [V3] STAGE6:   [C195A_H196A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:08:15] [V3] STAGE6:   [C195A_H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:08:26] [V3] STAGE7:   C195A_H196A apo: top=-9.12 delta=+0.01 n=20 rmsd=2.11 mis_docked=False
+[2026-05-12 13:08:39] [V3] STAGE7:   C195A_H196A holo: top=-10.16 delta=-1.84 n=3 rmsd=2.13 mis_docked=False
+[2026-05-12 13:08:39] [V3] STAGE7: [16/20] R175E_R176E (double_phosclamp)
+[2026-05-12 13:08:40] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:08:43] [V3] STAGE6:   [R175E_R176E_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:08:43] [V3] STAGE6:   [R175E_R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:08:55] [V3] STAGE7:   R175E_R176E apo: top=-9.02 delta=+0.11 n=20 rmsd=2.31 mis_docked=False
+[2026-05-12 13:09:11] [V3] STAGE7:   R175E_R176E holo: top=-8.30 delta=+0.02 n=2 rmsd=2.14 mis_docked=False
+[2026-05-12 13:09:11] [V3] STAGE7: [17/20] C195S_H196N (double_polar_neutral)
+[2026-05-12 13:09:11] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:09:14] [V3] STAGE6:   [C195S_H196N_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:09:15] [V3] STAGE6:   [C195S_H196N_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:09:26] [V3] STAGE7:   C195S_H196N apo: top=-9.34 delta=-0.21 n=20 rmsd=2.08 mis_docked=False
+[2026-05-12 13:09:38] [V3] STAGE7:   C195S_H196N holo: top=-9.84 delta=-1.53 n=4 rmsd=2.07 mis_docked=False
+[2026-05-12 13:09:38] [V3] STAGE7: [18/20] R215A_N226A (double_substrate_orient)
+[2026-05-12 13:09:39] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:09:42] [V3] STAGE6:   [R215A_N226A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:09:43] [V3] STAGE6:   [R215A_N226A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:09:54] [V3] STAGE7:   R215A_N226A apo: top=-8.05 delta=+1.08 n=20 rmsd=5.34 mis_docked=True
+[2026-05-12 13:10:08] [V3] STAGE7:   R215A_N226A holo: top=-7.59 delta=+0.73 n=4 rmsd=2.31 mis_docked=False
+[2026-05-12 13:10:08] [V3] STAGE7: [19/20] Y258F_F225Y (double_aromatic_swap)
+[2026-05-12 13:10:08] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:10:11] [V3] STAGE6:   [Y258F_F225Y_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:10:12] [V3] STAGE6:   [Y258F_F225Y_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:10:23] [V3] STAGE7:   Y258F_F225Y apo: top=-8.88 delta=+0.25 n=20 rmsd=2.45 mis_docked=False
+[2026-05-12 13:10:39] [V3] STAGE7:   Y258F_F225Y holo: top=-8.12 delta=+0.20 n=2 rmsd=2.14 mis_docked=False
+[2026-05-12 13:10:39] [V3] STAGE7: [20/20] T170A (control_surface)
+[2026-05-12 13:10:39] [V3] STAGE7:   sculpt: OK
+[2026-05-12 13:10:42] [V3] STAGE6:   [T170A_apo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:10:43] [V3] STAGE6:   [T170A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:10:54] [V3] STAGE7:   T170A apo: top=-9.02 delta=+0.11 n=20 rmsd=2.30 mis_docked=False
+[2026-05-12 13:11:09] [V3] STAGE7:   T170A holo: top=-8.29 delta=+0.03 n=3 rmsd=2.18 mis_docked=False
+[2026-05-12 13:11:09] [V3] STAGE7: wrote /Users/ario/conserved_site_project/07c_mut_docking_v3/mutant_results_v3.csv (40 rows)
+[2026-05-12 13:11:09] [V3] STAGE7: Stage 7 v3 DONE: 40 runs, 0 skipped
+[2026-05-12 13:11:40] [V3] STAGE8: Stage 8 v3 starting
+[2026-05-12 13:11:40] [V3] STAGE8: loaded 40 rows
+[2026-05-12 13:11:40] [V3] STAGE8: wrote pivot: ['mutant', 'category', 'delta_vina_vs_wt_apo', 'delta_vina_vs_wt_holo', 'mis_docked_apo', 'mis_docked_holo', 'n_modes_apo', 'n_modes_holo']...
+[2026-05-12 13:11:40] [V3] STAGE8: top apo destab (well-docked): [['R215E', 0.5410000000000004, 2.42580130725254], ['R50A', 0.5090000000000003, 2.4166652516683764], ['R215A', 0.5, 2.2464490849617618], ['Q214A', 0.4750000000000014, 2.356671062897535], ['N226D', 0.3500000000000014, 2.397877221341776]]
+[2026-05-12 13:11:40] [V3] STAGE8: top holo destab (well-docked): [['R215A_N226A', 0.726, 2.3084502395744604], ['R50A', 0.7039999999999997, 2.0921804444876977], ['H196A', 0.5030000000000001, 2.1763053728118313], ['R215E', 0.4519999999999999, 2.1046988789004506], ['N226D', 0.4409999999999998, 2.132076958676749]]
+[2026-05-12 13:11:41] [V3] STAGE8: summary: top3 apo (well-docked) = [('R215E', 0.5410000000000004), ('R50A', 0.5090000000000003), ('R215A', 0.5)]
+[2026-05-12 13:11:41] [V3] STAGE8: Stage 8 v3 DONE
+[2026-05-12 13:11:47] [V3] STAGE9: Stage 9 v3 starting
+[2026-05-12 13:11:47] [V3] STAGE9: wrote /Users/ario/conserved_site_project/09c_report_v3/report.html
+[2026-05-12 13:11:48] [V3] STAGE9: wrote /Users/ario/conserved_site_project/09c_report_v3/report.pdf (377319 bytes)
+[2026-05-12 13:11:48] [V3] STAGE9: wrote /Users/ario/conserved_site_project/09c_report_v3/report.docx (314084 bytes)
+[2026-05-12 13:11:48] [V3] STAGE9: Stage 9 v3 DONE
+[2026-05-12 13:26:16] [V4] STAGE3: Stage 3 v4 starting (REAL cofactor reprotonation)
+[2026-05-12 13:26:18] [V4] STAGE3:   found 2 -COOH groups
+[2026-05-12 13:26:18] [V4] STAGE3:   SMILES (no H): Cc1nc(=O)c2cc(CN(C)c3ccc(C(=O)N[C@@H](CCC(=O)[O-])C(=O)[O-])s3)ccc2[nH]1
+[2026-05-12 13:26:18] [V4] STAGE3:   protonated SDF written
+[2026-05-12 13:26:18] [V4] STAGE3:   obabel canonical SMILES: [O-]C(=O)CC[C@@H](C(=O)[O-])NC(=O)c1ccc(s1)N(Cc1ccc2c(c1)c(=O)nc([nH]2)C)C
+[2026-05-12 13:26:18] [V4] STAGE3:   protonated heavy count: 32, crystal heavy count: 32
+[2026-05-12 13:26:18] [V4] STAGE3:   crystal elements: ['N', 'C', 'C', 'N', 'C', 'O', 'C', 'C', 'C', 'C']...
+[2026-05-12 13:26:18] [V4] STAGE3:   mol elements:     ['N', 'C', 'C', 'N', 'C', 'O', 'C', 'C', 'C', 'C']...
+[2026-05-12 13:26:18] [V4] STAGE3:   element order matches; using direct Kabsch alignment
+[2026-05-12 13:26:18] [V4] STAGE3:   alignment RMSD heavy = 2.709 A
+[2026-05-12 13:26:18] [V4] STAGE3:   wrote /Users/ario/conserved_site_project/03d_structure_v4/cofactor_chainA_v4.pdb
+[2026-05-12 13:26:18] [V4] STAGE3:   protonated heavy count: 32, crystal heavy count: 32
+[2026-05-12 13:26:18] [V4] STAGE3:   crystal elements: ['N', 'C', 'C', 'N', 'C', 'O', 'C', 'C', 'C', 'C']...
+[2026-05-12 13:26:18] [V4] STAGE3:   mol elements:     ['N', 'C', 'C', 'N', 'C', 'O', 'C', 'C', 'C', 'C']...
+[2026-05-12 13:26:18] [V4] STAGE3:   element order matches; using direct Kabsch alignment
+[2026-05-12 13:26:18] [V4] STAGE3:   alignment RMSD heavy = 2.666 A
+[2026-05-12 13:26:18] [V4] STAGE3:   wrote /Users/ario/conserved_site_project/03d_structure_v4/cofactor_chainB_v4.pdb
+[2026-05-12 13:26:18] [V4] STAGE3:   chain A: v2_md5=c3a555f6f0444de7cac58d2797c90eb5 v4_md5=e6f06a08f8910fff680286de98c2e1d2
+[2026-05-12 13:26:18] [V4] STAGE3:   chain A: MD5 differs (good)
+[2026-05-12 13:26:18] [V4] STAGE3:   chain B: v2_md5=6dcb536725c93aa7cdd52c36a46ca3f7 v4_md5=9900570337d49678d67b31e076657cec
+[2026-05-12 13:26:18] [V4] STAGE3:   chain B: MD5 differs (good)
+[2026-05-12 13:26:18] [V4] STAGE3: Stage 3 v4 DONE
+[2026-05-12 13:29:16] [V4] STAGE6: Stage 6 v4 starting (multi-seed sweep, affinity-based selection)
+[2026-05-12 13:29:16] [V4] STAGE6: crystal dUMP centroid: [-0.13655, 4.2319, 15.159450000000001]
+[2026-05-12 13:29:18] [V4] STAGE6:   [APO_dimer] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:29:18] [V4] STAGE6:   apo receptor OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 13:29:18] [V4] STAGE6:   [HOLO_dimer] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:29:18] [V4] STAGE6:   holo receptor OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 13:29:18] [V4] STAGE6:   vina[wt_apo] seed=42 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:29:54] [V4] STAGE6:   wt_apo seed42: top=-9.20 n=27 rmsd=0.91
+[2026-05-12 13:29:54] [V4] STAGE6:   vina[wt_apo] seed=7 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:30:32] [V4] STAGE6:   wt_apo seed7: top=-9.13 n=29 rmsd=0.89
+[2026-05-12 13:30:32] [V4] STAGE6:   vina[wt_apo] seed=13 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:31:09] [V4] STAGE6:   wt_apo seed13: top=-9.12 n=28 rmsd=0.86
+[2026-05-12 13:31:09] [V4] STAGE6:   vina[wt_apo] seed=99 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:31:49] [V4] STAGE6:   wt_apo seed99: top=-9.08 n=28 rmsd=0.97
+[2026-05-12 13:31:49] [V4] STAGE6:   vina[wt_apo] seed=256 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:32:25] [V4] STAGE6:   wt_apo seed256: top=-9.19 n=29 rmsd=0.92
+[2026-05-12 13:32:25] [V4] STAGE6:   WT apo BEST seed = 42 (top=-9.20, n_modes=27, rmsd=0.91)
+[2026-05-12 13:32:25] [V4] STAGE6:   WT apo named-pose RMSD vs crystal = 3.802
+[2026-05-12 13:32:25] [V4] STAGE6:   vina[wt_holo] seed=42 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:33:20] [V4] STAGE6:   wt_holo seed42: top=-5.09 n=31 rmsd=12.24
+[2026-05-12 13:33:20] [V4] STAGE6:   vina[wt_holo] seed=7 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:34:14] [V4] STAGE6:   wt_holo seed7: top=-5.22 n=30 rmsd=12.95
+[2026-05-12 13:34:14] [V4] STAGE6:   vina[wt_holo] seed=13 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:35:09] [V4] STAGE6:   wt_holo seed13: top=-5.11 n=30 rmsd=12.23
+[2026-05-12 13:35:09] [V4] STAGE6:   vina[wt_holo] seed=99 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:36:04] [V4] STAGE6:   wt_holo seed99: top=-5.22 n=31 rmsd=12.93
+[2026-05-12 13:36:04] [V4] STAGE6:   vina[wt_holo] seed=256 exh=96 center=(-0.14,4.23,15.16)
+[2026-05-12 13:36:58] [V4] STAGE6:   wt_holo seed256: top=-5.24 n=30 rmsd=12.95
+[2026-05-12 13:36:58] [V4] STAGE6:   WT holo BEST seed = 256 (top=-5.24, n_modes=30, rmsd=12.95)
+[2026-05-12 13:36:58] [V4] STAGE6:   WT holo named-pose RMSD vs crystal = 12.917
+[2026-05-12 13:36:58] [V4] STAGE6: Stage 6 v4 DONE
+[2026-05-12 13:37:54] [V4] STAGE7: Stage 7 v4 starting
+[2026-05-12 13:37:54] [V4] STAGE7: Found 20 mutants from v3
+[2026-05-12 13:37:54] [V4] STAGE7: centroid (crystal dUMP): [-0.13655, 4.2319, 15.159450000000001]
+[2026-05-12 13:37:54] [V4] STAGE7: WT v4 apo aff = -9.20, WT v4 holo aff = -5.24
+[2026-05-12 13:37:54] [V4] STAGE7: [1/20] C195A (ala_scan)
+[2026-05-12 13:37:55] [V4] STAGE7:   [C195A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:38:10] [V4] STAGE7:   C195A holo: top=-6.99 delta=-1.75 n=12 rmsd=3.77 mis_docked=True low_conf=False
+[2026-05-12 13:38:10] [V4] STAGE7:   C195A apo (reused v3): top=-9.46 delta=-0.26 n=20 rmsd=2.09
+[2026-05-12 13:38:10] [V4] STAGE7: [2/20] C195A_H196A (double_dyad)
+[2026-05-12 13:38:11] [V4] STAGE7:   [C195A_H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:38:25] [V4] STAGE7:   C195A_H196A holo: top=-7.88 delta=-2.64 n=2 rmsd=4.25 mis_docked=True low_conf=True
+[2026-05-12 13:38:25] [V4] STAGE7:   C195A_H196A apo (reused v3): top=-9.12 delta=+0.08 n=20 rmsd=2.11
+[2026-05-12 13:38:25] [V4] STAGE7: [3/20] C195S (opposite)
+[2026-05-12 13:38:26] [V4] STAGE7:   [C195S_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:38:42] [V4] STAGE7:   C195S holo: top=-6.05 delta=-0.81 n=18 rmsd=3.49 mis_docked=True low_conf=False
+[2026-05-12 13:38:42] [V4] STAGE7:   C195S apo (reused v3): top=-9.55 delta=-0.36 n=20 rmsd=2.14
+[2026-05-12 13:38:42] [V4] STAGE7: [4/20] C195S_H196N (double_polar_neutral)
+[2026-05-12 13:38:42] [V4] STAGE7:   [C195S_H196N_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:38:58] [V4] STAGE7:   C195S_H196N holo: top=-6.28 delta=-1.04 n=19 rmsd=4.12 mis_docked=True low_conf=False
+[2026-05-12 13:38:58] [V4] STAGE7:   C195S_H196N apo (reused v3): top=-9.34 delta=-0.14 n=20 rmsd=2.08
+[2026-05-12 13:38:58] [V4] STAGE7: [5/20] H196A (ala_scan)
+[2026-05-12 13:38:59] [V4] STAGE7:   [H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:39:16] [V4] STAGE7:   H196A holo: top=-5.16 delta=+0.09 n=19 rmsd=11.76 mis_docked=True low_conf=False
+[2026-05-12 13:39:16] [V4] STAGE7:   H196A apo (reused v3): top=-8.86 delta=+0.34 n=19 rmsd=2.31
+[2026-05-12 13:39:16] [V4] STAGE7: [6/20] N226D (opposite)
+[2026-05-12 13:39:16] [V4] STAGE7:   [N226D_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:39:33] [V4] STAGE7:   N226D holo: top=-5.08 delta=+0.16 n=17 rmsd=13.00 mis_docked=True low_conf=False
+[2026-05-12 13:39:33] [V4] STAGE7:   N226D apo (reused v3): top=-8.78 delta=+0.42 n=20 rmsd=2.40
+[2026-05-12 13:39:33] [V4] STAGE7: [7/20] Q214A (ala_scan)
+[2026-05-12 13:39:34] [V4] STAGE7:   [Q214A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:39:49] [V4] STAGE7:   Q214A holo: top=-5.08 delta=+0.16 n=20 rmsd=12.91 mis_docked=True low_conf=False
+[2026-05-12 13:39:49] [V4] STAGE7:   Q214A apo (reused v3): top=-8.65 delta=+0.54 n=19 rmsd=2.36
+[2026-05-12 13:39:49] [V4] STAGE7: [8/20] R175A (ala_scan)
+[2026-05-12 13:39:50] [V4] STAGE7:   [R175A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:40:07] [V4] STAGE7:   R175A holo: top=-5.12 delta=+0.13 n=19 rmsd=11.82 mis_docked=True low_conf=False
+[2026-05-12 13:40:07] [V4] STAGE7:   R175A apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.30
+[2026-05-12 13:40:07] [V4] STAGE7: [9/20] R175E (opposite)
+[2026-05-12 13:40:07] [V4] STAGE7:   [R175E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:40:24] [V4] STAGE7:   R175E holo: top=-5.10 delta=+0.14 n=18 rmsd=12.19 mis_docked=True low_conf=False
+[2026-05-12 13:40:24] [V4] STAGE7:   R175E apo (reused v3): top=-9.04 delta=+0.16 n=20 rmsd=2.39
+[2026-05-12 13:40:24] [V4] STAGE7: [10/20] R175E_R176E (double_phosclamp)
+[2026-05-12 13:40:24] [V4] STAGE7:   [R175E_R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:40:41] [V4] STAGE7:   R175E_R176E holo: top=-5.04 delta=+0.20 n=19 rmsd=12.19 mis_docked=True low_conf=False
+[2026-05-12 13:40:41] [V4] STAGE7:   R175E_R176E apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.31
+[2026-05-12 13:40:41] [V4] STAGE7: [11/20] R176A (ala_scan)
+[2026-05-12 13:40:42] [V4] STAGE7:   [R176A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:40:58] [V4] STAGE7:   R176A holo: top=-5.06 delta=+0.18 n=19 rmsd=11.79 mis_docked=True low_conf=False
+[2026-05-12 13:40:58] [V4] STAGE7:   R176A apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.31
+[2026-05-12 13:40:58] [V4] STAGE7: [12/20] R176E (opposite)
+[2026-05-12 13:40:58] [V4] STAGE7:   [R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:41:15] [V4] STAGE7:   R176E holo: top=-5.04 delta=+0.20 n=19 rmsd=12.19 mis_docked=True low_conf=False
+[2026-05-12 13:41:15] [V4] STAGE7:   R176E apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.31
+[2026-05-12 13:41:15] [V4] STAGE7: [13/20] R215A (ala_scan)
+[2026-05-12 13:41:16] [V4] STAGE7:   [R215A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:41:31] [V4] STAGE7:   R215A holo: top=-6.53 delta=-1.29 n=15 rmsd=3.78 mis_docked=True low_conf=False
+[2026-05-12 13:41:31] [V4] STAGE7:   R215A apo (reused v3): top=-8.63 delta=+0.57 n=20 rmsd=2.25
+[2026-05-12 13:41:31] [V4] STAGE7: [14/20] R215A_N226A (double_substrate_orient)
+[2026-05-12 13:41:32] [V4] STAGE7:   [R215A_N226A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:41:47] [V4] STAGE7:   R215A_N226A holo: top=-6.46 delta=-1.22 n=14 rmsd=3.79 mis_docked=True low_conf=False
+[2026-05-12 13:41:47] [V4] STAGE7:   R215A_N226A apo (reused v3): top=-8.05 delta=+1.15 n=20 rmsd=5.34
+[2026-05-12 13:41:47] [V4] STAGE7: [15/20] R215E (opposite)
+[2026-05-12 13:41:48] [V4] STAGE7:   [R215E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:42:03] [V4] STAGE7:   R215E holo: top=-6.76 delta=-1.51 n=8 rmsd=3.77 mis_docked=True low_conf=False
+[2026-05-12 13:42:03] [V4] STAGE7:   R215E apo (reused v3): top=-8.59 delta=+0.61 n=19 rmsd=2.43
+[2026-05-12 13:42:03] [V4] STAGE7: [16/20] R50A (ala_scan)
+[2026-05-12 13:42:03] [V4] STAGE7:   [R50A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:42:16] [V4] STAGE7:   R50A holo: top=-6.86 delta=-1.62 n=20 rmsd=8.66 mis_docked=True low_conf=False
+[2026-05-12 13:42:16] [V4] STAGE7:   R50A apo (reused v3): top=-8.62 delta=+0.58 n=20 rmsd=2.42
+[2026-05-12 13:42:16] [V4] STAGE7: [17/20] R50E (opposite)
+[2026-05-12 13:42:16] [V4] STAGE7:   [R50E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:42:30] [V4] STAGE7:   R50E holo: top=-6.84 delta=-1.59 n=19 rmsd=5.78 mis_docked=True low_conf=False
+[2026-05-12 13:42:30] [V4] STAGE7:   R50E apo (reused v3): top=-8.78 delta=+0.41 n=20 rmsd=2.35
+[2026-05-12 13:42:30] [V4] STAGE7: [18/20] T170A (control_surface)
+[2026-05-12 13:42:31] [V4] STAGE7:   [T170A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:42:47] [V4] STAGE7:   T170A holo: top=-5.07 delta=+0.17 n=20 rmsd=12.94 mis_docked=True low_conf=False
+[2026-05-12 13:42:47] [V4] STAGE7:   T170A apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.30
+[2026-05-12 13:42:47] [V4] STAGE7: [19/20] W109A (ala_scan)
+[2026-05-12 13:42:48] [V4] STAGE7:   [W109A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:43:02] [V4] STAGE7:   W109A holo: top=-7.04 delta=-1.80 n=19 rmsd=8.40 mis_docked=True low_conf=False
+[2026-05-12 13:43:02] [V4] STAGE7:   W109A apo (reused v3): top=-8.88 delta=+0.32 n=19 rmsd=2.46
+[2026-05-12 13:43:02] [V4] STAGE7: [20/20] Y258F_F225Y (double_aromatic_swap)
+[2026-05-12 13:43:03] [V4] STAGE7:   [Y258F_F225Y_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 13:43:20] [V4] STAGE7:   Y258F_F225Y holo: top=-5.14 delta=+0.11 n=18 rmsd=11.77 mis_docked=True low_conf=False
+[2026-05-12 13:43:20] [V4] STAGE7:   Y258F_F225Y apo (reused v3): top=-8.88 delta=+0.32 n=20 rmsd=2.45
+[2026-05-12 13:43:20] [V4] STAGE7: wrote /Users/ario/conserved_site_project/07d_mut_docking_v4/mutant_results_v4.csv (42 rows including WT reference)
+[2026-05-12 13:43:20] [V4] STAGE7: Stage 7 v4 DONE: 40 rows, 0 skipped
+[2026-05-12 13:43:55] [V4] STAGE8: Stage 8 v4 starting
+[2026-05-12 13:43:55] [V4] STAGE8: loaded 42 rows (including WT reference)
+[2026-05-12 13:43:55] [V4] STAGE8: top apo destab (well-docked, n>=5): [['R215E', 0.6109999999999989, 2.42580130725254, 19], ['R50A', 0.5789999999999988, 2.4166652516683764, 20], ['R215A', 0.5699999999999985, 2.2464490849617618, 20], ['Q214A', 0.5449999999999999, 2.356671062897535, 19], ['N226D', 0.4199999999999999, 2.397877221341776, 20]]
+[2026-05-12 13:43:55] [V4] STAGE8: top holo destab (well-docked, n>=5): []
+[2026-05-12 13:43:55] [V4] STAGE8: summary written
+[2026-05-12 13:43:55] [V4] STAGE8: Pearson r = None, Spearman ρ = None, filtered Spearman ρ = None (n=0)
+[2026-05-12 13:43:55] [V4] STAGE8: Stage 8 v4 DONE
+[2026-05-12 13:45:36] [V4] STAGE8: Stage 8 v4 starting
+[2026-05-12 13:45:36] [V4] STAGE8: loaded 42 rows (including WT reference)
+[2026-05-12 13:45:36] [V4] STAGE8: WT holo itself is RMSD=12.95 A vs crystal (ionised cofactor displaces dUMP). Holo mis_docked redefined as |RMSD - WT_holo_RMSD| > 3 A.
+[2026-05-12 13:45:36] [V4] STAGE8: top apo destab (well-docked, n>=5): [['R215E', 0.6109999999999989, 2.42580130725254, 19], ['R50A', 0.5789999999999988, 2.4166652516683764, 20], ['R215A', 0.5699999999999985, 2.2464490849617618, 20], ['Q214A', 0.5449999999999999, 2.356671062897535, 19], ['N226D', 0.4199999999999999, 2.397877221341776, 20]]
+[2026-05-12 13:45:36] [V4] STAGE8: top holo destab (well-docked, n>=5): [['R176E', 0.2039999999999997, 12.186796240193727, 19], ['R175E_R176E', 0.2039999999999997, 12.186796240193727, 19], ['R176A', 0.1820000000000003, 11.786282206446613, 19], ['T170A', 0.1710000000000002, 12.94482042169763, 20], ['N226D', 0.1639999999999997, 13.001087527587837, 17]]
+[2026-05-12 13:45:37] [V4] STAGE8: summary written
+[2026-05-12 13:45:37] [V4] STAGE8: Pearson r = -0.30136180770091225, Spearman ρ = -0.45065162847137524, filtered Spearman ρ = 0.6000000000000001 (n=4)
+[2026-05-12 13:45:37] [V4] STAGE8: Stage 8 v4 DONE
+[2026-05-12 13:45:54] [V4] STAGE9: Stage 9 v4 starting
+[2026-05-12 13:45:54] [V4] STAGE9: wrote /Users/ario/conserved_site_project/09d_report_v4/report.html
+[2026-05-12 13:45:55] [V4] STAGE9: wrote /Users/ario/conserved_site_project/09d_report_v4/report.pdf (252362 bytes)
+[2026-05-12 13:45:55] [V4] STAGE9: wrote /Users/ario/conserved_site_project/09d_report_v4/report.docx (197556 bytes)
+[2026-05-12 13:45:55] [V4] STAGE9: Stage 9 v4 DONE
+[2026-05-12 13:59:25] [V5] STAGE3: Stage 3 v5 starting (IN-PLACE cofactor reprotonation; no Kabsch)
+[2026-05-12 13:59:25] [V5] STAGE3:   chain A heavy atoms: 32
+[2026-05-12 13:59:25] [V5] STAGE3:   chain B heavy atoms: 32
+[2026-05-12 13:59:25] [V5] STAGE3: Chain A:
+[2026-05-12 13:59:26] [V5] STAGE3:   template heavy atoms: 34, crystal heavy atoms: 32
+[2026-05-12 13:59:26] [V5] STAGE3:   WARNING heavy-atom count mismatch (34 vs 32)
+[2026-05-12 13:59:26] [V5] STAGE3:   rdDetermineBonds path failed (No matching found); using direct heavy-mol bond transfer
+[2026-05-12 14:00:54] [V5] STAGE3: Stage 3 v5 starting (IN-PLACE cofactor reprotonation; no Kabsch)
+[2026-05-12 14:00:54] [V5] STAGE3:   chain A heavy atoms: 32
+[2026-05-12 14:00:54] [V5] STAGE3:   chain B heavy atoms: 32
+[2026-05-12 14:00:54] [V5] STAGE3: Chain A:
+[2026-05-12 14:00:54] [V5] STAGE3:   template heavy atoms: 32, crystal heavy atoms: 32
+[2026-05-12 14:00:54] [V5] STAGE3:   element order matches index-by-index
+[2026-05-12 14:00:54] [V5] STAGE3:   found 2 -COOH groups in template (will deprotonate)
+[2026-05-12 14:00:54] [V5] STAGE3:   SMILES (no H): Cc1nc(=O)c2cc(CN(C)c3ccc(C(=O)N[C@@H](CCC(=O)[O-])C(=O)[O-])s3)ccc2[nH]1
+[2026-05-12 14:00:54] [V5] STAGE3:   carboxylate [O-] count: 2
+[2026-05-12 14:00:54] [V5] STAGE3:   wrote /Users/ario/conserved_site_project/03e_structure_v5/cofactor_chainA_v5.pdb (md5=0e0b87ba50dcda7d9239b5dba806b290)
+[2026-05-12 14:00:54] [V5] STAGE3: Chain B:
+[2026-05-12 14:00:54] [V5] STAGE3:   template heavy atoms: 32, crystal heavy atoms: 32
+[2026-05-12 14:00:54] [V5] STAGE3:   element order matches index-by-index
+[2026-05-12 14:00:54] [V5] STAGE3:   found 2 -COOH groups in template (will deprotonate)
+[2026-05-12 14:00:54] [V5] STAGE3:   SMILES (no H): Cc1nc(=O)c2cc(CN(C)c3ccc(C(=O)N[C@@H](CCC(=O)[O-])C(=O)[O-])s3)ccc2[nH]1
+[2026-05-12 14:00:54] [V5] STAGE3:   carboxylate [O-] count: 2
+[2026-05-12 14:00:54] [V5] STAGE3:   wrote /Users/ario/conserved_site_project/03e_structure_v5/cofactor_chainB_v5.pdb (md5=1aea7b012749ab7ade8b1f724ec45982)
+[2026-05-12 14:00:54] [V5] STAGE3:   verify A: heavy-atom RMSD vs 1HVY chain-A D16 = 0.000000 A (matched 32 of 32 atoms)
+[2026-05-12 14:00:54] [V5] STAGE3:   verify B: heavy-atom RMSD vs 1HVY chain-B D16 = 0.000000 A (matched 32 of 32 atoms)
+[2026-05-12 14:00:54] [V5] STAGE3:   v5 chain-A md5 = 0e0b87ba50dcda7d9239b5dba806b290
+[2026-05-12 14:00:54] [V5] STAGE3:   v4 chain-A md5 = e6f06a08f8910fff680286de98c2e1d2
+[2026-05-12 14:00:54] [V5] STAGE3:   protein dimer heavy atoms: 4650
+[2026-05-12 14:00:54] [V5] STAGE3:   chain A clashes < 1.8 A: 0
+[2026-05-12 14:00:54] [V5] STAGE3:   chain B clashes < 1.8 A: 0
+[2026-05-12 14:00:54] [V5] STAGE3:   chain A near-clashes < 2.0 A: 0
+[2026-05-12 14:01:07] [V5] STAGE3: Stage 3 v5 starting (IN-PLACE cofactor reprotonation; no Kabsch)
+[2026-05-12 14:01:07] [V5] STAGE3:   chain A heavy atoms: 32
+[2026-05-12 14:01:07] [V5] STAGE3:   chain B heavy atoms: 32
+[2026-05-12 14:01:07] [V5] STAGE3: Chain A:
+[2026-05-12 14:01:07] [V5] STAGE3:   template heavy atoms: 32, crystal heavy atoms: 32
+[2026-05-12 14:01:07] [V5] STAGE3:   element order matches index-by-index
+[2026-05-12 14:01:07] [V5] STAGE3:   found 2 -COOH groups in template (will deprotonate)
+[2026-05-12 14:01:07] [V5] STAGE3:   SMILES (no H): Cc1nc(=O)c2cc(CN(C)c3ccc(C(=O)N[C@@H](CCC(=O)[O-])C(=O)[O-])s3)ccc2[nH]1
+[2026-05-12 14:01:07] [V5] STAGE3:   carboxylate [O-] count: 2
+[2026-05-12 14:01:07] [V5] STAGE3:   wrote /Users/ario/conserved_site_project/03e_structure_v5/cofactor_chainA_v5.pdb (md5=0e0b87ba50dcda7d9239b5dba806b290)
+[2026-05-12 14:01:07] [V5] STAGE3: Chain B:
+[2026-05-12 14:01:07] [V5] STAGE3:   template heavy atoms: 32, crystal heavy atoms: 32
+[2026-05-12 14:01:07] [V5] STAGE3:   element order matches index-by-index
+[2026-05-12 14:01:07] [V5] STAGE3:   found 2 -COOH groups in template (will deprotonate)
+[2026-05-12 14:01:07] [V5] STAGE3:   SMILES (no H): Cc1nc(=O)c2cc(CN(C)c3ccc(C(=O)N[C@@H](CCC(=O)[O-])C(=O)[O-])s3)ccc2[nH]1
+[2026-05-12 14:01:07] [V5] STAGE3:   carboxylate [O-] count: 2
+[2026-05-12 14:01:07] [V5] STAGE3:   wrote /Users/ario/conserved_site_project/03e_structure_v5/cofactor_chainB_v5.pdb (md5=1aea7b012749ab7ade8b1f724ec45982)
+[2026-05-12 14:01:07] [V5] STAGE3:   verify A: heavy-atom RMSD vs 1HVY chain-A D16 = 0.000000 A (matched 32 of 32 atoms)
+[2026-05-12 14:01:07] [V5] STAGE3:   verify B: heavy-atom RMSD vs 1HVY chain-B D16 = 0.000000 A (matched 32 of 32 atoms)
+[2026-05-12 14:01:07] [V5] STAGE3:   v5 chain-A md5 = 0e0b87ba50dcda7d9239b5dba806b290
+[2026-05-12 14:01:07] [V5] STAGE3:   v4 chain-A md5 = e6f06a08f8910fff680286de98c2e1d2
+[2026-05-12 14:01:07] [V5] STAGE3:   protein dimer heavy atoms: 4650
+[2026-05-12 14:01:07] [V5] STAGE3:   chain A clashes < 1.8 A: 0
+[2026-05-12 14:01:07] [V5] STAGE3:   chain B clashes < 1.8 A: 0
+[2026-05-12 14:01:07] [V5] STAGE3:   chain A near-clashes < 2.0 A: 0
+[2026-05-12 14:01:07] [V5] STAGE3: Stage 3 v5 DONE
+[2026-05-12 14:02:21] [V5] STAGE6: Stage 6 v5 starting
+[2026-05-12 14:02:21] [V5] STAGE6:   centroid (crystal dUMP): [-0.13655, 4.2319, 15.159450000000001]
+[2026-05-12 14:02:21] [V5] STAGE6:   apo PDBQT copied from v4 (max|q|=0.507)
+[2026-05-12 14:02:22] [V5] STAGE6:   [HOLO_dimer_v5] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:02:22] [V5] STAGE6:   holo PDBQT OK via obabel_gasteiger, max|q|=0.507
+[2026-05-12 14:02:22] [V5] STAGE6:   WT apo (reused from v4): top=-9.20 rmsd=0.91
+[2026-05-12 14:02:22] [V5] STAGE6:   vina[wt_holo] seed=42 exh=96
+[2026-05-12 14:03:08] [V5] STAGE6:   wt_holo seed42: top=-8.21 n=2 rmsd=0.32
+[2026-05-12 14:03:08] [V5] STAGE6:   vina[wt_holo] seed=7 exh=96
+[2026-05-12 14:03:54] [V5] STAGE6:   wt_holo seed7: top=-8.23 n=2 rmsd=0.33
+[2026-05-12 14:03:54] [V5] STAGE6:   vina[wt_holo] seed=13 exh=96
+[2026-05-12 14:04:41] [V5] STAGE6:   wt_holo seed13: top=-8.25 n=2 rmsd=0.33
+[2026-05-12 14:04:41] [V5] STAGE6:   vina[wt_holo] seed=99 exh=96
+[2026-05-12 14:05:25] [V5] STAGE6:   wt_holo seed99: top=-8.22 n=2 rmsd=0.33
+[2026-05-12 14:05:25] [V5] STAGE6:   vina[wt_holo] seed=256 exh=96
+[2026-05-12 14:06:10] [V5] STAGE6:   wt_holo seed256: top=-8.21 n=3 rmsd=0.34
+[2026-05-12 14:06:10] [V5] STAGE6:   WT holo: max n_modes=3 <10, escalating to exh=128
+[2026-05-12 14:06:10] [V5] STAGE6:   vina[wt_holo] seed=1 exh=128
+[2026-05-12 14:07:09] [V5] STAGE6:   wt_holo seed1: top=-8.22 n=2 rmsd=0.33
+[2026-05-12 14:07:09] [V5] STAGE6:   vina[wt_holo] seed=2025 exh=128
+[2026-05-12 14:08:10] [V5] STAGE6:   wt_holo seed2025: top=-8.22 n=2 rmsd=0.33
+[2026-05-12 14:08:10] [V5] STAGE6:   vina[wt_holo] seed=31337 exh=128
+[2026-05-12 14:09:11] [V5] STAGE6:   wt_holo seed31337: top=-8.25 n=2 rmsd=0.33
+[2026-05-12 14:09:11] [V5] STAGE6:   WT holo: after fallback, max n_modes=3
+[2026-05-12 14:09:11] [V5] STAGE6:   WT holo BEST seed = 13 top=-8.25 n_modes=2 rmsd=0.33
+[2026-05-12 14:09:11] [V5] STAGE6:   WT holo named-pose RMSD vs crystal = 0.999
+[2026-05-12 14:09:11] [V5] STAGE6: Stage 6 v5 DONE
+[2026-05-12 14:10:30] [V5] STAGE7: Stage 7 v5 starting
+[2026-05-12 14:10:30] [V5] STAGE7: Found 20 mutants from v3
+[2026-05-12 14:10:30] [V5] STAGE7:   centroid: [-0.13655, 4.2319, 15.159450000000001]
+[2026-05-12 14:10:30] [V5] STAGE7:   WT v5 apo aff = -9.20, WT v5 holo aff = -8.25
+[2026-05-12 14:10:30] [V5] STAGE7: [1/20] C195A (ala_scan)
+[2026-05-12 14:10:30] [V5] STAGE7:   [C195A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:10:42] [V5] STAGE7:   C195A holo: top=-10.49 delta=-2.25 n=2 rmsd=0.34 mis_docked=False low_conf=True
+[2026-05-12 14:10:42] [V5] STAGE7:   C195A apo (reused v3): top=-9.46 delta=-0.26 n=20 rmsd=2.09
+[2026-05-12 14:10:42] [V5] STAGE7: [2/20] C195A_H196A (double_dyad)
+[2026-05-12 14:10:43] [V5] STAGE7:   [C195A_H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:10:55] [V5] STAGE7:   C195A_H196A holo: top=-10.03 delta=-1.78 n=4 rmsd=0.36 mis_docked=False low_conf=True
+[2026-05-12 14:10:55] [V5] STAGE7:   C195A_H196A apo (reused v3): top=-9.12 delta=+0.08 n=20 rmsd=2.11
+[2026-05-12 14:10:55] [V5] STAGE7: [3/20] C195S (opposite)
+[2026-05-12 14:10:55] [V5] STAGE7:   [C195S_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:11:08] [V5] STAGE7:   C195S holo: top=-10.21 delta=-1.97 n=3 rmsd=0.30 mis_docked=False low_conf=True
+[2026-05-12 14:11:08] [V5] STAGE7:   C195S apo (reused v3): top=-9.55 delta=-0.36 n=20 rmsd=2.14
+[2026-05-12 14:11:08] [V5] STAGE7: [4/20] C195S_H196N (double_polar_neutral)
+[2026-05-12 14:11:09] [V5] STAGE7:   [C195S_H196N_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:11:21] [V5] STAGE7:   C195S_H196N holo: top=-9.78 delta=-1.53 n=4 rmsd=0.30 mis_docked=False low_conf=True
+[2026-05-12 14:11:21] [V5] STAGE7:   C195S_H196N apo (reused v3): top=-9.34 delta=-0.14 n=20 rmsd=2.08
+[2026-05-12 14:11:21] [V5] STAGE7: [5/20] H196A (ala_scan)
+[2026-05-12 14:11:21] [V5] STAGE7:   [H196A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:11:35] [V5] STAGE7:   H196A holo: top=-7.76 delta=+0.49 n=5 rmsd=0.34 mis_docked=False low_conf=False
+[2026-05-12 14:11:35] [V5] STAGE7:   H196A apo (reused v3): top=-8.86 delta=+0.34 n=19 rmsd=2.31
+[2026-05-12 14:11:35] [V5] STAGE7: [6/20] N226D (opposite)
+[2026-05-12 14:11:36] [V5] STAGE7:   [N226D_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:11:50] [V5] STAGE7:   N226D holo: top=-7.80 delta=+0.45 n=4 rmsd=0.34 mis_docked=False low_conf=True
+[2026-05-12 14:11:50] [V5] STAGE7:   N226D apo (reused v3): top=-8.78 delta=+0.42 n=20 rmsd=2.40
+[2026-05-12 14:11:50] [V5] STAGE7: [7/20] Q214A (ala_scan)
+[2026-05-12 14:11:51] [V5] STAGE7:   [Q214A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:12:06] [V5] STAGE7:   Q214A holo: top=-8.17 delta=+0.08 n=2 rmsd=0.34 mis_docked=False low_conf=True
+[2026-05-12 14:12:06] [V5] STAGE7:   Q214A apo (reused v3): top=-8.65 delta=+0.54 n=19 rmsd=2.36
+[2026-05-12 14:12:06] [V5] STAGE7: [8/20] R175A (ala_scan)
+[2026-05-12 14:12:07] [V5] STAGE7:   [R175A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:12:21] [V5] STAGE7:   R175A holo: top=-8.19 delta=+0.06 n=2 rmsd=0.34 mis_docked=False low_conf=True
+[2026-05-12 14:12:21] [V5] STAGE7:   R175A apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.30
+[2026-05-12 14:12:21] [V5] STAGE7: [9/20] R175E (opposite)
+[2026-05-12 14:12:22] [V5] STAGE7:   [R175E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:12:36] [V5] STAGE7:   R175E holo: top=-8.19 delta=+0.06 n=2 rmsd=0.34 mis_docked=False low_conf=True
+[2026-05-12 14:12:36] [V5] STAGE7:   R175E apo (reused v3): top=-9.04 delta=+0.16 n=20 rmsd=2.39
+[2026-05-12 14:12:36] [V5] STAGE7: [10/20] R175E_R176E (double_phosclamp)
+[2026-05-12 14:12:36] [V5] STAGE7:   [R175E_R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:12:50] [V5] STAGE7:   R175E_R176E holo: top=-8.20 delta=+0.05 n=2 rmsd=0.35 mis_docked=False low_conf=True
+[2026-05-12 14:12:50] [V5] STAGE7:   R175E_R176E apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.31
+[2026-05-12 14:12:50] [V5] STAGE7: [11/20] R176A (ala_scan)
+[2026-05-12 14:12:51] [V5] STAGE7:   [R176A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:13:05] [V5] STAGE7:   R176A holo: top=-8.19 delta=+0.06 n=2 rmsd=0.34 mis_docked=False low_conf=True
+[2026-05-12 14:13:05] [V5] STAGE7:   R176A apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.31
+[2026-05-12 14:13:05] [V5] STAGE7: [12/20] R176E (opposite)
+[2026-05-12 14:13:06] [V5] STAGE7:   [R176E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:13:20] [V5] STAGE7:   R176E holo: top=-8.20 delta=+0.05 n=2 rmsd=0.35 mis_docked=False low_conf=True
+[2026-05-12 14:13:20] [V5] STAGE7:   R176E apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.31
+[2026-05-12 14:13:20] [V5] STAGE7: [13/20] R215A (ala_scan)
+[2026-05-12 14:13:20] [V5] STAGE7:   [R215A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:13:34] [V5] STAGE7:   R215A holo: top=-7.81 delta=+0.44 n=5 rmsd=0.40 mis_docked=False low_conf=False
+[2026-05-12 14:13:34] [V5] STAGE7:   R215A apo (reused v3): top=-8.63 delta=+0.57 n=20 rmsd=2.25
+[2026-05-12 14:13:34] [V5] STAGE7: [14/20] R215A_N226A (double_substrate_orient)
+[2026-05-12 14:13:35] [V5] STAGE7:   [R215A_N226A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:13:49] [V5] STAGE7:   R215A_N226A holo: top=-7.48 delta=+0.77 n=9 rmsd=0.60 mis_docked=False low_conf=False
+[2026-05-12 14:13:49] [V5] STAGE7:   R215A_N226A apo (reused v3): top=-8.05 delta=+1.15 n=20 rmsd=5.34
+[2026-05-12 14:13:49] [V5] STAGE7: [15/20] R215E (opposite)
+[2026-05-12 14:13:50] [V5] STAGE7:   [R215E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:14:08] [V5] STAGE7:   R215E holo: top=-7.78 delta=+0.47 n=5 rmsd=0.39 mis_docked=False low_conf=False
+[2026-05-12 14:14:08] [V5] STAGE7:   R215E apo (reused v3): top=-8.59 delta=+0.61 n=19 rmsd=2.43
+[2026-05-12 14:14:08] [V5] STAGE7: [16/20] R50A (ala_scan)
+[2026-05-12 14:14:09] [V5] STAGE7:   [R50A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:14:22] [V5] STAGE7:   R50A holo: top=-7.42 delta=+0.83 n=20 rmsd=5.53 mis_docked=True low_conf=False
+[2026-05-12 14:14:22] [V5] STAGE7:   R50A apo (reused v3): top=-8.62 delta=+0.58 n=20 rmsd=2.42
+[2026-05-12 14:14:22] [V5] STAGE7: [17/20] R50E (opposite)
+[2026-05-12 14:14:22] [V5] STAGE7:   [R50E_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:14:36] [V5] STAGE7:   R50E holo: top=-7.77 delta=+0.48 n=20 rmsd=5.65 mis_docked=True low_conf=False
+[2026-05-12 14:14:36] [V5] STAGE7:   R50E apo (reused v3): top=-8.78 delta=+0.41 n=20 rmsd=2.35
+[2026-05-12 14:14:36] [V5] STAGE7: [18/20] T170A (control_surface)
+[2026-05-12 14:14:37] [V5] STAGE7:   [T170A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:14:53] [V5] STAGE7:   T170A holo: top=-8.20 delta=+0.05 n=2 rmsd=0.35 mis_docked=False low_conf=True
+[2026-05-12 14:14:53] [V5] STAGE7:   T170A apo (reused v3): top=-9.02 delta=+0.18 n=20 rmsd=2.30
+[2026-05-12 14:14:53] [V5] STAGE7: [19/20] W109A (ala_scan)
+[2026-05-12 14:14:54] [V5] STAGE7:   [W109A_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:15:09] [V5] STAGE7:   W109A holo: top=-7.98 delta=+0.27 n=2 rmsd=0.34 mis_docked=False low_conf=True
+[2026-05-12 14:15:09] [V5] STAGE7:   W109A apo (reused v3): top=-8.88 delta=+0.32 n=19 rmsd=2.46
+[2026-05-12 14:15:09] [V5] STAGE7: [20/20] Y258F_F225Y (double_aromatic_swap)
+[2026-05-12 14:15:10] [V5] STAGE7:   [Y258F_F225Y_holo] obabel-gasteiger rc=0 max|q|=0.507
+[2026-05-12 14:15:26] [V5] STAGE7:   Y258F_F225Y holo: top=-8.05 delta=+0.20 n=2 rmsd=0.35 mis_docked=False low_conf=True
+[2026-05-12 14:15:26] [V5] STAGE7:   Y258F_F225Y apo (reused v3): top=-8.88 delta=+0.32 n=20 rmsd=2.45
+[2026-05-12 14:15:26] [V5] STAGE7: wrote /Users/ario/conserved_site_project/07e_mut_docking_v5/mutant_results_v5.csv (42 rows including WT reference)
+[2026-05-12 14:15:26] [V5] STAGE7: Stage 7 v5 DONE: 40 rows, 0 skipped
+[2026-05-12 14:16:48] [V5] STAGE8: Stage 8 v5 starting
+[2026-05-12 14:16:48] [V5] STAGE8: loaded 42 rows (including WT reference)
+[2026-05-12 14:16:48] [V5] STAGE8: WT holo RMSD vs crystal = 0.334 A; standard mis_docked (RMSD > 3 A vs crystal) applies. v4-style dual-RMSD-reference is not needed in v5.
+[2026-05-12 14:16:48] [V5] STAGE8: top apo destab (clean): [['R215E', 0.6109999999999989], ['R50A', 0.5789999999999988], ['R215A', 0.5699999999999985], ['Q214A', 0.5449999999999999], ['N226D', 0.4199999999999999]]
+[2026-05-12 14:16:48] [V5] STAGE8: top holo destab (clean): [['R215A_N226A', 0.7720000000000002], ['H196A', 0.4910000000000005], ['R215E', 0.4700000000000006], ['R215A', 0.4430000000000005]]
+[2026-05-12 14:16:48] [V5] STAGE8:   n mutants holo |Δ| > 0.85: 0
+[2026-05-12 14:16:48] [V5] STAGE8: Pearson r = -0.7401065909147103, Spearman ρ = -0.5, null_correlation=True
+[2026-05-12 14:16:48] [V5] STAGE8: n above noise (holo): 0
+[2026-05-12 14:16:48] [V5] STAGE8: Stage 8 v5 DONE
+[2026-05-12 14:21:12] [V5] STAGE9: Stage 9 v5 starting
+[2026-05-12 14:21:13] [V5] STAGE9: wrote /Users/ario/conserved_site_project/09e_report_v5/report.html
+[2026-05-12 14:21:14] [V5] STAGE9: wrote /Users/ario/conserved_site_project/09e_report_v5/report.pdf (256701 bytes)
+[2026-05-12 14:21:14] [V5] STAGE9: wrote /Users/ario/conserved_site_project/09e_report_v5/report.docx (202051 bytes)
+[2026-05-12 14:21:14] [V5] STAGE9: Stage 9 v5 DONE

@@ -1,0 +1,219 @@
+[2026-05-12 12:25:33] [V2] STAGE6: Stage 6 v2 starting
+[2026-05-12 12:25:33] [V2] STAGE6: chain-A active site centroid from 10 CA: [3.4655004 4.7408    7.7776003]
+[2026-05-12 12:25:35] [V2] STAGE6:   meeko receptor APO_dimer rc=2
+[2026-05-12 12:25:35] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:25:36] [V2] STAGE6:   obabel receptor APO_dimer rc=0
+[2026-05-12 12:25:38] [V2] STAGE6:   meeko receptor HOLO_dimer rc=2
+[2026-05-12 12:25:38] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:25:38] [V2] STAGE6:   obabel receptor HOLO_dimer rc=0
+[2026-05-12 12:25:38] [V2] STAGE6:   vina WT_apo: cmd=/opt/homebrew/bin/vina --receptor /Users/ario/conserved_site_project/06b_docking_wt_v2/protein_dimer_apo.pdbqt --ligand ... center=(3.47,4.74,7.78)
+[2026-05-12 12:25:55] [V2] STAGE6:   WT apo affinities (from PDBQT): [-6.798, -6.505, -6.446, -6.371, -6.346]
+[2026-05-12 12:25:55] [V2] STAGE6:   WT apo: top=-6.80, mean_top3=-6.58, RMSD=5.60
+[2026-05-12 12:25:55] [V2] STAGE6:   vina WT_holo: cmd=/opt/homebrew/bin/vina --receptor /Users/ario/conserved_site_project/06b_docking_wt_v2/protein_dimer_holo.pdbqt --ligand ... center=(3.47,4.74,7.78)
+[2026-05-12 12:26:09] [V2] STAGE6:   WT holo affinities (from PDBQT): [-3.215, -1.355, -0.495]
+[2026-05-12 12:26:10] [V2] STAGE6:   WT holo: top=-3.21, mean_top3=-1.69, RMSD=4.32
+[2026-05-12 12:26:10] [V2] STAGE6: Stage 6 v2 DONE
+[2026-05-12 12:28:02] [V2] STAGE6:   meeko receptor R50A_apo rc=2
+[2026-05-12 12:28:02] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:03] [V2] STAGE6:   obabel receptor R50A_apo rc=0
+[2026-05-12 12:28:04] [V2] STAGE6:   meeko receptor R50A_holo rc=2
+[2026-05-12 12:28:04] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:05] [V2] STAGE6:   obabel receptor R50A_holo rc=0
+[2026-05-12 12:28:39] [V2] STAGE6:   meeko receptor W109A_apo rc=2
+[2026-05-12 12:28:39] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:41] [V2] STAGE6:   obabel receptor W109A_apo rc=0
+[2026-05-12 12:28:42] [V2] STAGE6:   meeko receptor W109A_holo rc=2
+[2026-05-12 12:28:42] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:28:42] [V2] STAGE6:   obabel receptor W109A_holo rc=0
+[2026-05-12 12:29:18] [V2] STAGE6:   meeko receptor R175A_apo rc=2
+[2026-05-12 12:29:18] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:20] [V2] STAGE6:   obabel receptor R175A_apo rc=0
+[2026-05-12 12:29:21] [V2] STAGE6:   meeko receptor R175A_holo rc=2
+[2026-05-12 12:29:21] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:21] [V2] STAGE6:   obabel receptor R175A_holo rc=0
+[2026-05-12 12:29:56] [V2] STAGE6:   meeko receptor R176A_apo rc=2
+[2026-05-12 12:29:56] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:58] [V2] STAGE6:   obabel receptor R176A_apo rc=0
+[2026-05-12 12:29:59] [V2] STAGE6:   meeko receptor R176A_holo rc=2
+[2026-05-12 12:29:59] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:29:59] [V2] STAGE6:   obabel receptor R176A_holo rc=0
+[2026-05-12 12:30:34] [V2] STAGE6:   meeko receptor C195A_apo rc=2
+[2026-05-12 12:30:34] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:30:35] [V2] STAGE6:   obabel receptor C195A_apo rc=0
+[2026-05-12 12:30:36] [V2] STAGE6:   meeko receptor C195A_holo rc=2
+[2026-05-12 12:30:36] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:30:37] [V2] STAGE6:   obabel receptor C195A_holo rc=0
+[2026-05-12 12:31:11] [V2] STAGE6:   meeko receptor H196A_apo rc=2
+[2026-05-12 12:31:11] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:13] [V2] STAGE6:   obabel receptor H196A_apo rc=0
+[2026-05-12 12:31:14] [V2] STAGE6:   meeko receptor H196A_holo rc=2
+[2026-05-12 12:31:14] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:14] [V2] STAGE6:   obabel receptor H196A_holo rc=0
+[2026-05-12 12:31:49] [V2] STAGE6:   meeko receptor Q214A_apo rc=2
+[2026-05-12 12:31:49] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:50] [V2] STAGE6:   obabel receptor Q214A_apo rc=0
+[2026-05-12 12:31:51] [V2] STAGE6:   meeko receptor Q214A_holo rc=2
+[2026-05-12 12:31:51] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:31:52] [V2] STAGE6:   obabel receptor Q214A_holo rc=0
+[2026-05-12 12:32:28] [V2] STAGE6:   meeko receptor R215A_apo rc=2
+[2026-05-12 12:32:28] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:32:29] [V2] STAGE6:   obabel receptor R215A_apo rc=0
+[2026-05-12 12:32:31] [V2] STAGE6:   meeko receptor R215A_holo rc=2
+[2026-05-12 12:32:31] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:32:31] [V2] STAGE6:   obabel receptor R215A_holo rc=0
+[2026-05-12 12:33:07] [V2] STAGE6:   meeko receptor R50E_apo rc=2
+[2026-05-12 12:33:07] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:08] [V2] STAGE6:   obabel receptor R50E_apo rc=0
+[2026-05-12 12:33:10] [V2] STAGE6:   meeko receptor R50E_holo rc=2
+[2026-05-12 12:33:10] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:10] [V2] STAGE6:   obabel receptor R50E_holo rc=0
+[2026-05-12 12:33:44] [V2] STAGE6:   meeko receptor R175E_apo rc=2
+[2026-05-12 12:33:44] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:45] [V2] STAGE6:   obabel receptor R175E_apo rc=0
+[2026-05-12 12:33:47] [V2] STAGE6:   meeko receptor R175E_holo rc=2
+[2026-05-12 12:33:47] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:33:47] [V2] STAGE6:   obabel receptor R175E_holo rc=0
+[2026-05-12 12:34:22] [V2] STAGE6:   meeko receptor R176E_apo rc=2
+[2026-05-12 12:34:22] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:34:24] [V2] STAGE6:   obabel receptor R176E_apo rc=0
+[2026-05-12 12:34:25] [V2] STAGE6:   meeko receptor R176E_holo rc=2
+[2026-05-12 12:34:25] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:34:25] [V2] STAGE6:   obabel receptor R176E_holo rc=0
+[2026-05-12 12:35:00] [V2] STAGE6:   meeko receptor C195S_apo rc=2
+[2026-05-12 12:35:00] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:01] [V2] STAGE6:   obabel receptor C195S_apo rc=0
+[2026-05-12 12:35:02] [V2] STAGE6:   meeko receptor C195S_holo rc=2
+[2026-05-12 12:35:02] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:03] [V2] STAGE6:   obabel receptor C195S_holo rc=0
+[2026-05-12 12:35:39] [V2] STAGE6:   meeko receptor R215E_apo rc=2
+[2026-05-12 12:35:39] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:41] [V2] STAGE6:   obabel receptor R215E_apo rc=0
+[2026-05-12 12:35:42] [V2] STAGE6:   meeko receptor R215E_holo rc=2
+[2026-05-12 12:35:42] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:35:43] [V2] STAGE6:   obabel receptor R215E_holo rc=0
+[2026-05-12 12:36:21] [V2] STAGE6:   meeko receptor N226D_apo rc=2
+[2026-05-12 12:36:21] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:36:23] [V2] STAGE6:   obabel receptor N226D_apo rc=0
+[2026-05-12 12:36:24] [V2] STAGE6:   meeko receptor N226D_holo rc=2
+[2026-05-12 12:36:24] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:36:25] [V2] STAGE6:   obabel receptor N226D_holo rc=0
+[2026-05-12 12:37:01] [V2] STAGE6:   meeko receptor C195A_H196A_apo rc=2
+[2026-05-12 12:37:01] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:03] [V2] STAGE6:   obabel receptor C195A_H196A_apo rc=0
+[2026-05-12 12:37:04] [V2] STAGE6:   meeko receptor C195A_H196A_holo rc=2
+[2026-05-12 12:37:04] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:05] [V2] STAGE6:   obabel receptor C195A_H196A_holo rc=0
+[2026-05-12 12:37:39] [V2] STAGE6:   meeko receptor R175E_R176E_apo rc=2
+[2026-05-12 12:37:39] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:40] [V2] STAGE6:   obabel receptor R175E_R176E_apo rc=0
+[2026-05-12 12:37:42] [V2] STAGE6:   meeko receptor R175E_R176E_holo rc=2
+[2026-05-12 12:37:42] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:37:42] [V2] STAGE6:   obabel receptor R175E_R176E_holo rc=0
+[2026-05-12 12:38:16] [V2] STAGE6:   meeko receptor C195S_H196N_apo rc=2
+[2026-05-12 12:38:16] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:17] [V2] STAGE6:   obabel receptor C195S_H196N_apo rc=0
+[2026-05-12 12:38:19] [V2] STAGE6:   meeko receptor C195S_H196N_holo rc=2
+[2026-05-12 12:38:19] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:19] [V2] STAGE6:   obabel receptor C195S_H196N_holo rc=0
+[2026-05-12 12:38:53] [V2] STAGE6:   meeko receptor R215A_N226A_apo rc=2
+[2026-05-12 12:38:53] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:54] [V2] STAGE6:   obabel receptor R215A_N226A_apo rc=0
+[2026-05-12 12:38:56] [V2] STAGE6:   meeko receptor R215A_N226A_holo rc=2
+[2026-05-12 12:38:56] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:38:56] [V2] STAGE6:   obabel receptor R215A_N226A_holo rc=0
+[2026-05-12 12:39:31] [V2] STAGE6:   meeko receptor Y258F_F225Y_apo rc=2
+[2026-05-12 12:39:31] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:39:32] [V2] STAGE6:   obabel receptor Y258F_F225Y_apo rc=0
+[2026-05-12 12:39:34] [V2] STAGE6:   meeko receptor Y258F_F225Y_holo rc=2
+[2026-05-12 12:39:34] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:39:34] [V2] STAGE6:   obabel receptor Y258F_F225Y_holo rc=0
+[2026-05-12 12:40:08] [V2] STAGE6:   meeko receptor T170A_apo rc=2
+[2026-05-12 12:40:08] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:40:09] [V2] STAGE6:   obabel receptor T170A_apo rc=0
+[2026-05-12 12:40:10] [V2] STAGE6:   meeko receptor T170A_holo rc=2
+[2026-05-12 12:40:10] [V2] STAGE6:   meeko stderr: 
+mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
+
+[2026-05-12 12:40:11] [V2] STAGE6:   obabel receptor T170A_holo rc=0

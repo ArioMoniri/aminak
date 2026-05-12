@@ -1,0 +1,87 @@
+{
+  "n_rows": 40,
+  "n_mutants": 20,
+  "n_apo": 20,
+  "n_holo": 20,
+  "n_mis_docked": 2,
+  "wt_apo_aff": -9.127,
+  "wt_holo_aff": -8.314,
+  "top5_destab_apo_clean": [
+    {
+      "mutant": "R215E",
+      "category": "opposite",
+      "delta_vina_vs_wt": 0.5410000000000004,
+      "rmsd_to_native": 2.42580130725254,
+      "n_modes": 19
+    },
+    {
+      "mutant": "R50A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.5090000000000003,
+      "rmsd_to_native": 2.4166652516683764,
+      "n_modes": 20
+    },
+    {
+      "mutant": "R215A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.5,
+      "rmsd_to_native": 2.2464490849617618,
+      "n_modes": 20
+    },
+    {
+      "mutant": "Q214A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.4750000000000014,
+      "rmsd_to_native": 2.356671062897535,
+      "n_modes": 19
+    },
+    {
+      "mutant": "N226D",
+      "category": "opposite",
+      "delta_vina_vs_wt": 0.3500000000000014,
+      "rmsd_to_native": 2.397877221341776,
+      "n_modes": 20
+    }
+  ],
+  "top5_destab_holo_clean": [
+    {
+      "mutant": "R215A_N226A",
+      "category": "double_substrate_orient",
+      "delta_vina_vs_wt": 0.726,
+      "rmsd_to_native": 2.3084502395744604,
+      "n_modes": 4
+    },
+    {
+      "mutant": "R50A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.7039999999999997,
+      "rmsd_to_native": 2.0921804444876977,
+      "n_modes": 20
+    },
+    {
+      "mutant": "H196A",
+      "category": "ala_scan",
+      "delta_vina_vs_wt": 0.5030000000000001,
+      "rmsd_to_native": 2.1763053728118313,
+      "n_modes": 4
+    },
+    {
+      "mutant": "R215E",
+      "category": "opposite",
+      "delta_vina_vs_wt": 0.4519999999999999,
+      "rmsd_to_native": 2.1046988789004506,
+      "n_modes": 4
+    },
+    {
+      "mutant": "N226D",
+      "category": "opposite",
+      "delta_vina_vs_wt": 0.4409999999999998,
+      "rmsd_to_native": 2.132076958676749,
+      "n_modes": 2
+    }
+  ],
+  "apo_holo_correlation": 0.7986570354063889,
+  "sign_convention": "delta_vina_vs_wt = top_aff_mut - top_aff_wt; positive = destabilising",
+  "mean_topk_rule": "mean(affinities[:min(3, n_modes)])",
+  "mis_docked_threshold_A": 3.0
+}

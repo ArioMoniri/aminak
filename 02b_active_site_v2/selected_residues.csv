@@ -1,0 +1,11 @@
+ref_position,residue,source,notes,residue_cons,js_score,gap_fraction,aln_col,percentile,selected
+50,R,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],R,0.2191657346607824,0.0,67,94.11764705882352,True
+109,W,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B]; PDBe binding [UMP/B],W,0.2359335997301578,0.0,135,98.69281045751634,True
+175,R,both,Binding site:  [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],R,0.2092818197593191,0.0,239,89.54248366013073,True
+176,R,both,Binding site:  [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],R,0.2097985292685058,0.0,240,90.84967320261438,True
+195,C,both,Active site: Nucleophile; Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],C,0.2529874968925927,0.0,259,100.0,True
+196,H,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],H,0.2269898905277595,0.0,260,96.07843137254902,True
+214,Q,pdbe,PDBe binding [UMP/A]; PDBe binding [UMP/B],Q,0.2324689716366386,0.0,287,98.36601307189542,True
+215,R,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],R,0.2193991644803075,0.0,288,94.44444444444444,True
+225,F,pdbe,PDBe binding [D16/A]; PDBe binding [D16/B],F,0.2305266311800626,0.0,298,97.7124183006536,True
+226,N,both,Binding site: in other chain [dUMP]; PDBe binding [UMP/A]; PDBe binding [UMP/B],N,0.2287083594318911,0.0,299,97.05882352941175,True

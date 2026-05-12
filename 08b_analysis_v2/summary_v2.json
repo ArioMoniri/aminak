@@ -1,0 +1,52 @@
+{
+  "n_mutants_total": 20,
+  "n_apo": 20,
+  "n_holo": 20,
+  "wt_apo_aff": -6.798,
+  "wt_holo_aff": -3.215,
+  "top5_destabilising_apo": [
+    {
+      "mutant": "Q214A",
+      "ddG_vs_wt": 0.1299999999999999
+    },
+    {
+      "mutant": "R50E",
+      "ddG_vs_wt": -0.2039999999999997
+    },
+    {
+      "mutant": "R50A",
+      "ddG_vs_wt": -0.2690000000000001
+    },
+    {
+      "mutant": "Y258F_F225Y",
+      "ddG_vs_wt": -0.2830000000000003
+    },
+    {
+      "mutant": "R175E",
+      "ddG_vs_wt": -0.3029999999999999
+    }
+  ],
+  "top5_destabilising_holo": [
+    {
+      "mutant": "H196A",
+      "ddG_vs_wt": -1.1690000000000005
+    },
+    {
+      "mutant": "T170A",
+      "ddG_vs_wt": -1.2700000000000005
+    },
+    {
+      "mutant": "R50E",
+      "ddG_vs_wt": -2.173
+    },
+    {
+      "mutant": "N226D",
+      "ddG_vs_wt": -2.6879999999999997
+    },
+    {
+      "mutant": "R50A",
+      "ddG_vs_wt": -2.7910000000000004
+    }
+  ],
+  "apo_holo_correlation": 0.6337560620851608
+}

@@ -1,0 +1,9 @@
+{
+  "loop_pdb": "loop_target.BL00020001.pdb",
+  "DOPE": -708.750732421875,
+  "input_model": "refined_B99990003.pdb",
+  "loop_residues": [
+    93,
+    101
+  ]
+}

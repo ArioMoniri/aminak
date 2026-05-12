@@ -1,0 +1,13 @@
+label,n,favoured,allowed,outlier,favoured_pct,allowed_pct,outlier_pct,outlier_residues
+refined_B99990001,285,271,13,1,95.09,4.56,0.35,MET285(general)
+refined_B99990002,285,271,13,1,95.09,4.56,0.35,SER128(general)
+refined_B99990003,285,272,12,1,95.44,4.21,0.35,SER128(general)
+refined_B99990004,285,272,11,2,95.44,3.86,0.70,PHE116(general);MET285(general)
+refined_B99990005,285,272,12,1,95.44,4.21,0.35,MET285(general)
+refined_B99990006,285,271,12,2,95.09,4.21,0.70,PRO107(pro);MET285(general)
+refined_B99990007,285,271,13,1,95.09,4.56,0.35,MET285(general)
+refined_B99990008,285,272,12,1,95.44,4.21,0.35,ASP43(general)
+refined_B99990009,285,271,13,1,95.09,4.56,0.35,MET285(general)
+refined_B99990010,285,271,13,1,95.09,4.56,0.35,SER128(general)
+best_refined,285,272,12,1,95.44,4.21,0.35,SER128(general)
+best_loop_refined,285,271,13,1,95.09,4.56,0.35,SER128(general)

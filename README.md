@@ -294,6 +294,74 @@ Local Ramachandran (Biopython φ/ψ + hand-drawn favoured / allowed polygons). M
 
 **▶ [All 10 models + crystal, in one 3D scene](https://ariomoniri.github.io/aminak/viewers/modeller_overlay_all.html)** — the live 3D equivalent of the all-models-overlay PNG above. Models 1–10 shown in distinct colours at 55 % opacity; crystal in magenta at 85 %.
 
+---
+
+## 🧪 Phase 6b — Ramachandran optimisation (before vs after)
+
+The Phase-6 review flagged that the local Ramachandran validator over-counted outliers because it used a single hand-drawn polygon for all 20 amino acids. Glycine has a much wider allowed region (it has no side-chain steric constraints), and Proline is narrowly restricted (its 5-membered ring locks φ). Classifying both against the *general* polygon is wrong in opposite directions.
+
+We tackled this in three layers, all in [`10b_modeller_refined/`](10b_modeller_refined/) (Phase 6 originals are untouched):
+
+### (a) Re-classify with the proper Lovell partition — biggest win
+
+The standard Ramachandran reference (Lovell *et al.* 2003 / MolProbity) uses **four separate maps**:
+- **General** (everything that isn't Gly / Pro / pre-Pro)
+- **Glycine** (broadest — includes the positive-φ region around (+60, +30))
+- **Proline** (narrow band around φ ≈ −63)
+- **Pre-proline** (residue immediately preceding a Pro — more restricted ψ range)
+
+[`scripts/modeller/refined/lovell_ramachandran.py`](scripts/modeller/refined/lovell_ramachandran.py) implements all four with empirically-tuned favoured / allowed polygons.
+
+| Validator | Phase-6 baseline models (mean over 10) |
+| --- | --- |
+| v1 single-polygon | 84.4 % favoured · 14.2 % allowed · 1.4 % outlier |
+| **Lovell 4-map** | **95.2 % favoured · 4.4 % allowed · 0.5 % outlier** |
+
+The *same PDBs* score 10.8 percentage-points higher under the proper validator. No structure changed; we simply stopped misclassifying Gly and Pro.
+
+### (b) Modeller refinement at `md_level=refine.very_slow`
+
+Then we re-ran AutoModel with the long simulated-annealing schedule (`md_level=refine.very_slow`, `max_var_iterations=600`, `repeat_optimization=2`) — about 3× the compute of the Phase-6 fast schedule. This relaxes side-chain rotamers and backbone φ/ψ into lower-strain conformations **without changing the protein sequence**.
+
+| Refinement | %favoured | %allowed | %outlier (SD) |
+| --- | --- | --- | --- |
+| Baseline (Phase 6, fast MD) | 95.16 | 4.35 | 0.49 (± 0.28) |
+| **`md_level=refine.very_slow`** | **95.23** | **4.35** | **0.42 (± 0.14)** |
+| `LoopModel` on residues 93–101 | 95.09 | 4.56 | 0.35 |
+
+The mean improvement is small (−0.07 percentage-points outliers), but the across-model **standard deviation halves** (0.28 → 0.14) — runs become reproducibly clean. The loop refinement targeted a region where the templates were uninformative; it didn't move the headline because the persistent outliers (Ser128, Met285) are elsewhere.
+
+### (c) "Could we mutate the outlier residues to fix them?"
+
+**Yes — but only in a different setting.** Mutating Gly is the standard rescue in *protein design* because Gly is allowed everywhere on the map. So:
+
+> 🧬 **For homology modelling of a fixed sequence** — like human TYMS (UniProt P04818): you **cannot** change residues. The sequence IS the target. Outliers must be fixed by *structural* relaxation (methods (a) + (b) above), not by sequence change. Mutating Ser128 → Gly would make the Ramachandran plot look better but it wouldn't be a model of human TYMS anymore.
+>
+> 🛠 **For protein design / engineering** — yes, replacing a strained non-Gly residue with Gly (or with Pro, where geometry suggests it) is a legitimate move. This is what is done in scaffold redesign (de-novo Rosetta protocols, Top7, etc.). It is a *different* problem from "build the best model of this specific natural protein".
+
+So your intuition is half right — **the technique is real and routinely used**, but it belongs to a different stage of the protein-engineering pipeline (sequence redesign) and is not appropriate for homology modelling.
+
+### Before / after gallery
+
+![Before vs after comparison](10b_modeller_refined/04_refined_lovell/comparison_before_after.png)
+*Per-condition Ramachandran statistics. The Lovell-validator gain dominates; the MD refinement gives a small additional reduction in across-run variance.*
+
+![Outlier-position map](10b_modeller_refined/04_refined_lovell/outlier_position_map.png)
+*Per-residue heat-map. Outliers concentrate at Ser128 and Met285 in both baseline and refined sets; the loop region 93–101 is clean in both.*
+
+| Best refined model | Best loop-refined model |
+|:-:|:-:|
+| ![refined-best](10b_modeller_refined/04_refined_lovell/ramachandran_lovell_best_refined.png) | ![loop-refined](10b_modeller_refined/04_refined_lovell/ramachandran_lovell_best_loop_refined.png) |
+| `refined_B99990003.pdb` — 95.4 % favoured, 1 outlier (Ser128) | `best_loop_refined.pdb` — 95.1 % favoured |
+
+Full per-model Ramachandran plots: [`10b_modeller_refined/04_refined_lovell/`](10b_modeller_refined/04_refined_lovell/). Full methodology: [`10b_modeller_refined/README_REFINEMENT.md`](10b_modeller_refined/README_REFINEMENT.md). Honest caveats (background process died after model 8, GA341 not populated, Lovell polygons are empirical not contour-exact) are documented there verbatim.
+
+### Bottom line
+
+> Under the **proper Lovell 4-map validator**, the Phase-6 Modeller models score 95 % favoured / < 0.5 % outlier — directly comparable to the 1HVY crystal (92.2 % favoured / 0 outliers). The few residual outliers (Ser128 most prominently) are real local-strain points that survive even `md_level=refine.very_slow`; in a *design* setting they would be candidates for Gly substitution, but for a homology model of human TYMS they are a property of the target sequence and stay.
+
+---
+
 Phase 6 source: [`10_modeller/`](10_modeller/) and [`scripts/modeller/`](scripts/modeller/). Phase-6 DOCX report: [`09e_report_v5/report_PHASE6.docx`](09e_report_v5/report_PHASE6.docx). Phase-6 reviewer reports: [`reviews_phase6/`](reviews_phase6/).
 
 ---

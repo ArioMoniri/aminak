@@ -1,5 +1,5 @@
 label,n,favoured,allowed,outlier,favoured_pct,allowed_pct,outlier_pct,outlier_residues
-best_model,285,273,12,0,95.79,4.21,0.00,
+1HVY_crystal_A,283,261,22,0,92.23,7.77,0.00,
 target.B99990001,285,270,14,1,94.74,4.91,0.35,HIS278(prepro)
 target.B99990002,285,270,12,3,94.74,4.21,1.05,ASP22(general);SER128(general);MET285(general)
 target.B99990003,285,273,12,0,95.79,4.21,0.00,
@@ -10,3 +10,4 @@ target.B99990007,285,274,10,1,96.14,3.51,0.35,MET285(general)
 target.B99990008,285,271,12,2,95.09,4.21,0.70,ASN179(general);MET285(general)
 target.B99990009,285,271,13,1,95.09,4.56,0.35,MET285(general)
 target.B99990010,285,271,13,1,95.09,4.56,0.35,MET285(general)
+phase6_best_model,285,273,12,0,95.79,4.21,0.00,

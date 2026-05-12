@@ -296,6 +296,32 @@ Local Ramachandran (Biopython φ/ψ + hand-drawn favoured / allowed polygons). M
 
 ---
 
+## ⚡ Receptor charge audit & fix (Phase 6c)
+
+A strict structural-biology reviewer caught a numerical defect in the receptor PDBQT files used by Vina: the total receptor charge was **−307 e** (should be ≈ 0 for TYMS at pH 7.4), every Arg residue summed to **−1.06 e** (should be +1), every H atom carried zero charge. **None of these affected the Vina docking scores** because Vina's scoring function is electrostatics-free, but the PDBQT files could not be re-used for AD4 rescoring.
+
+The root cause: the original meeko prep had silently fallen back to `obabel -xr` (which writes no charges), and the v3 prep added Gasteiger fragments without merging non-polar H charges into their carrier carbons.
+
+The fix (`scripts/v5/pqr_to_pdbqt.py`):
+1. Run **PDB2PQR 3** with `--ff=AMBER --with-ph=7.4 --titration-state-method=propka` to assign proper AMBER ff14SB charges with PROPKA-corrected ionisation.
+2. Convert PQR → PDBQT preserving the per-atom charges and adding AutoDock atom types (`HD`, `N`, `NA`, `OA`, `A`, `C`, `SA`, `S`).
+3. Merge non-polar H charges into their carrier heavy atoms (the AD4 united-atom convention).
+4. **Hard-assert at build time**: `|total_q| < 5 e`, every ARG/LYS residue in `[+0.7, +1.3]`, every ASP/GLU in `[−1.3, −0.7]`. This is the gate the v3 audit's `max|q| > 0.05` check should have been.
+
+| Receptor | Total q | Arg mean | Lys mean | Asp mean | Glu mean | Assertion |
+| --- | --- | --- | --- | --- | --- | --- |
+| Before (v3 broken) | **−306.61 e** | −1.06 | (broken) | (broken) | (broken) | ❌ FAIL |
+| After (Phase 6c) | **−2.23 e** | **+1.00** | **+1.00** | **−1.00** | **−0.97** (1 residue dropped by PDB2PQR) | ✅ PASS |
+
+Apo and holo receptor PDBQTs in [`06e_docking_wt_v5/`](06e_docking_wt_v5/) are now physically correct; the originals are preserved as `*_BROKEN.pdbqt` in [`06f_receptor_fixed/`](06f_receptor_fixed/) for audit.
+
+**Important caveat:** the **Vina results in this repo are unchanged** by this fix because Vina ignores partial charges. The fix matters only if you want to:
+- Re-score with AD4 (which DOES use electrostatics)
+- Run electrostatic-aware analysis (APBS, MEAD, etc.)
+- Re-prepare a publication-quality figure with proper charge maps
+
+---
+
 ## 🧪 Phase 6b — Ramachandran optimisation (before vs after)
 
 The Phase-6 review flagged that the local Ramachandran validator over-counted outliers because it used a single hand-drawn polygon for all 20 amino acids. Glycine has a much wider allowed region (it has no side-chain steric constraints), and Proline is narrowly restricted (its 5-membered ring locks φ). Classifying both against the *general* polygon is wrong in opposite directions.

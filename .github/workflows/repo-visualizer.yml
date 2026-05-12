@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: githubocto/repo-visualizer@0.9.1
         with:
-          excluded_paths: ".venv,.git,__pycache__,logs,*.log,*.pdb,*.pdbqt,*.dcd,*.png,*.html,*.docx,*.pdf"
-          output_file: diagram.svg
+          excluded_paths: ".venv,.git,__pycache__,logs,*.log,*.pdb,*.pdbqt,*.dcd,*.docx,*.pdf"
+          output_file: docs/assets/repo-visualization.svg
           should_push: true
-          commit_message: "chore: refresh repo diagram.svg"
+          commit_message: "chore: refresh repo visualization svg"

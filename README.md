@@ -14,19 +14,71 @@ Phase 6 (Modeller homology modelling) is layered on top: 10 models from 3 templa
 
 ---
 
-## Pipeline workflow
+## 🧭 Pipeline workflow
 
-![Workflow](workflow_diagram_v3.png)
+Six phases, nine stages each in its own numbered subfolder, plus a sibling `10_modeller/` for the homology-modelling sub-pipeline. The diagram below is rendered live by GitHub's Mermaid support, so it always scales to the viewport and never clips.
 
-Six phases, nine stages each in its own numbered subfolder, plus a sibling `10_modeller/` for the homology-modelling sub-pipeline. Phase colours match the badges below.
+```mermaid
+flowchart TD
+    classDef discovery fill:#2b6f9c,stroke:#1f4f70,color:#fff
+    classDef prep      fill:#2f8a6f,stroke:#1f6452,color:#fff
+    classDef dock      fill:#caa44a,stroke:#a4842c,color:#1a1a1a
+    classDef mut       fill:#b8593c,stroke:#8a4128,color:#fff
+    classDef report    fill:#7e3b8a,stroke:#5d2864,color:#fff
+    classDef phase6    fill:#b9408a,stroke:#8a2b66,color:#fff
+    classDef anchor    fill:#1f3b5e,stroke:#11233d,color:#fff
+
+    START([🧬 <b>Pipeline Start</b><br/>Target: human TYMS - P04818, 313 aa, obligate homodimer<br/>5-FU drug target in colorectal cancer · PDB 1HVY · natural substrate dUMP]):::anchor
+
+    S1[<b>1 — MSA and JS Conservation</b><br/>≥10 verified TYMS orthologs - UniProt REST<br/>PfDHFR-TS trimmed to TS domain · MAFFT --auto<br/>JS divergence - Capra-Singh weighted window<br/>Exclude greater than 50pct gap columns from ranking]:::discovery
+    S2[<b>2 — Active Site</b><br/>UniProt features · PDBe binding-site graph API<br/>Intersect top-25pct conservation peaks - no force-augment<br/>Document dimer-interface residues - chain A vs B]:::discovery
+
+    S3[<b>3 — Dimer Prep - v5</b><br/>Keep chains A AND B - homodimer<br/>Preserve CME43 to CYS in place<br/>In-place reprotonation of crystal cofactor coords<br/>0.000 A heavy-atom drift, 0 protein clashes]:::prep
+    S4[<b>4 — Visualization</b><br/>Headless PyMOL 3.1.0 ray-traced 1600x1200:<br/>surface protein + sticks ligand · active-site closeup<br/>conservation cartoon · cavity<br/>labelled interacting residues · mutation site WT vs mutant overlay]:::prep
+
+    S5[<b>5 — Ligand Multi-Format</b><br/>dUMP from crystal - PDB, MOL2, SDF, PDBQT<br/>Gasteiger charges - Vina-ready<br/>Raltitrexed cofactor also prepared]:::dock
+    S6[<b>6 — WT Docking - x2</b><br/>Vina v1.2.7 · exhaustiveness 32-96 · box 18-22 cubed A · seed 42<br/>Condition A: apo - cofactor pocket empty<br/>Condition B: holo - raltitrexed retained<br/>WT redock RMSD 0.33 A - positive control]:::dock
+
+    S7[<b>7 — Mutagenesis x 2 conditions</b><br/>20 mutants: 8 Ala-scan + 7 chemically-opposite<br/>+ 5 doubles + 4 Arg-clamp probes - R50/R175/R176/R215<br/>+ 1 distant-surface control - T170A · G217W dropped on clash<br/>Lowest-strain rotamer + sculpt minimisation<br/>Identical box and seed → fair Δ comparison<br/>Viewer files: complex.pdb + top_pose.pdb per mutant per condition]:::mut
+
+    S8[<b>8 — Analysis</b><br/>Δ-Vina ranking - positive equals destabilising<br/>Residue x substitution heatmap · pose clustering<br/>Apo vs holo concordance - Pearson + Spearman<br/>Mutation-effect 2D map - chemistry x volume x ΔVina]:::report
+    S9[<b>9 — Report and 3D Viewers</b><br/>Jinja2 → HTML embedded PNG · WeasyPrint → PDF<br/>python-docx → DOCX with all caption fixes<br/>3Dmol.js per-complex interactive viewer - 86 pages<br/>GitHub Pages auto-deploy]:::report
+
+    P6[<b>Phase 6 — Modeller Homology Modelling</b><br/>Target chain → BLAST vs PDB → templates 30-95pct identity - educational less than 100pct<br/>ClustalW MSA → PIR → Modeller AutoModel x 10 models<br/>PyMOL pairwise + all-together overlay · Cα RMSD per model<br/>Local Ramachandran + DOPE per-residue · UCLA SAVES manual upload<br/>Best by RMSD: 0.367 A · Best by DOPE: -35775]:::phase6
+
+    OUT([📦 <b>Outputs</b><br/>report.html · report.pdf · report.docx · results_full.csv<br/>pipeline.log · 31+ ray-traced PNGs · 96 viewer HTMLs<br/>10 homology models · Ramachandran plots · cofactor provenance]):::anchor
+
+    START --> S1
+    START --> S2
+    S1 --> S2
+    S1 --> S3
+    S2 --> S4
+    S3 --> S5
+    S3 --> S6
+    S4 --> S6
+    S5 --> S6
+    S6 --> S7
+    S7 --> S8
+    S7 --> S9
+    S8 --> S9
+    S3 --> P6
+    S9 --> P6
+    S8 --> OUT
+    S9 --> OUT
+    P6 --> OUT
+```
+
+[Static PNG fallback for places that don't render Mermaid](workflow_diagram_v3.png).
 
 ---
 
-## Repository structure
+## 🗺️ Repo map
 
-![Repository structure (treemap)](repo_structure.png)
+The diagram below regenerates on every push to `main` ([repo-visualizer](https://github.com/githubocto/repo-visualizer) by [GitHub Next](https://githubnext.com/projects/repo-visualization/)). A schematic placeholder is committed to the repo so this image always renders, even before the workflow has run.
 
-A separate, auto-refreshed `diagram.svg` (rendered by [GitHub Next's repo-visualizer](https://github.com/githubocto/repo-visualizer) on every push to `main`) lives at the root once the action runs.
+<p align="center">
+  <a href="docs/assets/repo-visualization.svg"><img src="docs/assets/repo-visualization.svg" alt="aminak repo visualization" width="100%"/></a>
+</p>
 
 ---
 

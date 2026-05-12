@@ -17,6 +17,9 @@ jobs:
       - uses: githubocto/repo-visualizer@0.9.1
         with:
           excluded_paths: ".venv,.git,__pycache__,logs,*.log,*.pdb,*.pdbqt,*.dcd,*.docx,*.pdf"
-          output_file: docs/assets/repo-visualization.svg
+          # Write to a SEPARATE file — the README points at our clickable
+          # treemap SVG (docs/assets/repo-visualization.svg) and the Action's
+          # non-clickable circle-pack version is kept as an alternative view.
+          output_file: docs/assets/repo-circle-pack.svg
           should_push: true
-          commit_message: "chore: refresh repo visualization svg"
+          commit_message: "chore: refresh repo circle-pack svg"

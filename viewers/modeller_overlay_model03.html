@@ -33,17 +33,17 @@
  </div>
  <div class="controls">
   <strong>Toggle:</strong>
-  <button onclick="setCartoon()">Cartoons only</button>
-  <button onclick="setRibbon()">Ribbon</button>
-  <button onclick="setBackbone()">Cα trace</button>
-  <button onclick="zoomAll()">Zoom to fit</button>
-  <button onclick="spinOn()">Spin</button>
-  <button onclick="spinOff()">Stop spin</button>
+  <button onclick="window.setCartoon()">Cartoons only</button>
+  <button onclick="window.setRibbon()">Ribbon</button>
+  <button onclick="window.setBackbone()">Cα trace</button>
+  <button onclick="window.zoomAll()">Zoom to fit</button>
+  <button onclick="window.spinOn()">Spin</button>
+  <button onclick="window.spinOff()">Stop spin</button>
  </div>
 </div>
 <script>
-const viewer = $3Dmol.createViewer("viewer", {backgroundColor: "0x0c1116"});
-window._v = viewer;
+// Use window-bound viewer + functions so onclick handlers always resolve correctly.
+window._v = $3Dmol.createViewer("viewer", {backgroundColor: "0x0c1116"});
 const crystalText = `ATOM      1  N   PRO A  26     -14.335  21.198  -9.125  1.00 39.96           N  
 ATOM      2  CA  PRO A  26     -12.992  21.290  -8.496  1.00 39.18           C  
 ATOM      3  C   PRO A  26     -13.036  20.795  -7.047  1.00 37.71           C  
@@ -4699,29 +4699,35 @@ ATOM   2319  OXT VAL A 287      94.880  -6.317  36.844  1.00 97.17           O
 TER    2320      VAL A 287
 END
 `;
-viewer.addModel(crystalText, "pdb");   // model index 0 — crystal
-viewer.addModel(modelText, "pdb");     // model index 1 — Modeller model
+window._v.addModel(crystalText, "pdb");   // model index 0 — crystal
+window._v.addModel(modelText, "pdb");     // model index 1 — Modeller model
 
-function setCartoon() {
-  viewer.setStyle({model:0}, {cartoon: {color: '#d62895', opacity: 0.85}});
-  viewer.setStyle({model:1}, {cartoon: {color: '#2ca02c', opacity: 0.85}});
-  viewer.render();
+function _withV(fn) {
+  if (!window._v) { console.warn("3Dmol viewer not ready"); return; }
+  try { fn(window._v); } catch (e) { console.error("viewer error:", e); }
 }
-function setRibbon() {
-  viewer.setStyle({model:0}, {cartoon: {style:'ribbon', color:'#d62895'}});
-  viewer.setStyle({model:1}, {cartoon: {style:'ribbon', color:'#2ca02c'}});
-  viewer.render();
-}
-function setBackbone() {
-  viewer.setStyle({model:0}, {line: {color:'#d62895', linewidth:2.5}});
-  viewer.setStyle({model:1}, {line: {color:'#2ca02c', linewidth:2.5}});
-  viewer.render();
-}
-function zoomAll() { viewer.zoomTo(); viewer.zoom(0.9); viewer.render(); }
-function spinOn()  { viewer.spin(true); }
-function spinOff() { viewer.spin(false); }
-setCartoon();
-zoomAll();
-viewer.render();
+window.setCartoon = function() { _withV(function(v){
+  v.setStyle({model:0}, {cartoon: {color: '#d62895', opacity: 0.85}});
+  v.setStyle({model:1}, {cartoon: {color: '#2ca02c', opacity: 0.85}});
+  v.render();
+}); };
+window.setRibbon = function() { _withV(function(v){
+  v.setStyle({model:0}, {cartoon: {style:'ribbon', color:'#d62895'}});
+  v.setStyle({model:1}, {cartoon: {style:'ribbon', color:'#2ca02c'}});
+  v.render();
+}); };
+window.setBackbone = function() { _withV(function(v){
+  v.setStyle({model:0}, {line: {color:'#d62895', linewidth:2.5}});
+  v.setStyle({model:1}, {line: {color:'#2ca02c', linewidth:2.5}});
+  v.render();
+}); };
+window.zoomAll = function() { _withV(function(v){ v.zoomTo(); v.zoom(0.9); v.render(); }); };
+window.spinOn  = function() { _withV(function(v){ v.spin(true); }); };
+window.spinOff = function() { _withV(function(v){ v.spin(false); }); };
+
+// Initial render: cartoons + zoom to fit.
+window.setCartoon();
+window.zoomAll();
+window._v.render();
 </script>
 </body></html>

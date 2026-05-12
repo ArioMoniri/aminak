@@ -98,6 +98,8 @@ The protein–ligand complex on this page rotates in place; the click-through bu
 
 A complete index of 96 interactive viewer pages is at **[ariomoniri.github.io/aminak/viewers/](https://ariomoniri.github.io/aminak/viewers/index.html)**. In every viewer the protein is rendered as cartoon + semi-transparent surface, the ligand as fat magenta sticks, active-site residues as labelled sticks; catalytic Cys195 / His196 / Arg175 / Arg176 / Arg215 / Asn226 carry permanent text labels.
 
+> **🌀 Note on the rotating GIFs above.** The animated thumbnails show **protein + dUMP only** (cofactor is hidden) to keep the rotation visually clean. Earlier versions left raltitrexed cyan sticks visible, and the cofactor's long polyglutamate tail extended past the protein surface, producing the "tentacles" / disrupted look. The **static** reference renders below (and the **3Dmol viewer** click-throughs) show the full holo complex with all three ligands. See the "Why two ligands?" callout for the full ligand inventory.
+
 > **❓ "Why do I see two ligands in the holo views?"** Each holo complex has **three** ligand molecules, by design and consistent with the 1HVY crystal:
 > - **dUMP** (residue name `UMP`, magenta sticks, chain X) — the substrate we docked. **One copy**, placed in the chain-A active site.
 > - **Raltitrexed** (residue name `D16`, cyan sticks) — the antifolate cofactor that occupies the methylene-THF pocket. **Two copies, one per chain**, because TYMS is an obligate homodimer and both subunits' cofactor pockets are occupied in 1HVY.
@@ -329,6 +331,18 @@ Apo and holo receptor PDBQTs in [`06e_docking_wt_v5/`](06e_docking_wt_v5/) are n
 ---
 
 ## 🧪 Phase 6b — Ramachandran optimisation (before vs after)
+
+> **TL;DR — what we did and why it worked.** The Phase-6 models initially scored only **83.5–85.3 % Ramachandran-favoured** under the validator. Two real causes were diagnosed and three fixes applied. Stack effect:
+> | Change | Best model %favoured | Notes |
+> | --- | --- | --- |
+> | Phase-6 baseline (single hand-drawn polygon, fast MD) | 83.5–85.3 | The validator was the dominant problem — it misclassified Gly (which has a much wider allowed region) and Pro (which is narrowly restricted) against the same polygon as everything else. |
+> | + Proper **Lovell 4-map validator** (general / Gly / Pro / pre-Pro) | **94.7–96.1** | *Same PDBs.* No structure change. Pure scoring fix. |
+> | + Modeller AutoModel @ `md_level=refine.very_slow`, `max_var_iterations=600`, `repeat_optimization=2` (≈ 3× more MD-SA) | 95.16 → 95.23 (mean) | Side-chain rotamers + φ/ψ relax. SD halves (0.28 → 0.14), so runs become reproducibly clean. |
+> | + Modeller `LoopModel` on residues 93–101 (the loop where templates disagreed) | 95.09 | Local re-sampling of an uncertain region. |
+> | **Final best model** (`refined_B99990003.pdb`) | **95.4** | 1 outlier residue (Ser128). |
+> | Reference: **1HVY crystal chain A** under the same Lovell validator | 92.2 | i.e. our models *match or beat the experimental crystal* under this scheme. |
+>
+> **Did we mutate outlier residues?** Some users ask if we should substitute outliers to Gly (which is allowed everywhere on the map) to "fix" them. **No** — that would be appropriate for *protein design* (Gly is the classic rescue residue), but for *homology modelling of a fixed target sequence* (human TYMS) the sequence is the answer key. Mutating Ser128 → Gly would improve the plot but the result would no longer be a model of human TYMS. Outliers are fixed by structural relaxation, not sequence change.
 
 The Phase-6 review flagged that the local Ramachandran validator over-counted outliers because it used a single hand-drawn polygon for all 20 amino acids. Glycine has a much wider allowed region (it has no side-chain steric constraints), and Proline is narrowly restricted (its 5-membered ring locks φ). Classifying both against the *general* polygon is wrong in opposite directions.
 

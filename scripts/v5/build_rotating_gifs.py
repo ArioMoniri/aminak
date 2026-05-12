@@ -55,11 +55,11 @@ color magenta, lig and elem c
 util.cnc lig
 set stick_radius, 0.28, lig
 
-select cof, resn D16
-show sticks, cof
-color cyan, cof and elem c
-util.cnc cof
-set stick_radius, 0.16, cof
+# Hide cofactor (raltitrexed) — keeping it visible during rotation made
+# the cofactor's polyglutamylated tail poke through the protein surface,
+# producing the "disrupted" look. Cofactor presence is documented in the
+# README and static renders; the GIFs focus on protein + substrate.
+hide everything, resn D16
 
 select active, chain A and resi 50+80+109+135+175+176+195+196+214+215+217+218+225+226+258 and polymer
 show sticks, active

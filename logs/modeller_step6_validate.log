@@ -1,0 +1,48 @@
+2026-05-12 15:01:02 [INFO] Validating 10 models
+2026-05-12 15:01:02 [INFO] Rama model 01: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:02 [WARNING] per_residue_dope failed for target.B99990001.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:02 [WARNING] No per-residue DOPE for target.B99990001.pdb
+2026-05-12 15:01:02 [INFO] Rama model 02: favoured=84.6% allowed=12.6% outlier=2.8%
+2026-05-12 15:01:02 [WARNING] per_residue_dope failed for target.B99990002.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:02 [WARNING] No per-residue DOPE for target.B99990002.pdb
+2026-05-12 15:01:02 [INFO] Rama model 03: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:03 [WARNING] per_residue_dope failed for target.B99990003.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [WARNING] No per-residue DOPE for target.B99990003.pdb
+2026-05-12 15:01:03 [INFO] Rama model 04: favoured=85.3% allowed=13.3% outlier=1.4%
+2026-05-12 15:01:03 [WARNING] per_residue_dope failed for target.B99990004.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [WARNING] No per-residue DOPE for target.B99990004.pdb
+2026-05-12 15:01:03 [INFO] Rama model 05: favoured=84.6% allowed=12.6% outlier=2.8%
+2026-05-12 15:01:03 [WARNING] per_residue_dope failed for target.B99990005.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [WARNING] No per-residue DOPE for target.B99990005.pdb
+2026-05-12 15:01:03 [INFO] Rama model 06: favoured=84.2% allowed=13.3% outlier=2.5%
+2026-05-12 15:01:03 [WARNING] per_residue_dope failed for target.B99990006.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [WARNING] No per-residue DOPE for target.B99990006.pdb
+2026-05-12 15:01:03 [INFO] Rama model 07: favoured=83.5% allowed=14.4% outlier=2.1%
+2026-05-12 15:01:03 [WARNING] per_residue_dope failed for target.B99990007.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [WARNING] No per-residue DOPE for target.B99990007.pdb
+2026-05-12 15:01:03 [INFO] Rama model 08: favoured=83.9% allowed=13.3% outlier=2.8%
+2026-05-12 15:01:03 [WARNING] per_residue_dope failed for target.B99990008.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [WARNING] No per-residue DOPE for target.B99990008.pdb
+2026-05-12 15:01:04 [INFO] Rama model 09: favoured=84.9% allowed=12.6% outlier=2.5%
+2026-05-12 15:01:04 [WARNING] per_residue_dope failed for target.B99990009.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:04 [WARNING] No per-residue DOPE for target.B99990009.pdb
+2026-05-12 15:01:04 [INFO] Rama model 10: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:04 [WARNING] per_residue_dope failed for target.B99990010.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:04 [WARNING] No per-residue DOPE for target.B99990010.pdb
+2026-05-12 15:01:04 [INFO] Wrote /Users/ario/conserved_site_project/10_modeller/06_validation/ramachandran_stats.csv
+2026-05-12 15:01:04 [INFO] Wrote /Users/ario/conserved_site_project/10_modeller/06_validation/SAVES_MANUAL.md
+2026-05-12 15:01:04 [INFO] STEP 6 OK
+2026-05-12 15:01:55 [INFO] Validating 10 models
+2026-05-12 15:01:56 [INFO] Rama model 01: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:57 [INFO] Rama model 02: favoured=84.6% allowed=12.6% outlier=2.8%
+2026-05-12 15:01:58 [INFO] Rama model 03: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:59 [INFO] Rama model 04: favoured=85.3% allowed=13.3% outlier=1.4%
+2026-05-12 15:02:00 [INFO] Rama model 05: favoured=84.6% allowed=12.6% outlier=2.8%
+2026-05-12 15:02:01 [INFO] Rama model 06: favoured=84.2% allowed=13.3% outlier=2.5%
+2026-05-12 15:02:02 [INFO] Rama model 07: favoured=83.5% allowed=14.4% outlier=2.1%
+2026-05-12 15:02:03 [INFO] Rama model 08: favoured=83.9% allowed=13.3% outlier=2.8%
+2026-05-12 15:02:04 [INFO] Rama model 09: favoured=84.9% allowed=12.6% outlier=2.5%
+2026-05-12 15:02:05 [INFO] Rama model 10: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:02:06 [INFO] Wrote /Users/ario/conserved_site_project/10_modeller/06_validation/ramachandran_stats.csv
+2026-05-12 15:02:06 [INFO] Wrote /Users/ario/conserved_site_project/10_modeller/06_validation/SAVES_MANUAL.md
+2026-05-12 15:02:06 [INFO] STEP 6 OK

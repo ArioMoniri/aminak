@@ -1,0 +1,22 @@
+# GitHub Action: regenerate diagram.svg via repo-visualizer on every push to main.
+# Authored by GitHub Next: https://github.com/githubocto/repo-visualizer
+name: Repo visualizer
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  visualize:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: githubocto/repo-visualizer@0.9.1
+        with:
+          excluded_paths: ".venv,.git,__pycache__,logs,*.log,*.pdb,*.pdbqt,*.dcd,*.png,*.html,*.docx,*.pdf"
+          output_file: diagram.svg
+          should_push: true
+          commit_message: "chore: refresh repo diagram.svg"

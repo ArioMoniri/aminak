@@ -73,6 +73,12 @@ def render_html(title: str, pdb_path: pathlib.Path, *,
  .legend {{ font-size: 11.5px; color:#cad5e6; padding: 6px 12px; border-top:1px solid #283344; }}
  .legend span {{ display:inline-block; padding: 2px 8px; border-radius: 4px;
                 margin: 2px 4px 2px 0; }}
+ .controls {{ padding: 6px 12px; border-top:1px solid #283344;
+              font-size: 12px; color:#cad5e6; }}
+ .controls button {{ background:#283b53; color:#cfe6ff; border:1px solid #3a4d65;
+                     border-radius: 4px; padding: 4px 10px; margin: 2px 4px 2px 0;
+                     cursor: pointer; font-size: 11.5px; }}
+ .controls button:hover {{ background:#3a4d65; }}
  .nav a {{ color:#9ad5ff; margin-right: 12px; font-size: 12px; text-decoration:none; }}
  .nav a:hover {{ text-decoration:underline; }}
 </style>
@@ -86,25 +92,53 @@ def render_html(title: str, pdb_path: pathlib.Path, *,
 <div class="panel">
  <div id="viewer" style="width:100%; max-width:{width}px; height:{height}px; margin:auto; position:relative;"></div>
  <div class="legend">
-  <span style="background:#1d3a5a;color:#cfe6ff;">Receptor cartoon</span>
-  <span style="background:#5a3a1d;color:#ffe6cf;">Active-site sticks</span>
-  <span style="background:#3b1d5a;color:#dccfff;">dUMP (UMP)</span>
-  {('<span style="background:#1d5a4a;color:#cfffe6;">Cofactor (D16/raltitrexed)</span>' if cof_resn else '')}
+  <span style="background:#1d3a5a;color:#cfe6ff;">Receptor cartoon + transparent surface</span>
+  <span style="background:#5a3a1d;color:#ffe6cf;">Active-site sticks (yellow C)</span>
+  <span style="background:#3b1d5a;color:#dccfff;">dUMP (UMP — magenta sticks)</span>
+  {('<span style="background:#1d5a4a;color:#cfffe6;">Cofactor (D16/raltitrexed — cyan sticks)</span>' if cof_resn else '')}
+ </div>
+ <div class="controls">
+  <strong>Toggle:</strong>
+  <button onclick="window._v.removeAllSurfaces(); window._v.render();">Hide surface</button>
+  <button onclick="window._v.addSurface($3Dmol.SurfaceType.MS,{{opacity:0.30,color:'lightgrey'}},{{polymer:true}}); window._v.render();">Show surface</button>
+  <button onclick="window._v.setStyle({{polymer:true}},{{cartoon:{{colorscheme:'spectrum',opacity:1.0}}}}); window._v.render();">Cartoon only</button>
+  <button onclick="window._v.zoomTo({{resn:'{lig_resn}'}}); window._v.zoom(0.85); window._v.render();">Zoom to ligand</button>
+  <button onclick="window._v.spin(true);">Spin</button>
+  <button onclick="window._v.spin(false);">Stop spin</button>
  </div>
 </div>
 <script>
 const pdbText = `{pdb_js}`;
 const viewer = $3Dmol.createViewer("viewer", {{backgroundColor: "0x0c1116"}});
+window._v = viewer;   // expose for the toggle buttons
 viewer.addModel(pdbText, "pdb");
-// Receptor cartoon
-viewer.setStyle({{}}, {{cartoon: {{colorscheme: 'spectrum', opacity: 0.80}}}});
-// Active-site residues coloured by chain
+
+// 1. Receptor: cartoon (always visible) + semi-transparent surface (only when toggle is on)
+viewer.setStyle({{polymer: true}}, {{cartoon: {{colorscheme: 'spectrum', opacity: 0.85}}}});
+viewer.addSurface($3Dmol.SurfaceType.MS,
+                  {{opacity: 0.30, color: 'lightgrey'}},
+                  {{polymer: true}});
+
+// 2. Active-site residues — sticks, amino-acid colouring
 const activeResi = [50,80,87,109,135,170,175,176,195,196,214,215,217,218,221,225,226,258];
-viewer.setStyle({{resi: activeResi}}, {{stick: {{colorscheme: 'amino', radius: 0.18}},
-                                       cartoon: {{colorscheme: 'spectrum'}}}});
-// Ligand (dUMP)
-viewer.setStyle({{resn: '{lig_resn}'}}, {{stick: {{colorscheme: 'magentaCarbon', radius: 0.22}}}});
+viewer.setStyle({{resi: activeResi, polymer: true}}, {{stick: {{colorscheme: 'amino', radius: 0.18}},
+                                                      cartoon: {{colorscheme: 'spectrum'}}}});
+// Label active-site residues by Cα
+viewer.addStyle({{resi: activeResi, atom: 'CA'}}, {{}});
+// (3Dmol auto-labels via clicker on Cα; explicit labels on a handful of catalytic residues:)
+const catalyticResi = [195, 196, 175, 176, 215, 226];
+catalyticResi.forEach(function(r){{
+  viewer.addLabel(String(r), {{
+     fontSize: 11, fontColor: 'white', backgroundColor: '0x202830',
+     backgroundOpacity: 0.75, alignment: 'center'
+  }}, {{resi: r, atom: 'CA', polymer: true}});
+}});
+
+// 3. Ligand (dUMP) — fat magenta sticks (the user's feature request)
+viewer.setStyle({{resn: '{lig_resn}'}}, {{stick: {{colorscheme: 'magentaCarbon', radius: 0.30}}}});
 {cof_block}
+
+// 4. Frame on the ligand
 viewer.zoomTo({{resn: '{lig_resn}'}});
 viewer.zoom(0.85);
 viewer.render();
@@ -117,6 +151,30 @@ def make_index(entries: list[tuple[str, str, str]]):
     """entries: list of (group, label, href)"""
     today = datetime.date.today().isoformat()
     cards = []
+
+    # Featured viewers (highlighted at top)
+    FEATURED_HREFS = [
+        ("WT (apo) + dUMP — reference",                     "wt_apo_complex.html"),
+        ("WT (holo) + dUMP — reference",                    "wt_holo_complex.html"),
+        ("R215A_N226A holo — top destabiliser",             "R215A_N226A_holo_complex.html"),
+        ("H196A holo — catalytic dyad probe",               "H196A_holo_complex.html"),
+        ("R175E_R176E holo — phosphate clamp inversion",    "R175E_R176E_holo_complex.html"),
+        ("T170A holo — distant-surface negative control",   "T170A_holo_complex.html"),
+        ("Modeller best model (by DOPE)",                   "modeller_model03.html"),
+        ("Modeller best model (by RMSD vs crystal)",        "modeller_model10.html"),
+    ]
+    feat_cards = []
+    for label, href in FEATURED_HREFS:
+        feat_cards.append(
+            f'<a class="featured-card" href="{html.escape(href)}">'
+            f'<div class="featured-title">{html.escape(label)}</div>'
+            f'<div class="featured-href">{html.escape(href)}</div></a>'
+        )
+    cards.append(
+        '<section><h2 style="color:#ffd479;">★ Featured viewers</h2>'
+        '<div class="featured-grid">' + "".join(feat_cards) + '</div></section>'
+    )
+
     by_group: dict[str, list] = {}
     for grp, label, href in entries:
         by_group.setdefault(grp, []).append((label, href))
@@ -142,6 +200,15 @@ def make_index(entries: list[tuple[str, str, str]]):
  li {{ margin: 4px 0; break-inside: avoid; }}
  a  {{ color:#cfe6ff; text-decoration: none; font-size: 13.5px; }}
  a:hover {{ text-decoration: underline; }}
+ .featured-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                   gap: 12px; margin-top: 8px; }}
+ .featured-card {{ background:#172230; border:1px solid #2c4866; border-radius: 8px;
+                   padding: 12px 14px; text-decoration:none; transition: all 0.15s;
+                   display:block; }}
+ .featured-card:hover {{ border-color:#ffd479; transform: translateY(-1px);
+                          background:#1c2a3c; }}
+ .featured-title {{ color:#ffd479; font-weight:600; font-size: 13.5px; margin-bottom:3px; }}
+ .featured-href  {{ color:#7a8da3; font-size: 11.5px; font-family: ui-monospace, monospace; }}
  .note {{ background:#15202b; border-left: 3px solid #9ad5ff;
           padding: 10px 14px; font-size: 13px; line-height: 1.5;
           color: #cad5e6; border-radius: 0 6px 6px 0; }}

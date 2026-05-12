@@ -1336,3 +1336,218 @@ mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
 [2026-05-12 14:21:14] [V5] STAGE9: wrote /Users/ario/conserved_site_project/09e_report_v5/report.pdf (256701 bytes)
 [2026-05-12 14:21:14] [V5] STAGE9: wrote /Users/ario/conserved_site_project/09e_report_v5/report.docx (202051 bytes)
 [2026-05-12 14:21:14] [V5] STAGE9: Stage 9 v5 DONE
+2026-05-12 14:47:31 [MODELLER:step1_clean_pdb] INFO Reading /Users/ario/conserved_site_project/03_structure/1hvy.pdb
+2026-05-12 14:47:31 [MODELLER:step1_clean_pdb] INFO Wrote chain-A-only PDB: /Users/ario/conserved_site_project/10_modeller/01_clean_pdb/1hvy_chainA.pdb (187928 bytes)
+2026-05-12 14:47:31 [MODELLER:step1_clean_pdb] INFO Assertion passed: only chain A present in output PDB
+2026-05-12 14:47:31 [MODELLER:step1_clean_pdb] INFO Extracted chain-A sequence length: 287
+2026-05-12 14:47:31 [MODELLER:step1_clean_pdb] INFO Wrote FASTA: /Users/ario/conserved_site_project/10_modeller/01_clean_pdb/1hvy_chainA.fasta
+2026-05-12 14:47:31 [MODELLER:step1_clean_pdb] INFO Identity vs P04818: 91.69% (matches=287 / canonical=313)
+2026-05-12 14:47:31 [MODELLER:step1_clean_pdb] INFO STEP 1 OK
+2026-05-12 14:48:32 [MODELLER:step2_blast] INFO Query length: 287
+2026-05-12 14:48:32 [MODELLER:step2_blast] INFO Running NCBIWWW.qblast on pdb DB (this may take 1-3 minutes)...
+2026-05-12 14:48:36 [MODELLER:step2_blast] INFO BLAST result XML written: /Users/ario/conserved_site_project/10_modeller/02_blast/blast.xml (61927 bytes)
+2026-05-12 14:48:36 [MODELLER:step2_blast] INFO Parsed 29 BLAST hits
+2026-05-12 14:48:36 [MODELLER:step2_blast] INFO Wrote /Users/ario/conserved_site_project/10_modeller/02_blast/blast.tsv
+2026-05-12 14:48:36 [MODELLER:step2_blast] INFO After identity/coverage filter: 0 candidates
+2026-05-12 14:48:36 [MODELLER:step2_blast] WARNING Only 0 templates selected (wanted 3)
+2026-05-12 14:48:36 [MODELLER:step2_blast] ERROR No usable templates — abort
+2026-05-12 14:49:07 [MODELLER:step2_blast] INFO Query length: 287
+2026-05-12 14:49:07 [MODELLER:step2_blast] INFO Running NCBIWWW.qblast on pdb DB (this may take 1-3 minutes)...
+2026-05-12 14:50:10 [MODELLER:step2_blast] INFO BLAST result XML written: /Users/ario/conserved_site_project/10_modeller/02_blast/blast.xml (342768 bytes)
+2026-05-12 14:50:10 [MODELLER:step2_blast] INFO Parsed 167 BLAST hits
+2026-05-12 14:50:10 [MODELLER:step2_blast] INFO Wrote /Users/ario/conserved_site_project/10_modeller/02_blast/blast.tsv
+2026-05-12 14:50:10 [MODELLER:step2_blast] INFO After identity/coverage filter: 100 candidates
+2026-05-12 14:50:10 [MODELLER:step2_blast] INFO Downloading https://files.rcsb.org/download/3IHI.pdb
+2026-05-12 14:50:11 [MODELLER:step2_blast] INFO Selected 3IHI_A identity=92.71% cov=1.00 res=1.94
+2026-05-12 14:50:12 [MODELLER:step2_blast] INFO Downloading https://files.rcsb.org/download/1RTS.pdb
+2026-05-12 14:50:13 [MODELLER:step2_blast] INFO Skip 1RTS: resolution 3.30 > 2.50
+2026-05-12 14:50:13 [MODELLER:step2_blast] INFO Downloading https://files.rcsb.org/download/6K7Q.pdb
+2026-05-12 14:50:16 [MODELLER:step2_blast] INFO Selected 6K7Q_A identity=75.96% cov=1.00 res=2.27
+2026-05-12 14:50:17 [MODELLER:step2_blast] INFO Downloading https://files.rcsb.org/download/5H39.pdb
+2026-05-12 14:50:18 [MODELLER:step2_blast] INFO Selected 5H39_A identity=72.28% cov=0.99 res=2.0
+2026-05-12 14:50:18 [MODELLER:step2_blast] INFO Wrote /Users/ario/conserved_site_project/10_modeller/02_blast/selected_templates.json
+2026-05-12 14:50:18 [MODELLER:step2_blast] INFO STEP 2 OK: 3 templates selected
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO Templates: [('3IHI', 'A'), ('6K7Q', 'A'), ('5H39', 'A')]
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO Target residue range 26-313 (len=287)
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO Template 3IHI_A: range 21-300, len=280
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO Template 6K7Q_A: range 1-285, len=272
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO Template 5H39_A: range 51-335, len=285
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO Wrote /Users/ario/conserved_site_project/10_modeller/03_alignment/input.fasta (4 records)
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO Running ClustalW: /opt/homebrew/bin/clustalw -INFILE=/Users/ario/conserved_site_project/10_modeller/03_alignment/input.fasta -ALIGN -OUTFILE=/Users/ario/conserved_site_project/10_modeller/03_alignment/aligned.aln -OUTPUT=CLUSTAL
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO ClustalW done; written /Users/ario/conserved_site_project/10_modeller/03_alignment/aligned.aln (1916 bytes)
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO Aligned columns: 289
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO Wrote /Users/ario/conserved_site_project/10_modeller/03_alignment/alignment.ali and /Users/ario/conserved_site_project/10_modeller/03_alignment/alignment.pir
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO knowns: ['3IHI_A', '6K7Q_A', '5H39_A']
+2026-05-12 14:51:09 [MODELLER:step3_clustalw_pir] INFO STEP 3 OK
+2026-05-12 14:52:00 [MODELLER:step4_run_modeller] INFO Starting AutoModel.make()  knowns=['3IHI_A', '6K7Q_A', '5H39_A']  models=1..10
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO Templates: [('3IHI', 'A'), ('6K7Q', 'A'), ('5H39', 'A')]
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO Target residue range 26-313 (len=287)
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO Template 3IHI_A: range 21-300, len=280
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO Template 6K7Q_A: range 1-285, len=272
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO Template 5H39_A: range 51-335, len=285
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO Wrote /Users/ario/conserved_site_project/10_modeller/03_alignment/input.fasta (4 records)
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO Running ClustalW: /opt/homebrew/bin/clustalw -INFILE=/Users/ario/conserved_site_project/10_modeller/03_alignment/input.fasta -ALIGN -OUTFILE=/Users/ario/conserved_site_project/10_modeller/03_alignment/aligned.aln -OUTPUT=CLUSTAL
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO ClustalW done; written /Users/ario/conserved_site_project/10_modeller/03_alignment/aligned.aln (1916 bytes)
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO Aligned columns: 289
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO Wrote /Users/ario/conserved_site_project/10_modeller/03_alignment/alignment.ali and /Users/ario/conserved_site_project/10_modeller/03_alignment/alignment.pir
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO knowns: ['3IHI_A', '6K7Q_A', '5H39_A']
+2026-05-12 14:52:18 [MODELLER:step3_clustalw_pir] INFO STEP 3 OK
+2026-05-12 14:52:22 [MODELLER:step4_run_modeller] INFO Starting AutoModel.make()  knowns=['3IHI_A', '6K7Q_A', '5H39_A']  models=1..10
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO AutoModel.make() done
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990001.pdb  molpdf=10027.02734375  DOPE=-35404.66796875  GA341=[1.0, 0.3831549882888794, -253.2482147216797, -20.819490432739258, -10.076574325561523, -8.025050163269043, -8.030832290649414, -11.766022682189941]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990002.pdb  molpdf=10202.59375  DOPE=-35644.9140625  GA341=[1.0, 0.3764180839061737, -236.084228515625, -19.803714752197266, -9.411252975463867, -7.582737922668457, -7.718956470489502, -10.278803825378418]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990003.pdb  molpdf=9911.490234375  DOPE=-35775.74609375  GA341=[1.0, 0.38793906569480896, -247.85536193847656, -19.281057357788086, -9.591482162475586, -7.928945541381836, -7.642152309417725, -10.287302017211914]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990004.pdb  molpdf=10178.56640625  DOPE=-35409.90234375  GA341=[1.0, 0.3819543719291687, -240.0302276611328, -19.31285285949707, -9.378911018371582, -7.761666774749756, -7.824333667755127, -10.470483779907227]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990005.pdb  molpdf=9964.7216796875  DOPE=-35499.63671875  GA341=[1.0, 0.36837038397789, -252.65988159179688, -20.34021759033203, -9.868331909179688, -7.9442291259765625, -7.724201679229736, -10.566646575927734]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990006.pdb  molpdf=9941.2529296875  DOPE=-35314.4375  GA341=[1.0, 0.3788973391056061, -231.68470764160156, -15.742748260498047, -8.289785385131836, -7.572717189788818, -6.6785478591918945, -9.584381103515625]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990007.pdb  molpdf=9961.4970703125  DOPE=-35548.33203125  GA341=[1.0, 0.3840775787830353, -229.08041381835938, -15.5330228805542, -8.262154579162598, -7.672802448272705, -6.559135437011719, -9.576098442077637]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990008.pdb  molpdf=10003.2421875  DOPE=-35458.8515625  GA341=[1.0, 0.3811359703540802, -229.28225708007812, -15.445743560791016, -8.281309127807617, -7.538204669952393, -6.676283836364746, -9.534928321838379]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990009.pdb  molpdf=9962.1474609375  DOPE=-35383.765625  GA341=[1.0, 0.3745937645435333, -243.01092529296875, -18.727495193481445, -9.350387573242188, -7.8331170082092285, -7.385254859924316, -10.114384651184082]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Model target.B99990010.pdb  molpdf=9890.28125  DOPE=-35390.81640625  GA341=[1.0, 0.3856862187385559, -249.62246704101562, -16.947376251220703, -8.938376426696777, -7.7811055183410645, -6.982367992401123, -9.884419441223145]
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Moved 10 models to /Users/ario/conserved_site_project/10_modeller/04_modeller_run/models
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Wrote /Users/ario/conserved_site_project/10_modeller/04_modeller_run/scores.csv
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO Best (by DOPE) -> target.B99990003.pdb (copied to best_model.pdb)
+2026-05-12 14:54:05 [MODELLER:step4_run_modeller] INFO STEP 4 OK: 10 models
+2026-05-12 14:55:12 [MODELLER:step5_pymol_compare] INFO Comparing 10 models against 1hvy_chainA.pdb
+2026-05-12 14:55:12 [MODELLER:step5_pymol_compare] INFO PyMOL [pair01]
+2026-05-12 14:55:13 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 1: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model01.json'
+2026-05-12 14:55:13 [MODELLER:step5_pymol_compare] INFO Model 01  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:13 [MODELLER:step5_pymol_compare] INFO PyMOL [heat01]
+2026-05-12 14:55:13 [MODELLER:step5_pymol_compare] INFO PyMOL [pair02]
+2026-05-12 14:55:14 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 2: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model02.json'
+2026-05-12 14:55:14 [MODELLER:step5_pymol_compare] INFO Model 02  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:14 [MODELLER:step5_pymol_compare] INFO PyMOL [heat02]
+2026-05-12 14:55:14 [MODELLER:step5_pymol_compare] INFO PyMOL [pair03]
+2026-05-12 14:55:14 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 3: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model03.json'
+2026-05-12 14:55:14 [MODELLER:step5_pymol_compare] INFO Model 03  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:14 [MODELLER:step5_pymol_compare] INFO PyMOL [heat03]
+2026-05-12 14:55:14 [MODELLER:step5_pymol_compare] INFO PyMOL [pair04]
+2026-05-12 14:55:15 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 4: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model04.json'
+2026-05-12 14:55:15 [MODELLER:step5_pymol_compare] INFO Model 04  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:15 [MODELLER:step5_pymol_compare] INFO PyMOL [heat04]
+2026-05-12 14:55:15 [MODELLER:step5_pymol_compare] INFO PyMOL [pair05]
+2026-05-12 14:55:15 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 5: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model05.json'
+2026-05-12 14:55:15 [MODELLER:step5_pymol_compare] INFO Model 05  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:15 [MODELLER:step5_pymol_compare] INFO PyMOL [heat05]
+2026-05-12 14:55:16 [MODELLER:step5_pymol_compare] INFO PyMOL [pair06]
+2026-05-12 14:55:16 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 6: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model06.json'
+2026-05-12 14:55:16 [MODELLER:step5_pymol_compare] INFO Model 06  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:16 [MODELLER:step5_pymol_compare] INFO PyMOL [heat06]
+2026-05-12 14:55:16 [MODELLER:step5_pymol_compare] INFO PyMOL [pair07]
+2026-05-12 14:55:17 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 7: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model07.json'
+2026-05-12 14:55:17 [MODELLER:step5_pymol_compare] INFO Model 07  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:17 [MODELLER:step5_pymol_compare] INFO PyMOL [heat07]
+2026-05-12 14:55:17 [MODELLER:step5_pymol_compare] INFO PyMOL [pair08]
+2026-05-12 14:55:17 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 8: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model08.json'
+2026-05-12 14:55:17 [MODELLER:step5_pymol_compare] INFO Model 08  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:17 [MODELLER:step5_pymol_compare] INFO PyMOL [heat08]
+2026-05-12 14:55:17 [MODELLER:step5_pymol_compare] INFO PyMOL [pair09]
+2026-05-12 14:55:18 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 9: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model09.json'
+2026-05-12 14:55:18 [MODELLER:step5_pymol_compare] INFO Model 09  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:18 [MODELLER:step5_pymol_compare] INFO PyMOL [heat09]
+2026-05-12 14:55:18 [MODELLER:step5_pymol_compare] INFO PyMOL [pair10]
+2026-05-12 14:55:19 [MODELLER:step5_pymol_compare] WARNING RMSD parse failed for 10: [Errno 2] No such file or directory: '/Users/ario/conserved_site_project/10_modeller/05_comparison/_pairwise_model10.json'
+2026-05-12 14:55:19 [MODELLER:step5_pymol_compare] INFO Model 10  RMSD=nan Å  n_atoms=0
+2026-05-12 14:55:19 [MODELLER:step5_pymol_compare] INFO PyMOL [heat10]
+2026-05-12 14:55:19 [MODELLER:step5_pymol_compare] INFO Wrote /Users/ario/conserved_site_project/10_modeller/05_comparison/rmsd_per_model.csv
+2026-05-12 14:55:19 [MODELLER:step5_pymol_compare] INFO PyMOL [all_overlay]
+2026-05-12 14:56:31 [MODELLER:step5_pymol_compare] INFO Best by RMSD: None   Best by DOPE: {'model_id': 3, 'model_pdb': 'target.B99990003.pdb', 'DOPE': -35775.74609375}
+2026-05-12 14:56:31 [MODELLER:step5_pymol_compare] INFO STEP 5 OK
+2026-05-12 14:57:49 [MODELLER:step5_pymol_compare] INFO Comparing 10 models against 1hvy_chainA.pdb
+2026-05-12 14:57:49 [MODELLER:step5_pymol_compare] INFO PyMOL [pair01]
+2026-05-12 14:57:50 [MODELLER:step5_pymol_compare] INFO Model 01  RMSD=0.388 Å  n_atoms=254
+2026-05-12 14:57:50 [MODELLER:step5_pymol_compare] INFO PyMOL [heat01]
+2026-05-12 14:57:51 [MODELLER:step5_pymol_compare] INFO PyMOL [pair02]
+2026-05-12 14:57:51 [MODELLER:step5_pymol_compare] INFO Model 02  RMSD=0.372 Å  n_atoms=263
+2026-05-12 14:57:51 [MODELLER:step5_pymol_compare] INFO PyMOL [heat02]
+2026-05-12 14:57:52 [MODELLER:step5_pymol_compare] INFO PyMOL [pair03]
+2026-05-12 14:57:52 [MODELLER:step5_pymol_compare] INFO Model 03  RMSD=0.371 Å  n_atoms=258
+2026-05-12 14:57:52 [MODELLER:step5_pymol_compare] INFO PyMOL [heat03]
+2026-05-12 14:57:52 [MODELLER:step5_pymol_compare] INFO PyMOL [pair04]
+2026-05-12 14:57:53 [MODELLER:step5_pymol_compare] INFO Model 04  RMSD=0.389 Å  n_atoms=265
+2026-05-12 14:57:53 [MODELLER:step5_pymol_compare] INFO PyMOL [heat04]
+2026-05-12 14:57:53 [MODELLER:step5_pymol_compare] INFO PyMOL [pair05]
+2026-05-12 14:57:54 [MODELLER:step5_pymol_compare] INFO Model 05  RMSD=0.386 Å  n_atoms=258
+2026-05-12 14:57:54 [MODELLER:step5_pymol_compare] INFO PyMOL [heat05]
+2026-05-12 14:57:54 [MODELLER:step5_pymol_compare] INFO PyMOL [pair06]
+2026-05-12 14:57:55 [MODELLER:step5_pymol_compare] INFO Model 06  RMSD=0.390 Å  n_atoms=260
+2026-05-12 14:57:55 [MODELLER:step5_pymol_compare] INFO PyMOL [heat06]
+2026-05-12 14:57:55 [MODELLER:step5_pymol_compare] INFO PyMOL [pair07]
+2026-05-12 14:57:56 [MODELLER:step5_pymol_compare] INFO Model 07  RMSD=0.385 Å  n_atoms=267
+2026-05-12 14:57:56 [MODELLER:step5_pymol_compare] INFO PyMOL [heat07]
+2026-05-12 14:57:56 [MODELLER:step5_pymol_compare] INFO PyMOL [pair08]
+2026-05-12 14:57:57 [MODELLER:step5_pymol_compare] INFO Model 08  RMSD=0.370 Å  n_atoms=246
+2026-05-12 14:57:57 [MODELLER:step5_pymol_compare] INFO PyMOL [heat08]
+2026-05-12 14:57:57 [MODELLER:step5_pymol_compare] INFO PyMOL [pair09]
+2026-05-12 14:57:58 [MODELLER:step5_pymol_compare] INFO Model 09  RMSD=0.387 Å  n_atoms=250
+2026-05-12 14:57:58 [MODELLER:step5_pymol_compare] INFO PyMOL [heat09]
+2026-05-12 14:57:58 [MODELLER:step5_pymol_compare] INFO PyMOL [pair10]
+2026-05-12 14:57:59 [MODELLER:step5_pymol_compare] INFO Model 10  RMSD=0.367 Å  n_atoms=259
+2026-05-12 14:57:59 [MODELLER:step5_pymol_compare] INFO PyMOL [heat10]
+2026-05-12 14:57:59 [MODELLER:step5_pymol_compare] INFO Wrote /Users/ario/conserved_site_project/10_modeller/05_comparison/rmsd_per_model.csv
+2026-05-12 14:57:59 [MODELLER:step5_pymol_compare] INFO PyMOL [all_overlay]
+2026-05-12 14:59:08 [MODELLER:step5_pymol_compare] INFO Best by RMSD: {'model_id': 10, 'model_pdb': 'target.B99990010.pdb', 'rmsd_to_crystal': 0.3666912317276001, 'n_atoms_aligned': 259}   Best by DOPE: {'model_id': 3, 'model_pdb': 'target.B99990003.pdb', 'DOPE': -35775.74609375}
+2026-05-12 14:59:08 [MODELLER:step5_pymol_compare] INFO STEP 5 OK
+2026-05-12 15:01:02 [MODELLER:step6_validate] INFO Validating 10 models
+2026-05-12 15:01:02 [MODELLER:step6_validate] INFO Rama model 01: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:02 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990001.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:02 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990001.pdb
+2026-05-12 15:01:02 [MODELLER:step6_validate] INFO Rama model 02: favoured=84.6% allowed=12.6% outlier=2.8%
+2026-05-12 15:01:02 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990002.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:02 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990002.pdb
+2026-05-12 15:01:02 [MODELLER:step6_validate] INFO Rama model 03: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990003.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990003.pdb
+2026-05-12 15:01:03 [MODELLER:step6_validate] INFO Rama model 04: favoured=85.3% allowed=13.3% outlier=1.4%
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990004.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990004.pdb
+2026-05-12 15:01:03 [MODELLER:step6_validate] INFO Rama model 05: favoured=84.6% allowed=12.6% outlier=2.8%
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990005.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990005.pdb
+2026-05-12 15:01:03 [MODELLER:step6_validate] INFO Rama model 06: favoured=84.2% allowed=13.3% outlier=2.5%
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990006.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990006.pdb
+2026-05-12 15:01:03 [MODELLER:step6_validate] INFO Rama model 07: favoured=83.5% allowed=14.4% outlier=2.1%
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990007.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990007.pdb
+2026-05-12 15:01:03 [MODELLER:step6_validate] INFO Rama model 08: favoured=83.9% allowed=13.3% outlier=2.8%
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990008.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:03 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990008.pdb
+2026-05-12 15:01:04 [MODELLER:step6_validate] INFO Rama model 09: favoured=84.9% allowed=12.6% outlier=2.5%
+2026-05-12 15:01:04 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990009.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:04 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990009.pdb
+2026-05-12 15:01:04 [MODELLER:step6_validate] INFO Rama model 10: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:04 [MODELLER:step6_validate] WARNING per_residue_dope failed for target.B99990010.pdb: 'Model' object has no attribute 'select_atoms'
+2026-05-12 15:01:04 [MODELLER:step6_validate] WARNING No per-residue DOPE for target.B99990010.pdb
+2026-05-12 15:01:04 [MODELLER:step6_validate] INFO Wrote /Users/ario/conserved_site_project/10_modeller/06_validation/ramachandran_stats.csv
+2026-05-12 15:01:04 [MODELLER:step6_validate] INFO Wrote /Users/ario/conserved_site_project/10_modeller/06_validation/SAVES_MANUAL.md
+2026-05-12 15:01:04 [MODELLER:step6_validate] INFO STEP 6 OK
+2026-05-12 15:01:55 [MODELLER:step6_validate] INFO Validating 10 models
+2026-05-12 15:01:56 [MODELLER:step6_validate] INFO Rama model 01: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:57 [MODELLER:step6_validate] INFO Rama model 02: favoured=84.6% allowed=12.6% outlier=2.8%
+2026-05-12 15:01:58 [MODELLER:step6_validate] INFO Rama model 03: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:01:59 [MODELLER:step6_validate] INFO Rama model 04: favoured=85.3% allowed=13.3% outlier=1.4%
+2026-05-12 15:02:00 [MODELLER:step6_validate] INFO Rama model 05: favoured=84.6% allowed=12.6% outlier=2.8%
+2026-05-12 15:02:01 [MODELLER:step6_validate] INFO Rama model 06: favoured=84.2% allowed=13.3% outlier=2.5%
+2026-05-12 15:02:02 [MODELLER:step6_validate] INFO Rama model 07: favoured=83.5% allowed=14.4% outlier=2.1%
+2026-05-12 15:02:03 [MODELLER:step6_validate] INFO Rama model 08: favoured=83.9% allowed=13.3% outlier=2.8%
+2026-05-12 15:02:04 [MODELLER:step6_validate] INFO Rama model 09: favoured=84.9% allowed=12.6% outlier=2.5%
+2026-05-12 15:02:05 [MODELLER:step6_validate] INFO Rama model 10: favoured=84.6% allowed=13.0% outlier=2.5%
+2026-05-12 15:02:06 [MODELLER:step6_validate] INFO Wrote /Users/ario/conserved_site_project/10_modeller/06_validation/ramachandran_stats.csv
+2026-05-12 15:02:06 [MODELLER:step6_validate] INFO Wrote /Users/ario/conserved_site_project/10_modeller/06_validation/SAVES_MANUAL.md
+2026-05-12 15:02:06 [MODELLER:step6_validate] INFO STEP 6 OK
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model01.html and mirror modeller_model01.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model02.html and mirror modeller_model02.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model03.html and mirror modeller_model03.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model04.html and mirror modeller_model04.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model05.html and mirror modeller_model05.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model06.html and mirror modeller_model06.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model07.html and mirror modeller_model07.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model08.html and mirror modeller_model08.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model09.html and mirror modeller_model09.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote viewer model10.html and mirror modeller_model10.html
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Updated /Users/ario/conserved_site_project/viewers/index.html with 10 homology-model links
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote /Users/ario/conserved_site_project/10_modeller/summary.json
+2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote /Users/ario/conserved_site_project/10_modeller/README_PHASE6.md
+2026-05-12 15:04:12 [MODELLER:step7_viewers_report] INFO Wrote DOCX report: /Users/ario/conserved_site_project/09e_report_v5/report_PHASE6.docx (6707600 bytes)
+2026-05-12 15:04:12 [MODELLER:step7_viewers_report] INFO STEP 7 OK

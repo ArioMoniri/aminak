@@ -1,0 +1,11 @@
+model_id,model_pdb,n_residues_with_phi_psi,pct_favoured,pct_allowed,pct_outlier
+1,target.B99990001.pdb,285,84.56,12.98,2.46
+2,target.B99990002.pdb,285,84.56,12.63,2.81
+3,target.B99990003.pdb,285,84.56,12.98,2.46
+4,target.B99990004.pdb,285,85.26,13.33,1.4
+5,target.B99990005.pdb,285,84.56,12.63,2.81
+6,target.B99990006.pdb,285,84.21,13.33,2.46
+7,target.B99990007.pdb,285,83.51,14.39,2.11
+8,target.B99990008.pdb,285,83.86,13.33,2.81
+9,target.B99990009.pdb,285,84.91,12.63,2.46
+10,target.B99990010.pdb,285,84.56,12.98,2.46

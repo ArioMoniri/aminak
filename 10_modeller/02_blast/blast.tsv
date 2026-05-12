@@ -1,0 +1,168 @@
+pdb_id	chain	identity_pct	coverage	align_length	score	evalue	hit_def
+4UP1	A	99.65	1.003	288	1532.0	0.0	Chain A, THYMIDYLATE SYNTHASE [Homo sapiens] >pdb|4UP1|B Chain B, THYMIDYLATE SYNTHASE [Homo sapiens] >pdb|4UP1|C Chain C, THYMIDYLATE SYNTHASE [Homo sapiens] >
+5X5A	A	99.65	1.003	288	1531.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|5X5A|B Chain B, Thymidylate synthase [Homo sapiens] >pdb|5X5A|C Chain C, Thymidylate synthase [Homo sapiens] >
+5HS3	A	99.65	1.003	288	1531.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|5HS3|B Chain B, Thymidylate synthase [Homo sapiens] >pdb|5HS3|C Chain C, Thymidylate synthase [Homo sapiens] >
+3ED7	A	99.65	1.003	288	1531.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+6QXH	A	99.65	1.003	288	1530.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|6QXH|B Chain B, Thymidylate synthase [Homo sapiens] >pdb|6QXH|C Chain C, Thymidylate synthase [Homo sapiens]
+3EDW	X	99.65	1.003	288	1530.0	0.0	Chain X, Thymidylate synthase [Homo sapiens] >pdb|3EJL|A Chain A, Thymidylate synthase [Homo sapiens] >pdb|3EJL|B Chain B, Thymidylate synthase [Homo sapiens] >
+3EF9	A	99.65	1.003	288	1530.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|3GH0|A Chain A, Thymidylate synthase [Homo sapiens]
+3GG5	A	99.65	1.003	288	1530.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|3GG5|B Chain B, Thymidylate synthase [Homo sapiens] >pdb|3GG5|C Chain C, Thymidylate synthase [Homo sapiens] >
+4GYH	A	99.65	1.003	288	1529.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|4H1I|A Chain A, Thymidylate synthase [Homo sapiens] >pdb|4H1I|B Chain B, Thymidylate synthase [Homo sapiens] >
+6QXG	A	99.65	1.003	288	1529.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|6QXG|B Chain B, Thymidylate synthase [Homo sapiens] >pdb|6QXG|C Chain C, Thymidylate synthase [Homo sapiens] >
+2RD8	A	99.31	1.003	288	1527.0	0.0	Chain A, Thymidylate synthase [unidentified] >pdb|2RDA|A Chain A, Thymidylate synthase [unidentified] >pdb|2RDA|B Chain B, Thymidylate synthase [unidentified] >
+5X4W	A	99.31	1.003	288	1527.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|5X4X|A Chain A, Thymidylate synthase [Homo sapiens]
+1JU6	A	99.31	1.003	288	1525.0	0.0	Chain A, THYMIDYLATE SYNTHASE [Homo sapiens] >pdb|1JU6|B Chain B, THYMIDYLATE SYNTHASE [Homo sapiens] >pdb|1JU6|C Chain C, THYMIDYLATE SYNTHASE [Homo sapiens] >
+5X4Y	A	99.31	1.003	288	1525.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+3EAW	X	99.31	1.003	288	1521.0	0.0	Chain X, Thymidylate synthase [Homo sapiens]
+3GH2	X	99.31	1.003	288	1520.0	0.0	Chain X, Thymidylate synthase [Homo sapiens]
+3N5E	B	99.31	1.003	288	1520.0	0.0	Chain B, Thymidylate synthase [Homo sapiens]
+6ZXO	F	99.31	1.003	288	1519.0	0.0	Chain F, Thymidylate synthase [Homo sapiens]
+6R2E	A	98.96	1.003	288	1516.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|6R2E|B Chain B, Thymidylate synthase [Homo sapiens] >pdb|6R2E|C Chain C, Thymidylate synthase [Homo sapiens] >
+2RD8	B	98.96	1.003	288	1516.0	0.0	Chain B, Thymidylate synthase [unidentified]
+4GD7	A	98.96	1.003	288	1514.0	0.0	Chain A, Thymidylate Synthase [Homo sapiens]
+3EBU	A	98.96	1.003	288	1513.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+1HW4	A	98.96	1.003	288	1510.0	0.0	Chain A, THYMIDYLATE SYNTHASE [Homo sapiens]
+3N5E	A	98.96	1.003	288	1510.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+4E28	A	98.96	1.003	288	1509.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+4O1X	A	98.61	1.003	288	1506.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|4O1X|B Chain B, Thymidylate synthase [Homo sapiens] >pdb|4O1X|C Chain C, Thymidylate synthase [Homo sapiens]
+1HZW	A	99.65	0.99	284	1506.0	0.0	Chain A, THYMIDYLATE SYNTHASE [Homo sapiens] >pdb|1HZW|B Chain B, THYMIDYLATE SYNTHASE [Homo sapiens] >pdb|1I00|A Chain A, THYMIDYLATE SYNTHASE [Homo sapiens] >
+4G2O	X	98.61	1.003	288	1504.0	0.0	Chain X, Thymidylate synthase [Homo sapiens] >pdb|4G6W|X Chain X, Thymidylate synthase [Homo sapiens]
+4FGT	A	98.61	1.003	288	1504.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+1HW3	A	98.61	1.003	288	1504.0	0.0	Chain A, THYMIDYLATE SYNTHASE [Homo sapiens] >pdb|1YPV|A Chain A, Thymidylate synthase [Homo sapiens] >pdb|2ONB|A Chain A, Thymidylate synthetase [Homo sapiens]
+3EHI	X	98.61	1.003	288	1504.0	0.0	Chain X, Thymidylate synthase [Homo sapiens]
+3N5G	A	98.61	1.003	288	1503.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+6QYQ	D	98.61	1.003	288	1500.0	0.0	Chain D, Thymidylate synthase [Homo sapiens]
+3EGY	X	98.26	1.003	288	1499.0	0.0	Chain X, Thymidylate synthase [Homo sapiens]
+4O1X	D	98.26	1.003	288	1497.0	0.0	Chain D, Thymidylate synthase [Homo sapiens]
+4KPW	A	98.26	1.003	288	1497.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+4O1U	A	98.26	1.003	288	1496.0	0.0	Chain A, Thymidylate synthase [Homo sapiens] >pdb|4O1U|B Chain B, Thymidylate synthase [Homo sapiens]
+4JEF	A	98.6	0.997	286	1492.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+6QYQ	B	98.26	1.003	288	1491.0	0.0	Chain B, Thymidylate synthase [Homo sapiens] >pdb|6QYQ|C Chain C, Thymidylate synthase [Homo sapiens]
+6QYQ	A	98.26	1.003	288	1489.0	0.0	Chain A, Thymidylate synthase [Homo sapiens]
+3IHI	A	92.71	1.003	288	1460.0	0.0	Chain A, Thymidylate synthase [Mus musculus] >pdb|3IHI|B Chain B, Thymidylate synthase [Mus musculus] >pdb|4E5O|A Chain A, Thymidylate synthase [Mus musculus] >
+1RTS	A	92.36	1.003	288	1455.0	0.0	Chain A, THYMIDYLATE SYNTHASE [Rattus norvegicus] >pdb|1RTS|B Chain B, THYMIDYLATE SYNTHASE [Rattus norvegicus] >pdb|2TSR|A Chain A, THYMIDYLATE SYNTHASE [Rattu
+6K7Q	A	75.96	1.0	287	1195.0	1.34864e-166	Chain A, Thymidylate synthase [Penaeus vannamei] >pdb|6K7Q|B Chain B, Thymidylate synthase [Penaeus vannamei] >pdb|6K7Q|C Chain C, Thymidylate synthase [Penaeus
+5H39	A	72.28	0.993	285	1147.0	2.33254e-159	Chain A, ORF70 [Human gammaherpesvirus 8] >pdb|5H39|B Chain B, ORF70 [Human gammaherpesvirus 8]
+5H38	A	72.18	0.99	284	1140.0	2.32127e-158	Chain A, ORF70 [Human gammaherpesvirus 8] >pdb|5H38|B Chain B, ORF70 [Human gammaherpesvirus 8]
+5H3A	A	72.08	0.986	283	1135.0	1.32112e-157	Chain A, ORF70 [Human gammaherpesvirus 8] >pdb|5H3A|B Chain B, ORF70 [Human gammaherpesvirus 8]
+4XSC	A	71.84	0.965	277	1127.0	5.68585e-156	Chain A, Thymidylate synthase [Human herpesvirus 3 strain Oka vaccine] >pdb|4XSC|B Chain B, Thymidylate synthase [Human herpesvirus 3 strain Oka vaccine] >pdb|4
+5BY6	A	68.77	0.993	285	1079.0	1.06155e-148	Chain A, Thymidylate synthase [Trichinella spiralis] >pdb|5BY6|B Chain B, Thymidylate synthase [Trichinella spiralis] >pdb|5BY6|C Chain C, Thymidylate synthase 
+5M4Z	A	68.77	0.993	285	1080.0	1.27811e-148	Chain A, Thymidylate synthase [Trichinella spiralis] >pdb|5M4Z|B Chain B, Thymidylate synthase [Trichinella spiralis]
+4IQB	A	68.07	0.993	285	1063.0	4.76241e-146	Chain A, Thymidylate synthase [Caenorhabditis elegans] >pdb|4IQB|B Chain B, Thymidylate synthase [Caenorhabditis elegans] >pdb|4IQQ|A Chain A, Thymidylate synth
+4ISW	A	68.07	0.993	285	1061.0	8.3225e-146	Chain A, Thymidylate synthase [Caenorhabditis elegans] >pdb|4ISW|B Chain B, Thymidylate synthase [Caenorhabditis elegans]
+7XYJ	A	67.94	1.0	287	1047.0	5.32078e-144	Chain A, Thymidylate synthase [Shrimp white spot syndrome virus (isolate Tongan)] >pdb|7XYJ|B Chain B, Thymidylate synthase [Shrimp white spot syndrome virus (i
+7CC8	A	67.94	1.0	287	1047.0	6.7072e-144	Chain A, Thymidylate Synthase [Shrimp white spot syndrome virus (isolate Tongan)] >pdb|7CC8|B Chain B, Thymidylate Synthase [Shrimp white spot syndrome virus (i
+7DP6	A	65.96	0.993	285	1038.0	1.99607e-142	Chain A, Thymidylate synthase [Brugia malayi]
+7DP5	A	65.61	0.993	285	1034.0	8.10185e-142	Chain A, Thymidylate synthase [Brugia malayi]
+7DP4	A	65.61	0.993	285	1033.0	1.22801e-141	Chain A, Thymidylate synthase [Brugia malayi]
+8DAE	A	65.38	0.997	286	1041.0	1.57347e-139	Chain A, Bifunctional dihydrofolate reductase-thymidylate synthase 1 [Arabidopsis thaliana]
+4EIL	A	64.71	1.007	289	1005.0	1.02828e-133	Chain A, Bifunctional dihydrofolate reductase-thymidylate synthase [Toxoplasma gondii] >pdb|4EIL|B Chain B, Bifunctional dihydrofolate reductase-thymidylate syn
+4ECK	A	64.71	1.007	289	1003.0	8.2942e-133	Chain A, Bifunctional dihydrofolate reductase-thymidylate synthase [Toxoplasma gondii] >pdb|4ECK|B Chain B, Bifunctional dihydrofolate reductase-thymidylate syn
+1CI7	A	61.64	1.017	292	958.0	2.32507e-130	Chain A, PROTEIN (THYMIDYLATE SYNTHASE) [Pneumocystis carinii] >pdb|1CI7|B Chain B, PROTEIN (THYMIDYLATE SYNTHASE) [Pneumocystis carinii] >pdb|1F28|A Chain A, T
+2H2Q	A	63.16	0.993	285	973.0	1.46877e-129	Chain A, Bifunctional dihydrofolate reductase-thymidylate synthase [Trypanosoma cruzi] >pdb|2H2Q|B Chain B, Bifunctional dihydrofolate reductase-thymidylate syn
+3INV	A	63.16	0.993	285	973.0	1.63751e-129	Chain A, Bifunctional dihydrofolate reductase-thymidylate synthase [Trypanosoma cruzi] >pdb|3INV|B Chain B, Bifunctional dihydrofolate reductase-thymidylate syn
+2AAZ	A	61.26	1.052	302	944.0	4.79342e-128	Chain A, Thymidylate synthase [Cryptococcus neoformans] >pdb|2AAZ|B Chain B, Thymidylate synthase [Cryptococcus neoformans] >pdb|2AAZ|C Chain C, Thymidylate syn
+3KGB	A	59.45	1.014	291	917.0	3.27193e-124	Chain A, Thymidylate synthase 1/2 [Encephalitozoon cuniculi GB-M1]
+1J3I	C	55.59	0.997	286	899.0	4.97731e-121	Chain C, Bifunctional dihydrofolate reductase-thymidylate synthase [Plasmodium falciparum] >pdb|1J3I|D Chain D, Bifunctional dihydrofolate reductase-thymidylate
+3DL6	A	57.14	1.0	287	912.0	2.55739e-120	Chain A, Dihydrofolate reductase, DHFR [Cryptosporidium hominis] >pdb|3DL6|B Chain B, Dihydrofolate reductase, DHFR [Cryptosporidium hominis] >pdb|3DL6|C Chain 
+3DL5	A	56.79	1.0	287	907.0	1.65529e-119	Chain A, Dihydrofolate reductase, DHFR [Cryptosporidium hominis] >pdb|3DL5|B Chain B, Dihydrofolate reductase, DHFR [Cryptosporidium hominis] >pdb|3DL5|C Chain 
+3I3R	A	56.14	0.993	285	905.0	2.42671e-119	Chain A, Dihydrofolate reductase/thymidylate synthase [Babesia bovis T2Bo] >pdb|3I3R|B Chain B, Dihydrofolate reductase/thymidylate synthase [Babesia bovis T2Bo
+3NRR	A	56.14	0.993	285	904.0	4.0483e-119	Chain A, Dihydrofolate reductase-thymidylate synthase [Babesia bovis] >pdb|3NRR|B Chain B, Dihydrofolate reductase-thymidylate synthase [Babesia bovis]
+2OIP	A	56.79	1.0	287	903.0	5.43265e-119	Chain A, Chain A, crystal structure of Dhfr [Cryptosporidium hominis] >pdb|2OIP|B Chain B, Chain A, crystal structure of Dhfr [Cryptosporidium hominis] >pdb|2OI
+8WGM	A	55.79	0.993	285	909.0	1.18395e-118	Chain A, Bifunctional dihydrofolate reductase-thymidylate synthase [Plasmodium falciparum VS/1] >pdb|8WGM|B Chain B, Bifunctional dihydrofolate reductase-thymid
+7F3Z	A	55.79	0.993	285	908.0	1.43843e-118	Chain A, Bifunctional dihydrofolate reductase-thymidylate synthase [Plasmodium falciparum] >pdb|7F3Z|B Chain B, Bifunctional dihydrofolate reductase-thymidylate
+3QGT	A	55.79	0.993	285	908.0	1.50204e-118	Chain A, Bifunctional dihydrofolate reductase-thymidylate synthase [Plasmodium falciparum] >pdb|3QGT|B Chain B, Bifunctional dihydrofolate reductase-thymidylate
+3UM5	A	55.79	0.993	285	908.0	1.62018e-118	Chain A, Bifunctional dihydrofolate reductase-thymidylate synthase [Plasmodium falciparum] >pdb|3UM5|B Chain B, Bifunctional dihydrofolate reductase-thymidylate
+3JSU	A	55.79	0.993	285	908.0	1.6378e-118	Chain A, Dihydrofolate reductase-thymidylate synthase [Plasmodium falciparum] >pdb|3JSU|B Chain B, Dihydrofolate reductase-thymidylate synthase [Plasmodium falc
+3HJ3	A	56.45	1.0	287	899.0	2.49775e-118	Chain A, Chain A, crystal structure of Dhfr [Cryptosporidium hominis] >pdb|3HJ3|B Chain B, Chain A, crystal structure of Dhfr [Cryptosporidium hominis] >pdb|3HJ
+1QZF	A	56.45	1.0	287	899.0	2.52501e-118	Chain A, bifunctional dihydrofolate reductase-thymidylate synthase [Cryptosporidium hominis] >pdb|1QZF|B Chain B, bifunctional dihydrofolate reductase-thymidyla
+7TA9	A	53.38	0.979	281	752.0	2.90481e-99	Chain A, Thymidylate synthase [Acinetobacter baumannii] >pdb|7TA9|B Chain B, Thymidylate synthase [Acinetobacter baumannii]
+3IX6	A	52.28	0.993	285	754.0	1.70425e-98	Chain A, Thymidylate synthase [Brucella melitensis] >pdb|3IX6|B Chain B, Thymidylate synthase [Brucella melitensis]
+1AOB	A	51.06	0.983	282	722.0	4.4219e-95	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|2BBQ|A Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|2BBQ|B Chain B, THYMIDYLATE SYNTHASE [Escheri
+1AN5	A	51.06	0.983	282	722.0	4.57172e-95	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1AN5|B Chain B, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1AXW|A Chain A, THYMIDYLATE SYNTHASE [Escheri
+4LRR	A	51.06	0.983	282	722.0	5.44355e-95	Chain A, Thymidylate synthase [Escherichia coli O157:H7]
+1F4B	A	51.06	0.983	282	721.0	6.62076e-95	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1F4C|A Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1F4C|B Chain B, THYMIDYLATE SYNTHASE [Escheri
+1EV5	A	50.71	0.983	282	719.0	1.12993e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli]
+3B5B	A	50.71	0.983	282	719.0	1.30209e-94	Chain A, Thymidylate synthase [Escherichia coli BL21] >pdb|3B5B|B Chain B, Thymidylate synthase [Escherichia coli BL21]
+1EVG	A	50.71	0.983	282	719.0	1.45217e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli]
+6AUJ	A	51.59	0.986	283	719.0	1.47397e-94	Chain A, Thymidylate synthase [Elizabethkingia anophelis NUHP1] >pdb|6AUJ|B Chain B, Thymidylate synthase [Elizabethkingia anophelis NUHP1] >pdb|6AUJ|C Chain C,
+1F4G	A	51.06	0.983	282	718.0	1.51693e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1F4G|B Chain B, THYMIDYLATE SYNTHASE [Escherichia coli]
+1ZPR	A	50.71	0.983	282	718.0	1.69177e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1ZPR|B Chain B, THYMIDYLATE SYNTHASE [Escherichia coli]
+6CDZ	A	51.25	0.979	281	718.0	1.76621e-94	Chain A, Thymidylate synthase [Escherichia coli K-12] >pdb|6CDZ|B Chain B, Thymidylate synthase [Escherichia coli K-12]
+2FTN	A	50.71	0.983	282	718.0	1.94952e-94	Chain A, Thymidylate synthase [Escherichia coli] >pdb|2FTO|X Chain X, Thymidylate synthase [Escherichia coli]
+1FFL	A	50.71	0.983	282	718.0	2.10421e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1FWM|A Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1FWM|B Chain B, THYMIDYLATE SYNTHASE [Escheri
+2VET	A	50.71	0.983	282	717.0	2.17421e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli BL21] >pdb|2VF0|A Chain A, THYMIDYLATE SYNTHASE [Escherichia coli BL21] >pdb|2VF0|B Chain B, THYMIDYLATE SYNTHAS
+1BJG	A	50.71	0.983	282	717.0	2.32127e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1DNA|A Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1DNA|B Chain B, THYMIDYLATE SYNTHASE [Escheri
+2TSC	A	50.71	0.983	282	717.0	2.34673e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|2TSC|B Chain B, THYMIDYLATE SYNTHASE [Escherichia coli]
+2G8X	A	50.71	0.983	282	717.0	2.34673e-94	Chain A, thymidylate synthase [Escherichia coli] >pdb|2G8X|B Chain B, thymidylate synthase [Escherichia coli] >pdb|4GEV|A Chain A, Thymidylate synthase [Escheri
+1AIQ	A	50.71	0.983	282	717.0	2.91884e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1AIQ|B Chain B, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1AJM|A Chain A, THYMIDYLATE SYNTHASE [Escheri
+1BQ2	A	50.71	0.983	282	715.0	5.55528e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli]
+1JG0	A	50.71	0.983	282	714.0	6.4718e-94	Chain A, thymidylate synthase [Escherichia coli] >pdb|1JG0|B Chain B, thymidylate synthase [Escherichia coli]
+3BFI	A	50.71	0.983	282	714.0	6.83455e-94	Chain A, Thymidylate synthase [Escherichia coli]
+1BQ1	A	50.71	0.983	282	714.0	7.0619e-94	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1BQ1|B Chain B, THYMIDYLATE SYNTHASE [Escherichia coli]
+1NCE	A	50.71	0.983	282	712.0	1.34401e-93	Chain A, Thymidylate synthase [synthetic construct] >pdb|1NCE|B Chain B, Thymidylate synthase [synthetic construct]
+1TYS	A	50.71	0.983	282	712.0	1.60026e-93	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|3BGX|A Chain A, Thymidylate synthase [Escherichia coli]
+1EVF	A	50.35	0.983	282	710.0	2.91548e-93	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli]
+3UWL	A	47.83	1.122	322	715.0	3.21785e-93	Chain A, Thymidylate synthase [Enterococcus faecalis] >pdb|3UWL|C Chain C, Thymidylate synthase [Enterococcus faecalis] >pdb|4O7U|A Chain A, Thymidylate synthas
+1KZJ	A	50.71	0.983	282	708.0	5.67071e-93	Chain A, Thymidylate synthase [Escherichia coli] >pdb|1KZJ|B Chain B, Thymidylate synthase [Escherichia coli] >pdb|1KZJ|C Chain C, Thymidylate synthase [Escheri
+1F4D	A	50.35	0.983	282	707.0	8.39743e-93	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli] >pdb|1F4D|B Chain B, THYMIDYLATE SYNTHASE [Escherichia coli]
+1EV8	A	50.35	0.983	282	707.0	9.7826e-93	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli]
+1QQQ	A	50.35	0.983	282	706.0	1.34216e-92	Chain A, THYMIDYLATE SYNTHASE [Escherichia coli]
+3UWL	B	47.52	1.122	322	704.0	1.36168e-91	Chain B, Thymidylate synthase [Enterococcus faecalis] >pdb|3UWL|D Chain D, Thymidylate synthase [Enterococcus faecalis] >pdb|6QXS|A Chain A, Thymidylate synthas
+4FOG	A	51.48	0.941	270	697.0	2.54852e-91	Chain A, Thymidylate synthase [Mycobacterium tuberculosis H37Rv] >pdb|4FOG|B Chain B, Thymidylate synthase [Mycobacterium tuberculosis H37Rv] >pdb|4FOG|C Chain 
+3QJ7	A	51.48	0.941	270	697.0	2.93766e-91	Chain A, Thymidylate synthase [Mycobacterium tuberculosis] >pdb|3QJ7|B Chain B, Thymidylate synthase [Mycobacterium tuberculosis] >pdb|3QJ7|C Chain C, Thymidyla
+4H0R	A	49.08	0.944	271	664.0	2.48509e-86	Chain A, Thymidylate synthase [Corynebacterium glutamicum ATCC 13032] >pdb|4H0R|B Chain B, Thymidylate synthase [Corynebacterium glutamicum ATCC 13032] >pdb|4H0
+4F2V	A	47.16	0.983	282	635.0	8.22293e-82	Chain A, De novo designed serine hydrolase [synthetic construct] >pdb|4F2V|B Chain B, De novo designed serine hydrolase [synthetic construct]
+1LCA	A	43.79	1.122	322	629.0	2.80079e-80	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1LCB|A Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1LCE|A Chain A, THYMIDYLATE S
+4DQ1	A	44.48	1.073	308	628.0	4.62451e-80	Chain A, Thymidylate synthase [Staphylococcus aureus subsp. aureus Mu50] >pdb|4DQ1|B Chain B, Thymidylate synthase [Staphylococcus aureus subsp. aureus Mu50]
+1TSY	A	43.48	1.122	322	626.0	7.60489e-80	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1TSZ|A Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+1VZB	A	43.48	1.122	322	626.0	7.68791e-80	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1VZC|A Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1VZD|A Chain A, THYMIDYLATE S
+1VZA	A	43.48	1.122	322	626.0	8.38549e-80	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+2G86	A	43.48	1.122	322	625.0	9.86855e-80	Chain A, Thymidylate synthase [Lacticaseibacillus casei]
+2G8D	A	43.48	1.122	322	625.0	1.17406e-79	Chain A, thymidylate synthase [Lacticaseibacillus casei]
+1TDA	A	43.61	1.118	321	624.0	1.44555e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1TDB|A Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1TDC|A Chain A, THYMIDYLATE S
+1NJC	A	43.48	1.122	322	624.0	1.54014e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1NJD|A Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+1JMI	A	43.48	1.122	322	624.0	1.6085e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1TVW|A Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+1TSX	A	43.48	1.122	322	623.0	1.9345e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+1BO8	A	43.48	1.122	322	623.0	1.95562e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+1BO7	A	43.48	1.122	322	623.0	1.95562e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+1TSV	A	43.48	1.122	322	623.0	2.13304e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1TSW|A Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+1JMG	A	43.48	1.122	322	622.0	2.89071e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+1JMF	A	43.48	1.122	322	622.0	3.55284e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1TVU|A Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+2G8A	A	43.48	1.122	322	621.0	4.86729e-79	Chain A, thymidylate synthase [Lacticaseibacillus casei]
+2G89	A	43.48	1.122	322	621.0	5.02839e-79	Chain A, thymidylate synthase [Lacticaseibacillus casei]
+1BP0	A	43.48	1.122	322	621.0	5.08327e-79	Chain A, PROTEIN (THYMIDYLATE SYNTHASE) [Lacticaseibacillus casei]
+1NJA	A	43.48	1.122	322	620.0	6.31572e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1NJB|A Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei] >pdb|1TVV|A Chain A, THYMIDYLATE S
+1JMH	A	43.48	1.122	322	619.0	8.55875e-79	Chain A, THYMIDYLATE SYNTHASE [Lacticaseibacillus casei]
+1BPJ	A	43.17	1.122	322	617.0	1.82961e-78	Chain A, PROTEIN (THYMIDYLATE SYNTHASE) [Lacticaseibacillus casei]
+1BP6	A	43.17	1.122	322	615.0	3.70435e-78	Chain A, PROTEIN (THYMIDYLATE SYNTHASE) [Lacticaseibacillus casei]
+1TIS	A	43.52	1.049	301	585.0	4.66344e-74	Chain A, THYMIDYLATE SYNTHASE [Tequatrovirus T4]
+1BKO	A	38.35	0.927	266	452.0	3.5082e-54	Chain A, THYMIDYLATE SYNTHASE A [Bacillus subtilis] >pdb|1BKO|B Chain B, THYMIDYLATE SYNTHASE A [Bacillus subtilis] >pdb|1BKO|C Chain C, THYMIDYLATE SYNTHASE A 
+1B02	A	38.35	0.927	266	452.0	4.15111e-54	Chain A, PROTEIN (THYMIDYLATE SYNTHASE) [Bacillus subtilis]
+3V8H	A	34.36	1.136	326	454.0	6.18398e-54	Chain A, Thymidylate synthase [Burkholderia thailandensis E264] >pdb|3V8H|B Chain B, Thymidylate synthase [Burkholderia thailandensis E264] >pdb|3V8H|C Chain C,
+5B6D	A	28.85	0.362	104	128.0	1.33333e-07	Chain A, CMP 5-hydroxymethylase [Streptomyces rimofaciens] >pdb|5B6D|B Chain B, CMP 5-hydroxymethylase [Streptomyces rimofaciens] >pdb|5B6E|A Chain A, CMP 5-hyd
+5JNH	A	28.85	0.362	104	127.0	1.53971e-07	Chain A, CMP 5-hydroxymethylase [Streptomyces rimofaciens] >pdb|5JNH|B Chain B, CMP 5-hydroxymethylase [Streptomyces rimofaciens]
+9IQC	A	23.08	0.362	104	102.0	0.000176917	Chain A, Thymidylate synthase [Phage #D] >pdb|9IR2|A Chain A, Thymidylate synthase [Phage #D]
+9IQU	A	23.08	0.362	104	101.0	0.000187821	Chain A, Thymidylate synthase [Phage #D]
+6L18	A	20.61	0.794	228	85.0	0.0265196	Chain A, Deoxycytidylate 5-hydroxymethyltransferase [Tequatrovirus T4]
+1B49	A	20.18	0.794	228	80.0	0.104274	Chain A, PROTEIN (DEOXYCYTIDYLATE HYDROXYMETHYLASE) [Tequatrovirus T4] >pdb|1B49|C Chain C, PROTEIN (DEOXYCYTIDYLATE HYDROXYMETHYLASE) [Tequatrovirus T4] >pdb|1
+6A9A	A	20.18	0.794	228	75.0	0.438144	Chain A, Deoxycytidylate 5-hydroxymethyltransferase [Tequatrovirus T4]
+3AU7	A	26.15	0.226	65	75.0	0.520862	Chain A, Crystal structure of the ZRD-deleted mutant of TiaS in complex with agmatine [Archaeoglobus fulgidus]
+4RVZ	Z	22.13	0.425	122	74.0	0.772801	Chain Z, tRNA(Ile2) 2-agmatinylcytidine synthetase TiaS [Archaeoglobus fulgidus DSM 4304] >pdb|5XOB|Z Chain Z, tRNA(Ile2) 2-agmatinylcytidine synthetase TiaS [A
+3AMU	A	22.13	0.425	122	74.0	0.826488	Chain A, Crystal structure of the TiaS-tRNA(Ile2)-AMPCPP-agmatine complex [Archaeoglobus fulgidus]
+2W00	A	31.34	0.233	67	68.0	4.98819	Chain A, HSDR [Escherichia coli] >pdb|2W00|B Chain B, HSDR [Escherichia coli] >pdb|6H2J|A Chain A, Type I restriction enzyme R Protein [Escherichia coli] >pdb|6
+3AMT	A	22.13	0.425	122	67.0	5.16838	Chain A, Crystal structure of the TiaS-tRNA(Ile2)-ATP complex [Archaeoglobus fulgidus]
+4AZ4	A	30.56	0.251	72	65.0	5.74889	Chain A, PEPTIDE DEFORMYLASE [Escherichia coli BL21(DE3)]
+4AL2	A	30.56	0.251	72	65.0	6.01789	Chain A, PEPTIDE DEFORMYLASE [Escherichia coli BL21(DE3)] >pdb|4AL2|B Chain B, PEPTIDE DEFORMYLASE [Escherichia coli BL21(DE3)] >pdb|4AL2|C Chain C, PEPTIDE DEF
+1BS4	A	30.56	0.251	72	65.0	6.16722	Chain A, PROTEIN (PEPTIDE DEFORMYLASE) [Escherichia coli] >pdb|1BS4|B Chain B, PROTEIN (PEPTIDE DEFORMYLASE) [Escherichia coli] >pdb|1BS4|C Chain C, PROTEIN (PE
+2W3T	A	30.56	0.251	72	65.0	6.18531	Chain A, PEPTIDE DEFORMYLASE [Escherichia coli K-12] >pdb|2W3U|A Chain A, PEPTIDE DEFORMYLASE [Escherichia coli K-12]
+3K6L	A	30.56	0.251	72	65.0	6.49673	Chain A, Peptide deformylase [Escherichia coli K-12] >pdb|3K6L|B Chain B, Peptide deformylase [Escherichia coli K-12] >pdb|3K6L|C Chain C, Peptide deformylase [
+4AL3	A	30.56	0.251	72	65.0	6.96594	Chain A, PEPTIDE DEFORMYLASE [Escherichia coli BL21(DE3)]
+8OFE	A	30.56	0.251	72	64.0	7.27299	Chain A, Peptide deformylase [Escherichia coli] >pdb|8RHR|A Chain A, Peptide deformylase [Escherichia coli]
+6V0A	A	29.55	0.153	44	66.0	7.84725	Chain A, Nitrite reductase (cytochrome; ammonia-forming) [Trichlorobacter lovleyi SZ] >pdb|6V0A|B Chain B, Nitrite reductase (cytochrome; ammonia-forming) [Tric
+8QWT	A	25.64	0.272	78	65.0	8.56176	Chain A, Peroxidase [Cyathus striatus]
+1ZCZ	A	37.5	0.139	40	66.0	8.56865	Chain A, Bifunctional purine biosynthesis protein purH [Thermotoga maritima] >pdb|1ZCZ|B Chain B, Bifunctional purine biosynthesis protein purH [Thermotoga mari
+8SLS	A	25.49	0.178	51	65.0	9.42689	Chain A, Tyrosine-protein phosphatase non-receptor type 5 [Homo sapiens] >pdb|8SLT|A Chain A, Tyrosine-protein phosphatase non-receptor type 5 [Homo sapiens] >p
+1VJ1	A	34.09	0.153	44	65.0	9.56211	Chain A, putative NADPH-dependent oxidoreductase [Mus musculus]
+2ZB3	A	34.09	0.153	44	65.0	9.6462	Chain A, Prostaglandin reductase 2 [Mus musculus]
+2BV5	A	25.49	0.178	51	64.0	9.94429	Chain A, TYROSINE-PROTEIN PHOSPHATASE, NON-RECEPTOR TYPE 5 [Homo sapiens]

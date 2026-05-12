@@ -1,0 +1,24 @@
+2026-05-12 14:51:09 [INFO] Templates: [('3IHI', 'A'), ('6K7Q', 'A'), ('5H39', 'A')]
+2026-05-12 14:51:09 [INFO] Target residue range 26-313 (len=287)
+2026-05-12 14:51:09 [INFO] Template 3IHI_A: range 21-300, len=280
+2026-05-12 14:51:09 [INFO] Template 6K7Q_A: range 1-285, len=272
+2026-05-12 14:51:09 [INFO] Template 5H39_A: range 51-335, len=285
+2026-05-12 14:51:09 [INFO] Wrote /Users/ario/conserved_site_project/10_modeller/03_alignment/input.fasta (4 records)
+2026-05-12 14:51:09 [INFO] Running ClustalW: /opt/homebrew/bin/clustalw -INFILE=/Users/ario/conserved_site_project/10_modeller/03_alignment/input.fasta -ALIGN -OUTFILE=/Users/ario/conserved_site_project/10_modeller/03_alignment/aligned.aln -OUTPUT=CLUSTAL
+2026-05-12 14:51:09 [INFO] ClustalW done; written /Users/ario/conserved_site_project/10_modeller/03_alignment/aligned.aln (1916 bytes)
+2026-05-12 14:51:09 [INFO] Aligned columns: 289
+2026-05-12 14:51:09 [INFO] Wrote /Users/ario/conserved_site_project/10_modeller/03_alignment/alignment.ali and /Users/ario/conserved_site_project/10_modeller/03_alignment/alignment.pir
+2026-05-12 14:51:09 [INFO] knowns: ['3IHI_A', '6K7Q_A', '5H39_A']
+2026-05-12 14:51:09 [INFO] STEP 3 OK
+2026-05-12 14:52:18 [INFO] Templates: [('3IHI', 'A'), ('6K7Q', 'A'), ('5H39', 'A')]
+2026-05-12 14:52:18 [INFO] Target residue range 26-313 (len=287)
+2026-05-12 14:52:18 [INFO] Template 3IHI_A: range 21-300, len=280
+2026-05-12 14:52:18 [INFO] Template 6K7Q_A: range 1-285, len=272
+2026-05-12 14:52:18 [INFO] Template 5H39_A: range 51-335, len=285
+2026-05-12 14:52:18 [INFO] Wrote /Users/ario/conserved_site_project/10_modeller/03_alignment/input.fasta (4 records)
+2026-05-12 14:52:18 [INFO] Running ClustalW: /opt/homebrew/bin/clustalw -INFILE=/Users/ario/conserved_site_project/10_modeller/03_alignment/input.fasta -ALIGN -OUTFILE=/Users/ario/conserved_site_project/10_modeller/03_alignment/aligned.aln -OUTPUT=CLUSTAL
+2026-05-12 14:52:18 [INFO] ClustalW done; written /Users/ario/conserved_site_project/10_modeller/03_alignment/aligned.aln (1916 bytes)
+2026-05-12 14:52:18 [INFO] Aligned columns: 289
+2026-05-12 14:52:18 [INFO] Wrote /Users/ario/conserved_site_project/10_modeller/03_alignment/alignment.ali and /Users/ario/conserved_site_project/10_modeller/03_alignment/alignment.pir
+2026-05-12 14:52:18 [INFO] knowns: ['3IHI_A', '6K7Q_A', '5H39_A']
+2026-05-12 14:52:18 [INFO] STEP 3 OK

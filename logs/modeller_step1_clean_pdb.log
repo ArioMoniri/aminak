@@ -1,0 +1,7 @@
+2026-05-12 14:47:31 [INFO] Reading /Users/ario/conserved_site_project/03_structure/1hvy.pdb
+2026-05-12 14:47:31 [INFO] Wrote chain-A-only PDB: /Users/ario/conserved_site_project/10_modeller/01_clean_pdb/1hvy_chainA.pdb (187928 bytes)
+2026-05-12 14:47:31 [INFO] Assertion passed: only chain A present in output PDB
+2026-05-12 14:47:31 [INFO] Extracted chain-A sequence length: 287
+2026-05-12 14:47:31 [INFO] Wrote FASTA: /Users/ario/conserved_site_project/10_modeller/01_clean_pdb/1hvy_chainA.fasta
+2026-05-12 14:47:31 [INFO] Identity vs P04818: 91.69% (matches=287 / canonical=313)
+2026-05-12 14:47:31 [INFO] STEP 1 OK

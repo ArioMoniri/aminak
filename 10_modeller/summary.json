@@ -1,0 +1,107 @@
+{
+  "phase": "6 \u2014 Modeller homology modelling",
+  "target_uniprot": "P04818",
+  "target_pdb_source": "1HVY chain A",
+  "n_models_built": 10,
+  "templates": [
+    {
+      "pdb_id": "3IHI",
+      "chain": "A",
+      "identity_pct": 92.71,
+      "resolution_A": 1.94
+    },
+    {
+      "pdb_id": "6K7Q",
+      "chain": "A",
+      "identity_pct": 75.96,
+      "resolution_A": 2.27
+    },
+    {
+      "pdb_id": "5H39",
+      "chain": "A",
+      "identity_pct": 72.28,
+      "resolution_A": 2.0
+    }
+  ],
+  "template_identity_range_pct": {
+    "min": 72.28,
+    "max": 92.71
+  },
+  "best_by_dope": {
+    "model_id": 3,
+    "model_pdb": "target.B99990003.pdb",
+    "DOPE": -35775.74609375,
+    "molpdf": 9911.490234375,
+    "GA341": 1.0
+  },
+  "best_by_rmsd_to_crystal": {
+    "model_id": 10,
+    "model_pdb": "target.B99990010.pdb",
+    "rmsd_to_crystal": 0.3666912317276001,
+    "n_atoms_aligned": 259
+  },
+  "ramachandran_summary": [
+    {
+      "model_id": "1",
+      "pct_favoured": "84.56",
+      "pct_allowed": "12.98",
+      "pct_outlier": "2.46"
+    },
+    {
+      "model_id": "2",
+      "pct_favoured": "84.56",
+      "pct_allowed": "12.63",
+      "pct_outlier": "2.81"
+    },
+    {
+      "model_id": "3",
+      "pct_favoured": "84.56",
+      "pct_allowed": "12.98",
+      "pct_outlier": "2.46"
+    },
+    {
+      "model_id": "4",
+      "pct_favoured": "85.26",
+      "pct_allowed": "13.33",
+      "pct_outlier": "1.4"
+    },
+    {
+      "model_id": "5",
+      "pct_favoured": "84.56",
+      "pct_allowed": "12.63",
+      "pct_outlier": "2.81"
+    },
+    {
+      "model_id": "6",
+      "pct_favoured": "84.21",
+      "pct_allowed": "13.33",
+      "pct_outlier": "2.46"
+    },
+    {
+      "model_id": "7",
+      "pct_favoured": "83.51",
+      "pct_allowed": "14.39",
+      "pct_outlier": "2.11"
+    },
+    {
+      "model_id": "8",
+      "pct_favoured": "83.86",
+      "pct_allowed": "13.33",
+      "pct_outlier": "2.81"
+    },
+    {
+      "model_id": "9",
+      "pct_favoured": "84.91",
+      "pct_allowed": "12.63",
+      "pct_outlier": "2.46"
+    },
+    {
+      "model_id": "10",
+      "pct_favoured": "84.56",
+      "pct_allowed": "12.98",
+      "pct_outlier": "2.46"
+    }
+  ],
+  "saves_web_upload_status": "manual (see 06_validation/SAVES_MANUAL.md)",
+  "generated": "2026-05-12T15:04:11"
+}

@@ -1,0 +1,14 @@
+{
+  "best_by_rmsd": {
+    "model_id": 10,
+    "model_pdb": "target.B99990010.pdb",
+    "rmsd_to_crystal": 0.3666912317276001,
+    "n_atoms_aligned": 259
+  },
+  "best_by_dope": {
+    "model_id": 3,
+    "model_pdb": "target.B99990003.pdb",
+    "DOPE": -35775.74609375
+  },
+  "n_models": 10
+}

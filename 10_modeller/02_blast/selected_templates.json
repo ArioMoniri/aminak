@@ -1,0 +1,52 @@
+{
+  "criteria": {
+    "min_identity_pct": 30.0,
+    "max_identity_pct": 95.0,
+    "min_coverage": 0.8,
+    "max_resolution_A": 2.5,
+    "excluded_pdbs": [
+      "1HVY"
+    ]
+  },
+  "note": "Templates were chosen with %identity 30-95% deliberately, for educational purposes; in production one would use the highest-quality template available, including 100% identity matches (e.g. 1HVY itself).",
+  "selected": [
+    {
+      "pdb_id": "3IHI",
+      "chain": "A",
+      "identity_pct": 92.71,
+      "coverage": 1.003,
+      "align_length": 288,
+      "hsp_score": 1460.0,
+      "hsp_evalue": 0.0,
+      "hit_def": "Chain A, Thymidylate synthase [Mus musculus] >pdb|3IHI|B Chain B, Thymidylate synthase [Mus musculus] >pdb|4E5O|A Chain A, Thymidylate synthase [Mus musculus] >",
+      "resolution": 1.94,
+      "chain_pdb": "/Users/ario/conserved_site_project/10_modeller/02_blast/templates/3IHI_A.pdb"
+    },
+    {
+      "pdb_id": "6K7Q",
+      "chain": "A",
+      "identity_pct": 75.96,
+      "coverage": 1.0,
+      "align_length": 287,
+      "hsp_score": 1195.0,
+      "hsp_evalue": 1.34864e-166,
+      "hit_def": "Chain A, Thymidylate synthase [Penaeus vannamei] >pdb|6K7Q|B Chain B, Thymidylate synthase [Penaeus vannamei] >pdb|6K7Q|C Chain C, Thymidylate synthase [Penaeus",
+      "resolution": 2.27,
+      "chain_pdb": "/Users/ario/conserved_site_project/10_modeller/02_blast/templates/6K7Q_A.pdb"
+    },
+    {
+      "pdb_id": "5H39",
+      "chain": "A",
+      "identity_pct": 72.28,
+      "coverage": 0.993,
+      "align_length": 285,
+      "hsp_score": 1147.0,
+      "hsp_evalue": 2.33254e-159,
+      "hit_def": "Chain A, ORF70 [Human gammaherpesvirus 8] >pdb|5H39|B Chain B, ORF70 [Human gammaherpesvirus 8]",
+      "resolution": 2.0,
+      "chain_pdb": "/Users/ario/conserved_site_project/10_modeller/02_blast/templates/5H39_A.pdb"
+    }
+  ],
+  "n_total_hits": 167,
+  "n_passed_filters": 100
+}

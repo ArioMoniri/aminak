@@ -308,14 +308,20 @@ The fix (`scripts/v5/pqr_to_pdbqt.py`):
 3. Merge non-polar H charges into their carrier heavy atoms (the AD4 united-atom convention).
 4. **Hard-assert at build time**: `|total_q| < 5 e`, every ARG/LYS residue in `[+0.7, +1.3]`, every ASP/GLU in `[−1.3, −0.7]`. This is the gate the v3 audit's `max|q| > 0.05` check should have been.
 
-| Receptor | Total q | Arg mean | Lys mean | Asp mean | Glu mean | Assertion |
+| Receptor (apo) | Total q | Arg mean | Lys mean | Asp mean | Glu mean | Assertion |
 | --- | --- | --- | --- | --- | --- | --- |
 | Before (v3 broken) | **−306.61 e** | −1.06 | (broken) | (broken) | (broken) | ❌ FAIL |
-| After (Phase 6c) | **−2.23 e** | **+1.00** | **+1.00** | **−1.00** | **−0.97** (1 residue dropped by PDB2PQR) | ✅ PASS |
+| After (Phase 6c) | **−2.23 e** | **+1.00** | **+1.00** | **−1.00** | **−0.97** (1 of 32 residues dropped by PDB2PQR — disclosed) | ✅ PASS |
+
+**Holo receptor**: protein portion totals −2.23 e (same as apo); the bound raltitrexed cofactor (D16) contributes net **−3.64 e** (target −4 e for 2 copies × −2 net each, the physiologically deprotonated dianion state). Carboxylate Os were patched to −0.700 each to enforce the formal −1 per carboxylate group. Total holo receptor q = **−5.87 e** — physically correct for the dimer plus 4 deprotonated carboxylates.
+
+**AD4 atom typing** (the second strict-reviewer concern): the fixed protein PDBQT contains the full AD4 type set — `HD` (1025 polar Hs, mean charge +0.334), `OA` (840 HB-acceptor Os), `NA` (46 HB-acceptor Ns in His rings), `SA` (24 Met Sδ), `A` (434 aromatic Cs), `N` (762 amide Ns), `C` (2532 aliphatic Cs). Zero polar Hs carry q = 0. The file is AD4-rescore-ready.
 
 Apo and holo receptor PDBQTs in [`06e_docking_wt_v5/`](06e_docking_wt_v5/) are now physically correct; the originals are preserved as `*_BROKEN.pdbqt` in [`06f_receptor_fixed/`](06f_receptor_fixed/) for audit.
 
-**Important caveat:** the **Vina results in this repo are unchanged** by this fix because Vina ignores partial charges. The fix matters only if you want to:
+> **🧬 Dimer-asymmetry caveat.** TYMS is an obligate homodimer with two equivalent active sites. The complex viewer files load **one dUMP molecule** (placed at the chain-A active site we docked into; residue `UMP X 414`) plus **two cofactor copies** (one per chain). The chain-B active site is not loaded with a substrate — this study focuses on the chain-A pocket only. A symmetric study would dock dUMP into both sites; doing so would not change the qualitative null-result conclusion but would double the per-condition compute.
+
+**Important caveat:** the **Vina results in this repo are unchanged** by the charge fix because Vina ignores partial charges. The fix matters only if you want to:
 - Re-score with AD4 (which DOES use electrostatics)
 - Run electrostatic-aware analysis (APBS, MEAD, etc.)
 - Re-prepare a publication-quality figure with proper charge maps

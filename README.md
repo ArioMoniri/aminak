@@ -211,7 +211,7 @@ Each render below shows the protein as semi-transparent surface over cartoon, dU
 </tr>
 </table>
 
-Renders for every key mutant (close-up + wide context) are in [`11_enhanced/pymol/`](11_enhanced/pymol/).
+Renders for every key mutant — **holo close-up + holo wide context + apo close-up** — are in [`11_enhanced/pymol/`](11_enhanced/pymol/). The apo set is named `<mut>_apo_render.png` (8 mutants × 1 close-up = 8 files), the holo set is `<mut>_holo_render.png` and `<mut>_holo_render_wide.png` (8 mutants × 2 views = 16 files).
 
 ---
 

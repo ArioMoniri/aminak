@@ -36,16 +36,18 @@ load {pdb}, complex
 hide everything
 bg_color white
 set ray_shadows, 0
-set ambient, 0.35
+set ambient, 0.42
+set spec_reflect, 0.10
 set surface_quality, 1
-set transparency, 0.45
+set transparency, 0.0
 set cartoon_transparency, 0.0
 
 select rec, polymer and chain A
 show cartoon, rec
-color grey90, rec
+color white, rec
 show surface, rec
-color grey75, rec
+color grey80, rec
+set surface_color, grey80, rec
 
 select lig, resn UMP
 show sticks, lig

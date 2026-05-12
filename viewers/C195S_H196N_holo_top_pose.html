@@ -39,14 +39,33 @@
  </div>
  <div class="controls">
   <strong>Toggle:</strong>
-  <button onclick="window._v.removeAllSurfaces(); window._v.render();">Hide surface</button>
-  <button onclick="window._v.addSurface($3Dmol.SurfaceType.MS,{opacity:0.30,color:'lightgrey'},{polymer:true}); window._v.render();">Show surface</button>
-  <button onclick="window._v.setStyle({polymer:true},{cartoon:{colorscheme:'spectrum',opacity:1.0}}); window._v.render();">Cartoon only</button>
-  <button onclick="window._v.zoomTo({resn:'UMP'}); window._v.zoom(0.85); window._v.render();">Zoom to ligand</button>
-  <button onclick="window._v.spin(true);">Spin</button>
-  <button onclick="window._v.spin(false);">Stop spin</button>
+  <button onclick="hideSurface()">Hide surface</button>
+  <button onclick="showSurface()">Show surface</button>
+  <button onclick="cartoonOnly()">Cartoon only</button>
+  <button onclick="zoomLigand()">Zoom to ligand</button>
+  <button onclick="spinOn()">Spin</button>
+  <button onclick="spinOff()">Stop spin</button>
  </div>
 </div>
+<script>
+function _withV(fn) {
+  if (!window._v) { console.warn('viewer not ready'); return; }
+  try { fn(window._v); } catch (e) { console.error(e); }
+}
+function hideSurface()  { _withV(function(v){ v.removeAllSurfaces(); v.render(); }); }
+function showSurface()  { _withV(function(v){
+  var p = v.addSurface($3Dmol.SurfaceType.MS, {opacity:0.30, color:'lightgrey'}, {polymer:true});
+  if (p && p.then) p.then(function(){ v.render(); }); else v.render();
+}); }
+function cartoonOnly()  { _withV(function(v){
+  v.removeAllSurfaces();
+  v.setStyle({polymer:true}, {cartoon: {colorscheme: 'spectrum', opacity: 1.0}});
+  v.render();
+}); }
+function zoomLigand()   { _withV(function(v){ v.zoomTo({resn: 'UMP'}); v.zoom(0.85); v.render(); }); }
+function spinOn()       { _withV(function(v){ v.spin(true); }); }
+function spinOff()      { _withV(function(v){ v.spin(false); }); }
+</script>
 <script>
 const pdbText = `HETATM    1  C1' UMP X 414      -0.884   5.479  15.360  1.00  0.00           C
 HETATM    2  C2' UMP X 414      -1.642   4.332  14.751  1.00  0.00           C

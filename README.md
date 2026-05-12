@@ -82,15 +82,36 @@ The diagram below regenerates on every push to `main` ([repo-visualizer](https:/
 
 ---
 
-## Live interactive 3D viewers
+## Live 3D structures — rotating in-page (looped GIFs) + click-through to interactive viewers
 
-**👉 https://ariomoniri.github.io/aminak/viewers/index.html**
+GitHub markdown strips `<script>` and `<iframe>`, so a true JavaScript-driven viewer (3Dmol.js, Mol*) cannot run **inside** this README. The closest legitimate substitute is animated GIFs (rendered with PyMOL, looped here at ~3 fps) for the in-page "interactive feel", plus click-through buttons that open the full 3Dmol.js viewer (with rotate / zoom / surface toggle / spin), or load the same PDB straight into the public Mol* viewer.
 
-96 self-contained 3Dmol.js viewer pages (PDB embedded inline; works locally and via GitHub Pages). Drag = rotate, scroll = zoom, right-drag = translate. Each viewer has buttons to toggle surface / cartoon-only, zoom to ligand, and spin.
+<table>
+<tr><td align="center" width="33%">
+<img src="11_enhanced/gifs/wt_apo.gif" width="100%" alt="WT apo rotating"/><br/>
+<b>WT (apo) + dUMP</b><br/>
+<a href="https://ariomoniri.github.io/aminak/viewers/wt_apo_complex.html">▶ 3Dmol viewer</a> · 
+<a href="https://molstar.org/viewer/?url=https://raw.githubusercontent.com/ArioMoniri/aminak/main/06e_docking_wt_v5/wt_apo_complex.pdb">▶ Mol* viewer</a>
+</td>
+<td align="center" width="33%">
+<img src="11_enhanced/gifs/wt_holo.gif" width="100%" alt="WT holo rotating"/><br/>
+<b>WT (holo) + dUMP + cofactor</b><br/>
+<a href="https://ariomoniri.github.io/aminak/viewers/wt_holo_complex.html">▶ 3Dmol viewer</a> · 
+<a href="https://molstar.org/viewer/?url=https://raw.githubusercontent.com/ArioMoniri/aminak/main/06e_docking_wt_v5/wt_holo_complex.pdb">▶ Mol* viewer</a>
+</td>
+<td align="center" width="33%">
+<img src="11_enhanced/gifs/R215A_N226A_holo.gif" width="100%" alt="R215A_N226A rotating"/><br/>
+<b>R215A_N226A holo</b> — top destabiliser<br/>
+<a href="https://ariomoniri.github.io/aminak/viewers/R215A_N226A_holo_complex.html">▶ 3Dmol viewer</a> · 
+<a href="https://molstar.org/viewer/?url=https://raw.githubusercontent.com/ArioMoniri/aminak/main/07e_mut_docking_v5/viewer_files/R215A_N226A_holo_complex.pdb">▶ Mol* viewer</a>
+</td></tr>
+</table>
 
-By default the protein is shown as cartoon **+ semi-transparent surface**, ligand as **fat magenta sticks**, and active-site residues as labelled sticks (yellow C). The catalytic Cys195 / His196 / Arg175 / Arg176 / Arg215 / Asn226 carry permanent text labels.
+Index of all 96 interactive 3Dmol viewer pages: **https://ariomoniri.github.io/aminak/viewers/index.html**
 
-Click any thumbnail below to launch the live viewer:
+The 3Dmol viewer pages have the protein as cartoon **+ semi-transparent surface**, ligand as **fat magenta sticks**, active-site residues as labelled sticks (yellow C); catalytic Cys195 / His196 / Arg175 / Arg176 / Arg215 / Asn226 carry permanent text labels. On-page buttons toggle surface, switch to cartoon-only, zoom to ligand, and spin.
+
+### Static thumbnails — clickable
 
 | | | |
 |:-:|:-:|:-:|
@@ -101,34 +122,164 @@ Click any thumbnail below to launch the live viewer:
 | [![C195A](11_enhanced/pymol/C195A_holo_render.png)](https://ariomoniri.github.io/aminak/viewers/C195A_holo_complex.html) | [![Modeller best](11_enhanced/pymol/R215E_holo_render.png)](https://ariomoniri.github.io/aminak/viewers/modeller_model03.html) | [![Modeller best RMSD](11_enhanced/pymol/R50A_holo_render.png)](https://ariomoniri.github.io/aminak/viewers/modeller_model10.html) |
 | **C195A** — flagged low-confidence | **Modeller model 3** — best by DOPE | **Modeller model 10** — best by RMSD |
 
-> GitHub does not allow `<iframe>` or JavaScript inside README markdown, so the viewers cannot run *embedded* in this page. The thumbnails above are real PyMOL ray-traced PNGs that link out to the live interactive viewer pages on GitHub Pages.
+---
+
+## 📊 Mutation-effect 2D map (Ramachandran-style for mutations)
+
+[![Mutation effect 2D — static](11_enhanced/mutation_effect_2d.png)](https://ariomoniri.github.io/aminak/11_enhanced/mutation_effect_2d.html)
+
+**▶ Open the [dynamic Plotly version](https://ariomoniri.github.io/aminak/11_enhanced/mutation_effect_2d.html)** — hover for full per-mutant detail, click the legend to filter by functional class, click any point to launch its live 3Dmol viewer.
+
+Each point is one mutant in the holo condition. **X axis**: Δ hydropathy (Kyte–Doolittle, new − WT). **Y axis**: Δ side-chain volume (Å³, new − WT). **Fill colour**: Δ Vina score vs WT (red = destabilising, blue = stabilising; range narrower than Vina's ±0.85 noise floor). **Ring colour**: functional class. **Greyed marker** = mis-docked or low-confidence (excluded from clean rankings). The plot makes the headline visible: across the entire chemistry × volume plane, **no mutant produces a colour darker than the noise band**.
 
 ---
 
-## Mutation-effect 2D map (Ramachandran-style)
+## 🔬 Conservation, active-site annotation, structural prep
 
-![Mutation effect 2D](11_enhanced/mutation_effect_2d.png)
+| | |
+|:-:|:-:|
+| ![Conservation plot](01b_msa_v2/conservation_plot.png) | ![Active-site / conservation overlap](02b_active_site_v2/overlap_figure.png) |
+| **Per-residue Jensen–Shannon conservation** (Capra–Singh, weighted window). 10 verified TYMS orthologs, MAFFT --auto, PfDHFR-TS trimmed to TS domain, >50 % gap columns excluded from ranking. Cys195/His196/Arg175/Arg176/Arg215/Asn226 all naturally in the top decile. | **DB-annotated active-site × top-25 % conservation overlap**. Intersection yields the canonical TYMS catalytic set with no force-augmentation. |
 
-The "mutation Ramachandran". Each point is one mutant in the holo condition.
-- **X axis**: Δ hydropathy (Kyte–Doolittle, new − WT side chain).
-- **Y axis**: Δ side-chain volume (Å³, new − WT).
-- **Fill colour**: Δ Vina score vs WT (red = destabilising, blue = "stabilising"; range narrower than Vina's ±0.85 noise floor).
-- **Ring colour**: functional class of the mutated residue (catalytic / phosphate clamp / substrate orientation / pocket scaffold / distant control).
-- **Greyed marker** = mis-docked or low-confidence (excluded from clean rankings).
+| | |
+|:-:|:-:|
+| ![Dimer overview](04b_pymol_v2/dimer_overview.png) | ![Conservation surface](04b_pymol_v2/conservation_surface.png) |
+| **TYMS homodimer (chains A + B)** with chain-A dUMP highlighted. Active site sits at the dimer interface — Arg175′ / Arg176′ of chain B clamp the chain-A dUMP phosphate. | **Surface coloured by Jensen–Shannon conservation** (blue → red, low → high). The catalytic pocket aligns with the deepest red. |
 
-The plot makes the headline visible: across the entire chemistry × volume plane, no mutant produces a colour darker than the noise band.
+| | |
+|:-:|:-:|
+| ![Active site chain A](04b_pymol_v2/active_site_chainA.png) | ![Active site chain B](04b_pymol_v2/active_site_chainB.png) |
+| **Chain-A active-site closeup** with residue labels. | **Chain-B active site** — mirror image of chain A, since TYMS is a symmetric homodimer. |
+
+![Catalytic dyad](04b_pymol_v2/catalytic_dyad.png)
+*Cys195 – His196 catalytic dyad geometry. Cys195 is the Michael-addition nucleophile; His196 is the proton-transfer partner.*
 
 ---
 
-## Reference renders (chain A, surface + sticks + labelled interacting residues)
+## 🧱 Reference renders (chain A, surface + sticks + labelled interacting residues + mutation site)
 
-![Active-site close-up — H196A holo](11_enhanced/pymol/H196A_holo_render.png)
-*Surface + cartoon protein, dUMP magenta sticks, mutation site (orange) and catalytic interacting residues labelled. The surface makes the binding pocket visible at a glance; the labelled residues identify which contacts the mutation removes.*
+Each mutant render shows the **interacting residues** (within 4.5 Å of dUMP — yellow C, labelled with `RES<num>`), the **mutation site** (orange, labelled `MUT <RES><num>`), the **ligand** (magenta sticks), and the **cofactor** (cyan sticks in holo). The receptor's semi-transparent **surface** is overlaid on a cartoon so the pocket geometry is unambiguous.
 
-![Wide view — H196A holo](11_enhanced/pymol/H196A_holo_render_wide.png)
-*Same mutant, wider context: chain B in grey shows the dimer-interface contributions to the chain-A pocket.*
+<table>
+<tr>
+<td align="center" width="50%"><img src="11_enhanced/pymol/H196A_holo_render.png" width="100%"/><br/><b>H196A holo</b> — catalytic dyad probe</td>
+<td align="center" width="50%"><img src="11_enhanced/pymol/H196A_holo_render_wide.png" width="100%"/><br/><b>H196A holo (wide context)</b> — chain B in grey</td>
+</tr>
+<tr>
+<td align="center"><img src="11_enhanced/pymol/R215A_N226A_holo_render.png" width="100%"/><br/><b>R215A_N226A holo</b> — top destabiliser</td>
+<td align="center"><img src="11_enhanced/pymol/R175E_R176E_holo_render.png" width="100%"/><br/><b>R175E_R176E holo</b> — phosphate clamp inversion</td>
+</tr>
+<tr>
+<td align="center"><img src="11_enhanced/pymol/R50A_holo_render.png" width="100%"/><br/><b>R50A holo</b> — phosphate clamp, bulk loss</td>
+<td align="center"><img src="11_enhanced/pymol/R215E_holo_render.png" width="100%"/><br/><b>R215E holo</b> — phosphate clamp, charge inversion</td>
+</tr>
+<tr>
+<td align="center"><img src="11_enhanced/pymol/C195A_holo_render.png" width="100%"/><br/><b>C195A holo</b> — catalytic Cys (flagged low-confidence)</td>
+<td align="center"><img src="11_enhanced/pymol/Y258F_F225Y_holo_render.png" width="100%"/><br/><b>Y258F_F225Y holo</b> — aromatic swap pair</td>
+</tr>
+<tr>
+<td align="center" colspan="2"><img src="11_enhanced/pymol/T170A_holo_render.png" width="50%"/><br/><b>T170A holo</b> — distant-surface negative control (Δ ≈ 0)</td>
+</tr>
+</table>
 
-Renders for every key mutant are in [`11_enhanced/pymol/`](11_enhanced/pymol/).
+Renders for every key mutant (close-up + wide context) are in [`11_enhanced/pymol/`](11_enhanced/pymol/).
+
+---
+
+## 📈 Analysis plots
+
+| | |
+|:-:|:-:|
+| ![Δ Vina by category](08c_analysis_v3/delta_vina_by_category.png) | ![Δ Vina apo + holo](08c_analysis_v3/delta_vina_apo_holo.png) |
+| **Δ Vina by mutant category** (apo + holo overlay). | **Per-mutant Δ Vina, both conditions side-by-side**. |
+
+| | |
+|:-:|:-:|
+| ![Apo vs holo paired](08c_analysis_v3/delta_vina_apo_vs_holo.png) | ![Apo vs holo concordance](08c_analysis_v3/apo_vs_holo_concordance.png) |
+| **Apo vs holo paired difference**. | **Apo vs holo concordance scatter** with the diagonal. |
+
+![Static mutation-effect plot (v3 analysis)](08c_analysis_v3/mutation_effect_plot.png)
+*Earlier (v3) version of the mutation-effect map. The final Plotly version is up top.*
+
+---
+
+## 🧬 Phase 6 — Modeller homology modelling
+
+10 models built with **Modeller 10.8 AutoModel** against 3 templates spanning **30–95 % identity** (deliberately educational, not 100 %; 1HVY itself excluded from BLAST hits):
+
+| Template | Organism | % identity | Resolution |
+| --- | --- | --- | --- |
+| 3IHI_A | *Mus musculus* TYMS | 92.71 % | 1.94 Å |
+| 6K7Q_A | *Penaeus vannamei* (white shrimp) TYMS | 75.96 % | 2.27 Å |
+| 5H39_A | *Human gammaherpesvirus 8* (KSHV) ORF70 | 72.28 % | 2.00 Å |
+
+**Best by DOPE** (canonical pick for blind prediction): model 3 (DOPE = −35 775).
+**Best by Cα RMSD vs 1HVY**: model 10 (0.367 Å). The two criteria disagree by one rank because the two models differ in a surface loop (residues 93–101) where the templates were uninformative — exactly where a real homology-modelling exercise should differ.
+
+### All 10 models, individually overlaid on the 1HVY crystal
+
+<table>
+<tr>
+<td align="center" width="25%"><img src="10_modeller/05_comparison/pairwise_model01.png" width="100%"/><br/><b>Model 1</b></td>
+<td align="center" width="25%"><img src="10_modeller/05_comparison/pairwise_model02.png" width="100%"/><br/><b>Model 2</b></td>
+<td align="center" width="25%"><img src="10_modeller/05_comparison/pairwise_model03.png" width="100%"/><br/><b>Model 3</b> · ⭐ best DOPE</td>
+<td align="center" width="25%"><img src="10_modeller/05_comparison/pairwise_model04.png" width="100%"/><br/><b>Model 4</b></td>
+</tr>
+<tr>
+<td align="center"><img src="10_modeller/05_comparison/pairwise_model05.png" width="100%"/><br/><b>Model 5</b></td>
+<td align="center"><img src="10_modeller/05_comparison/pairwise_model06.png" width="100%"/><br/><b>Model 6</b></td>
+<td align="center"><img src="10_modeller/05_comparison/pairwise_model07.png" width="100%"/><br/><b>Model 7</b></td>
+<td align="center"><img src="10_modeller/05_comparison/pairwise_model08.png" width="100%"/><br/><b>Model 8</b></td>
+</tr>
+<tr>
+<td align="center"><img src="10_modeller/05_comparison/pairwise_model09.png" width="100%"/><br/><b>Model 9</b></td>
+<td align="center"><img src="10_modeller/05_comparison/pairwise_model10.png" width="100%"/><br/><b>Model 10</b> · ⭐ best RMSD (0.367 Å)</td>
+<td align="center" colspan="2"><img src="10_modeller/05_comparison/all_models_overlay.png" width="100%"/><br/><b>All 10 models + crystal</b> (overlay)</td>
+</tr>
+</table>
+
+Each tile: **green** = model, **magenta** = 1HVY crystal chain-A backbone. Click any thumbnail above (or open the PNG in [`10_modeller/05_comparison/`](10_modeller/05_comparison/)) for the full-resolution render.
+
+### Per-model Ramachandran φ/ψ plots (local PROCHECK substitute)
+
+Local Ramachandran (Biopython φ/ψ + hand-drawn favoured/allowed polygons — calibrated against the 1HVY crystal itself, which scores 82.3 % favoured under the same scheme). Models score 83.5–85.3 % favoured / 12.6–14.4 % allowed / 1.4–2.8 % outliers — i.e. **match or beat the crystal under this scheme**. For canonical MolProbity-comparable numbers, see [`10_modeller/06_validation/SAVES_MANUAL.md`](10_modeller/06_validation/SAVES_MANUAL.md) (manual upload to https://saves.mbi.ucla.edu/).
+
+<table>
+<tr>
+<td align="center" width="25%"><img src="10_modeller/06_validation/ramachandran_model01.png" width="100%"/><br/>Model 1</td>
+<td align="center" width="25%"><img src="10_modeller/06_validation/ramachandran_model02.png" width="100%"/><br/>Model 2</td>
+<td align="center" width="25%"><img src="10_modeller/06_validation/ramachandran_model03.png" width="100%"/><br/>Model 3</td>
+<td align="center" width="25%"><img src="10_modeller/06_validation/ramachandran_model04.png" width="100%"/><br/>Model 4</td>
+</tr>
+<tr>
+<td align="center"><img src="10_modeller/06_validation/ramachandran_model05.png" width="100%"/><br/>Model 5</td>
+<td align="center"><img src="10_modeller/06_validation/ramachandran_model06.png" width="100%"/><br/>Model 6</td>
+<td align="center"><img src="10_modeller/06_validation/ramachandran_model07.png" width="100%"/><br/>Model 7</td>
+<td align="center"><img src="10_modeller/06_validation/ramachandran_model08.png" width="100%"/><br/>Model 8</td>
+</tr>
+<tr>
+<td align="center"><img src="10_modeller/06_validation/ramachandran_model09.png" width="100%"/><br/>Model 9</td>
+<td align="center"><img src="10_modeller/06_validation/ramachandran_model10.png" width="100%"/><br/>Model 10</td>
+<td align="center" colspan="2"><img src="10_modeller/06_validation/quality_overview.png" width="100%"/><br/><b>Per-model quality overview</b> (DOPE / molpdf / RMSD / Ramachandran %)</td>
+</tr>
+</table>
+
+### Per-residue DOPE energy profile (best by DOPE, model 3)
+
+![DOPE profile model 3](10_modeller/06_validation/dope_profile_model03.png)
+
+Peaks in the per-residue DOPE highlight modelling-uncertain regions (the residue-93–101 loop visible in the overlay). Profiles for the other 9 models are in [`10_modeller/06_validation/`](10_modeller/06_validation/).
+
+### Open any Modeller model in 3Dmol or Mol*
+
+| Model | Best by | 3Dmol viewer | Mol* viewer |
+| --- | --- | --- | --- |
+| `target.B99990001` | — | [▶](https://ariomoniri.github.io/aminak/viewers/modeller_model01.html) | [▶](https://molstar.org/viewer/?url=https://raw.githubusercontent.com/ArioMoniri/aminak/main/10_modeller/04_modeller_run/models/target.B99990001.pdb) |
+| `target.B99990003` | ⭐ DOPE | [▶](https://ariomoniri.github.io/aminak/viewers/modeller_model03.html) | [▶](https://molstar.org/viewer/?url=https://raw.githubusercontent.com/ArioMoniri/aminak/main/10_modeller/04_modeller_run/models/target.B99990003.pdb) |
+| `target.B99990010` | ⭐ Cα RMSD vs 1HVY | [▶](https://ariomoniri.github.io/aminak/viewers/modeller_model10.html) | [▶](https://molstar.org/viewer/?url=https://raw.githubusercontent.com/ArioMoniri/aminak/main/10_modeller/04_modeller_run/models/target.B99990010.pdb) |
+| `best_model.pdb` | DOPE pick copy | — | [▶](https://molstar.org/viewer/?url=https://raw.githubusercontent.com/ArioMoniri/aminak/main/10_modeller/04_modeller_run/models/best_model.pdb) |
+
+Phase 6 source: [`10_modeller/`](10_modeller/) and [`scripts/modeller/`](scripts/modeller/). Full Phase-6 DOCX: [`09e_report_v5/report_PHASE6.docx`](09e_report_v5/report_PHASE6.docx). Phase-6 reviewer reports: [`reviews_phase6/`](reviews_phase6/).
 
 ---
 

@@ -94,49 +94,64 @@ ic = np.log2(20) - entropy
 heights = prob.mul(ic, axis=0)
 
 # ===================== PLOT 1: focus on active-site residues =====================
+# Re-index by COMPACT positions (1, 2, 3, ...) so columns don't crowd
 positions = sorted(PANEL.keys())
-sub = heights.loc[positions]
-fig, ax = plt.subplots(figsize=(14, 4.6))
+compact_idx = list(range(len(positions)))
+sub = heights.loc[positions].reset_index(drop=True)
+
+# Two-stack figure: top = logo, bottom = function-class band, with extra
+# vertical room for the "WT=X / →A,B" labels above each column.
+fig, (ax_top, ax) = plt.subplots(2, 1, figsize=(16, 7),
+                                  gridspec_kw={"height_ratios": [1.4, 6]},
+                                  sharex=True)
+ax_top.axis("off")
 logo = lm.Logo(sub, ax=ax, color_scheme="chemistry", font_name="DejaVu Sans Bold")
-logo.style_xticks(anchor=0, spacing=1, rotation=0)
-ax.set_xticks(positions)
-ax.set_xticklabels([str(p) for p in positions], fontsize=10)
-ax.set_xlabel("Reference position (P04818, human TYMS)", fontsize=11)
-ax.set_ylabel("Information content (bits)\nlog₂(20) − Shannon entropy", fontsize=11)
-ax.set_ylim(0, np.log2(20))
+
+# Use COMPACT x positions; relabel ticks with the actual residue numbers
+ax.set_xticks(compact_idx)
+ax.set_xticklabels([f"{wt}{p}" for p, (wt,_,_) in zip(positions, [PANEL[p] for p in positions])],
+                   fontsize=10, fontweight="bold")
+ax.set_xlabel("Active-site / mutated residues  (numbering = ungapped P04818)",
+              fontsize=11, labelpad=10)
+ax.set_ylabel("Information content (bits)\nlog₂(20) − Shannon entropy",
+              fontsize=11)
+ax.set_ylim(0, np.log2(20) + 0.2)
 ax.axhline(np.log2(20), ls="--", color="#bbb", lw=0.6)
-ax.text(positions[-1] + 0.4, np.log2(20) - 0.05, "fully conserved (4.32 bits)",
+ax.text(compact_idx[-1] + 0.4, np.log2(20) - 0.05, "fully conserved (4.32 bits)",
         ha="left", va="top", fontsize=8, color="#666")
 
-# Functional-class colour band beneath each column
-ymin = -0.6
-band_h = 0.4
-for p in positions:
+# Functional-class colour band IN A SEPARATE STRIP just below the logo
+band_y = -0.50
+band_h = 0.40
+for x, p in zip(compact_idx, positions):
     cls = PANEL[p][2]
-    ax.add_patch(mpatches.Rectangle((p - 0.5, ymin), 1, band_h,
-                                    facecolor=COLOR_OF[cls], alpha=0.7,
+    ax.add_patch(mpatches.Rectangle((x - 0.45, band_y), 0.90, band_h,
+                                    facecolor=COLOR_OF[cls], alpha=0.85,
                                     edgecolor="white", linewidth=0.5,
                                     transform=ax.transData, clip_on=False))
-# Mutation labels above each column
-for p in positions:
+
+# Mutation panel labels in the TOP axis (no overlap with logo)
+ax_top.set_xlim(ax.get_xlim())
+for x, p in zip(compact_idx, positions):
     wt, muts, _ = PANEL[p]
-    label = f"WT={wt}\n→{','.join(muts)}"
-    ax.annotate(label, xy=(p, np.log2(20) + 0.10),
-                ha="center", va="bottom", fontsize=7, color="#222",
-                annotation_clip=False)
+    ax_top.text(x, 0.65, f"WT={wt}", ha="center", va="bottom",
+                fontsize=9, fontweight="bold", color="#1f3b5e")
+    ax_top.text(x, 0.20, f"→{', '.join(muts)}", ha="center", va="bottom",
+                fontsize=8, color="#b8593c")
+ax_top.set_ylim(0, 1)
 
-# Class legend
+# Class legend (below x label)
 handles = [mpatches.Patch(color=col, label=name) for name, col in COLOR_OF.items()]
-leg = ax.legend(handles=handles, loc="upper center", ncol=3,
-                bbox_to_anchor=(0.5, -0.30), fontsize=9, frameon=False,
-                title="Functional class (band colour)", title_fontsize=9)
+ax.legend(handles=handles, loc="upper center", ncol=3,
+          bbox_to_anchor=(0.5, -0.30), fontsize=9, frameon=False,
+          title="Functional class (band colour)", title_fontsize=9)
 
-ax.set_title(
+fig.suptitle(
     "Amino-acid sequence logo at TYMS active-site & mutated residues\n"
     "Letter height = frequency × information content (10 verified TYMS orthologs)",
-    fontsize=12, fontweight="bold", color="#1f3b5e",
+    fontsize=13, fontweight="bold", color="#1f3b5e", y=0.98,
 )
-plt.subplots_adjust(bottom=0.30, top=0.85)
+plt.subplots_adjust(left=0.07, right=0.98, bottom=0.18, top=0.88, hspace=0.05)
 plt.savefig(OUT, dpi=180, bbox_inches="tight", facecolor="white")
 print(f"  wrote {OUT} ({OUT.stat().st_size//1024} KB)")
 

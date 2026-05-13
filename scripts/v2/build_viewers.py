@@ -44,11 +44,23 @@ print(f"viewer source: {SOURCE_TAG} (MUTDIR={MUTDIR.parent.name}/{MUTDIR.name}, 
 CDN_3DMOL = "https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"
 
 
+def parse_mutation_residue(stem: str) -> int | None:
+    """Extract the mutation residue number from a viewer-file stem like
+    'H196A_holo_complex' or 'R215A_N226A_apo_top_pose'. Returns the FIRST
+    residue number found, or None if it's WT."""
+    import re
+    if stem.startswith("wt_") or "modeller" in stem.lower():
+        return None
+    m = re.search(r"[A-Z](\d{2,3})[A-Z]", stem)
+    return int(m.group(1)) if m else None
+
+
 def render_html(title: str, pdb_path: pathlib.Path, *,
                 lig_resn: str = "UMP",
                 cof_resn: str | None = "D16",
                 description: str = "",
-                width: int = 800, height: int = 560) -> str:
+                width: int = 800, height: int = 560,
+                mutation_resi: int | None = None) -> str:
     """Generate a self-contained 3Dmol.js viewer HTML for one PDB."""
     if not pdb_path.exists():
         return f"<html><body>Missing: {pdb_path}</body></html>"
@@ -58,6 +70,18 @@ def render_html(title: str, pdb_path: pathlib.Path, *,
     cof_block = ""
     if cof_resn:
         cof_block = f"viewer.setStyle({{resn: '{cof_resn}'}}, {{stick: {{colorscheme: 'cyanCarbon', radius: 0.20}}}});"
+    # Mutation-site highlight block (orange thick sticks + MUT label)
+    if mutation_resi is not None:
+        mutation_block = (
+            f"viewer.setStyle({{resi: [{mutation_resi}], chain: ['A']}}, "
+            f"{{stick: {{color: 'orange', radius: 0.30}}, cartoon: {{colorscheme: 'spectrum'}}}});\n"
+            f"viewer.addLabel('MUT ' + {mutation_resi}, {{\n"
+            f"  fontSize: 13, fontColor: 'orange', backgroundColor: '0x402010',\n"
+            f"  backgroundOpacity: 0.85, alignment: 'topCenter', borderColor: 'orange', borderThickness: 1.0\n"
+            f"}}, {{resi: {mutation_resi}, atom: 'CA', chain: 'A'}});"
+        )
+    else:
+        mutation_block = "// (WT or reference structure — no mutation site to highlight)"
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8">
@@ -129,37 +153,48 @@ function spinOff()      {{ _withV(function(v){{ v.spin(false); }}); }}
 <script>
 const pdbText = `{pdb_js}`;
 const viewer = $3Dmol.createViewer("viewer", {{backgroundColor: "0x0c1116"}});
-window._v = viewer;   // expose for the toggle buttons
+window._v = viewer;
 viewer.addModel(pdbText, "pdb");
 
-// 1. Receptor: cartoon (always visible) + semi-transparent surface (only when toggle is on)
-viewer.setStyle({{polymer: true}}, {{cartoon: {{colorscheme: 'spectrum', opacity: 0.85}}}});
-viewer.addSurface($3Dmol.SurfaceType.MS,
-                  {{opacity: 0.30, color: 'lightgrey'}},
-                  {{polymer: true}});
+// 0. CLEAR all default styles (3Dmol 2.x defaults to wireframe lines)
+viewer.setStyle({{}}, {{}});
 
-// 2. Active-site residues — sticks, amino-acid colouring
+// 1. Protein receptor (chains A and B) → cartoon + semi-transparent surface
+const proteinSel = {{chain: ['A','B']}};
+viewer.setStyle(proteinSel, {{cartoon: {{colorscheme: 'spectrum', opacity: 0.90}}}});
+const surfPromise = viewer.addSurface($3Dmol.SurfaceType.MS,
+                                       {{opacity: 0.28, color: 'lightgrey'}},
+                                       proteinSel);
+
+// 2. Active-site residues → sticks (yellow C, amino-acid coloured heteroatoms)
 const activeResi = [50,80,87,109,135,170,175,176,195,196,214,215,217,218,221,225,226,258];
-viewer.setStyle({{resi: activeResi, polymer: true}}, {{stick: {{colorscheme: 'amino', radius: 0.18}},
-                                                      cartoon: {{colorscheme: 'spectrum'}}}});
-// Label active-site residues by Cα
-viewer.addStyle({{resi: activeResi, atom: 'CA'}}, {{}});
-// (3Dmol auto-labels via clicker on Cα; explicit labels on a handful of catalytic residues:)
+viewer.setStyle({{resi: activeResi, chain: ['A','B']}},
+                {{stick: {{colorscheme: 'yellowCarbon', radius: 0.18}},
+                  cartoon: {{colorscheme: 'spectrum'}}}});
+
+// 2b. MUTATION SITE — bright orange, fat sticks, with a "MUT" label
+{mutation_block}
+
+// 3. Permanent labels on the catalytic / phosphate-clamp residues
 const catalyticResi = [195, 196, 175, 176, 215, 226];
 catalyticResi.forEach(function(r){{
   viewer.addLabel(String(r), {{
-     fontSize: 11, fontColor: 'white', backgroundColor: '0x202830',
-     backgroundOpacity: 0.75, alignment: 'center'
-  }}, {{resi: r, atom: 'CA', polymer: true}});
+    fontSize: 11, fontColor: 'white', backgroundColor: '0x202830',
+    backgroundOpacity: 0.75, alignment: 'center'
+  }}, {{resi: r, atom: 'CA', chain: 'A'}});
 }});
 
-// 3. Ligand (dUMP) — fat magenta sticks (the user's feature request)
-viewer.setStyle({{resn: '{lig_resn}'}}, {{stick: {{colorscheme: 'magentaCarbon', radius: 0.30}}}});
+// 4. Ligand (dUMP) → fat magenta sticks
+viewer.setStyle({{resn: '{lig_resn}'}},
+                {{stick: {{colorscheme: 'magentaCarbon', radius: 0.30}}}});
 {cof_block}
 
-// 4. Frame on the ligand
+// 5. Frame on the ligand and render
 viewer.zoomTo({{resn: '{lig_resn}'}});
 viewer.zoom(0.85);
+if (surfPromise && surfPromise.then) {{
+  surfPromise.then(function(){{ viewer.render(); }});
+}}
 viewer.render();
 </script>
 </body></html>
@@ -307,7 +342,8 @@ def main():
             desc = (f"Mutant {mut} ({'apo cofactor pocket' if cond == 'apo' else 'raltitrexed retained (holo)'}). "
                     f"Top Vina pose of dUMP shown alongside the mutated receptor.")
             out = VIEWERS / f"{stem}.html"
-            out.write_text(render_html(label, pdb, description=desc))
+            out.write_text(render_html(label, pdb, description=desc,
+                                       mutation_resi=parse_mutation_residue(stem)))
             grp = "Single mutants" if "_" not in mut else "Double mutants"
             if mut.startswith("CTRL"):
                 grp = "Control"

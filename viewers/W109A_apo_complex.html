@@ -9406,37 +9406,52 @@ TER
 END
 `;
 const viewer = $3Dmol.createViewer("viewer", {backgroundColor: "0x0c1116"});
-window._v = viewer;   // expose for the toggle buttons
+window._v = viewer;
 viewer.addModel(pdbText, "pdb");
 
-// 1. Receptor: cartoon (always visible) + semi-transparent surface (only when toggle is on)
-viewer.setStyle({polymer: true}, {cartoon: {colorscheme: 'spectrum', opacity: 0.85}});
-viewer.addSurface($3Dmol.SurfaceType.MS,
-                  {opacity: 0.30, color: 'lightgrey'},
-                  {polymer: true});
+// 0. CLEAR all default styles (3Dmol 2.x defaults to wireframe lines)
+viewer.setStyle({}, {});
 
-// 2. Active-site residues — sticks, amino-acid colouring
+// 1. Protein receptor (chains A and B) → cartoon + semi-transparent surface
+const proteinSel = {chain: ['A','B']};
+viewer.setStyle(proteinSel, {cartoon: {colorscheme: 'spectrum', opacity: 0.90}});
+const surfPromise = viewer.addSurface($3Dmol.SurfaceType.MS,
+                                       {opacity: 0.28, color: 'lightgrey'},
+                                       proteinSel);
+
+// 2. Active-site residues → sticks (yellow C, amino-acid coloured heteroatoms)
 const activeResi = [50,80,87,109,135,170,175,176,195,196,214,215,217,218,221,225,226,258];
-viewer.setStyle({resi: activeResi, polymer: true}, {stick: {colorscheme: 'amino', radius: 0.18},
-                                                      cartoon: {colorscheme: 'spectrum'}});
-// Label active-site residues by Cα
-viewer.addStyle({resi: activeResi, atom: 'CA'}, {});
-// (3Dmol auto-labels via clicker on Cα; explicit labels on a handful of catalytic residues:)
+viewer.setStyle({resi: activeResi, chain: ['A','B']},
+                {stick: {colorscheme: 'yellowCarbon', radius: 0.18},
+                  cartoon: {colorscheme: 'spectrum'}});
+
+// 2b. MUTATION SITE — bright orange, fat sticks, with a "MUT" label
+viewer.setStyle({resi: [109], chain: ['A']}, {stick: {color: 'orange', radius: 0.30}, cartoon: {colorscheme: 'spectrum'}});
+viewer.addLabel('MUT ' + 109, {
+  fontSize: 13, fontColor: 'orange', backgroundColor: '0x402010',
+  backgroundOpacity: 0.85, alignment: 'topCenter', borderColor: 'orange', borderThickness: 1.0
+}, {resi: 109, atom: 'CA', chain: 'A'});
+
+// 3. Permanent labels on the catalytic / phosphate-clamp residues
 const catalyticResi = [195, 196, 175, 176, 215, 226];
 catalyticResi.forEach(function(r){
   viewer.addLabel(String(r), {
-     fontSize: 11, fontColor: 'white', backgroundColor: '0x202830',
-     backgroundOpacity: 0.75, alignment: 'center'
-  }, {resi: r, atom: 'CA', polymer: true});
+    fontSize: 11, fontColor: 'white', backgroundColor: '0x202830',
+    backgroundOpacity: 0.75, alignment: 'center'
+  }, {resi: r, atom: 'CA', chain: 'A'});
 });
 
-// 3. Ligand (dUMP) — fat magenta sticks (the user's feature request)
-viewer.setStyle({resn: 'UMP'}, {stick: {colorscheme: 'magentaCarbon', radius: 0.30}});
+// 4. Ligand (dUMP) → fat magenta sticks
+viewer.setStyle({resn: 'UMP'},
+                {stick: {colorscheme: 'magentaCarbon', radius: 0.30}});
 viewer.setStyle({resn: 'D16'}, {stick: {colorscheme: 'cyanCarbon', radius: 0.20}});
 
-// 4. Frame on the ligand
+// 5. Frame on the ligand and render
 viewer.zoomTo({resn: 'UMP'});
 viewer.zoom(0.85);
+if (surfPromise && surfPromise.then) {
+  surfPromise.then(function(){ viewer.render(); });
+}
 viewer.render();
 </script>
 </body></html>

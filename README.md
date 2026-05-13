@@ -102,6 +102,21 @@ The protein–ligand complex on this page rotates in place; the click-through bu
 
 A complete index of 96 interactive viewer pages is at **[ariomoniri.github.io/aminak/viewers/](https://ariomoniri.github.io/aminak/viewers/index.html)**. In every viewer the protein is rendered as cartoon + semi-transparent surface, the ligand as fat magenta sticks, active-site residues as labelled sticks; catalytic Cys195 / His196 / Arg175 / Arg176 / Arg215 / Asn226 carry permanent text labels.
 
+### 🖼 Publication-quality renders — close-ups of the active site
+
+Cartoon protein (grey, semi-transparent) + active-site residues within 5 Å of dUMP as **wheat** sticks (every residue is labelled `XNNN*`; the asterisk is a uniform marker, not an interaction-only flag) + **dUMP substrate in limegreen** + **cofactor raltitrexed (D16) in hotpink** (clearly distinct from dUMP) + **mutated residue in orange** + dashed yellow lines for **polar (N/O ↔ side-chain N/O) contacts < 3.5 Å only** between dUMP and protein. All hydrogens hidden (heavy-atom-only renders) on white opaque ray-traced background.
+
+> **About the second pink molecule:** TYMS is an obligate homodimer with two equivalent active sites, so the holo PDB contains **two raltitrexed cofactor copies** (one per protomer, chains A + B) plus **one docked dUMP pose** (chain A active site). The renders zoom to the chain-A active site, so the chain-B cofactor is mostly out of frame; the in-frame pink molecule is the chain-A raltitrexed. This is the correct biological state, not a rendering artefact.
+
+| | | |
+|:-:|:-:|:-:|
+| ![WT holo](12_phase7/07_pub_renders/WT_holo_pub.png) | ![R215A_N226A](12_phase7/07_pub_renders/R215A_N226A_pub.png) | ![H196A](12_phase7/07_pub_renders/H196A_pub.png) |
+| **WT holo** | **R215A_N226A** | **H196A** |
+| ![R215E](12_phase7/07_pub_renders/R215E_pub.png) | ![R50A](12_phase7/07_pub_renders/R50A_pub.png) | ![C195A](12_phase7/07_pub_renders/C195A_pub.png) |
+| **R215E** | **R50A** | **C195A** |
+
+All 7 renders (including R175E_R176E) in [`12_phase7/07_pub_renders/`](12_phase7/07_pub_renders/), 1600 × 1200 ray-traced.
+
 > **🌀 Note on the rotating GIFs above.** The animated thumbnails show **protein + dUMP only** (cofactor is hidden) to keep the rotation visually clean. Earlier versions left raltitrexed cyan sticks visible, and the cofactor's long polyglutamate tail extended past the protein surface, producing the "tentacles" / disrupted look. The **static** reference renders below (and the **3Dmol viewer** click-throughs) show the full holo complex with all three ligands. See the "Why two ligands?" callout for the full ligand inventory.
 
 > **❓ "Why do I see two ligands in the holo views?"** Each holo complex has **three** ligand molecules, by design and consistent with the 1HVY crystal:
@@ -171,6 +186,14 @@ What the logo tells you, position by position:
 **The teaching point**: every catalytic / phosphate-clamp residue we mutated is **100 % conserved** across all 10 orthologs (single tall letter on the logo), justifying the choice as a meaningful probe. The distant-surface control T170 is **variable** (5/10 T, 4/10 N) — exactly what a true negative control should look like.
 
 Per-position frequency table (sorted, top-3 observed): [`11_enhanced/aa_logo_active_site.csv`](11_enhanced/aa_logo_active_site.csv). Full-chain sequence logo: [`11_enhanced/aa_logo_full_chain.png`](11_enhanced/aa_logo_full_chain.png) (313 columns; active-site columns shaded by functional class).
+
+### 🌳 Why is the active site so conserved? — Phylogeny of the 10 TYMS orthologs
+
+Distance-based **neighbour-joining tree** built from the v2 MSA with BLOSUM62 distances, with kingdom annotation per leaf. *Teaching-grade only — no model selection, no bootstrap support. For a publication-grade topology, re-run with IQ-TREE / RAxML under LG+G or JTT+G+I with ≥ 1000 bootstraps.*
+
+![TYMS phylogeny](12_phase7/05_phylogeny/tymS_tree.png)
+
+Newick + interactive HTML: [`12_phase7/05_phylogeny/`](12_phase7/05_phylogeny/). The tree explains why the conservation logo above collapses to single tall letters at every catalytic / phosphate-clamp position — these orthologs span Metazoa, Plantae, Bacteria, Protozoa, and Bacteriophage, and the active-site chemistry is invariant across all of them. **A residue conserved this widely is one that the protein cannot afford to lose** — exactly the residues that should be most informative as mutational probes.
 
 ---
 
@@ -415,6 +438,20 @@ Full per-model Ramachandran plots: [`10b_modeller_refined/04_refined_lovell/`](1
 
 > Under the **proper Lovell 4-map validator**, the Phase-6 Modeller models score 95 % favoured / < 0.5 % outlier — directly comparable to the 1HVY crystal (92.2 % favoured / 0 outliers). The few residual outliers (Ser128 most prominently) are real local-strain points that survive even `md_level=refine.very_slow`; in a *design* setting they would be candidates for Gly substitution, but for a homology model of human TYMS they are a property of the target sequence and stay.
 
+### 🤖 Modeller vs AlphaFold — do the two methods agree?
+
+Downloaded [AF-P04818-F1-model_v6.pdb](12_phase7/03_alphafold/AF-P04818-F1-model_v6.pdb) (AlphaFold v6 prediction for human TYMS) and compared against the 1HVY crystal and the Phase-6b refined Modeller best:
+
+| Source | %favoured | %allowed | %outlier | Cα RMSD vs 1HVY (super) |
+| --- | --- | --- | --- | --- |
+| **AlphaFold (v6)** | 94.5 | 5.5 | **0** | **0.38 Å** |
+| Modeller best B99990003 | 95.4 | 4.2 | 0.35 | 0.37 Å |
+| Modeller alt B99990010 | 95.1 | 4.6 | 0.35 | 0.39 Å |
+
+**AlphaFold and the best Modeller model are statistically indistinguishable on the well-folded core** (~0.37–0.39 Å Cα RMSD over 257–261 atoms). AlphaFold has zero Ramachandran outliers; Modeller has one (Ser128). Active-site residues sit in the AF model's high-pLDDT region (pLDDT > 90). For docking we keep using the 1HVY crystal because its active-site Cα geometry is the gold-standard pocket; AF and Modeller would only become preferred if no crystal existed.
+
+![Triple overlay](12_phase7/03_alphafold/triple_overlay.png) Interactive overlay: [`viewers/alphafold_overlay.html`](https://ariomoniri.github.io/aminak/viewers/alphafold_overlay.html) (AF cyan, Modeller green, crystal magenta).
+
 ---
 
 Phase 6 source: [`10_modeller/`](10_modeller/) and [`scripts/modeller/`](scripts/modeller/). Phase-6 DOCX report: [`09e_report_v5/report_PHASE6.docx`](09e_report_v5/report_PHASE6.docx). Phase-6 reviewer reports: [`reviews_phase6/`](reviews_phase6/).
@@ -498,17 +535,7 @@ So the answer to "did we dock all 266 singles + 32 851 doubles?" is **no — onl
 
 ### 7d · AlphaFold compare
 
-Downloaded [AF-P04818-F1-model_v6.pdb](12_phase7/03_alphafold/AF-P04818-F1-model_v6.pdb) (AlphaFold v6 prediction for human TYMS) and compared against the 1HVY crystal and the Phase-6b refined Modeller best:
-
-| Source | %favoured | %allowed | %outlier | Cα RMSD vs 1HVY (super) |
-| --- | --- | --- | --- | --- |
-| **AlphaFold (v6)** | 94.5 | 5.5 | **0** | **0.38 Å** |
-| Modeller best B99990003 | 95.4 | 4.2 | 0.35 | 0.37 Å |
-| Modeller alt B99990010 | 95.1 | 4.6 | 0.35 | 0.39 Å |
-
-**AlphaFold and the best Modeller model are statistically indistinguishable on the well-folded core** (~0.37–0.39 Å Cα RMSD over 257–261 atoms). AlphaFold has zero Ramachandran outliers; Modeller has one (Ser128). Active-site residues sit in the AF model's high-pLDDT region (pLDDT > 90).
-
-![Triple overlay](12_phase7/03_alphafold/triple_overlay.png) Interactive overlay: [`viewers/alphafold_overlay.html`](https://ariomoniri.github.io/aminak/viewers/alphafold_overlay.html) (AF cyan, Modeller green, crystal magenta).
+> *Moved up* — see [§ "Modeller vs AlphaFold — do the two methods agree?"](#-modeller-vs-alphafold--do-the-two-methods-agree) earlier in the README, where AlphaFold sits next to the Modeller homology models it should be compared against.
 
 ### 7e · SASA per residue + correlation with Δ Vina
 
@@ -520,11 +547,7 @@ Per-residue solvent-accessible surface area (`freesasa`) for WT + each mutant, t
 
 ### 7f · Phylogeny of the 10 TYMS orthologs
 
-Distance-based **neighbour-joining tree** built from the v2 MSA with BLOSUM62 distances, with kingdom annotation per leaf. *Teaching-grade only — no model selection, no bootstrap support. For a publication-grade topology, re-run with IQ-TREE / RAxML under LG+G or JTT+G+I with ≥ 1000 bootstraps.*
-
-![TYMS phylogeny](12_phase7/05_phylogeny/tymS_tree.png)
-
-Newick + interactive HTML: [`12_phase7/05_phylogeny/`](12_phase7/05_phylogeny/). The tree explains why the conservation logo at the active site collapses to single tall letters — these orthologs span Metazoa, Plantae, Bacteria, Protozoa, and Bacteriophage, and the active-site chemistry is invariant across all of them.
+> *Moved up* — see [§ "Why is the active site so conserved?"](#-why-is-the-active-site-so-conserved--phylogeny-of-the-10-tyms-orthologs) earlier in the README, where the phylogeny sits next to the sequence logo it explains.
 
 ### 7g · Master 3D dynamic plot
 
@@ -536,18 +559,7 @@ Plotly 3D scatter: **x** = mutated residue position; **y** = hydropathy change o
 
 ### 7h · Publication-quality PyMOL renders (TGT-style)
 
-Cartoon protein (grey, semi-transparent) + active-site residues within 5 Å of dUMP as **wheat** sticks (every residue is labelled `XNNN*`; the asterisk is a uniform marker, not an interaction-only flag) + **dUMP substrate in limegreen** + **cofactor raltitrexed (D16) in hotpink** (clearly distinct from dUMP) + **mutated residue in orange** + dashed yellow lines for **polar (N/O ↔ side-chain N/O) contacts < 3.5 Å only** between dUMP and protein. All hydrogens hidden (heavy-atom-only renders) on white opaque ray-traced background.
-
-> **About the second pink molecule:** TYMS is an obligate homodimer with two equivalent active sites, so the holo PDB contains **two raltitrexed cofactor copies** (one per protomer, chains A + B) plus **one docked dUMP pose** (chain A active site). The renders zoom to the chain-A active site, so the chain-B cofactor is mostly out of frame; the in-frame pink molecule is the chain-A raltitrexed. This is the correct biological state, not a rendering artefact.
-
-| | | |
-|:-:|:-:|:-:|
-| ![WT holo](12_phase7/07_pub_renders/WT_holo_pub.png) | ![R215A_N226A](12_phase7/07_pub_renders/R215A_N226A_pub.png) | ![H196A](12_phase7/07_pub_renders/H196A_pub.png) |
-| **WT holo** | **R215A_N226A** | **H196A** |
-| ![R215E](12_phase7/07_pub_renders/R215E_pub.png) | ![R50A](12_phase7/07_pub_renders/R50A_pub.png) | ![C195A](12_phase7/07_pub_renders/C195A_pub.png) |
-| **R215E** | **R50A** | **C195A** |
-
-All 7 renders (including R175E_R176E) in [`12_phase7/07_pub_renders/`](12_phase7/07_pub_renders/), 1600 × 1200 ray-traced.
+> *Moved up* — see [§ "Publication-quality renders — close-ups of the active site"](#-publication-quality-renders--close-ups-of-the-active-site) at the top of the README, near the live 3D viewers and rotating GIFs (all the structural visualisations together).
 
 ---
 

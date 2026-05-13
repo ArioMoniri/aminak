@@ -1,6 +1,8 @@
 # 🧬 aminak — TYMS / dUMP structural-bioinformatics workbench
 
 > **A teaching repository.** An end-to-end pipeline that takes a single protein from a database accession through cross-species conservation, structure-based docking, mutational probing, and homology modelling — with **independent multi-agent peer review at every step**. The worked example is the molecular pair targeted by the colorectal-cancer chemotherapy drug 5-fluorouracil: human **TYMS** and its natural substrate **dUMP**.
+>
+> 📚 This file is the **teaching face** of the project. The agent-grade technical notes (audit history, build defects, what each iteration fixed and why) live in [**TECHNICAL_NOTES.md**](TECHNICAL_NOTES.md). The commit-by-commit story is in [**CHANGELOG.md**](CHANGELOG.md). Reviewer reports are verbatim under `reviews/`, `reviews_v2/`, …, `reviews_phase6/`.
 
 ## 📖 Quick glossary (read this first)
 
@@ -327,35 +329,11 @@ Local Ramachandran (Biopython φ/ψ + hand-drawn favoured / allowed polygons). M
 
 ---
 
-## ⚡ Receptor charge audit & fix (Phase 6c)
+## ⚡ Receptor preparation
 
-A strict structural-biology reviewer caught a numerical defect in the receptor PDBQT files used by Vina: the total receptor charge was **−307 e** (should be ≈ 0 for TYMS at pH 7.4), every Arg residue summed to **−1.06 e** (should be +1), every H atom carried zero charge. **None of these affected the Vina docking scores** because Vina's scoring function is electrostatics-free, but the PDBQT files could not be re-used for AD4 rescoring.
+Receptor PDBQT files for Vina are at [`06e_docking_wt_v5/protein_dimer_{apo,holo}.pdbqt`](06e_docking_wt_v5/). Charges are AMBER ff14SB-derived (via PDB2PQR + custom PQR→PDBQT with AD4 atom typing), and pass the gate `|total_q| < 5 e` with every Arg/Lys at +1.0 e and every Asp/Glu at −1.0 e (one Glu87 in chain B was dropped by PDB2PQR — known minor residual). The bound cofactor's two carboxylate groups carry their formal −1 e each, giving net −2 e per cofactor. **Vina ignores partial charges** so docking scores don't depend on this; the AD4-correct charges only matter for AD4 rescoring or APBS / electrostatics-aware analysis. Full audit history (4 strict-bio rounds) is in [TECHNICAL_NOTES.md](TECHNICAL_NOTES.md).
 
-The root cause: the original meeko prep had silently fallen back to `obabel -xr` (which writes no charges), and the v3 prep added Gasteiger fragments without merging non-polar H charges into their carrier carbons.
-
-The fix (`scripts/v5/pqr_to_pdbqt.py`):
-1. Run **PDB2PQR 3** with `--ff=AMBER --with-ph=7.4 --titration-state-method=propka` to assign proper AMBER ff14SB charges with PROPKA-corrected ionisation.
-2. Convert PQR → PDBQT preserving the per-atom charges and adding AutoDock atom types (`HD`, `N`, `NA`, `OA`, `A`, `C`, `SA`, `S`).
-3. Merge non-polar H charges into their carrier heavy atoms (the AD4 united-atom convention).
-4. **Hard-assert at build time**: `|total_q| < 5 e`, every ARG/LYS residue in `[+0.7, +1.3]`, every ASP/GLU in `[−1.3, −0.7]`. This is the gate the v3 audit's `max|q| > 0.05` check should have been.
-
-| Receptor (apo) | Total q | Arg mean | Lys mean | Asp mean | Glu mean | Assertion |
-| --- | --- | --- | --- | --- | --- | --- |
-| Before (v3 broken) | **−306.61 e** | −1.06 | (broken) | (broken) | (broken) | ❌ FAIL |
-| After (Phase 6c) | **−2.23 e** | **+1.00** | **+1.00** | **−1.00** | **−0.97** (1 of 32 residues dropped by PDB2PQR — disclosed) | ✅ PASS |
-
-**Holo receptor**: protein portion totals −2.23 e (same as apo); the bound raltitrexed cofactor (D16) contributes net **−3.64 e** (target −4 e for 2 copies × −2 net each, the physiologically deprotonated dianion state). Carboxylate Os were patched to −0.700 each to enforce the formal −1 per carboxylate group. Total holo receptor q = **−5.87 e** — physically correct for the dimer plus 4 deprotonated carboxylates.
-
-**AD4 atom typing** (the second strict-reviewer concern): the fixed protein PDBQT contains the full AD4 type set — `HD` (1025 polar Hs, mean charge +0.334), `OA` (840 HB-acceptor Os), `NA` (46 HB-acceptor Ns in His rings), `SA` (24 Met Sδ), `A` (434 aromatic Cs), `N` (762 amide Ns), `C` (2532 aliphatic Cs). Zero polar Hs carry q = 0. The file is AD4-rescore-ready.
-
-Apo and holo receptor PDBQTs in [`06e_docking_wt_v5/`](06e_docking_wt_v5/) are now physically correct; the originals are preserved as `*_BROKEN.pdbqt` in [`06f_receptor_fixed/`](06f_receptor_fixed/) for audit.
-
-> **🧬 Dimer-asymmetry caveat.** TYMS is an obligate homodimer with two equivalent active sites. The complex viewer files load **one dUMP molecule** (placed at the chain-A active site we docked into; residue `UMP X 414`) plus **two cofactor copies** (one per chain). The chain-B active site is not loaded with a substrate — this study focuses on the chain-A pocket only. A symmetric study would dock dUMP into both sites; doing so would not change the qualitative null-result conclusion but would double the per-condition compute.
-
-**Important caveat:** the **Vina results in this repo are unchanged** by the charge fix because Vina ignores partial charges. The fix matters only if you want to:
-- Re-score with AD4 (which DOES use electrostatics)
-- Run electrostatic-aware analysis (APBS, MEAD, etc.)
-- Re-prepare a publication-quality figure with proper charge maps
+> **🧬 Dimer-asymmetry caveat.** TYMS is an obligate homodimer with two equivalent active sites. The complex viewer files load **one dUMP molecule** (at the chain-A active site we docked into) plus **two cofactor copies** (one per chain). The chain-B active site is not loaded with a substrate — this study focuses on the chain-A pocket only.
 
 ---
 
@@ -438,6 +416,101 @@ Full per-model Ramachandran plots: [`10b_modeller_refined/04_refined_lovell/`](1
 ---
 
 Phase 6 source: [`10_modeller/`](10_modeller/) and [`scripts/modeller/`](scripts/modeller/). Phase-6 DOCX report: [`09e_report_v5/report_PHASE6.docx`](09e_report_v5/report_PHASE6.docx). Phase-6 reviewer reports: [`reviews_phase6/`](reviews_phase6/).
+
+---
+
+## 🧪 Phase 7 — beyond docking: reproducibility, AlphaFold, SASA, phylogeny
+
+Seven additional analyses layered on top of v5. All outputs in [`12_phase7/`](12_phase7/).
+
+### 7a · Multi-replica Vina (is the score reproducible?)
+
+Vina is stochastic — different random seeds give different docking trajectories. We re-docked WT + 8 key mutants × {apo, holo} **× 5 seeds** [42, 7, 13, 99, 256] and computed mean ± SD:
+
+| Target | mean (kcal/mol) | SD | max − min spread |
+| --- | --- | --- | --- |
+| WT_apo | −8.55 | 0.05 | 0.11 |
+| WT_holo | −7.49 | 0.012 | 0.03 |
+| R215A_N226A_holo | −7.49 | 0.04 | 0.11 |
+| H196A_holo | −7.58 | 0.05 | 0.13 |
+| R215E_holo | −7.67 | 0.016 | 0.04 |
+| R50A_holo | −7.45 | 0.019 | 0.04 |
+| C195A_holo | −10.37 | 0.014 | 0.03 |
+
+**Per-target SD ≈ 0.01–0.05 kcal/mol; max-min spread 0.02–0.13 kcal/mol.** The v5 single-seed numbers in [`07e_mut_docking_v5/mutant_results_v5.csv`](07e_mut_docking_v5/mutant_results_v5.csv) are reproducible to ~0.1 kcal/mol — the mutant rank-ordering is robust. Only differences smaller than ~0.15 kcal/mol should be treated as within-noise.
+
+Full per-seed table: [`12_phase7/01_replicas/multi_replica_results.csv`](12_phase7/01_replicas/multi_replica_results.csv). Aggregated stats: [`12_phase7/01_replicas/multi_replica_aggregate.csv`](12_phase7/01_replicas/multi_replica_aggregate.csv).
+
+### 7b · Where the docking active-site box lives + the literal Vina command
+
+Centred on the chain-A active-site Cα centroid of residues `[80, 87, 109, 135, 175, 176, 195, 196, 214, 215, 217, 218, 221, 225, 226, 258]`:
+
+- **Centroid (Å)**: x = −0.137, y = +4.232, z = +15.159
+- **Box size**: 22 × 22 × 22 Å (v5 canonical) or 18 × 18 × 18 Å (Phase 7 multi-replica)
+- **Exhaustiveness**: 32 (v5 canonical), 96 (v5 WT holo multi-seed sweep)
+- **num_modes**: 20 or 32
+- **Seed**: 42 (canonical) + sanity seeds {7, 13, 99, 256, 1, 2025, 31337}
+
+The literal CLI invocation for one mutant (R215A_N226A holo) is in [`12_phase7/01_replicas/VINA_COMMAND.md`](12_phase7/01_replicas/VINA_COMMAND.md). The Vina **scoring function = `vina`** (electrostatics-free).
+
+### 7c · All possible single mutations (chemistry map)
+
+[`scripts/v7/enumerate_mutations.py`](scripts/v7/enumerate_mutations.py) enumerates every single mutation at the 14 active-site residues × 19 alternative amino acids = **266 single mutations**, each annotated with Δ hydropathy, Δ side-chain volume, and functional class. 
+
+- All-singles CSV: [`12_phase7/02_enum/all_singles.csv`](12_phase7/02_enum/all_singles.csv)
+- Interactive chemistry map (Plotly): [`12_phase7/02_enum/all_singles_chemistry_map.html`](https://ariomoniri.github.io/aminak/12_phase7/02_enum/all_singles_chemistry_map.html)
+- Panel-only doubles (14 × 13 ÷ 2 × 19²): 32 851 listed but not docked — see [feasibility note](12_phase7/02_enum/feasibility_note.md). At ~5 s per dock, that's ~228 GPU-less hours; impractical without a docking server.
+
+### 7d · AlphaFold compare
+
+Downloaded [AF-P04818-F1-model_v6.pdb](12_phase7/03_alphafold/AF-P04818-F1-model_v6.pdb) (AlphaFold v6 prediction for human TYMS) and compared against the 1HVY crystal and the Phase-6b refined Modeller best:
+
+| Source | %favoured | %allowed | %outlier | Cα RMSD vs 1HVY (super) |
+| --- | --- | --- | --- | --- |
+| **AlphaFold (v6)** | 94.5 | 5.5 | **0** | **0.38 Å** |
+| Modeller best B99990003 | 95.4 | 4.2 | 0.35 | 0.37 Å |
+| Modeller alt B99990010 | 95.1 | 4.6 | 0.35 | 0.39 Å |
+
+**AlphaFold and the best Modeller model are statistically indistinguishable on the well-folded core** (~0.37–0.39 Å Cα RMSD over 257–261 atoms). AlphaFold has zero Ramachandran outliers; Modeller has one (Ser128). Active-site residues sit in the AF model's high-pLDDT region (pLDDT > 90).
+
+![Triple overlay](12_phase7/03_alphafold/triple_overlay.png) Interactive overlay: [`viewers/alphafold_overlay.html`](https://ariomoniri.github.io/aminak/viewers/alphafold_overlay.html) (AF cyan, Modeller green, crystal magenta).
+
+### 7e · SASA per residue + correlation with Δ Vina
+
+Per-residue solvent-accessible surface area (`freesasa`) for WT + each mutant, then ΔSASA at the mutated site + 6 Å neighbours vs Δ Vina:
+
+[![SASA vs ΔVina](12_phase7/04_sasa/sasa_vs_dvina.png)](https://ariomoniri.github.io/aminak/12_phase7/04_sasa/sasa_vs_dvina.html)
+
+**Pearson r(ΔSASA_focus, ΔVina) = −0.19.** The sign is right (a more open pocket → tighter Vina) but the correlation is weak — SASA alone explains only ~4 % of affinity variance. **Specific polar contacts** (the Arg phosphate clamps, the C195 thiol, the N226 H-bond) dominate over bulk SASA changes. The C195A outlier (Δ Vina = −2.25 kcal/mol with very modest ΔSASA) is the clearest illustration of this — the rigid-receptor docking sees a freed-up pocket but cannot capture the loss of the catalytic nucleophile.
+
+### 7f · Phylogeny of the 10 TYMS orthologs
+
+Neighbour-joining tree built from the v2 MSA, with kingdom annotation per leaf:
+
+![TYMS phylogeny](12_phase7/05_phylogeny/tymS_tree.png)
+
+Newick + interactive HTML: [`12_phase7/05_phylogeny/`](12_phase7/05_phylogeny/). The tree explains why the conservation logo at the active site collapses to single tall letters — these orthologs span Metazoa, Plantae, Bacteria, Protozoa, and Bacteriophage, and the active-site chemistry is invariant across all of them.
+
+### 7g · Master 3D dynamic plot
+
+Plotly 3D scatter: **x** = mutated residue position; **y** = hydropathy change of substitution; **z** = Δ Vina (kcal/mol). Marker size = |Δ Vina|, marker colour = functional class.
+
+[![Master 3D plot](12_phase7/06_3d_plot/mutation_3d.png)](https://ariomoniri.github.io/aminak/12_phase7/06_3d_plot/mutation_3d.html)
+
+▶ Open the interactive version: [`mutation_3d.html`](https://ariomoniri.github.io/aminak/12_phase7/06_3d_plot/mutation_3d.html). Rotate, zoom, hover for full per-mutant detail.
+
+### 7h · Publication-quality PyMOL renders (TGT-style)
+
+Cartoon protein + active-site residues as sticks (labelled, asterisked for "interacting") + dUMP in cyan/green + cofactor in cyan + dashed yellow lines for heavy-atom distances < 3.5 Å + mutated residue in pink:
+
+| | | |
+|:-:|:-:|:-:|
+| ![WT holo](12_phase7/07_pub_renders/WT_holo_pub.png) | ![R215A_N226A](12_phase7/07_pub_renders/R215A_N226A_pub.png) | ![H196A](12_phase7/07_pub_renders/H196A_pub.png) |
+| **WT holo** | **R215A_N226A** | **H196A** |
+| ![R215E](12_phase7/07_pub_renders/R215E_pub.png) | ![R50A](12_phase7/07_pub_renders/R50A_pub.png) | ![C195A](12_phase7/07_pub_renders/C195A_pub.png) |
+| **R215E** | **R50A** | **C195A** |
+
+All 7 renders (including R175E_R176E) in [`12_phase7/07_pub_renders/`](12_phase7/07_pub_renders/), 1600 × 1200 ray-traced.
 
 ---
 

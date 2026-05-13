@@ -436,6 +436,11 @@ Vina is stochastic — different random seeds give different docking trajectorie
 | R215E_holo | −7.67 | 0.016 | 0.04 |
 | R50A_holo | −7.45 | 0.019 | 0.04 |
 | C195A_holo | −10.37 | 0.014 | 0.03 |
+| Y258F_F225Y_holo | −7.87 | 0.010 | 0.02 |
+| T170A_holo † | −8.01 | 0.022 | 0.06 |
+| R175E_R176E_holo † | −8.01 | 0.022 | 0.06 |
+
+> **† Vina cannot discriminate these two mutants in the holo state.** The cofactor occludes the canonical phosphate-clamp region, dUMP is forced into a peripheral pocket, and neither residue 170 nor residues 175/176 lie within Vina's short-range cutoff of the mode-1 pose. The −8.01 number reflects the geometry of that non-canonical binding mode, not a meaningful test of the mutation. Do not interpret these rows as "T170A and R175E_R176E happen to give the same affinity" — interpret them as "this assay is insensitive to these mutations." See [`TECHNICAL_NOTES.md`](TECHNICAL_NOTES.md#phase-7-fallbacks-and-caveats) for the atom-level diff and Vina-log diff that establish this.
 
 **Per-target SD ≈ 0.01–0.05 kcal/mol; max-min spread 0.02–0.13 kcal/mol.** Two scope notes before reading this number too literally:
 - These SDs are the *within-seed numerical reproducibility* of the search at this specific 18 Å box, exhaustiveness 32, with this particular ligand and these particular receptors. The published Vina noise floor (Trott & Olson 2010) for *general* binding affinity is **±0.85 kcal/mol** — that bigger number is the right one to quote when comparing Vina ΔG to a measured Kd, and it is what bounds the rank-ordering claim across mutants. The 0.05 number bounds reproducibility *within one (target, box, ligand) tuple*.

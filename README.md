@@ -524,7 +524,9 @@ Plotly 3D scatter: **x** = mutated residue position; **y** = hydropathy change o
 
 ### 7h · Publication-quality PyMOL renders (TGT-style)
 
-Cartoon protein + active-site residues as sticks (every active-site residue is labelled `XNNN*`; the asterisk is a uniform marker, not an interaction-only flag) + dUMP in cyan/green + cofactor in cyan + dashed yellow lines for heavy-atom distances < 3.5 Å + mutated residue in pink:
+Cartoon protein (grey, semi-transparent) + active-site residues within 5 Å of dUMP as **wheat** sticks (every residue is labelled `XNNN*`; the asterisk is a uniform marker, not an interaction-only flag) + **dUMP substrate in limegreen** + **cofactor raltitrexed (D16) in hotpink** (clearly distinct from dUMP) + **mutated residue in orange** + dashed yellow lines for **polar (N/O ↔ side-chain N/O) contacts < 3.5 Å only** between dUMP and protein. All hydrogens hidden (heavy-atom-only renders) on white opaque ray-traced background.
+
+> **About the second pink molecule:** TYMS is an obligate homodimer with two equivalent active sites, so the holo PDB contains **two raltitrexed cofactor copies** (one per protomer, chains A + B) plus **one docked dUMP pose** (chain A active site). The renders zoom to the chain-A active site, so the chain-B cofactor is mostly out of frame; the in-frame pink molecule is the chain-A raltitrexed. This is the correct biological state, not a rendering artefact.
 
 | | | |
 |:-:|:-:|:-:|

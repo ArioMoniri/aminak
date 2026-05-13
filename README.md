@@ -588,7 +588,10 @@ GNINA (CNN-based rescoring) was the original first choice but **does not ship fo
 
 Full table: [`13_phase8/01_alt_scoring/alt_scoring_results.csv`](13_phase8/01_alt_scoring/alt_scoring_results.csv) · [interactive scatter](https://ariomoniri.github.io/aminak/13_phase8/01_alt_scoring/alt_scoring_compare.html)
 
-### 8b · Flexible-residue Vina (lets the 14 active-site side chains rotamer-search)
+### 8b · Flexible-residue Vina (lets 8 active-site side chains rotamer-search)
+
+The Vina `--flex` flag is applied to an **8-residue subset** of the active-site panel — positions **`[50, 109, 175, 176, 195, 196, 214, 215]`** on chain A. The full 14-residue panel also includes 170, 216, 225, 226, 256, 258, which are dropped here because (i) T170 is the distant-surface negative control and shouldn't perturb dUMP, and (ii) the other five are further from the dUMP top-pose centroid than the 8 kept residues, so their flex penalties saturate. Including all 14 raised per-mutant wall-time past 30 min at exh=8 and past 1 h at exh=32 — beyond this single-Mac compute budget. Documented in [`13_phase8/README.md`](13_phase8/README.md) Limitations.
+
 
 | Mutant (holo) | Rigid Vina | **Flex Vina** | Δ flex − rigid | Verdict |
 | --- | --- | --- | --- | --- |

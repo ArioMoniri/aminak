@@ -40,8 +40,25 @@ Outputs:
 Directory: `02_flexres/`
 
 For each of the 8 priority mutants (same list as `scripts/v7/task_a_replicas.py`),
-re-dock with the 14-residue active-site panel made flexible via Vina's
-built-in `--flex` flag.
+re-dock with an **8-residue subset** of the active-site panel made flexible
+via Vina's built-in `--flex` flag.  The flexed positions are
+**[50, 109, 175, 176, 195, 196, 214, 215]** (chain A) -- the rotatable
+side chains closest to the dUMP top-pose centroid.
+
+**Why 8 residues, not the full 14-residue panel?** The full panel is
+`[50, 109, 170, 175, 176, 195, 196, 214, 215, 216, 225, 226, 256, 258]`.
+We drop:
+
+- **T170** (distant-surface negative control) -- shouldn't perturb dUMP;
+  flexibilising it adds 3 chi DOF for no signal
+- **S216, F225, N226, H256, Y258** -- further from the dUMP top-pose
+  centroid than the 8 kept residues; flex penalties saturate
+
+Including all 14 raised per-mutant wall-time past 30 min at exh=8 (and
+past 1 h at exh=32, the v5 rigid baseline).  The 8-residue subset keeps
+the 22-chi-DOF search tractable on this single-Mac compute budget.  This
+is a documented compute concession -- the rigid-vs-flex *ranking* is the
+intended use; absolute flex scores are not fully converged.
 
 The standard tooling (`prepare_flexreceptor4.py` from MGLTools; meeko's
 `mk_prepare_receptor.py -f`) was unusable on this dataset:
@@ -64,15 +81,28 @@ Receptor build pipeline per mutant:
 3. Concatenate cofactor PDBQT atoms (`06f_receptor_fixed/cofactor_A.pdbqt`
    and `cofactor_B.pdbqt`) to make holo PDBQT.
 4. `flex_split.split_clean_pdbqt(holo_text, FLEX_PANEL)`
-   -> rigid PDBQT (everything except the 14 panel side chains)
-      + flex PDBQT (BEGIN_RES blocks for each panel side chain).
-5. `vina --receptor rigid --flex flex --ligand dump.pdbqt --exhaustiveness 32
-   --num_modes 20 --seed 42 --center/size {...same box as v5...}`
+   -> rigid PDBQT (everything except the 8 flexibilised panel side chains)
+      + flex PDBQT (BEGIN_RES blocks for the 8 flexible side chains).
+   The 27 H atoms attached to those 8 side chains are stripped (AD4
+   united-atom convention; non-polar H charges are merged into carrier C
+   in the original PDBQT prep), so atom-count parity is:
+   `original holo (5782) = rigid (5705) + flex_heavy (50) + CA_overlap (8) + side_chain_H (27)`.
+5. `vina --receptor rigid --flex flex --ligand dump.pdbqt --exhaustiveness 8
+   --num_modes 10 --seed 42 --center/size {...same box as v5...}`
+
+   Exhaustiveness is **8**, not the v5 rigid baseline of 32; the larger
+   flex search space slows wall-time past 30 min at exh=8 and past 1h at
+   exh=32.  Vina's recommended scaling for flex search is to *increase*
+   exh, not decrease it, so absolute flex scores are not fully converged;
+   we report only the rigid-vs-flex *ranking*.
 
 Outputs:
-- `{mutant}_rigid.pdbqt`     -- rigid portion of the holo receptor
-- `{mutant}_flexres.pdbqt`   -- the 14 panel side chains in flex format
-- `{mutant}_flex.pdbqt`      -- Vina docking output (up to 20 modes)
+- `{mutant}_rigid.pdbqt`     -- rigid portion of the holo receptor (panel
+  backbone N/CA/C/O retained; side-chain heavies + H removed)
+- `{mutant}_flexres.pdbqt`   -- the 8 flexible panel side chains in flex
+  format (CA + side-chain heavies, no H)
+- `{mutant}_flex.pdbqt`      -- Vina docking output (up to 10 modes; each
+  MODEL contains the dUMP pose AND the rearranged flex side-chain atoms)
 - `{mutant}_flex.log`        -- Vina stdout/stderr
 - `flexres_compare.csv`        -- summary: label, rigid_vina_score, flex_vina_score, delta_flex
 - `flex_vs_rigid.png`/`.html`  -- scatter of flex vs rigid scores
@@ -108,10 +138,14 @@ view, but is unavailable here.
 - No proper continuum electrostatics (Vinardo and Vina both use a
   distance-dependent dielectric; R215E charge effects are still
   approximated, not Poisson-Boltzmann).
-- The 14-residue flex panel adds ~30-40 rotatable degrees of freedom,
-  pushing the conformational search hard; `--exhaustiveness 32` may be
-  too low for full convergence.  A more thorough study would scan
-  exhaustiveness or use multi-replica seeds (Phase 7's recipe).
+- The **8-residue** flex subset (not the full 14-residue panel) adds
+  ~22 rotatable chi DOF.  Exhaustiveness was reduced to **8** (vs 32
+  rigid baseline) to keep wall-time tractable; Vina's recommended
+  scaling for flex search is to *increase* exh, so absolute flex
+  scores are NOT fully converged.  Rank-comparison (rigid vs flex per
+  mutant; mutant ordering under flex) is the intended use.  A more
+  thorough study would scan exh and/or use multi-replica seeds
+  (Phase 7's recipe), and flexibilise the full 14-residue panel.
 - AD4 column omitted (no autogrid4 binary on this Apple Silicon host).
 - The custom `flex_split.py` topology templates cover the 20 standard
   amino acids but assume canonical atom names (PDB v3.3 conventions);

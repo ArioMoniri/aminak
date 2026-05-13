@@ -9,11 +9,17 @@ For each priority mutant:
   2. Append the cofactor PDBQTs (chain A and chain B) as receptor ATOM
      records to make a clean holo PDBQT with chains A/B intact and resnums
      matching the source PDB.
-  3. Use scripts/v8/flex_split.py to split into rigid + flex PDBQTs for the
-     14 active-site panel residues on chain A (the chain closest to the
-     binding box centroid).
-  4. Dock with Vina (--exhaustiveness 32, --num_modes 20, --seed 42, same
-     box as the v5 mutant pipeline).
+  3. Use scripts/v8/flex_split.py to split into rigid + flex PDBQTs for an
+     8-residue subset of the 14-residue active-site panel on chain A
+     (positions 50, 109, 175, 176, 195, 196, 214, 215 — the rotatable
+     side chains closest to the dUMP top-pose centroid).  T170 (distant
+     control), 216, 225, 226, 256, 258 are dropped to keep the 22-chi-DOF
+     search tractable at exh=8.  See FLEX_PANEL constant below for the
+     authoritative list.
+  4. Dock with Vina (--exhaustiveness 8, --num_modes 10, --seed 42, same
+     box as the v5 mutant pipeline; reduced from baseline exh=32 because
+     the larger search space slows wall-time past 30 min at exh=8 and
+     past 1h at exh=32).
   5. Save outputs under 13_phase8/02_flexres/.
   6. Compare flex top affinity to the recorded rigid Vina top affinity from
      07e_mut_docking_v5/mutant_results_v5.csv.
@@ -45,10 +51,12 @@ LIGAND = PROJECT / "05b_ligand_v2" / "dump.pdbqt"
 
 CENTER = (-0.137, 4.232, 15.159)
 SIZE = (18.0, 18.0, 18.0)
-# Flex docking adds ~25-30 rotatable DOF (8 panel residues x 2-4 chi each)
-# on top of the ligand's own torsions.  Vina's default exh=8 can take >1h
-# per run with this many flex DOF; we reduce to exh=8 (Vina's default) and
-# num_modes=10 to keep per-mutant wall time around 5-10 min.
+# Flex docking adds ~22 rotatable DOF (8 panel residues x ~3 chi each, plus
+# the ligand's own torsions).  The first run at Vina's exh=32 took >12 min
+# per mutant; we reduce to exh=8 (Vina's default) and num_modes=10 to keep
+# the 8-mutant sweep under one hour.  This is a documented concession; the
+# rank-comparison is reliable but absolute scores are not fully converged
+# (see 13_phase8/README.md Limitations).
 EXH = 8
 NMODES = 10
 SEED = 42

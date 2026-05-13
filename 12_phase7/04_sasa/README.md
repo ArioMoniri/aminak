@@ -1,9 +1,13 @@
 # Task D: SASA per residue and correlation with Vina
 
 ## Method
-- `freesasa` 2.2.1 with default parameters on chain A only.
-- WT input: `protein_dimer_h.pdb` (the protonated dimer used everywhere downstream).
+- `freesasa` 2.2.1 (Python binding) on chain A only.
+- **Classifier**: `freesasa.Classifier()` default = NACCESS-style protein radii (Lee-Richards / Ali et al. 1983 atom-radii table). Default probe radius = 1.4 A. Default Lee-Richards algorithm with 20 slices/atom.
+- **Hydrogens**: stripped by the default protein classifier (verified empirically: 0/4650 H atoms are loaded from `protein_dimer_h.pdb`). This matches the AD4 / Naccess / DSSP convention of *heavy-atom-only* SASA.
+- WT input: `protein_dimer_h.pdb` (the protonated dimer used everywhere downstream — H atoms present in the file but ignored by the classifier).
 - Mutant inputs: each `<mut>_mut_h.pdb` from `07e_mut_docking_v5/<mut>/`.
+- Per-residue values are summed over all heavy atoms in that residue.
+- "6 A neighbours" in the README sentence is a *sequence-distance* proxy (residues at positions +/-3 from the mutated site), not a 3D contact map. This is documented in `task_d_sasa.py` and is a deliberate simplification.
 
 ## Output schema
 `sasa_<mut>.csv` columns: `residue_position, sasa_A2, wt_sasa_A2, dsasa_A2`.

@@ -14,7 +14,8 @@ import plotly.graph_objects as go
 from Bio import AlignIO, Phylo
 from Bio.Phylo.TreeConstruction import DistanceCalculator, DistanceTreeConstructor
 
-PROJECT = Path("/Users/ario/conserved_site_project")
+import os
+PROJECT = Path(os.environ.get("PROJECT_DIR", os.path.expanduser("~/conserved_site_project")))
 OUT = PROJECT / "12_phase7" / "05_phylogeny"
 LOG = PROJECT / "logs" / "v7_task_e.log"
 PIPELOG = PROJECT / "pipeline.log"

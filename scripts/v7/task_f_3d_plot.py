@@ -17,7 +17,8 @@ from pathlib import Path
 import pandas as pd
 import plotly.express as px
 
-PROJECT = Path("/Users/ario/conserved_site_project")
+import os
+PROJECT = Path(os.environ.get("PROJECT_DIR", os.path.expanduser("~/conserved_site_project")))
 OUT = PROJECT / "12_phase7" / "06_3d_plot"
 LOG = PROJECT / "logs" / "v7_task_f.log"
 PIPELOG = PROJECT / "pipeline.log"

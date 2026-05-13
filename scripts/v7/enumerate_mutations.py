@@ -12,13 +12,14 @@ from __future__ import annotations
 import csv
 import itertools
 import json
+import os
 import sys
 from pathlib import Path
 
 import plotly.express as px
 import pandas as pd
 
-PROJECT = Path("/Users/ario/conserved_site_project")
+PROJECT = Path(os.environ.get("PROJECT_DIR", os.path.expanduser("~/conserved_site_project")))
 OUT = PROJECT / "12_phase7" / "02_enum"
 
 # 14 active-site residues. Use the panel that lines the binding pocket.

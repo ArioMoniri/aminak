@@ -14,7 +14,8 @@ from pathlib import Path
 
 import pandas as pd
 
-PROJECT = Path("/Users/ario/conserved_site_project")
+import os
+PROJECT = Path(os.environ.get("PROJECT_DIR", os.path.expanduser("~/conserved_site_project")))
 OUT = PROJECT / "12_phase7" / "07_pub_renders"
 LOG = PROJECT / "logs" / "v7_task_g.log"
 PIPELOG = PROJECT / "pipeline.log"

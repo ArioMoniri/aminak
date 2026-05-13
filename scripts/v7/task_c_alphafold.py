@@ -8,7 +8,8 @@ import sys
 import time
 from pathlib import Path
 
-PROJECT = Path("/Users/ario/conserved_site_project")
+import os
+PROJECT = Path(os.environ.get("PROJECT_DIR", os.path.expanduser("~/conserved_site_project")))
 OUT = PROJECT / "12_phase7" / "03_alphafold"
 LOG = PROJECT / "logs" / "v7_task_c.log"
 PIPELOG = PROJECT / "pipeline.log"
@@ -71,8 +72,17 @@ remove resn HOH
 
 
 def run_lovell(pdb: Path, label: str) -> dict:
-    """Run lovell_ramachandran.py and aggregate per-residue classifications."""
-    cmd = [sys.executable, str(LOVELL), "--pdb", str(pdb), "--outdir", str(OUT), "--label", label]
+    """Run lovell_ramachandran.py and aggregate per-residue classifications.
+
+    The shared lovell_ramachandran.py writes a `summary.csv` to its --outdir
+    that is overwritten on every invocation (it summarises only the PDBs
+    passed in this run). Pass an explicit per-label `--summary` so each call
+    writes its own file; we then aggregate the three into the canonical
+    `summary.csv` after all three sub-runs have completed.
+    """
+    per_label_sum = OUT / f"summary_{label}.csv"
+    cmd = [sys.executable, str(LOVELL), "--pdb", str(pdb), "--outdir", str(OUT),
+           "--label", label, "--summary", str(per_label_sum)]
     proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
     if proc.returncode != 0:
         log(f"lovell FAIL {label}: {proc.stderr[:300]}")
@@ -133,9 +143,13 @@ def write_3dmol_html() -> Path:
     """Write a simple 3Dmol.js HTML viewer with the three structures."""
     out = PROJECT / "viewers" / "alphafold_overlay.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    af_text = AF.read_text()
-    mod_text = MOD_BEST.read_text()
-    hvy_text = HVY.read_text()
+    def js_template_literal_escape(s: str) -> str:
+        # JS template literals interpret backslash, backtick, and ${ as syntax;
+        # PDB content can in principle contain any of these, so escape them.
+        return s.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
+    af_text = js_template_literal_escape(AF.read_text())
+    mod_text = js_template_literal_escape(MOD_BEST.read_text())
+    hvy_text = js_template_literal_escape(HVY.read_text())
     # Encode large strings via JS template literals
     html = f"""<!doctype html>
 <html><head><meta charset="utf-8"><title>AlphaFold vs Modeller vs 1HVY</title>
@@ -233,6 +247,24 @@ def main() -> int:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
         w.writeheader(); w.writerows(rows)
     log(f"comparison CSV -> {cmp_csv}")
+
+    # 5b) Aggregate per-label summary_<label>.csv files into the canonical
+    # summary.csv (lovell_ramachandran writes one summary per invocation).
+    sum_path = OUT / "summary.csv"
+    rows_sum = []
+    for ramakey in ("alphafold_v6", "modeller_B99990003", "modeller_B99990010"):
+        per = OUT / f"summary_{ramakey}.csv"
+        if not per.exists():
+            continue
+        with per.open() as fh:
+            reader = csv.DictReader(fh)
+            for r in reader:
+                rows_sum.append(r)
+    if rows_sum:
+        with sum_path.open("w", newline="") as fh:
+            w = csv.DictWriter(fh, fieldnames=list(rows_sum[0].keys()))
+            w.writeheader(); w.writerows(rows_sum)
+        log(f"summary CSV (aggregated 3 sub-runs) -> {sum_path}")
 
     # 6) Summary JSON
     summary = {

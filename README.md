@@ -437,7 +437,9 @@ Vina is stochastic — different random seeds give different docking trajectorie
 | R50A_holo | −7.45 | 0.019 | 0.04 |
 | C195A_holo | −10.37 | 0.014 | 0.03 |
 
-**Per-target SD ≈ 0.01–0.05 kcal/mol; max-min spread 0.02–0.13 kcal/mol.** The v5 single-seed numbers in [`07e_mut_docking_v5/mutant_results_v5.csv`](07e_mut_docking_v5/mutant_results_v5.csv) are reproducible to ~0.1 kcal/mol — the mutant rank-ordering is robust. Only differences smaller than ~0.15 kcal/mol should be treated as within-noise.
+**Per-target SD ≈ 0.01–0.05 kcal/mol; max-min spread 0.02–0.13 kcal/mol.** Two scope notes before reading this number too literally:
+- These SDs are the *within-seed numerical reproducibility* of the search at this specific 18 Å box, exhaustiveness 32, with this particular ligand and these particular receptors. The published Vina noise floor (Trott & Olson 2010) for *general* binding affinity is **±0.85 kcal/mol** — that bigger number is the right one to quote when comparing Vina ΔG to a measured Kd, and it is what bounds the rank-ordering claim across mutants. The 0.05 number bounds reproducibility *within one (target, box, ligand) tuple*.
+- **Mode-1 collapse.** `T170A_holo` and `R175E_R176E_holo` produce **bit-identical top-pose PDBQTs** at every seed (mean = −8.013 kcal/mol both). Receptor coordinates DO differ (5599 of ~5800 atoms shared with WT; ~220 atoms differ each); but in the holo state the cofactor occludes the canonical phosphate-clamp region, dUMP docks to a peripheral pocket where neither residue 170 nor residues 175/176 lie, and Vina therefore converges to the same mode-1 minimum. Lower-rank modes (8+) DO differ between the two receptors. See [`TECHNICAL_NOTES.md` § Phase 7 fallbacks](TECHNICAL_NOTES.md#phase-7-fallbacks-and-caveats) and the `note` column in the aggregate CSV.
 
 Full per-seed table: [`12_phase7/01_replicas/multi_replica_results.csv`](12_phase7/01_replicas/multi_replica_results.csv). Aggregated stats: [`12_phase7/01_replicas/multi_replica_aggregate.csv`](12_phase7/01_replicas/multi_replica_aggregate.csv).
 
@@ -481,11 +483,11 @@ Per-residue solvent-accessible surface area (`freesasa`) for WT + each mutant, t
 
 [![SASA vs ΔVina](12_phase7/04_sasa/sasa_vs_dvina.png)](https://ariomoniri.github.io/aminak/12_phase7/04_sasa/sasa_vs_dvina.html)
 
-**Pearson r(ΔSASA_focus, ΔVina) = −0.19.** The sign is right (a more open pocket → tighter Vina) but the correlation is weak — SASA alone explains only ~4 % of affinity variance. **Specific polar contacts** (the Arg phosphate clamps, the C195 thiol, the N226 H-bond) dominate over bulk SASA changes. The C195A outlier (Δ Vina = −2.25 kcal/mol with very modest ΔSASA) is the clearest illustration of this — the rigid-receptor docking sees a freed-up pocket but cannot capture the loss of the catalytic nucleophile.
+**Pearson r(ΔSASA_focus, ΔVina) = −0.19** (*n = 20, two-tailed p ≈ 0.42 — formally null*). The sign is right (a more open pocket → tighter Vina) and the negative result is itself the teaching point: SASA alone explains only ~4 % of affinity variance, and **specific polar contacts** (the Arg phosphate clamps, the C195 thiol, the N226 H-bond) dominate over bulk SASA changes. The C195A outlier (Δ Vina = −2.25 kcal/mol with very modest ΔSASA) is the clearest illustration of this — the rigid-receptor docking sees a freed-up pocket but cannot capture the loss of the catalytic nucleophile.
 
 ### 7f · Phylogeny of the 10 TYMS orthologs
 
-Neighbour-joining tree built from the v2 MSA, with kingdom annotation per leaf:
+Distance-based **neighbour-joining tree** built from the v2 MSA with BLOSUM62 distances, with kingdom annotation per leaf. *Teaching-grade only — no model selection, no bootstrap support. For a publication-grade topology, re-run with IQ-TREE / RAxML under LG+G or JTT+G+I with ≥ 1000 bootstraps.*
 
 ![TYMS phylogeny](12_phase7/05_phylogeny/tymS_tree.png)
 
@@ -501,7 +503,7 @@ Plotly 3D scatter: **x** = mutated residue position; **y** = hydropathy change o
 
 ### 7h · Publication-quality PyMOL renders (TGT-style)
 
-Cartoon protein + active-site residues as sticks (labelled, asterisked for "interacting") + dUMP in cyan/green + cofactor in cyan + dashed yellow lines for heavy-atom distances < 3.5 Å + mutated residue in pink:
+Cartoon protein + active-site residues as sticks (every active-site residue is labelled `XNNN*`; the asterisk is a uniform marker, not an interaction-only flag) + dUMP in cyan/green + cofactor in cyan + dashed yellow lines for heavy-atom distances < 3.5 Å + mutated residue in pink:
 
 | | | |
 |:-:|:-:|:-:|

@@ -24,3 +24,30 @@
 [V7][taskC] 2026-05-13T03:05:29Z 3Dmol viewer -> /Users/ario/conserved_site_project/viewers/alphafold_overlay.html
 [V7][taskC] 2026-05-13T03:05:29Z comparison CSV -> /Users/ario/conserved_site_project/12_phase7/03_alphafold/comparison.csv
 [V7][taskC] 2026-05-13T03:05:29Z Task C done
+[V7][taskC] 2026-05-13T03:38:37Z Task C start
+[V7][taskC] 2026-05-13T03:38:37Z super AF-P04818-F1-model_v6.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.378/258  RMSD_raw=0.47/285
+[V7][taskC] 2026-05-13T03:38:37Z align AF-P04818-F1-model_v6.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.378/258  RMSD_raw=0.554/287
+[V7][taskC] 2026-05-13T03:38:37Z super refined_B99990003.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.373/257  RMSD_raw=0.516/285
+[V7][taskC] 2026-05-13T03:38:38Z align refined_B99990003.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.373/257  RMSD_raw=0.702/287
+[V7][taskC] 2026-05-13T03:38:38Z super refined_B99990010.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.394/261  RMSD_raw=0.497/284
+[V7][taskC] 2026-05-13T03:38:38Z align refined_B99990010.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.394/261  RMSD_raw=0.64/287
+[V7][taskC] 2026-05-13T03:38:38Z super AF-P04818-F1-model_v6.pdb -> refined_B99990003.pdb: RMSD_conv=0.432/264  RMSD_raw=0.598/286
+[V7][taskC] 2026-05-13T03:38:38Z align AF-P04818-F1-model_v6.pdb -> refined_B99990003.pdb: RMSD_conv=0.432/264  RMSD_raw=0.677/287
+[V7][taskC] 2026-05-13T03:38:41Z triple overlay rc=0, png exists=True
+[V7][taskC] 2026-05-13T03:38:41Z 3Dmol viewer -> /Users/ario/conserved_site_project/viewers/alphafold_overlay.html
+[V7][taskC] 2026-05-13T03:38:41Z comparison CSV -> /Users/ario/conserved_site_project/12_phase7/03_alphafold/comparison.csv
+[V7][taskC] 2026-05-13T03:38:41Z Task C done
+[V7][taskC] 2026-05-13T03:39:50Z Task C start
+[V7][taskC] 2026-05-13T03:39:51Z super AF-P04818-F1-model_v6.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.378/258  RMSD_raw=0.47/285
+[V7][taskC] 2026-05-13T03:39:51Z align AF-P04818-F1-model_v6.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.378/258  RMSD_raw=0.554/287
+[V7][taskC] 2026-05-13T03:39:51Z super refined_B99990003.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.373/257  RMSD_raw=0.516/285
+[V7][taskC] 2026-05-13T03:39:51Z align refined_B99990003.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.373/257  RMSD_raw=0.702/287
+[V7][taskC] 2026-05-13T03:39:51Z super refined_B99990010.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.394/261  RMSD_raw=0.497/284
+[V7][taskC] 2026-05-13T03:39:51Z align refined_B99990010.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.394/261  RMSD_raw=0.64/287
+[V7][taskC] 2026-05-13T03:39:51Z super AF-P04818-F1-model_v6.pdb -> refined_B99990003.pdb: RMSD_conv=0.432/264  RMSD_raw=0.598/286
+[V7][taskC] 2026-05-13T03:39:52Z align AF-P04818-F1-model_v6.pdb -> refined_B99990003.pdb: RMSD_conv=0.432/264  RMSD_raw=0.677/287
+[V7][taskC] 2026-05-13T03:39:54Z triple overlay rc=0, png exists=True
+[V7][taskC] 2026-05-13T03:39:54Z 3Dmol viewer -> /Users/ario/conserved_site_project/viewers/alphafold_overlay.html
+[V7][taskC] 2026-05-13T03:39:54Z comparison CSV -> /Users/ario/conserved_site_project/12_phase7/03_alphafold/comparison.csv
+[V7][taskC] 2026-05-13T03:39:54Z summary CSV (aggregated 3 sub-runs) -> /Users/ario/conserved_site_project/12_phase7/03_alphafold/summary.csv
+[V7][taskC] 2026-05-13T03:39:54Z Task C done

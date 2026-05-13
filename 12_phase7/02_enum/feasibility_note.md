@@ -30,6 +30,11 @@ Even without docking, the enumerated lists are useful for:
   functional_class is "charge_reversal" or "loss_of_charge").
 
 ## What we actually docked
-Phase 5/7 dock 20 hand-picked mutants 1x and 8 priority mutants 5x.  Multi-replica
-SD bracketed the per-mutation Vina noise floor (~0.2-0.5 kcal/mol typical;
-see `12_phase7/01_replicas/multi_replica_results.csv`).
+Phase 5/7 dock 20 hand-picked mutants 1x and 8 priority mutants 5x.  The
+multi-replica per-(target, box, ligand) numerical SD measured here was
+**0.01-0.05 kcal/mol** at exhaustiveness 32 and box 18 A
+(see `12_phase7/01_replicas/multi_replica_aggregate.csv`).  Note this is
+*within-seed search reproducibility for one tuple*, not the published
+Vina absolute-affinity noise floor (~0.85 kcal/mol; Trott & Olson 2010),
+which is the right number to quote when comparing Vina deltaG against a
+measured Kd.

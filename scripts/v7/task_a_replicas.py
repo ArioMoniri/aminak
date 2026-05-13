@@ -18,7 +18,7 @@ import sys
 import time
 from pathlib import Path
 
-PROJECT = Path("/Users/ario/conserved_site_project")
+PROJECT = Path(os.environ.get("PROJECT_DIR", os.path.expanduser("~/conserved_site_project")))
 OUT = PROJECT / "12_phase7" / "01_replicas"
 LOG = PROJECT / "logs" / "v7_task_a.log"
 PIPELOG = PROJECT / "pipeline.log"

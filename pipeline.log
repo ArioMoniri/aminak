@@ -1712,3 +1712,249 @@ mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
 [V7][taskG] 2026-05-13T05:02:39Z C195A render rc=0, png exists=True
 [V7][taskG] 2026-05-13T05:02:44Z R175E_R176E render rc=0, png exists=True
 [V7][taskG] 2026-05-13T05:02:44Z Task G done: 7 images
+[V8][8a] 2026-05-13T05:37:39Z Phase 8a start; AUTOGRID=None
+[V8][8a] 2026-05-13T05:37:39Z autogrid4 NOT FOUND on host; AD4 column will be empty (documented limitation).
+[V8][8a] 2026-05-13T05:37:39Z Targets: 42 rows from mutant_results_v5.csv
+[V8][8a] 2026-05-13T05:37:40Z WT                 apo  vina=-8.718 vinardo=-6.334 d_vinardo=2.3840000000000003
+[V8][8a] 2026-05-13T05:37:41Z WT                 holo vina=-7.407 vinardo=-5.112 d_vinardo=2.295
+[V8][8a] 2026-05-13T05:37:41Z C195A              holo vina=-10.502 vinardo=-8.519 d_vinardo=1.9830000000000005
+[V8][8a] 2026-05-13T05:37:41Z vina rc=1 scoring=vina lig=C195A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:41Z vina rc=1 scoring=vinardo lig=C195A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:41Z C195A              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:42Z C195A_H196A        holo vina=-10.025 vinardo=-8.02 d_vinardo=2.005000000000001
+[V8][8a] 2026-05-13T05:37:42Z vina rc=1 scoring=vina lig=C195A_H196A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:42Z vina rc=1 scoring=vinardo lig=C195A_H196A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:42Z C195A_H196A        apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:43Z C195S              holo vina=-10.209 vinardo=-8.39 d_vinardo=1.818999999999999
+[V8][8a] 2026-05-13T05:37:43Z vina rc=1 scoring=vina lig=C195S_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:43Z vina rc=1 scoring=vinardo lig=C195S_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:43Z C195S              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:44Z C195S_H196N        holo vina=-9.776 vinardo=-8.119 d_vinardo=1.657
+[V8][8a] 2026-05-13T05:37:44Z vina rc=1 scoring=vina lig=C195S_H196N_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:44Z vina rc=1 scoring=vinardo lig=C195S_H196N_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:44Z C195S_H196N        apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:45Z H196A              holo vina=-7.758 vinardo=-6.009 d_vinardo=1.7489999999999997
+[V8][8a] 2026-05-13T05:37:45Z vina rc=1 scoring=vina lig=H196A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:45Z vina rc=1 scoring=vinardo lig=H196A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:45Z H196A              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:45Z N226D              holo vina=-7.806 vinardo=-5.922 d_vinardo=1.8840000000000003
+[V8][8a] 2026-05-13T05:37:45Z vina rc=1 scoring=vina lig=N226D_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:45Z vina rc=1 scoring=vinardo lig=N226D_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:45Z N226D              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:46Z Q214A              holo vina=-8.175 vinardo=-6.225 d_vinardo=1.950000000000001
+[V8][8a] 2026-05-13T05:37:46Z vina rc=1 scoring=vina lig=Q214A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:46Z vina rc=1 scoring=vinardo lig=Q214A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:46Z Q214A              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:47Z R175A              holo vina=-8.193 vinardo=-6.378 d_vinardo=1.8149999999999995
+[V8][8a] 2026-05-13T05:37:47Z vina rc=1 scoring=vina lig=R175A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:47Z vina rc=1 scoring=vinardo lig=R175A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:47Z R175A              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:48Z R175E              holo vina=-8.196 vinardo=-6.436 d_vinardo=1.7599999999999998
+[V8][8a] 2026-05-13T05:37:48Z vina rc=1 scoring=vina lig=R175E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:48Z vina rc=1 scoring=vinardo lig=R175E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:48Z R175E              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:49Z R175E_R176E        holo vina=-8.203 vinardo=-6.38 d_vinardo=1.8229999999999995
+[V8][8a] 2026-05-13T05:37:49Z vina rc=1 scoring=vina lig=R175E_R176E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:49Z vina rc=1 scoring=vinardo lig=R175E_R176E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:49Z R175E_R176E        apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:49Z R176A              holo vina=-8.187 vinardo=-6.423 d_vinardo=1.7639999999999993
+[V8][8a] 2026-05-13T05:37:49Z vina rc=1 scoring=vina lig=R176A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:49Z vina rc=1 scoring=vinardo lig=R176A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:49Z R176A              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:50Z R176E              holo vina=-8.203 vinardo=-6.38 d_vinardo=1.8229999999999995
+[V8][8a] 2026-05-13T05:37:50Z vina rc=1 scoring=vina lig=R176E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:50Z vina rc=1 scoring=vinardo lig=R176E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:50Z R176E              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:51Z R215A              holo vina=-7.802 vinardo=-5.508 d_vinardo=2.2939999999999996
+[V8][8a] 2026-05-13T05:37:51Z vina rc=1 scoring=vina lig=R215A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:51Z vina rc=1 scoring=vinardo lig=R215A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:51Z R215A              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:52Z R215A_N226A        holo vina=-7.475 vinardo=-5.014 d_vinardo=2.4609999999999994
+[V8][8a] 2026-05-13T05:37:52Z vina rc=1 scoring=vina lig=R215A_N226A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:52Z vina rc=1 scoring=vinardo lig=R215A_N226A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:52Z R215A_N226A        apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:53Z R215E              holo vina=-7.774 vinardo=-5.527 d_vinardo=2.247
+[V8][8a] 2026-05-13T05:37:53Z vina rc=1 scoring=vina lig=R215E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:53Z vina rc=1 scoring=vinardo lig=R215E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:53Z R215E              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:53Z R50A               holo vina=-7.42 vinardo=-4.055 d_vinardo=3.365
+[V8][8a] 2026-05-13T05:37:53Z vina rc=1 scoring=vina lig=R50A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:53Z vina rc=1 scoring=vinardo lig=R50A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:53Z R50A               apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:54Z R50E               holo vina=-7.764 vinardo=-4.41 d_vinardo=3.354
+[V8][8a] 2026-05-13T05:37:54Z vina rc=1 scoring=vina lig=R50E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:54Z vina rc=1 scoring=vinardo lig=R50E_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:54Z R50E               apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:55Z T170A              holo vina=-8.203 vinardo=-6.38 d_vinardo=1.8229999999999995
+[V8][8a] 2026-05-13T05:37:55Z vina rc=1 scoring=vina lig=T170A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:55Z vina rc=1 scoring=vinardo lig=T170A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:55Z T170A              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:56Z W109A              holo vina=-7.976 vinardo=-6.343 d_vinardo=1.633
+[V8][8a] 2026-05-13T05:37:56Z vina rc=1 scoring=vina lig=W109A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:56Z vina rc=1 scoring=vinardo lig=W109A_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:56Z W109A              apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:56Z Y258F_F225Y        holo vina=-8.047 vinardo=-6.01 d_vinardo=2.037000000000001
+[V8][8a] 2026-05-13T05:37:56Z vina rc=1 scoring=vina lig=Y258F_F225Y_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:56Z vina rc=1 scoring=vinardo lig=Y258F_F225Y_apo_top.pdbqt: 
+
+PDBQT parsing error: Unexpected multi-MODEL tag found in rigid receptor. Only one model can be used for the rigid rece
+[V8][8a] 2026-05-13T05:37:56Z Y258F_F225Y        apo  vina=None vinardo=None d_vinardo=None
+[V8][8a] 2026-05-13T05:37:56Z wrote /Users/ario/conserved_site_project/13_phase8/01_alt_scoring/alt_scoring_results.csv with 42 rows
+[V8][8a] 2026-05-13T05:42:29Z Phase 8a start; AUTOGRID=None
+[V8][8a] 2026-05-13T05:42:29Z autogrid4 NOT FOUND on host; AD4 column will be empty (documented limitation).
+[V8][8a] 2026-05-13T05:42:29Z Targets: 42 rows from mutant_results_v5.csv
+[V8][8a] 2026-05-13T05:42:29Z WT                 apo  vina=-8.718 vinardo=-6.334 d_vinardo=2.3840000000000003
+[V8][8a] 2026-05-13T05:42:30Z WT                 holo vina=-7.407 vinardo=-5.112 d_vinardo=2.295
+[V8][8a] 2026-05-13T05:42:31Z C195A              holo vina=-10.502 vinardo=-8.519 d_vinardo=1.9830000000000005
+[V8][8a] 2026-05-13T05:42:34Z C195A              apo  vina=-9.46 vinardo=-7.59 d_vinardo=1.870000000000001
+[V8][8a] 2026-05-13T05:42:34Z C195A_H196A        holo vina=-10.025 vinardo=-8.02 d_vinardo=2.005000000000001
+[V8][8a] 2026-05-13T05:42:37Z C195A_H196A        apo  vina=-9.118 vinardo=-7.176 d_vinardo=1.9420000000000002
+[V8][8a] 2026-05-13T05:42:38Z C195S              holo vina=-10.209 vinardo=-8.39 d_vinardo=1.818999999999999
+[V8][8a] 2026-05-13T05:42:40Z C195S              apo  vina=-9.549 vinardo=-7.699 d_vinardo=1.8499999999999996
+[V8][8a] 2026-05-13T05:42:41Z C195S_H196N        holo vina=-9.776 vinardo=-8.119 d_vinardo=1.657
+[V8][8a] 2026-05-13T05:42:44Z C195S_H196N        apo  vina=-9.337 vinardo=-7.505 d_vinardo=1.8319999999999999
+[V8][8a] 2026-05-13T05:42:45Z H196A              holo vina=-7.758 vinardo=-6.009 d_vinardo=1.7489999999999997
+[V8][8a] 2026-05-13T05:42:47Z H196A              apo  vina=-8.858 vinardo=-7.025 d_vinardo=1.8330000000000002
+[V8][8a] 2026-05-13T05:42:48Z N226D              holo vina=-7.806 vinardo=-5.922 d_vinardo=1.8840000000000003
+[V8][8a] 2026-05-13T05:42:50Z N226D              apo  vina=-8.778 vinardo=-6.838 d_vinardo=1.9400000000000004
+[V8][8a] 2026-05-13T05:42:51Z Q214A              holo vina=-8.175 vinardo=-6.225 d_vinardo=1.950000000000001
+[V8][8a] 2026-05-13T05:42:54Z Q214A              apo  vina=-8.654 vinardo=-6.792 d_vinardo=1.862
+[V8][8a] 2026-05-13T05:42:55Z R175A              holo vina=-8.193 vinardo=-6.378 d_vinardo=1.8149999999999995
+[V8][8a] 2026-05-13T05:42:57Z R175A              apo  vina=-9.021 vinardo=-7.115 d_vinardo=1.9060000000000006
+[V8][8a] 2026-05-13T05:42:58Z R175E              holo vina=-8.196 vinardo=-6.436 d_vinardo=1.7599999999999998
+[V8][8a] 2026-05-13T05:43:00Z R175E              apo  vina=-9.04 vinardo=-7.074 d_vinardo=1.9659999999999993
+[V8][8a] 2026-05-13T05:43:01Z R175E_R176E        holo vina=-8.203 vinardo=-6.38 d_vinardo=1.8229999999999995
+[V8][8a] 2026-05-13T05:43:03Z R175E_R176E        apo  vina=-9.022 vinardo=-7.055 d_vinardo=1.9670000000000005
+[V8][8a] 2026-05-13T05:43:04Z R176A              holo vina=-8.187 vinardo=-6.423 d_vinardo=1.7639999999999993
+[V8][8a] 2026-05-13T05:43:06Z R176A              apo  vina=-9.022 vinardo=-7.055 d_vinardo=1.9670000000000005
+[V8][8a] 2026-05-13T05:43:07Z R176E              holo vina=-8.203 vinardo=-6.38 d_vinardo=1.8229999999999995
+[V8][8a] 2026-05-13T05:43:10Z R176E              apo  vina=-9.022 vinardo=-7.055 d_vinardo=1.9670000000000005
+[V8][8a] 2026-05-13T05:43:11Z R215A              holo vina=-7.802 vinardo=-5.508 d_vinardo=2.2939999999999996
+[V8][8a] 2026-05-13T05:43:13Z R215A              apo  vina=-8.63 vinardo=-6.232 d_vinardo=2.3980000000000006
+[V8][8a] 2026-05-13T05:43:14Z R215A_N226A        holo vina=-7.475 vinardo=-5.014 d_vinardo=2.4609999999999994
+[V8][8a] 2026-05-13T05:43:16Z R215A_N226A        apo  vina=-8.049 vinardo=-5.852 d_vinardo=2.196999999999999
+[V8][8a] 2026-05-13T05:43:17Z R215E              holo vina=-7.774 vinardo=-5.527 d_vinardo=2.247
+[V8][8a] 2026-05-13T05:43:19Z R215E              apo  vina=-8.586 vinardo=-6.092 d_vinardo=2.4940000000000007
+[V8][8a] 2026-05-13T05:43:20Z R50A               holo vina=-7.42 vinardo=-4.055 d_vinardo=3.365
+[V8][8a] 2026-05-13T05:43:22Z R50A               apo  vina=-8.618 vinardo=-6.094 d_vinardo=2.524
+[V8][8a] 2026-05-13T05:43:23Z R50E               holo vina=-7.764 vinardo=-4.41 d_vinardo=3.354
+[V8][8a] 2026-05-13T05:43:25Z R50E               apo  vina=-8.782 vinardo=-6.282 d_vinardo=2.5
+[V8][8a] 2026-05-13T05:43:26Z T170A              holo vina=-8.203 vinardo=-6.38 d_vinardo=1.8229999999999995
+[V8][8a] 2026-05-13T05:43:29Z T170A              apo  vina=-9.021 vinardo=-7.115 d_vinardo=1.9060000000000006
+[V8][8a] 2026-05-13T05:43:29Z W109A              holo vina=-7.976 vinardo=-6.343 d_vinardo=1.633
+[V8][8a] 2026-05-13T05:43:32Z W109A              apo  vina=-8.873 vinardo=-7.159 d_vinardo=1.7139999999999995
+[V8][8a] 2026-05-13T05:43:33Z Y258F_F225Y        holo vina=-8.047 vinardo=-6.01 d_vinardo=2.037000000000001
+[V8][8a] 2026-05-13T05:43:35Z Y258F_F225Y        apo  vina=-8.876 vinardo=-6.896 d_vinardo=1.9799999999999995
+[V8][8a] 2026-05-13T05:43:35Z wrote /Users/ario/conserved_site_project/13_phase8/01_alt_scoring/alt_scoring_results.csv with 42 rows
+[V8][8b] 2026-05-13T05:57:48Z Phase 8b start; flex panel = [('A', 50), ('A', 109), ('A', 175), ('A', 176), ('A', 195), ('A', 196), ('A', 214), ('A', 215), ('A', 225), ('A', 226), ('A', 218), ('A', 222), ('A', 87), ('A', 51)]
+[V8][8b] 2026-05-13T05:57:48Z === R215A_N226A ===
+[V8][8b] 2026-05-13T05:57:49Z   flex_split WARN: residue GLY A:222 has no rotatable side chain; keeping rigid
+[V8][8b] 2026-05-13T05:57:49Z   docking with --flex (exhaustiveness=32, modes=20)
+[V8][8b] 2026-05-13T06:10:07Z   flex top_aff=None n_modes=0 elapsed=737.1769189834595s
+[V8][8b] 2026-05-13T06:10:07Z === H196A ===
+[V8][8b] 2026-05-13T06:10:09Z   flex_split WARN: residue GLY A:222 has no rotatable side chain; keeping rigid
+[V8][8b] 2026-05-13T06:10:09Z   docking with --flex (exhaustiveness=32, modes=20)
+[V8][8b] 2026-05-13T06:10:48Z Phase 8b start; flex panel = [('A', 50), ('A', 109), ('A', 175), ('A', 176), ('A', 195), ('A', 196), ('A', 214), ('A', 215)]
+[V8][8b] 2026-05-13T06:10:48Z === R215A_N226A ===
+[V8][8b] 2026-05-13T06:10:50Z   docking with --flex (exhaustiveness=8, modes=10)
+[V8][8b] 2026-05-13T06:12:47Z   flex top_aff=-3.944 n_modes=10 elapsed=116.84s
+[V8][8b] 2026-05-13T06:12:47Z === H196A ===
+[V8][8b] 2026-05-13T06:12:48Z   docking with --flex (exhaustiveness=8, modes=10)
+[V8][8b] 2026-05-13T06:15:03Z   flex top_aff=-1.279 n_modes=10 elapsed=134.6s
+[V8][8b] 2026-05-13T06:15:03Z === R215E ===
+[V8][8b] 2026-05-13T06:15:04Z   docking with --flex (exhaustiveness=8, modes=10)
+[V8][8b] 2026-05-13T06:17:56Z   flex top_aff=-2.488 n_modes=10 elapsed=172.04s
+[V8][8b] 2026-05-13T06:17:56Z === R50A ===
+[V8][8b] 2026-05-13T06:17:58Z   docking with --flex (exhaustiveness=8, modes=10)
+[V8][8b] 2026-05-13T06:20:16Z   flex top_aff=-3.974 n_modes=10 elapsed=138.26s
+[V8][8b] 2026-05-13T06:20:16Z === C195A ===
+[V8][8b] 2026-05-13T06:20:18Z   docking with --flex (exhaustiveness=8, modes=10)
+[V8][8b] 2026-05-13T06:23:06Z   flex top_aff=-6.392 n_modes=10 elapsed=168.21s
+[V8][8b] 2026-05-13T06:23:06Z === R175E_R176E ===
+[V8][8b] 2026-05-13T06:23:08Z   docking with --flex (exhaustiveness=8, modes=10)
+[V8][8b] 2026-05-13T06:25:23Z   flex top_aff=-5.519 n_modes=10 elapsed=135.16s
+[V8][8b] 2026-05-13T06:25:23Z === T170A ===
+[V8][8b] 2026-05-13T06:25:25Z   docking with --flex (exhaustiveness=8, modes=10)
+[V8][8b] 2026-05-13T06:29:08Z   flex top_aff=-4.093 n_modes=10 elapsed=222.97s
+[V8][8b] 2026-05-13T06:29:08Z === Y258F_F225Y ===
+[V8][8b] 2026-05-13T06:29:10Z   docking with --flex (exhaustiveness=8, modes=10)
+[V8][8b] 2026-05-13T06:32:50Z   flex top_aff=-4.923 n_modes=10 elapsed=219.48s
+[V8][8b] 2026-05-13T06:32:50Z wrote /Users/ario/conserved_site_project/13_phase8/02_flexres/flexres_compare.csv with 8 rows

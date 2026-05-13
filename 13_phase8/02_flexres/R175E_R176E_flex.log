@@ -1,0 +1,52 @@
+AutoDock Vina v1.2.7
+#################################################################
+# If you used AutoDock Vina in your work, please cite:          #
+#                                                               #
+# J. Eberhardt, D. Santos-Martins, A. F. Tillack, and S. Forli  #
+# AutoDock Vina 1.2.0: New Docking Methods, Expanded Force      #
+# Field, and Python Bindings, J. Chem. Inf. Model. (2021)       #
+# DOI 10.1021/acs.jcim.1c00203                                  #
+#                                                               #
+# O. Trott, A. J. Olson,                                        #
+# AutoDock Vina: improving the speed and accuracy of docking    #
+# with a new scoring function, efficient optimization and       #
+# multithreading, J. Comp. Chem. (2010)                         #
+# DOI 10.1002/jcc.21334                                         #
+#                                                               #
+# Please see https://github.com/ccsb-scripps/AutoDock-Vina for  #
+# more information.                                             #
+#################################################################
+
+Scoring function : vina
+Rigid receptor: /Users/ario/conserved_site_project/13_phase8/02_flexres/R175E_R176E_rigid.pdbqt
+Flex receptor: /Users/ario/conserved_site_project/13_phase8/02_flexres/R175E_R176E_flexres.pdbqt
+Ligand: /Users/ario/conserved_site_project/05b_ligand_v2/dump.pdbqt
+Grid center: X -0.137 Y 4.232 Z 15.159
+Grid size  : X 18 Y 18 Z 18
+Grid space : 0.375
+Exhaustiveness: 8
+CPU: 0
+Verbosity: 1
+
+Computing Vina grid ... done.
+Performing docking (random seed: 42) ... 
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+mode |   affinity | dist from best mode
+     | (kcal/mol) | rmsd l.b.| rmsd u.b.
+-----+------------+----------+----------
+   1       -5.519          0          0
+   2       -2.173      2.088      3.006
+   3       0.4468      2.506      3.836
+   4         2.11      2.427      4.513
+   5        3.004      2.592      5.156
+   6        8.202      2.538      4.074
+   7         10.7      2.323      4.238
+   8        19.57      1.332      1.871
+   9        22.53      2.101      3.184
+  10          877      2.436      4.866
+
+--STDERR--
+WARNING: At low exhaustiveness, it may be impossible to utilize all CPUs.

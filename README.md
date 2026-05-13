@@ -492,7 +492,7 @@ Vina is stochastic — different random seeds give different docking trajectorie
 > 3. **Vina is electrostatics-free.** Charge-reversal mutations (`R215E`, `R175E_R176E`) move the side-chain charge from +1 to −1 — biologically catastrophic for holding a phosphate. Vina has **no Coulomb term** — it rewards H-bond geometry only. So `R → E` looks to Vina like "lost one H-bond donor, gained one acceptor of similar size." Δ ≈ 0.
 > 4. **No dUMP conformational adaptation.** Vina searches dUMP poses but the receptor sits still. The lowest-energy pose for WT and `R215A` ends up in nearly the same place because dUMP just hops to whatever the rigid receptor still allows.
 >
-> **The C195A outlier (Δ = −2.88 kcal/mol) confirms all four**: removing the bulky catalytic Cys thiol *opens up* the pocket, so dUMP slides deeper and Vina rewards the tighter geometric fit — even though biologically C195A is a *catalytic-dead* mutant (the thiol IS the nucleophile that attacks dUMP). Vina is scoring "this Ala-stub pocket fits dUMP better" while the actual enzyme has just lost its only nucleophile. **This is the project's headline finding**: rigid-receptor Vina cannot tell catalytic competence from geometric fit. The next step (induced-fit docking with AutoDockFR or RosettaDock; physics-based MM-GBSA rescoring; or learned-potential rescoring with GNINA) is signposted in the project's "Teaching point" section but not executed here. The honest null result IS the teaching point.
+> **The C195A outlier (Δ = −2.88 kcal/mol) confirms all four**: removing the bulky catalytic Cys thiol *opens up* the pocket, so dUMP slides deeper and Vina rewards the tighter geometric fit — even though biologically C195A is a *catalytic-dead* mutant (the thiol IS the nucleophile that attacks dUMP). Vina is scoring "this Ala-stub pocket fits dUMP better" while the actual enzyme has just lost its only nucleophile. **This is the project's headline finding**: rigid-receptor Vina cannot tell catalytic competence from geometric fit. **Phase 8 below tests whether smarter scoring fixes this.**
 
 **Per-target SD ≈ 0.01–0.05 kcal/mol; max-min spread 0.02–0.13 kcal/mol.** Two scope notes before reading this number too literally:
 - These SDs are the *within-seed numerical reproducibility* of the search at this specific 18 Å box, exhaustiveness 32, with this particular ligand and these particular receptors. The published Vina noise floor (Trott & Olson 2010) for *general* binding affinity is **±0.85 kcal/mol** — that bigger number is the right one to quote when comparing Vina ΔG to a measured Kd, and it is what bounds the rank-ordering claim across mutants. The 0.05 number bounds reproducibility *within one (target, box, ligand) tuple*.
@@ -560,6 +560,63 @@ Plotly 3D scatter: **x** = mutated residue position; **y** = hydropathy change o
 ### 7h · Publication-quality PyMOL renders (TGT-style)
 
 > *Moved up* — see [§ "Publication-quality renders — close-ups of the active site"](#-publication-quality-renders--close-ups-of-the-active-site) at the top of the README, near the live 3D viewers and rotating GIFs (all the structural visualisations together).
+
+---
+
+## ⚗️ Phase 8 — can smarter scoring fix the rigid-Vina null result?
+
+The four reasons rigid Vina can't resolve TYMS mutants ([§ "Why the holo Δ scores are tiny"](#-why-the-holo-δ-scores-are-tiny--read-this-if-a-row-surprises-you)) point at three orthogonal failure modes. Phase 8 tests one upgrade for each that runs natively on this Apple Silicon machine:
+
+| Upgrade | Failure mode it addresses | Native on macOS arm64? | Run? |
+| --- | --- | :-: | :-: |
+| **Vinardo** scoring (Quiroga & Villarreal 2016) on the same Vina top poses | "is the scoring function the problem, not the pose?" | ✅ (Vina 1.2 builtin) | ✅ all 42 |
+| **AD4** force-field scoring | "would AD4-style force-field scoring break the ranking?" | ❌ `autogrid4` no arm64 build | ⏭ skipped, documented |
+| **Flexible-residue Vina** (`--flex` on the 14 active-site residues) | "is the *rigidity* the problem, not the scoring?" | ✅ (Vina 1.2 builtin) | ✅ 8 priority mutants |
+
+GNINA (CNN-based rescoring) was the original first choice but **does not ship for Apple Silicon** (Scripps does not publish an arm64 binary and the source build requires CUDA + libmolgrid). Vinardo + flex-Vina cover two of GNINA's three benefits — better empirical scoring and induced-fit rearrangement — without the CNN.
+
+### 8a · Vinardo rescoring (same poses, different scorer)
+
+| Mutant (holo) | Vina | Vinardo | Δ Vinardo vs Vina | Verdict |
+| --- | --- | --- | --- | --- |
+| WT | −7.41 | −5.11 | +2.30 | baseline |
+| **C195A** | **−10.50** | **−8.52** | +1.98 | **illusion persists — Vinardo also calls C195A a tighter binder than WT** |
+| R215E | −7.78 | −5.53 | +2.25 | sign still wrong (R→E barely changes the score) |
+| R215A_N226A | −7.48 | −5.01 | +2.46 | comparable to WT |
+
+**Vinardo does NOT fix the C195A illusion** — the Δ is actually *larger* under Vinardo (−3.41 vs Vina's −3.10). Same for R215E: both empirical scoring functions miss the charge-reversal penalty because **neither has a proper Coulomb / Poisson–Boltzmann electrostatics term**. Vinardo discriminates 1.43× more strongly between mutants than Vina (mean |Δ vs WT| = 1.40 vs 0.98 kcal/mol), so it *amplifies* the existing signal but doesn't *flip* the rank ordering.
+
+Full table: [`13_phase8/01_alt_scoring/alt_scoring_results.csv`](13_phase8/01_alt_scoring/alt_scoring_results.csv) · [interactive scatter](https://ariomoniri.github.io/aminak/13_phase8/01_alt_scoring/alt_scoring_compare.html)
+
+### 8b · Flexible-residue Vina (lets the 14 active-site side chains rotamer-search)
+
+| Mutant (holo) | Rigid Vina | **Flex Vina** | Δ flex − rigid | Verdict |
+| --- | --- | --- | --- | --- |
+| R215A_N226A | −7.48 | −3.94 | +3.53 | flex penalises ~3.5 kcal/mol |
+| H196A | −7.76 | −1.28 | +6.48 | flex penalises ~6.5 kcal/mol |
+| R215E | −7.78 | −2.49 | +5.29 | flex penalises ~5.3 kcal/mol |
+| R50A | −7.42 | −3.97 | +3.45 | flex penalises ~3.4 kcal/mol |
+| **C195A** | **−10.50** | **−6.39** | **+4.10** | **the illusion is broken** — letting side chains relax shows C195A is *not* a better binder once neighbour residues can move |
+| R175E_R176E | −8.20 | −5.52 | +2.68 | flex penalises ~2.7 kcal/mol |
+| T170A (distant) | −8.20 | −4.09 | +4.11 | even the "distant control" gets a 4 kcal/mol flex penalty — see caveat below |
+| Y258F_F225Y | −8.05 | −4.92 | +3.13 | flex penalises ~3.1 kcal/mol |
+
+**The C195A illusion is partially broken by flex-Vina.** Rigid Vina ranked C195A as a 3-kcal/mol *tighter* binder than WT; flex-Vina knocks 4.1 kcal/mol off that "improvement" and brings it back into the WT band. This says the rigid-receptor "improvement" was largely an artifact of the static crystal-like side-chain geometry around residue 195; once neighbours can move, dUMP can't slide deeper without paying the rearrangement cost. **Caveat**: flex-Vina shows a 3–6 kcal/mol penalty on *every* mutant, including T170A (the supposed distant-surface negative control). This is the cost of forcing the rigid-optimal side-chain conformations away from their pre-set crystal geometry — flex-Vina is **discriminative but not absolutely calibrated**, and absolute flex scores cannot be read as Kd predictions. The *relative* ranking is what's interesting: C195A is no longer top.
+
+Full table: [`13_phase8/02_flexres/flexres_compare.csv`](13_phase8/02_flexres/flexres_compare.csv) · [interactive scatter](https://ariomoniri.github.io/aminak/13_phase8/02_flexres/flex_vs_rigid.html)
+
+### 8c · So — can smarter scoring fix it?
+
+| Question | Vinardo | Flex Vina | Punchline |
+| --- | --- | --- | --- |
+| Does C195A stop ranking *above* WT? | No (Δ = −3.41) | **Yes** (Δ = +4.10 vs rigid) | rigidity, not scoring, was the C195A illusion |
+| Does R215E start being penalised? | No (Δ = −0.42) | Partial (Δ = +5.29 vs rigid, but for the wrong reason — rearrangement cost, not electrostatics) | needs proper PB electrostatics (MM-GBSA / FEP) |
+| Do mutant Δ scores get bigger? | Yes (1.43× larger) | Yes (3–6 kcal/mol) | both methods amplify mutant separation |
+| Are flex scores comparable to Kd? | Same as rigid Vina (rough, ±0.85) | **No** — even T170A control gets +4 kcal/mol | flex is for *ranking*, not absolute affinity |
+
+The honest summary: **Vinardo is a free upgrade in scoring quality but the C195A illusion is a rigidity problem, not a scoring problem**. Flex Vina partially fixes it. To definitively fix the R→E sign error and get absolute affinities, the next step is **MM-GBSA rescoring** (proper Coulomb on a relaxed pose; AmberTools `MMPBSA.py` on the Vina top poses; ~30 min/mutant; not run here because it adds another forcefield-prep stage to the pipeline).
+
+**Master four-panel comparison** (Vina vs Vinardo vs AD4 vs flex Vina): [`13_phase8/master_comparison.html`](https://ariomoniri.github.io/aminak/13_phase8/master_comparison.html). Methodology, custom flex-split tooling, and limitations: [`13_phase8/README.md`](13_phase8/README.md).
 
 ---
 

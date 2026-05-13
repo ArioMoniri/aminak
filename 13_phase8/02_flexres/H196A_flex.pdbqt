@@ -1,0 +1,194 @@
+MODEL 1
+REMARK VINA RESULT:    -1.279      0.000      0.000
+REMARK INTER + INTRA:    163926643.793
+REMARK INTER:                  -1.616
+REMARK INTRA:            163926645.409
+REMARK UNBOUND:          163926645.409
+REMARK  Name = /Users/ario/conserved_site_project/03b_structure_v2/ligand_h.pdb
+REMARK  5 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: N_1  and  C_9
+REMARK    2  A    between atoms: C_11  and  O_13
+REMARK    3  A    between atoms: C_12  and  C_15
+REMARK    4  A    between atoms: C_15  and  O_16
+REMARK    5  A    between atoms: O_16  and  P_17
+REMARK                            x       y       z     vdW  Elec       q    Type
+REMARK                         _______ _______ _______ _____ _____    ______ ____
+ROOT
+ATOM      1  C   UNL     1       0.407   3.136  14.528  0.00  0.00    +0.131 C 
+ATOM      2  C   UNL     1       1.497   2.767  15.495  0.00  0.00    +0.019 C 
+ATOM      3  C   UNL     1       0.932   1.587  16.292  0.00  0.00    +0.087 C 
+ATOM      4  C   UNL     1      -0.437   1.920  16.381  0.00  0.00    +0.111 C 
+ATOM      5  O   UNL     1      -0.726   2.637  15.141  0.00  0.00    -0.350 OA
+ENDROOT
+BRANCH   1   6
+ATOM      6  N   UNL     1       0.344   4.533  14.104  0.00  0.00    -0.259 N 
+ATOM      7  C   UNL     1       0.361   4.839  12.746  0.00  0.00    +0.310 C 
+ATOM      8  N   UNL     1       0.055   6.149  12.432  0.00  0.00    -0.240 N 
+ATOM      9  C   UNL     1      -0.399   7.101  13.343  0.00  0.00    +0.222 C 
+ATOM     10  C   UNL     1      -0.365   6.785  14.733  0.00  0.00    +0.040 C 
+ATOM     11  C   UNL     1       0.260   5.581  15.196  0.00  0.00    +0.027 C 
+ATOM     12  O   UNL     1       0.635   4.022  11.869  0.00  0.00    -0.252 OA
+ATOM     13  O   UNL     1      -0.813   8.187  12.955  0.00  0.00    -0.275 OA
+ATOM     14  H   UNL     1       0.165   6.431  11.495  0.00  0.00    +0.000 HD
+ENDBRANCH   1   6
+BRANCH   3  15
+ATOM     15  O   UNL     1       1.098   0.359  15.537  0.00  0.00    -0.389 OA
+ATOM     16  H   UNL     1       1.000   0.547  14.590  0.00  0.00    +0.000 HD
+ENDBRANCH   3  15
+BRANCH   4  17
+ATOM     17  C   UNL     1      -0.835   2.807  17.547  0.00  0.00    +0.088 C 
+BRANCH  17  18
+ATOM     18  O   UNL     1       0.384   3.037  18.296  0.00  0.00    -0.284 OA
+BRANCH  18  19
+ATOM     19  P   UNL     1       0.517   3.028  19.859  0.00  0.00    +0.472 P 
+ATOM     20  O   UNL     1       1.146   1.744  20.215  0.00  0.00    -0.303 OA
+ATOM     21  O   UNL     1       1.389   4.125  20.264  0.00  0.00    -0.228 OA
+ATOM     22  O   UNL     1      -0.805   3.095  20.463  0.00  0.00    -0.303 OA
+ENDBRANCH  18  19
+ENDBRANCH  17  18
+ENDBRANCH   4  17
+TORSDOF 5
+BEGIN_RES ARG A  50
+REMARK   4 active torsions:
+ROOT
+ATOM      1   CA ARG A  50      -3.413  -2.627  21.931  0.00  0.00     +0.099  C
+ENDROOT
+BRANCH   1   2
+ATOM      2   CB ARG A  50      -2.133  -2.325  21.151  0.00  0.00     -0.024  C
+BRANCH   2   3
+ATOM      3   CG ARG A  50      -1.090  -1.507  21.880  0.00  0.00     -0.033  C
+BRANCH   3   4
+ATOM      4   CD ARG A  50       0.229  -1.590  21.093  0.00  0.00     +0.018  C
+BRANCH   4   5
+ATOM      5   NE ARG A  50       1.323  -2.210  21.907  0.00  0.00     -0.358  N
+ATOM      6   CZ ARG A  50       1.782  -3.448  21.842  0.00  0.00     +0.166  C
+ATOM      7  NH1 ARG A  50       1.351  -4.283  20.913  0.00  0.00     -0.372 NA
+ATOM      8  NH2 ARG A  50       2.724  -3.850  22.691  0.00  0.00     -0.372  N
+ENDBRANCH   4   5
+ENDBRANCH   3   4
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+END_RES ARG A  50
+BEGIN_RES TRP A 109
+REMARK   2 active torsions:
+ROOT
+ATOM      1   CA TRP A 109       7.622  11.268  20.638  0.00  0.00     +0.103  C
+ENDROOT
+BRANCH   1   2
+ATOM      2   CB TRP A 109       8.720  11.001  19.611  0.00  0.00     +0.001  C
+BRANCH   2   3
+ATOM      3   CG TRP A 109       8.235  10.435  18.330  0.00  0.00     -0.018  C
+ATOM      4  CD1 TRP A 109       8.102  11.022  17.136  0.00  0.00     +0.032  C
+ATOM      5  CD2 TRP A 109       7.906   9.073  18.078  0.00  0.00     +0.001  C
+ATOM      6  NE1 TRP A 109       7.593  10.230  16.175  0.00  0.00     -0.259 NA
+ATOM      7  CE2 TRP A 109       7.508   8.976  16.720  0.00  0.00     +0.052  C
+ATOM      8  CE3 TRP A 109       7.902   7.899  18.848  0.00  0.00     -0.053  C
+ATOM      9  CZ2 TRP A 109       7.113   7.769  16.122  0.00  0.00     +0.009  C
+ATOM     10  CZ3 TRP A 109       7.509   6.700  18.254  0.00  0.00     -0.065  C
+ATOM     11  CH2 TRP A 109       7.114   6.628  16.901  0.00  0.00     -0.078  C
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+END_RES TRP A 109
+BEGIN_RES ARG A 175
+REMARK   4 active torsions:
+ROOT
+ATOM      1   CA ARG A 175       9.677   1.254 -10.613  0.00  0.00     +0.099  C
+ENDROOT
+BRANCH   1   2
+ATOM      2   CB ARG A 175       8.830   0.291 -11.436  0.00  0.00     -0.024  C
+BRANCH   2   3
+ATOM      3   CG ARG A 175       8.013  -0.638 -10.579  0.00  0.00     -0.033  C
+BRANCH   3   4
+ATOM      4   CD ARG A 175       7.748  -0.108  -9.259  0.00  0.00     +0.018  C
+BRANCH   4   5
+ATOM      5   NE ARG A 175       8.186  -0.993  -8.138  0.00  0.00     -0.358  N
+ATOM      6   CZ ARG A 175       8.056  -0.757  -6.836  0.00  0.00     +0.166  C
+ATOM      7  NH1 ARG A 175       7.542   0.359  -6.325  0.00  0.00     -0.372 NA
+ATOM      8  NH2 ARG A 175       8.526  -1.698  -6.155  0.00  0.00     -0.372  N
+ENDBRANCH   4   5
+ENDBRANCH   3   4
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+END_RES ARG A 175
+BEGIN_RES ARG A 176
+REMARK   4 active torsions:
+ROOT
+ATOM      1   CA ARG A 176      11.732   0.245  -7.519  0.00  0.00     +0.099  C
+ENDROOT
+BRANCH   1   2
+ATOM      2   CB ARG A 176      12.865  -0.740  -7.832  0.00  0.00     -0.024  C
+BRANCH   2   3
+ATOM      3   CG ARG A 176      12.915  -1.935  -6.889  0.00  0.00     -0.033  C
+BRANCH   3   4
+ATOM      4   CD ARG A 176      11.625  -2.220  -6.326  0.00  0.00     +0.018  C
+BRANCH   4   5
+ATOM      5   NE ARG A 176      11.455  -1.737  -4.928  0.00  0.00     -0.358  N
+ATOM      6   CZ ARG A 176      10.360  -1.848  -4.176  0.00  0.00     +0.166  C
+ATOM      7  NH1 ARG A 176       9.297  -2.482  -4.625  0.00  0.00     -0.372 NA
+ATOM      8  NH2 ARG A 176      10.373  -1.383  -2.935  0.00  0.00     -0.372  N
+ENDBRANCH   4   5
+ENDBRANCH   3   4
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+END_RES ARG A 176
+BEGIN_RES CYS A 195
+REMARK   2 active torsions:
+ROOT
+ATOM      1   CA CYS A 195       2.998   2.970  11.363  0.00  0.00     +0.108  C
+ENDROOT
+BRANCH   1   2
+ATOM      2   CB CYS A 195       2.214   4.131  11.985  0.00  0.00     +0.018  C
+BRANCH   2   3
+ATOM      3   SG CYS A 195       3.260   5.226  12.976  0.00  0.00     -0.176  S
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+END_RES CYS A 195
+BEGIN_RES ALA A 196
+REMARK   1 active torsions:
+ROOT
+ATOM      1   CA ALA A 196       4.540   3.920   7.951  0.00  0.00     +0.097  C
+ENDROOT
+BRANCH   1   2
+ATOM      2   CB ALA A 196       5.092   5.376   7.830  0.00  0.00     -0.038  C
+ENDBRANCH   1   2
+END_RES ALA A 196
+BEGIN_RES GLN A 214
+REMARK   3 active torsions:
+ROOT
+ATOM      1   CA GLN A 214       0.603   3.243   6.483  0.00  0.00     +0.100  C
+ENDROOT
+BRANCH   1   2
+ATOM      2   CB GLN A 214      -0.073   4.544   6.861  0.00  0.00     -0.018  C
+BRANCH   2   3
+ATOM      3   CG GLN A 214       0.828   5.525   7.600  0.00  0.00     +0.026  C
+BRANCH   3   4
+ATOM      4   CD GLN A 214       0.101   6.348   8.618  0.00  0.00     +0.211  C
+ATOM      5  OE1 GLN A 214       0.344   6.451   9.703  0.00  0.00     -0.276 OA
+ATOM      6  NE2 GLN A 214      -0.998   6.969   8.221  0.00  0.00     -0.329  N
+ENDBRANCH   3   4
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+END_RES GLN A 214
+BEGIN_RES ARG A 215
+REMARK   4 active torsions:
+ROOT
+ATOM      1   CA ARG A 215      -0.163  -0.045   8.215  0.00  0.00     +0.099  C
+ENDROOT
+BRANCH   1   2
+ATOM      2   CB ARG A 215       0.845  -0.997   8.835  0.00  0.00     -0.024  C
+BRANCH   2   3
+ATOM      3   CG ARG A 215       1.191  -0.674  10.263  0.00  0.00     -0.033  C
+BRANCH   3   4
+ATOM      4   CD ARG A 215       0.977  -1.841  11.208  0.00  0.00     +0.018  C
+BRANCH   4   5
+ATOM      5   NE ARG A 215       2.134  -1.872  12.114  0.00  0.00     -0.358  N
+ATOM      6   CZ ARG A 215       2.672  -1.043  12.907  0.00  0.00     +0.166  C
+ATOM      7  NH1 ARG A 215       2.010   0.047  13.202  0.00  0.00     -0.372 NA
+ATOM      8  NH2 ARG A 215       3.741  -1.318  13.630  0.00  0.00     -0.372  N
+ENDBRANCH   4   5
+ENDBRANCH   3   4
+ENDBRANCH   2   3
+ENDBRANCH   1   2
+END_RES ARG A 215
+ENDMDL

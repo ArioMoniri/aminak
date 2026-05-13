@@ -13,6 +13,8 @@
 | 💊 **5-FU** | **5-fluorouracil** — chemotherapy drug used in colorectal cancer. It hijacks TYMS by being mistaken for dUMP. So a mutational probe of dUMP binding is, by construction, a probe of how 5-FU resistance arises. |
 | 🧱 **PDB 1HVY** | The X-ray crystal structure we anchor on: human TYMS at 1.9 Å resolution, with dUMP and a folate-mimic cofactor (raltitrexed, residue D16) bound. |
 | 🔍 **Δ Vina score** | The *change* in AutoDock Vina docking score when a residue is mutated. By convention here, **positive = destabilising** (mutant binds worse than WT). |
+| 🔓 **apo** | Receptor with the **cofactor pocket empty** — only the protein, no raltitrexed (D16) bound. We dock dUMP into this state to ask "what would dUMP do if it arrived first?". The whole pocket is available, so Vina finds tighter geometric fits → **more negative scores**. |
+| 🔒 **holo** | Receptor with the **cofactor pre-positioned** in the folate-binding sub-pocket (the way the 1HVY crystal was captured). We dock dUMP into this state to ask "what does dUMP do once cofactor is already bound?". The cofactor occupies part of the box, dUMP has less room → **less negative scores** in rigid-receptor Vina. Both states are reported because the *biological* binding order in TYMS is dUMP-first then cofactor-second; the holo dock is the inverted-order question. |
 | 🧠 **Modeller** | A homology-modelling package: given an amino-acid sequence and known similar 3-D structures, it predicts a 3-D model of the unknown protein. |
 | 🤝 **doer ↔ verifier** | The audit pattern this repo follows: a "doer" agent runs the pipeline; four specialised "verifier" agents (validator / code reviewer / scientific officer / structural bioinformatician) independently audit; the doer fixes; repeat until clean. |
 
@@ -425,7 +427,9 @@ Seven additional analyses layered on top of v5. All outputs in [`12_phase7/`](12
 
 ### 7a · Multi-replica Vina (is the score reproducible?)
 
-Vina is stochastic — different random seeds give different docking trajectories. We re-docked WT + 8 key mutants × {apo, holo} **× 5 seeds** [42, 7, 13, 99, 256] and computed mean ± SD:
+Vina is stochastic — different random seeds give different docking trajectories. We re-docked WT + 8 key mutants × {apo, holo} **× 5 seeds** [42, 7, 13, 99, 256] and computed mean ± SD.
+
+**Why is the WT_apo score (−8.55) more negative than WT_holo (−7.49)?** The apo receptor has the cofactor pocket *empty* — Vina can fit dUMP into a larger volume of free space and finds tighter geometric contacts. The holo receptor has raltitrexed (D16) pre-positioned in the folate sub-pocket; that bulk *occupies* part of the docking box and forces dUMP into a smaller, more constrained binding region, so Vina's score is less negative. **Both numbers are physically meaningful** but answer different questions: apo = "what would dUMP do if it arrived first?" (its biological binding order in TYMS); holo = "what does dUMP do once cofactor is already there?" (the inverse order). Neither number is directly comparable to a measured Kd because Vina is electrostatics-free and rigid-receptor.
 
 | Target | mean (kcal/mol) | SD | max − min spread |
 | --- | --- | --- | --- |
@@ -462,11 +466,23 @@ The literal CLI invocation for one mutant (R215A_N226A holo) is in [`12_phase7/0
 
 ### 7c · All possible single mutations (chemistry map)
 
-[`scripts/v7/enumerate_mutations.py`](scripts/v7/enumerate_mutations.py) enumerates every single mutation at the 14 active-site residues × 19 alternative amino acids = **266 single mutations**, each annotated with Δ hydropathy, Δ side-chain volume, and functional class. 
+[`scripts/v7/enumerate_mutations.py`](scripts/v7/enumerate_mutations.py) enumerates every single mutation at the 14 active-site residues × 19 alternative amino acids = **266 single mutations**, each annotated with Δ hydropathy, Δ side-chain volume, and functional class.
 
+**What was enumerated vs what was docked — read this carefully:**
+
+| Set | Count | Enumerated? | Docked? |
+| --- | --- | --- | --- |
+| Active-site **singles** (14 × 19) | **266** | ✅ all 266, full chemistry annotation | ❌ none docked individually — 20 hand-picked priority singles + double mutants are docked in v5 (`07e_mut_docking_v5/mutant_results_v5.csv`). |
+| Hand-picked v5 panel | **20** | ✅ from v2 active-site annotations + literature | ✅ **docked** at apo + holo, exh 32, num_modes 20 |
+| Phase 7 priority sub-panel | **8** | from the 20 above | ✅ docked **5 ×** (multi-replica, see §7a) |
+| Active-site **doubles** (panel-only, C(14,2) × 19²) | **32 851** | ✅ all 32 851 enumerated and written to CSV | ❌ **not docked** — at 5 s per dock that's ~228 hours of CPU. Two double mutants from the v5 panel (R215A_N226A, Y258F_F225Y) are docked. |
+
+So the answer to "did we dock all 266 singles + 32 851 doubles?" is **no — only enumerated** for the full set, **only the 20-mutant v5 panel + the 8-mutant Phase 7 sub-panel are physically docked**. The full enumeration is shipped as inputs for: (i) prioritising biologically-interesting subsets, (ii) cross-referencing against ClinVar / COSMIC / gnomAD, (iii) guiding a smaller targeted sub-sweep. The compute-budget rationale and what the GPU-Vina alternative would cost are in [`feasibility_note.md`](12_phase7/02_enum/feasibility_note.md).
+
+**Outputs**:
 - All-singles CSV: [`12_phase7/02_enum/all_singles.csv`](12_phase7/02_enum/all_singles.csv)
-- Interactive chemistry map (Plotly): [`12_phase7/02_enum/all_singles_chemistry_map.html`](https://ariomoniri.github.io/aminak/12_phase7/02_enum/all_singles_chemistry_map.html)
-- Panel-only doubles (14 × 13 ÷ 2 × 19²): 32 851 listed but not docked — see [feasibility note](12_phase7/02_enum/feasibility_note.md). At ~5 s per dock, that's ~228 GPU-less hours; impractical without a docking server.
+- All-doubles CSV: [`12_phase7/02_enum/all_doubles_sample.csv`](12_phase7/02_enum/all_doubles_sample.csv) (full 32 851, despite the `_sample` filename suffix kept from earlier iteration)
+- Interactive chemistry map (Plotly): [`12_phase7/02_enum/all_singles_chemistry_map.html`](https://ariomoniri.github.io/aminak/12_phase7/02_enum/all_singles_chemistry_map.html) · static PNG: [`all_singles_chemistry_map.png`](12_phase7/02_enum/all_singles_chemistry_map.png)
 
 ### 7d · AlphaFold compare
 

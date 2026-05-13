@@ -173,14 +173,19 @@ Even without docking, the enumerated lists are useful for:
   functional_class is "charge_reversal" or "loss_of_charge").
 
 ## What we actually docked
-Phase 5/7 dock 20 hand-picked mutants 1x and 8 priority mutants 5x.  Multi-replica
-SD bracketed the per-mutation Vina noise floor (~0.2-0.5 kcal/mol typical;
-see `12_phase7/01_replicas/multi_replica_results.csv`).
+Phase 5/7 dock 20 hand-picked mutants 1x and 8 priority mutants 5x.  The
+multi-replica per-(target, box, ligand) numerical SD measured here was
+**0.01-0.05 kcal/mol** at exhaustiveness 32 and box 18 A
+(see `12_phase7/01_replicas/multi_replica_aggregate.csv`).  Note this is
+*within-seed search reproducibility for one tuple*, not the published
+Vina absolute-affinity noise floor (~0.85 kcal/mol; Trott & Olson 2010),
+which is the right number to quote when comparing Vina deltaG against a
+measured Kd.
 """
     (OUT / "feasibility_note.md").write_text(note)
     print(f"feasibility note written")
 
-    # Plotly chemistry map
+    # Plotly chemistry map (wider canvas + clearly separated legend / colorbar)
     df = pd.DataFrame(singles)
     fig = px.scatter(
         df,
@@ -190,16 +195,50 @@ see `12_phase7/01_replicas/multi_replica_results.csv`).
         color_continuous_scale="RdBu_r",
         symbol="functional_class",
         hover_data=["mutation_id","wt_aa","new_aa","functional_class","volume_change","hydropathy_change"],
-        title=f"Active-site singles ({len(df)} mutations) at {n_pos} positions",
         labels={"residue_position":"Residue position",
                 "hydropathy_change":"Δ Kyte-Doolittle (new − wt)",
                 "volume_change":"Δ side-chain volume (Å³)"},
-        height=700,
+        height=720,
+        width=1400,
     )
     fig.update_traces(marker=dict(size=11, line=dict(width=0.5, color="DarkSlateGrey")))
-    fig.update_layout(template="plotly_white")
+    fig.update_layout(
+        template="plotly_white",
+        # Title sits above the plot with breathing room — no axis collision
+        title=dict(
+            text=(f"<b>Active-site singles ({len(df)} mutations) at {n_pos} positions</b>"
+                  "<br><sup>shape = functional class · colour = ΔV<sub>side-chain</sub> (Å³) · y = ΔKyte-Doolittle</sup>"),
+            x=0.02, xanchor="left",
+            y=0.97, yanchor="top",
+            font=dict(size=15),
+        ),
+        # Generous right margin so legend AND colorbar fit side-by-side
+        margin=dict(l=70, r=260, t=110, b=70),
+        # Symbol legend (functional_class) -> top-right column
+        legend=dict(
+            title=dict(text="<b>Functional class</b>"),
+            orientation="v",
+            x=1.02, xanchor="left",
+            y=1.0, yanchor="top",
+            bgcolor="rgba(255,255,255,0.85)",
+            bordercolor="lightgrey", borderwidth=1,
+        ),
+        # Continuous colour-bar (Δvolume) -> outside the legend column, lower
+        coloraxis_colorbar=dict(
+            title=dict(text="ΔV<br>(Å³)", side="top"),
+            x=1.18, xanchor="left",
+            y=0.40, yanchor="middle",
+            len=0.55, thickness=14,
+        ),
+        xaxis=dict(dtick=10),
+    )
     html_path = OUT / "all_singles_chemistry_map.html"
     fig.write_html(html_path, include_plotlyjs="cdn")
+    # Static PNG fallback (kaleido); skip silently if not available
+    try:
+        fig.write_image(str(OUT / "all_singles_chemistry_map.png"), width=1400, height=720, scale=2)
+    except Exception as e:
+        print(f"[warn] PNG fallback unavailable: {e}")
     print(f"plot written -> {html_path}")
     return 0
 

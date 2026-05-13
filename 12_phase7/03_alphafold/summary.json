@@ -1,0 +1,56 @@
+{
+  "rmsd_vs_1HVY": {
+    "AlphaFold": {
+      "vs_1HVY_super_rmsd": 0.378,
+      "vs_1HVY_super_natoms": 258,
+      "vs_1HVY_super_raw": 0.47,
+      "vs_1HVY_align_rmsd": 0.378,
+      "vs_1HVY_align_natoms": 258,
+      "vs_1HVY_align_raw": 0.554
+    },
+    "Modeller_best_B99990003": {
+      "vs_1HVY_super_rmsd": 0.373,
+      "vs_1HVY_super_natoms": 257,
+      "vs_1HVY_super_raw": 0.516,
+      "vs_1HVY_align_rmsd": 0.373,
+      "vs_1HVY_align_natoms": 257,
+      "vs_1HVY_align_raw": 0.702
+    },
+    "Modeller_alt_B99990010": {
+      "vs_1HVY_super_rmsd": 0.394,
+      "vs_1HVY_super_natoms": 261,
+      "vs_1HVY_super_raw": 0.497,
+      "vs_1HVY_align_rmsd": 0.394,
+      "vs_1HVY_align_natoms": 261,
+      "vs_1HVY_align_raw": 0.64
+    }
+  },
+  "af_vs_modeller_super": 0.432,
+  "af_vs_modeller_align": 0.432,
+  "ramachandran": {
+    "alphafold_v6": {
+      "pct_favoured": 94.53,
+      "pct_allowed": 5.47,
+      "pct_outlier": 0.0,
+      "n_residues": 311
+    },
+    "modeller_B99990003": {
+      "pct_favoured": 95.44,
+      "pct_allowed": 4.21,
+      "pct_outlier": 0.35,
+      "n_residues": 285
+    },
+    "modeller_B99990010": {
+      "pct_favoured": 95.09,
+      "pct_allowed": 4.56,
+      "pct_outlier": 0.35,
+      "n_residues": 285
+    }
+  },
+  "files": {
+    "alphafold_pdb": "/Users/ario/conserved_site_project/12_phase7/03_alphafold/AF-P04818-F1-model_v6.pdb",
+    "comparison_csv": "/Users/ario/conserved_site_project/12_phase7/03_alphafold/comparison.csv",
+    "triple_overlay_png": "/Users/ario/conserved_site_project/12_phase7/03_alphafold/triple_overlay.png",
+    "viewer_html": "/Users/ario/conserved_site_project/viewers/alphafold_overlay.html"
+  }
+}

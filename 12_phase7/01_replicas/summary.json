@@ -1,0 +1,425 @@
+{
+  "params": {
+    "center": [
+      -0.137,
+      4.232,
+      15.159
+    ],
+    "size": [
+      18.0,
+      18.0,
+      18.0
+    ],
+    "exhaustiveness": 32,
+    "num_modes": 20,
+    "seeds": [
+      42,
+      7,
+      13,
+      99,
+      256
+    ]
+  },
+  "results": {
+    "WT_apo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -8.586,
+          "n_modes": 20,
+          "elapsed_s": 8.76,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -8.581,
+          "n_modes": 18,
+          "elapsed_s": 8.79,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -8.528,
+          "n_modes": 20,
+          "elapsed_s": 8.7,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -8.587,
+          "n_modes": 19,
+          "elapsed_s": 8.59,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -8.474,
+          "n_modes": 19,
+          "elapsed_s": 8.92,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -8.5512,
+      "sd_top_affinity": 0.0496960763038691,
+      "min_top_affinity": -8.587,
+      "max_top_affinity": -8.474,
+      "spread_kcal_mol": 0.11299999999999955,
+      "n_seeds_ok": 5
+    },
+    "WT_holo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -7.479,
+          "n_modes": 20,
+          "elapsed_s": 10.25,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -7.488,
+          "n_modes": 20,
+          "elapsed_s": 9.69,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -7.506,
+          "n_modes": 19,
+          "elapsed_s": 10.17,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -7.481,
+          "n_modes": 19,
+          "elapsed_s": 10.3,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -7.478,
+          "n_modes": 19,
+          "elapsed_s": 9.84,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -7.4864,
+      "sd_top_affinity": 0.011631852818876432,
+      "min_top_affinity": -7.506,
+      "max_top_affinity": -7.478,
+      "spread_kcal_mol": 0.02800000000000047,
+      "n_seeds_ok": 5
+    },
+    "R215A_N226A_holo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -7.481,
+          "n_modes": 20,
+          "elapsed_s": 9.92,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -7.456,
+          "n_modes": 20,
+          "elapsed_s": 9.29,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -7.469,
+          "n_modes": 20,
+          "elapsed_s": 8.93,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -7.472,
+          "n_modes": 19,
+          "elapsed_s": 9.02,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -7.565,
+          "n_modes": 20,
+          "elapsed_s": 9.6,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -7.4886,
+      "sd_top_affinity": 0.04363828594250698,
+      "min_top_affinity": -7.565,
+      "max_top_affinity": -7.456,
+      "spread_kcal_mol": 0.10899999999999999,
+      "n_seeds_ok": 5
+    },
+    "H196A_holo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -7.637,
+          "n_modes": 20,
+          "elapsed_s": 9.28,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -7.509,
+          "n_modes": 20,
+          "elapsed_s": 9.15,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -7.558,
+          "n_modes": 20,
+          "elapsed_s": 9.91,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -7.562,
+          "n_modes": 20,
+          "elapsed_s": 9.42,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -7.618,
+          "n_modes": 20,
+          "elapsed_s": 9.58,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -7.5768,
+      "sd_top_affinity": 0.05121230320928733,
+      "min_top_affinity": -7.637,
+      "max_top_affinity": -7.509,
+      "spread_kcal_mol": 0.12799999999999923,
+      "n_seeds_ok": 5
+    },
+    "R215E_holo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -7.689,
+          "n_modes": 19,
+          "elapsed_s": 10.02,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -7.657,
+          "n_modes": 19,
+          "elapsed_s": 9.84,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -7.682,
+          "n_modes": 18,
+          "elapsed_s": 10.46,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -7.653,
+          "n_modes": 20,
+          "elapsed_s": 10.4,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -7.682,
+          "n_modes": 20,
+          "elapsed_s": 10.41,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -7.6726,
+      "sd_top_affinity": 0.016379865689315282,
+      "min_top_affinity": -7.689,
+      "max_top_affinity": -7.653,
+      "spread_kcal_mol": 0.036000000000000476,
+      "n_seeds_ok": 5
+    },
+    "R50A_holo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -7.432,
+          "n_modes": 20,
+          "elapsed_s": 11.32,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -7.462,
+          "n_modes": 20,
+          "elapsed_s": 11.36,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -7.465,
+          "n_modes": 20,
+          "elapsed_s": 10.62,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -7.423,
+          "n_modes": 20,
+          "elapsed_s": 10.19,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -7.457,
+          "n_modes": 20,
+          "elapsed_s": 10.18,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -7.4478,
+      "sd_top_affinity": 0.01901841213140552,
+      "min_top_affinity": -7.465,
+      "max_top_affinity": -7.423,
+      "spread_kcal_mol": 0.041999999999999815,
+      "n_seeds_ok": 5
+    },
+    "C195A_holo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -10.39,
+          "n_modes": 18,
+          "elapsed_s": 7.77,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -10.36,
+          "n_modes": 18,
+          "elapsed_s": 7.97,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -10.36,
+          "n_modes": 19,
+          "elapsed_s": 8.14,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -10.38,
+          "n_modes": 20,
+          "elapsed_s": 8.28,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -10.36,
+          "n_modes": 19,
+          "elapsed_s": 8.11,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -10.37,
+      "sd_top_affinity": 0.01414213562373159,
+      "min_top_affinity": -10.39,
+      "max_top_affinity": -10.36,
+      "spread_kcal_mol": 0.030000000000001137,
+      "n_seeds_ok": 5
+    },
+    "R175E_R176E_holo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -8.021,
+          "n_modes": 19,
+          "elapsed_s": 10.17,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -8.046,
+          "n_modes": 20,
+          "elapsed_s": 10.58,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -7.989,
+          "n_modes": 20,
+          "elapsed_s": 10.94,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -7.996,
+          "n_modes": 19,
+          "elapsed_s": 10.67,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -8.011,
+          "n_modes": 20,
+          "elapsed_s": 9.48,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -8.012599999999999,
+      "sd_top_affinity": 0.02247887897560711,
+      "min_top_affinity": -8.046,
+      "max_top_affinity": -7.989,
+      "spread_kcal_mol": 0.056999999999999496,
+      "n_seeds_ok": 5
+    },
+    "T170A_holo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -8.021,
+          "n_modes": 20,
+          "elapsed_s": 10.12,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -8.046,
+          "n_modes": 20,
+          "elapsed_s": 10.6,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -7.989,
+          "n_modes": 20,
+          "elapsed_s": 10.9,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -7.996,
+          "n_modes": 20,
+          "elapsed_s": 10.73,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -8.011,
+          "n_modes": 20,
+          "elapsed_s": 9.38,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -8.012599999999999,
+      "sd_top_affinity": 0.02247887897560711,
+      "min_top_affinity": -8.046,
+      "max_top_affinity": -7.989,
+      "spread_kcal_mol": 0.056999999999999496,
+      "n_seeds_ok": 5
+    },
+    "Y258F_F225Y_holo": {
+      "per_seed": {
+        "42": {
+          "top_affinity": -7.88,
+          "n_modes": 20,
+          "elapsed_s": 9.5,
+          "error": null
+        },
+        "7": {
+          "top_affinity": -7.861,
+          "n_modes": 20,
+          "elapsed_s": 9.17,
+          "error": null
+        },
+        "13": {
+          "top_affinity": -7.861,
+          "n_modes": 20,
+          "elapsed_s": 9.79,
+          "error": null
+        },
+        "99": {
+          "top_affinity": -7.868,
+          "n_modes": 19,
+          "elapsed_s": 9.52,
+          "error": null
+        },
+        "256": {
+          "top_affinity": -7.881,
+          "n_modes": 19,
+          "elapsed_s": 9.52,
+          "error": null
+        }
+      },
+      "mean_top_affinity": -7.8702,
+      "sd_top_affinity": 0.009833615815151743,
+      "min_top_affinity": -7.881,
+      "max_top_affinity": -7.861,
+      "spread_kcal_mol": 0.020000000000000462,
+      "n_seeds_ok": 5
+    }
+  }
+}

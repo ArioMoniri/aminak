@@ -1,0 +1,15 @@
+{
+  "n_taxa": 10,
+  "alignment_length": 399,
+  "distance_model": "blosum62",
+  "tree_methods": [
+    "nj",
+    "upgma"
+  ],
+  "files": {
+    "newick_nj": "/Users/ario/conserved_site_project/12_phase7/05_phylogeny/tymS_tree.nwk",
+    "newick_upgma": "/Users/ario/conserved_site_project/12_phase7/05_phylogeny/tymS_tree_upgma.nwk",
+    "png": "/Users/ario/conserved_site_project/12_phase7/05_phylogeny/tymS_tree.png",
+    "html": "/Users/ario/conserved_site_project/12_phase7/05_phylogeny/tymS_tree.html"
+  }
+}

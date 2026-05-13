@@ -1,0 +1,2 @@
+PNG snapshot skipped: No module named 'kaleido'
+Use the HTML viewer or run kaleido manually.

@@ -1,0 +1,5 @@
+{
+  "n_mutants": 20,
+  "pearson_r_dsasa_focus_vs_dvina": -0.19219606554347513,
+  "pearson_r_dsasa_at_mut_vs_dvina": -0.21061456985845237
+}

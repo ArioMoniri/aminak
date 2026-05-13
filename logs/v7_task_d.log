@@ -1,0 +1,10 @@
+[V7][taskD] 2026-05-13T03:06:58Z Task D start
+[V7][taskD] 2026-05-13T03:06:58Z WT SASA from /Users/ario/conserved_site_project/03b_structure_v2/protein_dimer_h.pdb
+[V7][taskD] 2026-05-13T03:07:09Z Task D start
+[V7][taskD] 2026-05-13T03:07:09Z WT SASA from /Users/ario/conserved_site_project/03b_structure_v2/protein_dimer_h.pdb
+[V7][taskD] 2026-05-13T03:07:11Z processed 20 mutants
+[V7][taskD] 2026-05-13T03:07:11Z merged CSV -> /Users/ario/conserved_site_project/12_phase7/04_sasa/sasa_vs_dvina.csv
+[V7][taskD] 2026-05-13T03:07:11Z correlation r(focus vs dvina) = -0.192; r(at_mut) = -0.211
+[V7][taskD] 2026-05-13T03:07:11Z matplotlib plot -> /Users/ario/conserved_site_project/12_phase7/04_sasa/sasa_vs_dvina.png
+[V7][taskD] 2026-05-13T03:07:11Z plotly -> /Users/ario/conserved_site_project/12_phase7/04_sasa/sasa_vs_dvina.html
+[V7][taskD] 2026-05-13T03:07:11Z Task D done

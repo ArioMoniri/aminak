@@ -1,0 +1,4 @@
+source,pct_favoured,pct_allowed,pct_outlier,n_residues,rmsd_vs_1HVY_super_A,rmsd_vs_1HVY_super_raw_A,n_super,rmsd_vs_1HVY_align_A,rmsd_vs_1HVY_align_raw_A,n_align
+AlphaFold,94.53,5.47,0.0,311,0.378,0.47,258,0.378,0.554,258
+Modeller best (B99990003),95.44,4.21,0.35,285,0.373,0.516,257,0.373,0.702,257
+Modeller alt (B99990010),95.09,4.56,0.35,285,0.394,0.497,261,0.394,0.64,261

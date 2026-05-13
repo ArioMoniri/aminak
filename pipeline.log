@@ -1551,3 +1551,128 @@ mk_prepare_receptor.py: error: unrecognized arguments: --no-flexible
 2026-05-12 15:04:11 [MODELLER:step7_viewers_report] INFO Wrote /Users/ario/conserved_site_project/10_modeller/README_PHASE6.md
 2026-05-12 15:04:12 [MODELLER:step7_viewers_report] INFO Wrote DOCX report: /Users/ario/conserved_site_project/09e_report_v5/report_PHASE6.docx (6707600 bytes)
 2026-05-12 15:04:12 [MODELLER:step7_viewers_report] INFO STEP 7 OK
+[V7] 2026-05-13T02:53:42Z Phase 7 start
+[V7][taskA] 2026-05-13T02:54:55Z Task A start
+[V7][taskA] 2026-05-13T02:54:55Z docking WT_apo seed=42
+[V7][taskA] 2026-05-13T02:55:04Z docking WT_apo seed=7
+[V7][taskA] 2026-05-13T02:55:13Z docking WT_apo seed=13
+[V7][taskA] 2026-05-13T02:55:21Z docking WT_apo seed=99
+[V7][taskA] 2026-05-13T02:55:30Z docking WT_apo seed=256
+[V7][taskA] 2026-05-13T02:55:39Z WT_apo: mean=-8.5512 sd=0.0496960763038691 spread=0.11299999999999955
+[V7][taskA] 2026-05-13T02:55:39Z docking WT_holo seed=42
+[V7][taskA] 2026-05-13T02:55:49Z docking WT_holo seed=7
+[V7][taskA] 2026-05-13T02:55:59Z docking WT_holo seed=13
+[V7][taskA] 2026-05-13T02:56:09Z docking WT_holo seed=99
+[V7][taskA] 2026-05-13T02:56:19Z docking WT_holo seed=256
+[V7][taskA] 2026-05-13T02:56:29Z WT_holo: mean=-7.4864 sd=0.011631852818876432 spread=0.02800000000000047
+[V7][taskA] 2026-05-13T02:56:29Z docking R215A_N226A_holo seed=42
+[V7][taskA] 2026-05-13T02:56:39Z docking R215A_N226A_holo seed=7
+[V7][taskA] 2026-05-13T02:56:48Z docking R215A_N226A_holo seed=13
+[V7][taskA] 2026-05-13T02:56:57Z docking R215A_N226A_holo seed=99
+[V7][taskA] 2026-05-13T02:57:06Z docking R215A_N226A_holo seed=256
+[V7][taskA] 2026-05-13T02:57:16Z R215A_N226A_holo: mean=-7.4886 sd=0.04363828594250698 spread=0.10899999999999999
+[V7][taskA] 2026-05-13T02:57:16Z docking H196A_holo seed=42
+[V7][taskA] 2026-05-13T02:57:25Z docking H196A_holo seed=7
+[V7][taskA] 2026-05-13T02:57:34Z docking H196A_holo seed=13
+[V7][taskA] 2026-05-13T02:57:44Z docking H196A_holo seed=99
+[V7][taskA] 2026-05-13T02:57:54Z docking H196A_holo seed=256
+[V7][taskA] 2026-05-13T02:58:03Z H196A_holo: mean=-7.5768 sd=0.05121230320928733 spread=0.12799999999999923
+[V7][taskA] 2026-05-13T02:58:03Z docking R215E_holo seed=42
+[V7][taskA] 2026-05-13T02:58:13Z docking R215E_holo seed=7
+[V7][taskA] 2026-05-13T02:58:23Z docking R215E_holo seed=13
+[V7][taskA] 2026-05-13T02:58:34Z docking R215E_holo seed=99
+[V7][taskA] 2026-05-13T02:58:44Z docking R215E_holo seed=256
+[V7][taskA] 2026-05-13T02:58:54Z R215E_holo: mean=-7.6726 sd=0.016379865689315282 spread=0.036000000000000476
+[V7][taskA] 2026-05-13T02:58:54Z docking R50A_holo seed=42
+[V7][taskA] 2026-05-13T02:59:06Z docking R50A_holo seed=7
+[V7][taskA] 2026-05-13T02:59:17Z docking R50A_holo seed=13
+[V7][taskA] 2026-05-13T02:59:28Z docking R50A_holo seed=99
+[V7][taskA] 2026-05-13T02:59:38Z docking R50A_holo seed=256
+[V7][taskA] 2026-05-13T02:59:48Z R50A_holo: mean=-7.4478 sd=0.01901841213140552 spread=0.041999999999999815
+[V7][taskA] 2026-05-13T02:59:48Z docking C195A_holo seed=42
+[V7][taskA] 2026-05-13T02:59:56Z docking C195A_holo seed=7
+[V7][taskA] 2026-05-13T03:00:04Z docking C195A_holo seed=13
+[V7][taskA] 2026-05-13T03:00:12Z docking C195A_holo seed=99
+[V7][taskA] 2026-05-13T03:00:20Z docking C195A_holo seed=256
+[V7][taskA] 2026-05-13T03:00:28Z C195A_holo: mean=-10.37 sd=0.01414213562373159 spread=0.030000000000001137
+[V7][taskA] 2026-05-13T03:00:28Z docking R175E_R176E_holo seed=42
+[V7][taskA] 2026-05-13T03:00:39Z docking R175E_R176E_holo seed=7
+[V7][taskA] 2026-05-13T03:00:49Z docking R175E_R176E_holo seed=13
+[V7][taskA] 2026-05-13T03:01:00Z docking R175E_R176E_holo seed=99
+[V7][taskA] 2026-05-13T03:01:11Z docking R175E_R176E_holo seed=256
+[V7][taskA] 2026-05-13T03:01:20Z R175E_R176E_holo: mean=-8.012599999999999 sd=0.02247887897560711 spread=0.056999999999999496
+[V7][taskA] 2026-05-13T03:01:20Z docking T170A_holo seed=42
+[V7][taskA] 2026-05-13T03:01:30Z docking T170A_holo seed=7
+[V7][taskA] 2026-05-13T03:01:41Z docking T170A_holo seed=13
+[V7][taskA] 2026-05-13T03:01:52Z docking T170A_holo seed=99
+[V7][taskA] 2026-05-13T03:02:03Z docking T170A_holo seed=256
+[V7][taskA] 2026-05-13T03:02:12Z T170A_holo: mean=-8.012599999999999 sd=0.02247887897560711 spread=0.056999999999999496
+[V7][taskA] 2026-05-13T03:02:12Z docking Y258F_F225Y_holo seed=42
+[V7][taskA] 2026-05-13T03:02:22Z docking Y258F_F225Y_holo seed=7
+[V7][taskA] 2026-05-13T03:02:31Z docking Y258F_F225Y_holo seed=13
+[V7][taskA] 2026-05-13T03:02:40Z docking Y258F_F225Y_holo seed=99
+[V7][taskA] 2026-05-13T03:02:50Z docking Y258F_F225Y_holo seed=256
+[V7][taskA] 2026-05-13T03:03:00Z Y258F_F225Y_holo: mean=-7.8702 sd=0.009833615815151743 spread=0.020000000000000462
+[V7][taskA] 2026-05-13T03:03:00Z Task A done: csv=/Users/ario/conserved_site_project/12_phase7/01_replicas/multi_replica_results.csv agg=/Users/ario/conserved_site_project/12_phase7/01_replicas/multi_replica_aggregate.csv
+[V7][taskC] 2026-05-13T03:03:53Z Task C start
+[V7][taskC] 2026-05-13T03:03:53Z super AF-P04818-F1-model_v6.pdb -> 1hvy_chainA.pdb: RMSD=0.378 N=258
+[V7][taskC] 2026-05-13T03:03:53Z align AF-P04818-F1-model_v6.pdb -> 1hvy_chainA.pdb: RMSD=0.378 N=258
+[V7][taskC] 2026-05-13T03:03:53Z super refined_B99990003.pdb -> 1hvy_chainA.pdb: RMSD=0.373 N=257
+[V7][taskC] 2026-05-13T03:03:53Z align refined_B99990003.pdb -> 1hvy_chainA.pdb: RMSD=0.373 N=257
+[V7][taskC] 2026-05-13T03:03:54Z super refined_B99990010.pdb -> 1hvy_chainA.pdb: RMSD=0.394 N=261
+[V7][taskC] 2026-05-13T03:03:54Z align refined_B99990010.pdb -> 1hvy_chainA.pdb: RMSD=0.394 N=261
+[V7][taskC] 2026-05-13T03:03:54Z super AF-P04818-F1-model_v6.pdb -> refined_B99990003.pdb: RMSD=0.432 N=264
+[V7][taskC] 2026-05-13T03:03:54Z align AF-P04818-F1-model_v6.pdb -> refined_B99990003.pdb: RMSD=0.432 N=264
+[V7][taskC] 2026-05-13T03:03:57Z triple overlay rc=0, png exists=True
+[V7][taskC] 2026-05-13T03:03:57Z 3Dmol viewer -> /Users/ario/conserved_site_project/viewers/alphafold_overlay.html
+[V7][taskC] 2026-05-13T03:03:57Z comparison CSV -> /Users/ario/conserved_site_project/12_phase7/03_alphafold/comparison.csv
+[V7][taskC] 2026-05-13T03:03:57Z Task C done
+[V7][taskC] 2026-05-13T03:05:25Z Task C start
+[V7][taskC] 2026-05-13T03:05:25Z super AF-P04818-F1-model_v6.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.378/258  RMSD_raw=0.47/285
+[V7][taskC] 2026-05-13T03:05:25Z align AF-P04818-F1-model_v6.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.378/258  RMSD_raw=0.554/287
+[V7][taskC] 2026-05-13T03:05:26Z super refined_B99990003.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.373/257  RMSD_raw=0.516/285
+[V7][taskC] 2026-05-13T03:05:26Z align refined_B99990003.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.373/257  RMSD_raw=0.702/287
+[V7][taskC] 2026-05-13T03:05:26Z super refined_B99990010.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.394/261  RMSD_raw=0.497/284
+[V7][taskC] 2026-05-13T03:05:26Z align refined_B99990010.pdb -> 1hvy_chainA.pdb: RMSD_conv=0.394/261  RMSD_raw=0.64/287
+[V7][taskC] 2026-05-13T03:05:26Z super AF-P04818-F1-model_v6.pdb -> refined_B99990003.pdb: RMSD_conv=0.432/264  RMSD_raw=0.598/286
+[V7][taskC] 2026-05-13T03:05:26Z align AF-P04818-F1-model_v6.pdb -> refined_B99990003.pdb: RMSD_conv=0.432/264  RMSD_raw=0.677/287
+[V7][taskC] 2026-05-13T03:05:29Z triple overlay rc=0, png exists=True
+[V7][taskC] 2026-05-13T03:05:29Z 3Dmol viewer -> /Users/ario/conserved_site_project/viewers/alphafold_overlay.html
+[V7][taskC] 2026-05-13T03:05:29Z comparison CSV -> /Users/ario/conserved_site_project/12_phase7/03_alphafold/comparison.csv
+[V7][taskC] 2026-05-13T03:05:29Z Task C done
+[V7][taskD] 2026-05-13T03:06:58Z Task D start
+[V7][taskD] 2026-05-13T03:06:58Z WT SASA from /Users/ario/conserved_site_project/03b_structure_v2/protein_dimer_h.pdb
+[V7][taskD] 2026-05-13T03:07:09Z Task D start
+[V7][taskD] 2026-05-13T03:07:09Z WT SASA from /Users/ario/conserved_site_project/03b_structure_v2/protein_dimer_h.pdb
+[V7][taskD] 2026-05-13T03:07:11Z processed 20 mutants
+[V7][taskD] 2026-05-13T03:07:11Z merged CSV -> /Users/ario/conserved_site_project/12_phase7/04_sasa/sasa_vs_dvina.csv
+[V7][taskD] 2026-05-13T03:07:11Z correlation r(focus vs dvina) = -0.192; r(at_mut) = -0.211
+[V7][taskD] 2026-05-13T03:07:11Z matplotlib plot -> /Users/ario/conserved_site_project/12_phase7/04_sasa/sasa_vs_dvina.png
+[V7][taskD] 2026-05-13T03:07:11Z plotly -> /Users/ario/conserved_site_project/12_phase7/04_sasa/sasa_vs_dvina.html
+[V7][taskD] 2026-05-13T03:07:11Z Task D done
+[V7][taskE] 2026-05-13T03:08:06Z Task E start
+[V7][taskE] 2026-05-13T03:08:06Z alignment: 10 taxa, 399 columns
+[V7][taskE] 2026-05-13T03:08:07Z NJ Newick -> /Users/ario/conserved_site_project/12_phase7/05_phylogeny/tymS_tree.nwk
+[V7][taskE] 2026-05-13T03:08:07Z matplotlib tree -> /Users/ario/conserved_site_project/12_phase7/05_phylogeny/tymS_tree.png
+[V7][taskE] 2026-05-13T03:08:07Z plotly tree -> /Users/ario/conserved_site_project/12_phase7/05_phylogeny/tymS_tree.html
+[V7][taskE] 2026-05-13T03:08:07Z Task E done
+[V7][taskF] 2026-05-13T03:08:42Z Task F start
+[V7][taskF] 2026-05-13T03:08:42Z plotting 25 points
+[V7][taskF] 2026-05-13T03:08:42Z plotly 3D -> /Users/ario/conserved_site_project/12_phase7/06_3d_plot/mutation_3d.html
+[V7][taskF] 2026-05-13T03:08:42Z png skipped: No module named 'kaleido'
+[V7][taskF] 2026-05-13T03:08:42Z Task F done
+[V7][taskF] 2026-05-13T03:08:48Z Task F start
+[V7][taskF] 2026-05-13T03:08:48Z plotting 25 points
+[V7][taskF] 2026-05-13T03:08:49Z plotly 3D -> /Users/ario/conserved_site_project/12_phase7/06_3d_plot/mutation_3d.html
+[V7][taskF] 2026-05-13T03:08:57Z png -> /Users/ario/conserved_site_project/12_phase7/06_3d_plot/mutation_3d.png
+[V7][taskF] 2026-05-13T03:08:57Z Task F done
+[V7][taskG] 2026-05-13T03:10:03Z Task G start
+[V7][taskG] 2026-05-13T03:10:08Z WT_holo render rc=0, png exists=True
+[V7][taskG] 2026-05-13T03:10:13Z R215A_N226A render rc=0, png exists=True
+[V7][taskG] 2026-05-13T03:10:18Z H196A render rc=0, png exists=True
+[V7][taskG] 2026-05-13T03:10:23Z R215E render rc=0, png exists=True
+[V7][taskG] 2026-05-13T03:10:28Z R50A render rc=0, png exists=True
+[V7][taskG] 2026-05-13T03:10:33Z C195A render rc=0, png exists=True
+[V7][taskG] 2026-05-13T03:10:39Z R175E_R176E render rc=0, png exists=True
+[V7][taskG] 2026-05-13T03:10:39Z Task G done: 7 images
+[V7] 2026-05-13T03:11:13Z Phase 7 complete (Tasks A-G)

@@ -1,0 +1,10 @@
+[V7][taskF] 2026-05-13T03:08:42Z Task F start
+[V7][taskF] 2026-05-13T03:08:42Z plotting 25 points
+[V7][taskF] 2026-05-13T03:08:42Z plotly 3D -> /Users/ario/conserved_site_project/12_phase7/06_3d_plot/mutation_3d.html
+[V7][taskF] 2026-05-13T03:08:42Z png skipped: No module named 'kaleido'
+[V7][taskF] 2026-05-13T03:08:42Z Task F done
+[V7][taskF] 2026-05-13T03:08:48Z Task F start
+[V7][taskF] 2026-05-13T03:08:48Z plotting 25 points
+[V7][taskF] 2026-05-13T03:08:49Z plotly 3D -> /Users/ario/conserved_site_project/12_phase7/06_3d_plot/mutation_3d.html
+[V7][taskF] 2026-05-13T03:08:57Z png -> /Users/ario/conserved_site_project/12_phase7/06_3d_plot/mutation_3d.png
+[V7][taskF] 2026-05-13T03:08:57Z Task F done

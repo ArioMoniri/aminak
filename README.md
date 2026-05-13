@@ -482,7 +482,8 @@ So the answer to "did we dock all 266 singles + 32 851 doubles?" is **no — onl
 **Outputs**:
 - All-singles CSV: [`12_phase7/02_enum/all_singles.csv`](12_phase7/02_enum/all_singles.csv)
 - All-doubles CSV: [`12_phase7/02_enum/all_doubles_sample.csv`](12_phase7/02_enum/all_doubles_sample.csv) (full 32 851, despite the `_sample` filename suffix kept from earlier iteration)
-- Interactive chemistry map (Plotly): [`12_phase7/02_enum/all_singles_chemistry_map.html`](https://ariomoniri.github.io/aminak/12_phase7/02_enum/all_singles_chemistry_map.html) · static PNG: [`all_singles_chemistry_map.png`](12_phase7/02_enum/all_singles_chemistry_map.png)
+- Interactive chemistry map (Plotly, 2D): [`12_phase7/02_enum/all_singles_chemistry_map.html`](https://ariomoniri.github.io/aminak/12_phase7/02_enum/all_singles_chemistry_map.html) · static PNG: [`all_singles_chemistry_map.png`](12_phase7/02_enum/all_singles_chemistry_map.png)
+- **3D subtraction-vector view** of the same 266 mutations: [`12_phase7/02_enum/all_singles_3d_subtraction.html`](https://ariomoniri.github.io/aminak/12_phase7/02_enum/all_singles_3d_subtraction.html) · static PNG: [`all_singles_3d_subtraction.png`](12_phase7/02_enum/all_singles_3d_subtraction.png). Each Δ in the 2D map collapses one degree of freedom; here, the WT amino acid and the mutant amino acid are plotted as **two separate points in 3D space** — `x` = residue position, `y` = Kyte-Doolittle hydropathy (absolute, not Δ), `z` = side-chain volume Å³ (absolute, not Δ) — and connected by a grey line. The **Δ vector you saw in the 2D plot is literally the line segment** between the WT (gold diamond) and the mutant (coloured dot, by functional class). Rotate to see how charge-reversals, gain-of-aromatics, and conservatives traverse the chemistry-space differently.
 
 ### 7d · AlphaFold compare
 

@@ -240,6 +240,127 @@ measured Kd.
     except Exception as e:
         print(f"[warn] PNG fallback unavailable: {e}")
     print(f"plot written -> {html_path}")
+
+    # ---- 3D subtraction-vector plot ----
+    # Each Δ in the 2D chemistry map collapses one degree of freedom (it shows
+    # the difference). Here we plot the WT and the mutant as TWO separate
+    # points in 3D space and connect them with a line, so each Δ is literally
+    # the visual subtraction of two 3D points.
+    #
+    # Axes:
+    #   x = residue position
+    #   y = Kyte-Doolittle hydropathy (absolute, not Δ)
+    #   z = side-chain volume (Å³, absolute, not Δ)
+    #
+    # Traces:
+    #   - 14 WT markers (one per panel position) — gold diamonds, labelled
+    #   - 266 mutant markers — coloured by functional class, hover = mutation_id
+    #   - 266 line segments WT → mutant, coloured by ΔV (RdBu_r continuous)
+    import plotly.graph_objects as go
+    from plotly.colors import sample_colorscale
+
+    # WT endpoints (one per position; deduplicated)
+    wt_x, wt_y, wt_z, wt_label = [], [], [], []
+    seen = set()
+    for pos, wt in PANEL:
+        if pos in seen: continue
+        seen.add(pos)
+        wt_x.append(pos); wt_y.append(KD[wt]); wt_z.append(VOL[wt])
+        wt_label.append(f"WT: {wt}{pos}")
+
+    # Mutant endpoints + segment colors (by ΔV)
+    deltas = [d["volume_change"] for d in singles]
+    dmin, dmax = min(deltas), max(deltas)
+    def _norm(v): return (v - dmin) / (dmax - dmin) if dmax > dmin else 0.5
+    seg_colors = sample_colorscale("RdBu_r", [_norm(v) for v in deltas])
+
+    mut_traces_by_class = {}
+    line_xs, line_ys, line_zs = [], [], []
+    line_colors = []
+    for d, col in zip(singles, seg_colors):
+        pos = d["residue_position"]
+        wt, new = d["wt_aa"], d["new_aa"]
+        cls = d["functional_class"]
+        x_wt, y_wt, z_wt = pos, KD[wt], VOL[wt]
+        x_mu, y_mu, z_mu = pos, KD[new], VOL[new]
+        line_xs += [x_wt, x_mu, None]
+        line_ys += [y_wt, y_mu, None]
+        line_zs += [z_wt, z_mu, None]
+        line_colors.append(col)
+        mut_traces_by_class.setdefault(cls, dict(x=[], y=[], z=[], text=[])).update()
+        mt = mut_traces_by_class[cls]
+        mt["x"].append(x_mu); mt["y"].append(y_mu); mt["z"].append(z_mu)
+        mt["text"].append(f"{d['mutation_id']}<br>ΔV={d['volume_change']:+.1f} Å³<br>ΔKD={d['hydropathy_change']:+.2f}<br>class={cls}")
+
+    fig3 = go.Figure()
+    # Subtraction-vector lines (drawn first, beneath markers)
+    fig3.add_trace(go.Scatter3d(
+        x=line_xs, y=line_ys, z=line_zs,
+        mode="lines",
+        line=dict(color="lightgrey", width=2),
+        name="Δ vector (WT → mutant)",
+        showlegend=True, hoverinfo="skip",
+    ))
+    # WT markers
+    fig3.add_trace(go.Scatter3d(
+        x=wt_x, y=wt_y, z=wt_z,
+        mode="markers+text",
+        marker=dict(size=8, symbol="diamond", color="gold",
+                    line=dict(color="black", width=1)),
+        text=wt_label, textposition="top center",
+        textfont=dict(size=10, color="black"),
+        name="WT (panel residue)",
+        hovertemplate="<b>%{text}</b><br>KD=%{y:.2f}<br>V=%{z:.1f} Å³<extra></extra>",
+    ))
+    # Mutant markers grouped by functional class so the legend is meaningful
+    cls_color = {
+        "conservative": "#9ecae1", "charge_reversal": "#d62728",
+        "loss_of_charge": "#1f77b4", "gain_of_charge": "#aec7e8",
+        "polar_to_hydrophobic": "#ff7f0e", "hydrophobic_to_polar": "#2ca02c",
+        "loss_of_aromatic": "#8c564b", "gain_of_aromatic": "#e377c2",
+        "other": "#7f7f7f",
+    }
+    for cls, mt in sorted(mut_traces_by_class.items()):
+        fig3.add_trace(go.Scatter3d(
+            x=mt["x"], y=mt["y"], z=mt["z"],
+            mode="markers",
+            marker=dict(size=4, color=cls_color.get(cls, "#7f7f7f"),
+                        line=dict(color="DarkSlateGrey", width=0.5)),
+            name=cls,
+            text=mt["text"], hovertemplate="%{text}<extra></extra>",
+        ))
+
+    fig3.update_layout(
+        template="plotly_white",
+        title=dict(
+            text=("<b>Active-site singles — 3D subtraction-vector view</b>"
+                  "<br><sup>each line = WT → mutant in (position, Kyte-Doolittle, side-chain volume) space; "
+                  "the Δ in the 2D chemistry map IS this vector</sup>"),
+            x=0.02, xanchor="left", y=0.97, yanchor="top",
+            font=dict(size=15),
+        ),
+        scene=dict(
+            xaxis=dict(title="Residue position", dtick=10),
+            yaxis=dict(title="Kyte-Doolittle hydropathy"),
+            zaxis=dict(title="Side-chain volume (Å³)"),
+            camera=dict(eye=dict(x=1.6, y=1.6, z=1.0)),
+        ),
+        height=820, width=1400,
+        margin=dict(l=10, r=200, t=110, b=10),
+        legend=dict(
+            title=dict(text="<b>Functional class</b>"),
+            x=1.02, xanchor="left", y=1.0, yanchor="top",
+            bgcolor="rgba(255,255,255,0.85)",
+            bordercolor="lightgrey", borderwidth=1,
+        ),
+    )
+    html3 = OUT / "all_singles_3d_subtraction.html"
+    fig3.write_html(html3, include_plotlyjs="cdn")
+    try:
+        fig3.write_image(str(OUT / "all_singles_3d_subtraction.png"), width=1400, height=820, scale=2)
+    except Exception as e:
+        print(f"[warn] 3D PNG fallback unavailable: {e}")
+    print(f"3D subtraction plot written -> {html3}")
     return 0
 
 if __name__ == "__main__":

@@ -139,6 +139,35 @@ We then intersected the conserved residues with two database sources (UniProt fe
 
 ![Active-site / conservation overlap](02b_active_site_v2/overlap_figure.png)
 
+### 🔤 Sequence logo at the active-site & mutated residues
+
+WebLogo-style stack at every residue we mutated. **Letter height ∝ frequency × information content** (bits = log₂20 − Shannon entropy across the 10 orthologs). A single tall letter spanning the full 4.32-bit ceiling means the residue is **invariant** across the panel; a stack of multiple shorter letters means the position is variable. Coloured band beneath each column = functional class.
+
+![AA sequence logo at active-site residues](11_enhanced/aa_logo_active_site.png)
+
+What the logo tells you, position by position:
+
+| Position | WT | Mutated to | Conservation across the 10 orthologs (top observed) | Class |
+| --- | --- | --- | --- | --- |
+| **R50** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | Phosphate clamp |
+| F80 | F | →Ala, →Asp | F = 7/10 (70 %), A 1/10, H 1/10 | Pocket scaffold |
+| **W109** | W | →Ala | **W = 10/10 (100 %, invariant)** | Pocket scaffold |
+| T170 | T | →Ala | T = 5/10 (50 %), N 4/10, K 1/10 — **variable**, exactly as expected for the distant-surface control | Distant control |
+| **R175** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | Phosphate clamp |
+| **R176** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | Phosphate clamp |
+| **C195** | C | →Ala, →Ser | **C = 10/10 (100 %, invariant)** — the catalytic nucleophile | Catalytic |
+| **H196** | H | →Ala, →Phe | **H = 10/10 (100 %, invariant)** — the catalytic dyad partner | Catalytic |
+| Q214 | Q | →Ala | (variable, see CSV) | Pocket scaffold |
+| **R215** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | Phosphate clamp |
+| D218 | D | →Ala, →Lys | (variable) | Pocket scaffold |
+| F225 | F | →Ala, →Asp | (variable) | Pocket scaffold |
+| **N226** | N | →Ala, →Asp | **N = 9/10 (90 %)** + 1 D | Substrate orientation |
+| **Y258** | Y | →Ala, →Phe | **Y = 10/10 (100 %, invariant)** — substrate-orienting tyrosine | Substrate orientation |
+
+**The teaching point**: every catalytic / phosphate-clamp residue we mutated is **100 % conserved** across all 10 orthologs (single tall letter on the logo), justifying the choice as a meaningful probe. The distant-surface control T170 is **variable** (5/10 T, 4/10 N) — exactly what a true negative control should look like.
+
+Per-position frequency table (sorted, top-3 observed): [`11_enhanced/aa_logo_active_site.csv`](11_enhanced/aa_logo_active_site.csv). Full-chain sequence logo: [`11_enhanced/aa_logo_full_chain.png`](11_enhanced/aa_logo_full_chain.png) (313 columns; active-site columns shaded by functional class).
+
 ---
 
 ## 🧱 Stage 3 + 4 — Dimer-aware structure preparation and visualisation

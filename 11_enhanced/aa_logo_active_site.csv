@@ -1,0 +1,15 @@
+position,wt,ic_bits,invariant,top3_observed,functional_class,mutated_to
+50,R,4.322,True,R=10/10 (100%),Phosphate clamp,"A,E"
+80,F,2.965,False,"F=7/10 (70%), A=1/10 (10%), H=1/10 (10%)",Pocket scaffold,"A,D"
+109,W,4.322,True,W=10/10 (100%),Pocket scaffold,A
+170,T,2.961,False,"T=5/10 (50%), N=4/10 (40%), K=1/10 (10%)",Distant control,A
+175,R,4.322,True,R=10/10 (100%),Phosphate clamp,"A,E"
+176,R,4.322,True,R=10/10 (100%),Phosphate clamp,"A,E"
+195,C,4.322,True,C=10/10 (100%),Catalytic nucleophile,"A,S"
+196,H,4.322,True,H=10/10 (100%),Catalytic dyad,"A,F"
+214,Q,4.322,True,Q=10/10 (100%),Pocket scaffold,A
+215,R,4.322,True,R=10/10 (100%),Phosphate clamp,"A,E"
+218,D,4.322,True,D=10/10 (100%),Pocket scaffold,"A,K"
+225,F,4.322,True,F=10/10 (100%),Pocket scaffold,"A,D"
+226,N,4.322,True,N=10/10 (100%),Substrate orientation,"A,D"
+258,Y,4.322,True,Y=10/10 (100%),Substrate orientation,"A,F"

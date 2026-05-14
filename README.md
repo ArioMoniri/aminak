@@ -164,26 +164,28 @@ WebLogo-style stack at every residue we mutated. **Letter height ∝ frequency �
 
 ![AA sequence logo at active-site residues](11_enhanced/aa_logo_active_site.png)
 
-What the logo tells you, position by position:
+What the logo tells you, position by position. The "Which species carry which residue?" column maps every non-WT amino acid back to the [10-ortholog phylogeny](#-why-is-the-active-site-so-conserved--phylogeny-of-the-10-tyms-orthologs), so you can see *which branches of the tree* tolerate variation:
 
-| Position | WT | Mutated to | Conservation across the 10 orthologs (top observed) | Class |
-| --- | --- | --- | --- | --- |
-| **R50** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | Phosphate clamp |
-| F80 | F | →Ala, →Asp | F = 7/10 (70 %), A 1/10, H 1/10 | Pocket scaffold |
-| **W109** | W | →Ala | **W = 10/10 (100 %, invariant)** | Pocket scaffold |
-| T170 | T | →Ala | T = 5/10 (50 %), N 4/10, K 1/10 — **variable**, exactly as expected for the distant-surface control | Distant control |
-| **R175** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | Phosphate clamp |
-| **R176** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | Phosphate clamp |
-| **C195** | C | →Ala, →Ser | **C = 10/10 (100 %, invariant)** — the catalytic nucleophile | Catalytic |
-| **H196** | H | →Ala, →Phe | **H = 10/10 (100 %, invariant)** — the catalytic dyad partner | Catalytic |
-| Q214 | Q | →Ala | (variable, see CSV) | Pocket scaffold |
-| **R215** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | Phosphate clamp |
-| D218 | D | →Ala, →Lys | (variable) | Pocket scaffold |
-| F225 | F | →Ala, →Asp | (variable) | Pocket scaffold |
-| **N226** | N | →Ala, →Asp | **N = 9/10 (90 %)** + 1 D | Substrate orientation |
-| **Y258** | Y | →Ala, →Phe | **Y = 10/10 (100 %, invariant)** — substrate-orienting tyrosine | Substrate orientation |
+| Position | WT | Mutated to | Conservation across the 10 orthologs | **Which species deviate from WT?** | Class |
+| --- | --- | --- | --- | --- | --- |
+| **R50** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | none | Phosphate clamp |
+| F80 | F | →Ala, →Asp | F = 7/10 (70 %), H = 1/10, P = 1/10, A = 1/10 | *E. coli* = H · *L. casei* = P · phage T4 = A (all three bacterial / phage lineages) | Pocket scaffold |
+| **W109** | W | →Ala | **W = 10/10 (100 %, invariant)** | none | Pocket scaffold |
+| T170 | T | →Ala | T = 5/10 (50 %), N = 4/10, K = 1/10 — **variable**, exactly as expected for the distant-surface control | *E. coli*, *D. melanogaster*, *A. thaliana*, *P. falciparum* all = N · phage T4 = K (the 5 mammalian / yeast / human-aligned lineages keep T) | Distant control |
+| **R175** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | none | Phosphate clamp |
+| **R176** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | none | Phosphate clamp |
+| **C195** | C | →Ala, →Ser | **C = 10/10 (100 %, invariant)** — the catalytic nucleophile | none | Catalytic |
+| **H196** | H | →Ala, →Phe | **H = 10/10 (100 %, invariant)** — the catalytic dyad partner | none | Catalytic |
+| **Q214** | Q | →Ala | **Q = 10/10 (100 %, invariant)** | none | Pocket scaffold |
+| **R215** | R | →Ala, →Glu | **R = 10/10 (100 %, invariant)** | none | Phosphate clamp |
+| **D218** | D | →Ala, →Lys | **D = 10/10 (100 %, invariant)** | none | Pocket scaffold |
+| **F225** | F | →Ala, →Asp | **F = 10/10 (100 %, invariant)** | none | Pocket scaffold |
+| **N226** | N | →Ala, →Asp | **N = 10/10 (100 %, invariant)** | none | Substrate orientation |
+| **Y258** | Y | →Ala, →Phe | **Y = 10/10 (100 %, invariant)** — substrate-orienting tyrosine | none | Substrate orientation |
 
-**The teaching point**: every catalytic / phosphate-clamp residue we mutated is **100 % conserved** across all 10 orthologs (single tall letter on the logo), justifying the choice as a meaningful probe. The distant-surface control T170 is **variable** (5/10 T, 4/10 N) — exactly what a true negative control should look like.
+**The teaching point**: 12 of the 14 active-site residues are **100 % conserved** across all 10 orthologs (single tall letter on the logo), justifying every catalytic / phosphate-clamp / substrate-orientation choice as a meaningful probe. The two variable positions tell two different stories:
+- **F80** drifts only on the bacterial / phage branch (*E. coli* H, *L. casei* P, phage T4 A) — eukaryotic TYMS keeps F; the variation tracks a clean Bacteria-vs-Eukaryota split
+- **T170**, the distant-surface control, drifts on every non-mammalian branch (T → N in *E. coli* / *D. melanogaster* / *A. thaliana* / *P. falciparum*; T → K in phage T4) — exactly the noise pattern you want to see for a residue that is functionally indifferent
 
 Per-position frequency table (sorted, top-3 observed): [`11_enhanced/aa_logo_active_site.csv`](11_enhanced/aa_logo_active_site.csv). Full-chain sequence logo: [`11_enhanced/aa_logo_full_chain.png`](11_enhanced/aa_logo_full_chain.png) (313 columns; active-site columns shaded by functional class).
 

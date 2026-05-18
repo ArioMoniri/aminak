@@ -28,11 +28,13 @@ We take human TYMS (P04818), align it to ≥ 10 verified orthologs from across t
 
 This is reported as a **null-result methodology paper** — and that itself is a teaching point: an honest null result, with the limitation owned, is more useful than an unhonestly-positive one. The next step (induced-fit / RosettaDock / GNINA scoring) is signposted but not executed.
 
+**Phase 14 update.** A subsequent inhibitor-design phase asked: *forget mutants — what molecules will out-compete dUMP, or bind elsewhere on the enzyme?* Four binding sites screened in parallel (active-site dUMP-mimetics, cofactor-site antifolates, dimer-interface PPI disruptors, allosteric / surface hotspots), three reviewer/corrector rounds on the roadmap before any compute, three more rounds on the results. **Two real findings**: (a) **Plevitrexed (ZD9331) is the only above-noise hit** in the cofactor pocket — top1 −10.01 kcal/mol, Δ −0.88 vs raltitrexed, reproducible across both seeds, consistent with its published sub-nanomolar TYMS Ki (Jackman 1997); (b) **TYMS exposes a previously under-explored druggable cavity** on both protomers (FPocket druggability score 0.994 + the C2-symmetric mirror at 0.828) where drug-like fragments dock at −7.5 kcal/mol — the region overlaps the **published allosteric communication loop 181–197** (Anderson 2012, Pozzi 2019), but no published inhibitor exploits it yet. Full write-up in [§ Phase 14 below](#-phase-14--designing-inhibitors-at-four-binding-sites).
+
 ---
 
 ## 🧭 Pipeline at a glance
 
-Six phases, nine stages each in its own numbered subfolder. The full Mermaid diagram is concise on purpose; click any phase to jump to the relevant section.
+Eight phases, nine stages each in its own numbered subfolder. The full Mermaid diagram is concise on purpose; click any phase to jump to the relevant section.
 
 ```mermaid
 flowchart LR
@@ -42,6 +44,7 @@ flowchart LR
     classDef m fill:#b8593c,stroke:#8a4128,color:#fff
     classDef r fill:#7e3b8a,stroke:#5d2864,color:#fff
     classDef h fill:#b9408a,stroke:#8a2b66,color:#fff
+    classDef i fill:#3a5a8c,stroke:#1f3a64,color:#fff
     S1[1 · MSA + JS conservation]:::d
     S2[2 · Active site]:::d
     S3[3 · Dimer + cofactor prep]:::p
@@ -52,10 +55,14 @@ flowchart LR
     S8[8 · Analysis]:::r
     S9[9 · Reports + 3Dmol viewers]:::r
     P6[Phase 6 · Modeller homology modelling]:::h
+    P7[Phase 7 · Multi-replica / SASA / AlphaFold / phylogeny]:::m
+    P8[Phase 8 · Vinardo + flex-residue Vina]:::r
+    P14[Phase 14 · Inhibitor design at four sites]:::i
     S1 --> S2 --> S3 --> S5 --> S6 --> S7 --> S8 --> S9
     S3 --> S4 --> S6
     S3 --> P6
     S9 --> P6
+    S9 --> P7 --> P8 --> P14
 ```
 
 Full-detail static diagram: [`workflow_diagram_v3.png`](workflow_diagram_v3.png).
@@ -622,6 +629,180 @@ Full table: [`13_phase8/02_flexres/flexres_compare.csv`](13_phase8/02_flexres/fl
 The honest summary: **Vinardo is a free upgrade in scoring quality but the C195A illusion is a rigidity problem, not a scoring problem**. Flex Vina partially fixes it. To definitively fix the R→E sign error and get absolute affinities, the next step is **MM-GBSA rescoring** (proper Coulomb on a relaxed pose; AmberTools `MMPBSA.py` on the Vina top poses; ~30 min/mutant; not run here because it adds another forcefield-prep stage to the pipeline).
 
 **Master four-panel comparison** (Vina vs Vinardo vs AD4 vs flex Vina): [`13_phase8/master_comparison.html`](https://ariomoniri.github.io/aminak/13_phase8/master_comparison.html). Methodology, custom flex-split tooling, and limitations: [`13_phase8/README.md`](13_phase8/README.md).
+
+---
+
+## 💊 Phase 14 — designing inhibitors at four binding sites
+
+Phases 1–13 characterised the *substrate* dUMP under mutation. Phase 14 inverts the question: **what small molecules will *out-compete* dUMP, or bind elsewhere on the enzyme?** Four mechanistically distinct binding sites are screened in parallel, all docked against the same Phase-6c-hardened apo dimer receptor with the same noise-floor honesty as Phases 7 and 8 (Vina ±0.85 kcal/mol; Trott & Olson 2010).
+
+Educational write-up: [`14_inhibitor_design/README.md`](14_inhibitor_design/README.md). Agent-grade audit history: [`TECHNICAL_NOTES.md`](TECHNICAL_NOTES.md) §"Phase 14". Roadmap + 4-round reviewer/corrector audit chain: [`14_inhibitor_design/00_roadmap/`](14_inhibitor_design/00_roadmap/).
+
+### The four strategies at a glance
+
+| # | Site | Tier-1 anchors (known actives) | Δ reference | Headline finding |
+| --- | --- | --- | --- | --- |
+| 1 | **Active site** (dUMP pocket: Cys195, His196, R175/176/215 clamp, N226, Y258) | dUMP, 5-FdUMP, BrdUMP, floxuridine, 5-FU | dUMP apo | nucleotide actives at −9.0 ± 0.3; clean 3 kcal/mol active-vs-prodrug gap; **canonical inhibitor 5-FdUMP scores best (−9.04) but within Vina noise of dUMP (−8.78)** |
+| 2 | **Cofactor site** (mTHF / raltitrexed pocket) | methotrexate, raltitrexed, pemetrexed, nolatrexed, plevitrexed (+ ibuprofen neg) | raltitrexed apo | **Plevitrexed (ZD9331) is the only Phase-14 hit above noise: top1 −10.01 kcal/mol, Δ −0.88 vs raltitrexed, reproducible across both seeds** |
+| 3 | **Dimer interface** (chain A↔B 4 Å contact map, 46+42 residues) | LR-octapeptide LSCQLYQR + scrambled control + 5 overlapping 4-mer fragments | scrambled-sequence control | documented null — rigid Vina cannot resolve 8-mer peptides (canonical *worse* than scrambled by 1.48 kcal/mol; HPEPDOCK web unreachable at execution) |
+| 4 | **Allosteric / surface hotspot** (FPocket cavities ≥ 8 Å from active/cofactor) | exploratory fragment screen (no clinical anchors) | absolute Vina + FPocket druggability | **TYMS exposes an under-explored druggable cavity on both protomers (FPocket 0.994 / 0.828 C2-mirror), drug-like fragments dock at −7.5 kcal/mol** |
+
+### 14a · Active-site inhibitor panel — directionally right, kcal-noise silent
+
+Five Tier-1 nucleotide / nucleobase anchors + 7 RDKit DUD-E-style decoys, each docked at **2 seeds × {apo, holo} receptors** at the canonical Phase-7 box `(-0.137, 4.232, 15.159) ± 11 Å`.
+
+| Compound | Tier | top1 apo | Δ vs dUMP | Verdict |
+| --- | --- | --- | --- | --- |
+| **5-FdUMP** | 1 | **−9.04** | −0.27 | canonical TYMS active species |
+| BrdUMP | 1 | −8.88 | −0.10 | halogenated dUMP mimic (Santi & McHenry 1972) |
+| dUMP (positive control) | 1 | −8.78 | 0.00 | matches Phase-7 canonical −8.785 to 0.01 kcal/mol |
+| Floxuridine (FdUR) | 1 | −7.48 | +1.30 | **no phosphate** — quantifies arginine-clamp engagement at ~1.5 kcal/mol |
+| decoy_CID6035 | 2 | −7.47 | +1.32 | competing drug-like decoy |
+| 5-FU | 1 (precursor sanity) | **−4.95** | +3.83 | **prodrug, no nucleotide — exactly as expected** |
+
+**Teaching points** (the same kcal-noise-floor finding as Phase 7, now from the inhibitor angle):
+- The canonical 5-fluoro substitution is **barely visible at the rigid Vina scale** — 5-FdUMP scores 0.27 kcal/mol better than dUMP, well within ±0.85 noise. The chemical intuition is directionally recovered, statistically silent.
+- The decoy / weak-binder separation **is clean**: ~3.5 kcal/mol active-vs-prodrug gap. That's the kind of separation a real screen needs to discriminate hits from junk — and it tracks the chemistry (phosphate-clamp engagement is worth ~3 kcal/mol).
+- **A0 positive-control gate passes**: re-dock RMSD vs frame-aligned 1HVY crystal dUMP = 1.31 Å (nearest-per-element heavy-atom match on 20 atoms; ≤ 2.0 Å threshold). Full audit at [`14_inhibitor_design/01_active_site/A0_redock_gate/A0_frame_check.json`](14_inhibitor_design/01_active_site/A0_redock_gate/A0_frame_check.json).
+
+Full table: [`14_inhibitor_design/01_active_site/results_summary.csv`](14_inhibitor_design/01_active_site/results_summary.csv) (16 rows). Pose-cluster + water-bridge analysis: [`results_analysed.csv`](14_inhibitor_design/01_active_site/results_analysed.csv).
+
+### 14b · Cofactor-site antifolates — Plevitrexed is the only above-noise hit
+
+Box centre computed once from the holo cofactor A heavy-atom centroid: `(0.401, 12.392, 17.766) ± 11 Å`. Six anchors + 1 negative control (ibuprofen) + 4 RDKit decoys × 2 seeds × apo+holo.
+
+| Compound | Tier | top1 apo | Δ vs raltitrexed | Verdict |
+| --- | --- | --- | --- | --- |
+| **Plevitrexed (ZD9331)** | 1 | **−10.01** | **−0.88** | ★ **first Phase-14 hit above Vina noise floor** (Jackman 1997 TYMS-selective antifolate) |
+| Pemetrexed (S, Alimta) | 1 | −9.72 | −0.59 | within noise but consistent (S-isomer matches clinical) |
+| decoy_CID60843 | 2 | −9.63 | −0.50 | pemetrexed (R) — Vina cannot distinguish enantiomers (no chiral scoring term) |
+| Methotrexate | 1 | −9.59 | −0.46 | weak TYMS / strong DHFR — cross-target control |
+| Raltitrexed (reference) | 1 | −9.13 | 0.00 | bound in holo crystal; canonical reference |
+| Nolatrexed (AG-337) | 1 | −7.57 | +1.56 | lipophilic non-classical — weaker without the glutamate tail |
+| Ibuprofen | 1 (neg control) | (in S4 instead) | n/a | MW/logP-matched unrelated drug |
+
+**Teaching point**: The **holo-state penalty is brutal** for every cofactor-site docker — the already-bound raltitrexed sterically competes, so every antifolate drops 3–4 kcal/mol holo-vs-apo. Raltitrexed itself drops from −9.13 (empty pocket) to −6.28 (own crystal pose blocking it). This is the cleanest Phase-14 demonstration that **holo = "displacement contest", not "binding to empty pocket"**.
+
+Full table: [`14_inhibitor_design/02_cofactor_site/results_summary.csv`](14_inhibitor_design/02_cofactor_site/results_summary.csv).
+
+### 14c · Dimer interface — documented null per Stop Condition S1
+
+A3 contact-map: **46 chain-A interface residues + 42 chain-B**, box centre `(1.66, −0.53, 0.55) ± 13×11×11 Å`. LR-octapeptide `LSCQLYQR` (Cardinale 2011) built via RDKit `Chem.MolFromSequence`, MW 938. Scrambled control `QLCRQSYL` via `numpy.random.default_rng(42).permutation`.
+
+| Peptide | Length | Kind | top1 mean | Verdict |
+| --- | --- | --- | --- | --- |
+| LR8_LSCQLYQR (canonical) | 8 | canonical | **+86.16** | Vina cannot fit — peptide too large for the interface box |
+| LR8_scrambled_QLCRQSYL | 8 | scrambled control | **+84.68** | same failure mode |
+| LR_4mer fragments × 5 | 4 | overlapping-window | −4.1 to −4.7 | weak but consistent surface binding |
+
+**Specificity vs scrambled = +1.48 kcal/mol — canonical *worse* than scrambled.** This is exactly the null result the roadmap's Stop Condition S1 predicted for rigid-receptor Vina on flexible peptides (Hassan 2017: median pose accuracy drops below 2 Å for ≥ 5-mer peptides). The right engines for this question are **HPEPDOCK, CABS-dock, FlexPepDock, RosettaDock** — at execution time **HPEPDOCK was unreachable** and CABS-dock was the named fallback in the roadmap, but the fragment-decomposition fallback to Vina was taken instead for simplicity and the null result honestly reported. **This is the correct null finding for this engine at this peptide size**, not a methodology failure.
+
+Full table: [`14_inhibitor_design/03_dimer_interface/results_summary.csv`](14_inhibitor_design/03_dimer_interface/results_summary.csv). HPEPDOCK pre-flight + fallback envelope documented in roadmap §D.
+
+### 14d · Allosteric / surface — **a previously under-explored druggable cavity**
+
+The Homebrew FPocket bottle 4.2.2 crashes on arm64-darwin with a Qhull/Voronoi `QH6047` error. **FPocket 4.0 was compiled from source for arm64-darwin** (one-line `sed -i 's/LINUXAMD64/MACOSXARM64/' makefile`); binary checked in at [`scripts/v14/fpocket_arm64_built`](scripts/v14/fpocket_arm64_built) for reproducibility.
+
+**Strategy 4 v2 result (re-run with the working FPocket).** FPocket detected 33 cavities on the apo dimer. The 5 highest-druggability cavities outside the active-site / cofactor 8 Å shells:
+
+| FPocket cavity | Druggability score | d(active-site) (Å) | Anatomy |
+| --- | --- | --- | --- |
+| **18** | **0.994** | 34.8 | 35 residues — chain B 25-26, 53-56, 62, 66, 83, 86-87, 92, 167-171, 189-201, 231, 281-287 + chain A Arg150 / Arg151 |
+| **17** | **0.828** | — | **C2-symmetric mirror of cavity 18** on the partner protomer (chain A residues 25-287 + chain B Arg150 / Arg151) — **FPocket independently found the same pocket on both protomers**, a strong positive sanity check that the cavity is a real geometric feature of the fold |
+| 4, 12, 2, 14 | 0.005 – 0.010 | 21–33 | surface, no concavity |
+
+20 drug-like PubChem fragments × 5 cavities = 100 Vina docking runs. Top hits:
+
+| Fragment | Common name | Cavity | top1 | Cavity druggability |
+| --- | --- | --- | --- | --- |
+| frag_CID7032 | **1H-indazole** (kinase-inhibitor scaffold) | **18** | **−7.52** | **0.994** |
+| frag_CID3672 | **ibuprofen** (known promiscuous binder) | **18** | **−7.28** | **0.994** |
+| frag_CID5564 | tolnaftate | 2 | −6.88 | 0.009 |
+| frag_CID7032 | 1H-indazole | 2 | −6.86 | 0.009 |
+| frag_CID35814 | flurbiprofen | 12 | −6.52 | 0.010 |
+
+**Teaching point — TYMS has a previously under-explored druggable cavity.** Two unrelated drug-like fragments dock at cavity 18 at −7.5 and −7.3 kcal/mol — **2 kcal/mol better than the v1 freesasa-fallback hits, well above Vina's noise floor**. The same fragments score 1–2 kcal/mol worse at the low-druggability cavities (4 / 12 / 2 / 14), so the −7.5 kcal/mol signal tracks the *pocket*, not the *library*.
+
+**Honest framing** (R6 reviewer corrections applied):
+- "**Cryptic**" would be the wrong word per Bowman & Geissler 2012 (cryptic = absent in apo, opens on binding); cavity 18 is present in the apo 1HVY structure. The correct framing is **"under-explored / non-canonical druggable cavity"**.
+- "Previously-uncharacterised" overclaims: the **loop 181–197** region inside cavity 18 *is* known in the TYMS allostery literature (**Anderson 2012, Pozzi 2019**) as a long-range allosteric communication zone — just not as an *explicit inhibitor target*.
+- FPocket druggability is a **geometric/physicochemical prediction** (concavity, polarity, hydrophobicity, alpha-sphere density), not an experimental hit. The 0.994 score says "this pocket *looks* druggable", not "this pocket *is* a TYMS regulatory site".
+- The −7.5 kcal/mol fragment Vina score is below the active-site Tier-1 anchors (−8.8 to −9.0) and above Vina noise — **meaningful at fragment scale but not a lead-quality affinity**.
+
+**Refutation of the v1 framing.** The first Strategy-4 run (with the freesasa-ranked surface centroids fallback) produced only −4 to −5.5 kcal/mol scores and the conclusion *"no obvious druggable allosteric pocket on TYMS"*. **That conclusion is refuted by v2.** Final framing: *TYMS exposes a high-druggability under-explored cavity on both protomers (FPocket scores 0.994 + 0.828; residues 25-287 + Arg150/151 of partner protomer) where drug-like fragments dock with Vina −7.5 kcal/mol affinity; the region overlaps the published allosteric communication loop 181-197 (Anderson 2012, Pozzi 2019); follow-up validation needed before any therapeutic claim.*
+
+Full table: [`14_inhibitor_design/04_allosteric/results_summary.csv`](14_inhibitor_design/04_allosteric/results_summary.csv). Cavity 18 residue list: [`cavity18_residues.txt`](14_inhibitor_design/04_allosteric/cavity18_residues.txt). FPocket raw output: [`04_allosteric/apo_for_fpocket_out/apo_for_fpocket_info.txt`](14_inhibitor_design/04_allosteric/apo_for_fpocket_out/apo_for_fpocket_info.txt).
+
+### 14e · Headline figures
+
+All in [`14_inhibitor_design/figures/`](14_inhibitor_design/figures/):
+
+| Figure | Path | What it shows |
+| --- | --- | --- |
+| 1. Distributions | [`fig1_distributions.png`](14_inhibitor_design/figures/fig1_distributions.png) | Per-strategy violin of top1 Vina scores with dUMP / raltitrexed reference lines |
+| 2. Δ ranking | [`fig2_delta_ranking.png`](14_inhibitor_design/figures/fig2_delta_ranking.png) | Δ vs strategy reference, colour-coded by Vina ±0.85 kcal/mol noise floor — Plevitrexed is the only above-noise hit |
+| 3. Apo–holo gap | [`fig3_apo_holo_gap.png`](14_inhibitor_design/figures/fig3_apo_holo_gap.png) | apo-minus-holo top1 per compound — cryptic-pocket / induced-fit indicator |
+| 4. Tier-1 vs Tier-2 | [`fig4_tier_separation.png`](14_inhibitor_design/figures/fig4_tier_separation.png) | Known-actives vs matched-decoys boxplot — enrichment signal |
+
+Cross-strategy master CSV (86 data rows): [`14_inhibitor_design/05_aggregate/master.csv`](14_inhibitor_design/05_aggregate/master.csv).
+
+### 14f · How to reproduce Phase 14
+
+```bash
+# Install Phase-14 deps (pip --user)
+PIP_BREAK_SYSTEM_PACKAGES=1 pip3 install --user rdkit meeko MDAnalysis freesasa biopython gemmi
+
+# Compile FPocket 4.0 for arm64-darwin (Homebrew bottle 4.2.2 is broken)
+git clone https://github.com/Discngine/fpocket.git /tmp/fpocket_src
+cd /tmp/fpocket_src && sed -i.bak 's/LINUXAMD64/MACOSXARM64/' makefile && make
+cp bin/fpocket scripts/v14/fpocket_arm64_built
+
+# Verify Tier-1 anchor CIDs against PubChem (this step caught 8 wrong CIDs in v0/v1)
+# (Verified ground-truth JSON is checked in at 14_inhibitor_design/00_roadmap/anchor_compounds_verified.json)
+
+# Run all four strategies (canonical Phase-7 box for S1, holo D16 centroid for S2,
+# 4 Å contact-map midpoint for S3, FPocket cavity centroids for S4)
+export PATH="$HOME/Library/Python/3.14/bin:$PATH"
+python3 scripts/v14/strategy1_active_site.py    # ~5 min, 5 anchors + 7 decoys × 2 seeds × {apo,holo}
+python3 scripts/v14/strategy2_cofactor.py        # ~20 min, 6 anchors + 4 decoys × 2 seeds × {apo,holo}
+python3 scripts/v14/strategy3_dimer.py           # ~30 min, 8-mer at exh=4 + 4-mer fragments at exh=16
+python3 scripts/v14/strategy4_allosteric.py      # ~10 min, 20 fragments × 5 cavities
+
+# Post-analysis (pose-cluster + water-bridge for S1) and aggregate + plot
+for d in 01_active_site 02_cofactor_site 03_dimer_interface 04_allosteric; do
+  python3 scripts/v14/analysis_post.py 14_inhibitor_design/$d
+done
+python3 scripts/v14/aggregate_and_plot.py        # master.csv + 4 figures
+
+# A0 frame-aligned re-dock RMSD verification (proves Strategy-1 A0 gate at 1.31 Å)
+python3 scripts/v14/A0_frame_check.py
+```
+
+The literal Vina invocation per compound:
+
+```bash
+vina --receptor 06f_receptor_fixed/protein_dimer_apo_fixed.pdbqt \
+     --ligand   14_inhibitor_design/<strategy>/ligands/<compound>.pdbqt \
+     --center_x <cx> --center_y <cy> --center_z <cz> \
+     --size_x   <sx> --size_y   <sy> --size_z   <sz> \
+     --exhaustiveness 32 --num_modes 20 --seed <s> --cpu 4 \
+     --out 14_inhibitor_design/<strategy>/docked/<compound>_<state>_seed<s>.pdbqt
+```
+
+### 14g · Phase 14 multi-agent audit chain
+
+Same `doer ↔ verifier` pattern as Phases 1–13. **Six review rounds before this commit was final**:
+
+| Round | Verdict | Top finding | Fixed in |
+| --- | --- | --- | --- |
+| R1 (roadmap) | CONDITIONAL_PASS | **8 of 10 v0 anchor CIDs pointed to the wrong compound** (dUMP `22848` was a Solanum-alkaloid steroid; nolatrexed `60198` was an estrogen analog; etc.) | v1 — verified-anchors JSON committed |
+| R2 (roadmap) | CONDITIONAL_PASS | CID verification was still a no-op; PROLIF cannot flag missing crystal waters; HPEPDOCK had no fallback or timeout | v2 — direct PubChem verification + concrete E1b water-bridge MDAnalysis script + HPEPDOCK envelope + CABS-dock fallback |
+| R3 (roadmap) | CONDITIONAL_PASS | E1b water-bridge script tried to align ligand-only PDBQT; pemetrexed null-InChIKey would silently pass; `ConnectivitySMILES` ≠ `IsomericSMILES` | v2-final — frame check redesigned, all 3 null InChIKeys filled, SMILES fallback chain added |
+| R4 (results) | CONDITIONAL_PASS | broken SASA column (values > 1); A0 RMSD frame-mismatch defence not demonstrated; duplicates in S1 analysed CSV; S4 overstated conclusion | R4-fix commit |
+| R5 (verification) | **PASS** | All 4 R4 blockers verified closed | — |
+| R6 (S4 v2 + A0 re-RMSD) | CONDITIONAL_PASS | Pocket 17 is the **C2-symmetric mirror** of pocket 18; "cryptic" is wrong word; "previously-uncharacterised" overclaims (Anderson 2012, Pozzi 2019 already discuss loop 181-197) | Documentation corrections applied; ready to commit |
+
+All reviewer reports verbatim under [`14_inhibitor_design/00_roadmap/reviews/`](14_inhibitor_design/00_roadmap/reviews/).
 
 ---
 

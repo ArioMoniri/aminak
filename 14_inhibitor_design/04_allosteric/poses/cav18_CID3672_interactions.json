@@ -1,0 +1,183 @@
+{
+  "hit": {
+    "id": "cav18_CID3672",
+    "compound": "ibuprofen",
+    "cid": 3672,
+    "cavity": 18,
+    "top1": -7.28,
+    "drug": 0.994,
+    "use_chain": "B",
+    "summary": "Non-steroidal anti-inflammatory drug; COX1/2 inhibitor. Carboxylate + isobutyl-phenyl combination is famously promiscuous, binding many off-targets (HSA pocket I, FABP, CRBN)."
+  },
+  "n_residue_contacts": 9,
+  "contacts": [
+    {
+      "heavy_count": 1,
+      "min_d": 3.005930305246616,
+      "hbond": true,
+      "salt_bridge": true,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "O"
+      ],
+      "atoms": [
+        "NZ"
+      ],
+      "chain": "B",
+      "resid": 283,
+      "resname": "LYS"
+    },
+    {
+      "heavy_count": 5,
+      "min_d": 3.084788161284336,
+      "hbond": true,
+      "salt_bridge": true,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "CD",
+        "CE",
+        "NZ"
+      ],
+      "chain": "B",
+      "resid": 52,
+      "resname": "LYS"
+    },
+    {
+      "heavy_count": 7,
+      "min_d": 3.2850894964977737,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "C",
+        "CD1",
+        "CG",
+        "O"
+      ],
+      "chain": "B",
+      "resid": 196,
+      "resname": "LEU"
+    },
+    {
+      "heavy_count": 12,
+      "min_d": 3.5656272940395777,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": true,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CB",
+        "CD1",
+        "CD2",
+        "CE1",
+        "CE2",
+        "CG"
+      ],
+      "chain": "B",
+      "resid": 200,
+      "resname": "PHE"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.5723024787943127,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CA",
+        "CG2"
+      ],
+      "chain": "B",
+      "resid": 54,
+      "resname": "VAL"
+    },
+    {
+      "heavy_count": 4,
+      "min_d": 3.5772443304868062,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CB",
+        "N"
+      ],
+      "chain": "B",
+      "resid": 55,
+      "resname": "PHE"
+    },
+    {
+      "heavy_count": 4,
+      "min_d": 3.581664138358034,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CB",
+        "CD1",
+        "CG2"
+      ],
+      "chain": "B",
+      "resid": 83,
+      "resname": "ILE"
+    },
+    {
+      "heavy_count": 1,
+      "min_d": 3.797265990156603,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CA"
+      ],
+      "chain": "B",
+      "resid": 197,
+      "resname": "GLY"
+    },
+    {
+      "heavy_count": 1,
+      "min_d": 3.89960626217571,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "O"
+      ],
+      "atoms": [
+        "O"
+      ],
+      "chain": "B",
+      "resid": 282,
+      "resname": "ILE"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "hit": {
+    "id": "cav2_CID5564",
+    "compound": "tolnaftate",
+    "cid": 5564,
+    "cavity": 2,
+    "top1": -6.88,
+    "drug": 0.009,
+    "use_chain": "B",
+    "summary": "Topical antifungal (thiocarbamate); not a TYMS literature ligand. Strongly lipophilic (logP ~5.1)."
+  },
+  "n_residue_contacts": 10,
+  "contacts": [
+    {
+      "heavy_count": 1,
+      "min_d": 2.975718568682192,
+      "hbond": true,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "O"
+      ],
+      "atoms": [
+        "NE2"
+      ],
+      "chain": "B",
+      "resid": 189,
+      "resname": "GLN"
+    },
+    {
+      "heavy_count": 6,
+      "min_d": 3.0043669882356245,
+      "hbond": true,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "Cl",
+        "O"
+      ],
+      "atoms": [
+        "C",
+        "O",
+        "OG"
+      ],
+      "chain": "B",
+      "resid": 191,
+      "resname": "SER"
+    },
+    {
+      "heavy_count": 7,
+      "min_d": 3.1404300660896753,
+      "hbond": true,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "CB",
+        "N"
+      ],
+      "chain": "B",
+      "resid": 193,
+      "resname": "ASP"
+    },
+    {
+      "heavy_count": 4,
+      "min_d": 3.231340588672138,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "CA",
+        "N"
+      ],
+      "chain": "B",
+      "resid": 197,
+      "resname": "GLY"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.3839122329043936,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "O"
+      ],
+      "atoms": [
+        "C",
+        "CA"
+      ],
+      "chain": "B",
+      "resid": 192,
+      "resname": "GLY"
+    },
+    {
+      "heavy_count": 3,
+      "min_d": 3.4224310073396653,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "Cl"
+      ],
+      "atoms": [
+        "C",
+        "CB",
+        "O"
+      ],
+      "chain": "B",
+      "resid": 83,
+      "resname": "ILE"
+    },
+    {
+      "heavy_count": 7,
+      "min_d": 3.4898270730796965,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": true,
+      "ligand_partners": [
+        "C",
+        "Cl"
+      ],
+      "atoms": [
+        "CD2",
+        "CE2",
+        "CE3",
+        "CH2",
+        "CZ2",
+        "NE1"
+      ],
+      "chain": "B",
+      "resid": 84,
+      "resname": "TRP"
+    },
+    {
+      "heavy_count": 6,
+      "min_d": 3.528613041975558,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "Cl",
+        "O"
+      ],
+      "atoms": [
+        "CB",
+        "SG"
+      ],
+      "chain": "B",
+      "resid": 170,
+      "resname": "CYS"
+    },
+    {
+      "heavy_count": 3,
+      "min_d": 3.557305300364308,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "Cl",
+        "O"
+      ],
+      "atoms": [
+        "ND2",
+        "OD1"
+      ],
+      "chain": "B",
+      "resid": 201,
+      "resname": "ASN"
+    },
+    {
+      "heavy_count": 1,
+      "min_d": 3.681236477054956,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "Cl"
+      ],
+      "atoms": [
+        "OH"
+      ],
+      "chain": "B",
+      "resid": 233,
+      "resname": "TYR"
+    }
+  ]
+}

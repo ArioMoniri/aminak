@@ -1,0 +1,201 @@
+{
+  "hit": {
+    "id": "cav18_CID7032",
+    "compound": "1H-indazole",
+    "cid": 7032,
+    "cavity": 18,
+    "top1": -7.52,
+    "drug": 0.994,
+    "use_chain": "B",
+    "summary": "Kinase-inhibitor privileged scaffold (e.g. axitinib, niraparib, pazopanib all carry indazole). A small bicyclic 5-6 heteroaromatic; can act as H-bond donor (N1-H) and acceptor (N2)."
+  },
+  "n_residue_contacts": 10,
+  "contacts": [
+    {
+      "heavy_count": 7,
+      "min_d": 3.230699614634576,
+      "hbond": true,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": true,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "CA",
+        "CB",
+        "CD2",
+        "N"
+      ],
+      "chain": "B",
+      "resid": 55,
+      "resname": "PHE"
+    },
+    {
+      "heavy_count": 4,
+      "min_d": 3.2644285870577714,
+      "hbond": true,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "ND2",
+        "OD1"
+      ],
+      "chain": "B",
+      "resid": 201,
+      "resname": "ASN"
+    },
+    {
+      "heavy_count": 7,
+      "min_d": 3.3967309284074876,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "C",
+        "CD1",
+        "CG",
+        "O"
+      ],
+      "chain": "B",
+      "resid": 196,
+      "resname": "LEU"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.4836904282671273,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CA"
+      ],
+      "chain": "B",
+      "resid": 197,
+      "resname": "GLY"
+    },
+    {
+      "heavy_count": 8,
+      "min_d": 3.5071928946095907,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": true,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CD1",
+        "CD2",
+        "CE2",
+        "CG"
+      ],
+      "chain": "B",
+      "resid": 200,
+      "resname": "PHE"
+    },
+    {
+      "heavy_count": 8,
+      "min_d": 3.6236347774023807,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "CB",
+        "CD1",
+        "CG2"
+      ],
+      "chain": "B",
+      "resid": 83,
+      "resname": "ILE"
+    },
+    {
+      "heavy_count": 1,
+      "min_d": 3.746782753243106,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CA"
+      ],
+      "chain": "B",
+      "resid": 54,
+      "resname": "VAL"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.7556329692876007,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CE",
+        "NZ"
+      ],
+      "chain": "B",
+      "resid": 52,
+      "resname": "LYS"
+    },
+    {
+      "heavy_count": 1,
+      "min_d": 3.9443789118186916,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "OE1"
+      ],
+      "chain": "B",
+      "resid": 62,
+      "resname": "GLU"
+    },
+    {
+      "heavy_count": 1,
+      "min_d": 3.9822694534649457,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "O"
+      ],
+      "chain": "B",
+      "resid": 53,
+      "resname": "ARG"
+    }
+  ]
+}

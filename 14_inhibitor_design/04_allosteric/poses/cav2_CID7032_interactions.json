@@ -1,0 +1,250 @@
+{
+  "hit": {
+    "id": "cav2_CID7032",
+    "compound": "1H-indazole",
+    "cid": 7032,
+    "cavity": 2,
+    "top1": -6.86,
+    "drug": 0.009,
+    "use_chain": "B",
+    "summary": "Same scaffold as above but docked in the low-druggability cavity 2 \u2014 comparison shows the \u22127.5 kcal/mol signal at cavity 18 tracks the *pocket*, not the *library*."
+  },
+  "n_residue_contacts": 13,
+  "contacts": [
+    {
+      "heavy_count": 4,
+      "min_d": 3.183049324154434,
+      "hbond": true,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "OG"
+      ],
+      "chain": "B",
+      "resid": 191,
+      "resname": "SER"
+    },
+    {
+      "heavy_count": 5,
+      "min_d": 3.198492457393014,
+      "hbond": true,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "ND2",
+        "OD1"
+      ],
+      "chain": "B",
+      "resid": 201,
+      "resname": "ASN"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.486763829111459,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": true,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CD2",
+        "NE2"
+      ],
+      "chain": "B",
+      "resid": 171,
+      "resname": "HIS"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.52371309842331,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "CB",
+        "OD1"
+      ],
+      "chain": "B",
+      "resid": 193,
+      "resname": "ASP"
+    },
+    {
+      "heavy_count": 5,
+      "min_d": 3.5298099098959987,
+      "hbond": false,
+      "salt_bridge": true,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "NE",
+        "NH2"
+      ],
+      "chain": "B",
+      "resid": 25,
+      "resname": "ARG"
+    },
+    {
+      "heavy_count": 4,
+      "min_d": 3.5709081477965783,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": true,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "CH2",
+        "CZ2"
+      ],
+      "chain": "B",
+      "resid": 84,
+      "resname": "TRP"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.6671043072157086,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": true,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CE1",
+        "NE2"
+      ],
+      "chain": "B",
+      "resid": 231,
+      "resname": "HIS"
+    },
+    {
+      "heavy_count": 3,
+      "min_d": 3.6942076281660188,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "SG"
+      ],
+      "chain": "B",
+      "resid": 170,
+      "resname": "CYS"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.706797134994036,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "NH1",
+        "NH2"
+      ],
+      "chain": "B",
+      "resid": 190,
+      "resname": "ARG"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.7449275026360658,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": true,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CE1",
+        "OH"
+      ],
+      "chain": "B",
+      "resid": 110,
+      "resname": "TYR"
+    },
+    {
+      "heavy_count": 1,
+      "min_d": 3.7892914905032042,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CD1"
+      ],
+      "chain": "B",
+      "resid": 167,
+      "resname": "LEU"
+    },
+    {
+      "heavy_count": 1,
+      "min_d": 3.8948141162319905,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "OH"
+      ],
+      "chain": "B",
+      "resid": 233,
+      "resname": "TYR"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.9096319519872975,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": false,
+      "aromatic": false,
+      "ligand_partners": [
+        "C",
+        "O"
+      ],
+      "atoms": [
+        "OE1"
+      ],
+      "chain": "B",
+      "resid": 62,
+      "resname": "GLU"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "hit": {
+    "id": "cav12_CID35814",
+    "compound": "flurbiprofen",
+    "cid": 35814,
+    "cavity": 12,
+    "top1": -6.52,
+    "drug": 0.01,
+    "use_chain": "B",
+    "summary": "NSAID (COX inhibitor), related to ibuprofen but with a fluorobiphenyl. Surface binding only."
+  },
+  "n_residue_contacts": 4,
+  "contacts": [
+    {
+      "heavy_count": 5,
+      "min_d": 3.542951594363095,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CD2"
+      ],
+      "chain": "B",
+      "resid": 162,
+      "resname": "LEU"
+    },
+    {
+      "heavy_count": 1,
+      "min_d": 3.67401837230028,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CG"
+      ],
+      "chain": "B",
+      "resid": 168,
+      "resname": "PRO"
+    },
+    {
+      "heavy_count": 4,
+      "min_d": 3.721454823049717,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": false,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CA",
+        "CB",
+        "O"
+      ],
+      "chain": "B",
+      "resid": 159,
+      "resname": "PRO"
+    },
+    {
+      "heavy_count": 2,
+      "min_d": 3.7260818563203895,
+      "hbond": false,
+      "salt_bridge": false,
+      "hydrophobic": true,
+      "aromatic": true,
+      "ligand_partners": [
+        "C"
+      ],
+      "atoms": [
+        "CH2",
+        "CZ2"
+      ],
+      "chain": "B",
+      "resid": 157,
+      "resname": "TRP"
+    }
+  ]
+}

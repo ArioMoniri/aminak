@@ -1,0 +1,60 @@
+Phase 14 Strategy 3 — started Mon May 18 14:07:19 2026
+14:07:19 
+=== A3 — chain A↔B 4 Å contact map ===
+14:07:19   chain A heavy atoms: 2325, chain B heavy atoms: 2325
+14:07:19   interface A residues (46): [20, 21, 22, 23, 24, 25, 32, 33, 34, 35, 36, 37, 39, 117, 118, 135, 148, 150, 151, 153, 157, 158, 159, 160, 167, 168, 172, 173, 175, 177]…
+14:07:19   interface B residues (42): [20, 22, 23, 24, 25, 32, 33, 34, 35, 36, 37, 39, 117, 135, 148, 150, 151, 153, 157, 159, 160, 167, 168, 172, 173, 175, 177, 178, 179, 184]…
+14:07:19   box centre = [ 1.6616664  -0.5343168   0.55487394]  size = (26, 22, 22) Å
+14:07:19 
+=== B — build peptide library from LR sequence 'LSCQLYQR' ===
+14:07:21   ✓ LR8_LSCQLYQR                        (len=8, MW=938.6, heavy=70)
+14:07:21   ✓ LR8_scrambled_QLCRQSYL              (len=8, MW=938.6, heavy=70)
+14:07:21   ✓ LR_4mer_pos1_LSCQ                   (len=4, MW=418.3, heavy=30)
+14:07:22   ✓ LR_4mer_pos2_SCQL                   (len=4, MW=418.3, heavy=30)
+14:07:22   ✓ LR_4mer_pos3_CQLY                   (len=4, MW=490.3, heavy=36)
+14:07:22   ✓ LR_4mer_pos4_QLYQ                   (len=4, MW=512.3, heavy=39)
+14:07:22   ✓ LR_4mer_pos5_LYQR                   (len=4, MW=536.3, heavy=41)
+14:07:22 
+=== C — peptide ligand prep ===
+14:07:24   ✓ LR8_LSCQLYQR                        (meeko)
+14:07:25   ✓ LR8_scrambled_QLCRQSYL              (meeko)
+14:07:26   ✓ LR_4mer_pos1_LSCQ                   (meeko)
+14:07:28   ✓ LR_4mer_pos2_SCQL                   (meeko)
+14:07:29   ✓ LR_4mer_pos3_CQLY                   (meeko)
+14:07:30   ✓ LR_4mer_pos4_QLYQ                   (meeko)
+14:07:31   ✓ LR_4mer_pos5_LYQR                   (meeko)
+14:07:31 
+=== D — Vina dock (HPEPDOCK unreachable → fragment-decomp + canonical 8-mer with Vina; quality caveat) ===
+14:11:56   LR8_LSCQLYQR                        s=42 top1=89.85 unreliable=True 264.13s
+14:16:46   LR8_LSCQLYQR                        s=7 top1=82.48 unreliable=True 290.14s
+14:21:30   LR8_scrambled_QLCRQSYL              s=42 top1=89.12 unreliable=True 284.04s
+14:26:07   LR8_scrambled_QLCRQSYL              s=7 top1=80.24 unreliable=True 277.13s
+14:27:30   LR_4mer_pos1_LSCQ                   s=42 top1=-4.325 unreliable=False 83.08s
+14:28:43   LR_4mer_pos1_LSCQ                   s=7 top1=-5.006 unreliable=False 72.61s
+14:29:43   LR_4mer_pos2_SCQL                   s=42 top1=-4.796 unreliable=False 60.16s
+14:30:47   LR_4mer_pos2_SCQL                   s=7 top1=-4.582 unreliable=False 64.68s
+14:33:02   LR_4mer_pos3_CQLY                   s=42 top1=-3.951 unreliable=False 134.39s
+14:35:05   LR_4mer_pos3_CQLY                   s=7 top1=-4.829 unreliable=False 122.78s
+14:37:32   LR_4mer_pos4_QLYQ                   s=42 top1=-4.143 unreliable=False 147.74s
+14:40:12   LR_4mer_pos4_QLYQ                   s=7 top1=-4.504 unreliable=False 159.2s
+14:43:26   LR_4mer_pos5_LYQR                   s=42 top1=-3.613 unreliable=False 194.74s
+14:46:18   LR_4mer_pos5_LYQR                   s=7 top1=-4.622 unreliable=False 171.95s
+14:46:18 
+=== G — canonical-vs-scrambled control + per-kind ranking ===
+14:46:18 
+  Canonical-vs-scrambled control (R2 sign-off #3):
+14:46:18     canonical LR8_LSCQLYQR  top1=+86.165
+14:46:18     scrambled LR8_scrambled_QLCRQSYL  top1=+84.680
+14:46:18     Δ = +1.485  (canonical should be ≤ scrambled − 2 kcal/mol for specificity)
+14:46:18     specificity_ok = False
+14:46:18   → /Users/ario/Downloads/aminak-inhibitor/14_inhibitor_design/03_dimer_interface/results_summary.csv
+14:46:18 
+  Ranking (most negative = best):
+14:46:18     LR_4mer_pos2_SCQL                    top1=-4.689  kind=fragment_4mer     
+14:46:18     LR_4mer_pos1_LSCQ                    top1=-4.665  kind=fragment_4mer     
+14:46:18     LR_4mer_pos3_CQLY                    top1=-4.390  kind=fragment_4mer     
+14:46:18     LR_4mer_pos4_QLYQ                    top1=-4.323  kind=fragment_4mer     
+14:46:18     LR_4mer_pos5_LYQR                    top1=-4.117  kind=fragment_4mer     
+14:46:18     LR8_scrambled_QLCRQSYL               top1=+84.680  kind=scrambled_control 
+14:46:18     LR8_LSCQLYQR                         top1=+86.165  kind=canonical         
+14:46:18 === DONE in 39.0 min ===

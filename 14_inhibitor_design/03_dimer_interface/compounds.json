@@ -1,0 +1,65 @@
+[
+  {
+    "name": "LR8_LSCQLYQR",
+    "sequence": "LSCQLYQR",
+    "length": 8,
+    "kind": "canonical",
+    "sdf_ok": true,
+    "mw": 938.6179999999999,
+    "n_heavy": 70
+  },
+  {
+    "name": "LR8_scrambled_QLCRQSYL",
+    "sequence": "QLCRQSYL",
+    "length": 8,
+    "kind": "scrambled_control",
+    "sdf_ok": true,
+    "mw": 938.6179999999999,
+    "n_heavy": 70
+  },
+  {
+    "name": "LR_4mer_pos1_LSCQ",
+    "sequence": "LSCQ",
+    "length": 4,
+    "kind": "fragment_4mer",
+    "sdf_ok": true,
+    "mw": 418.282,
+    "n_heavy": 30
+  },
+  {
+    "name": "LR_4mer_pos2_SCQL",
+    "sequence": "SCQL",
+    "length": 4,
+    "kind": "fragment_4mer",
+    "sdf_ok": true,
+    "mw": 418.282,
+    "n_heavy": 30
+  },
+  {
+    "name": "LR_4mer_pos3_CQLY",
+    "sequence": "CQLY",
+    "length": 4,
+    "kind": "fragment_4mer",
+    "sdf_ok": true,
+    "mw": 490.34799999999996,
+    "n_heavy": 36
+  },
+  {
+    "name": "LR_4mer_pos4_QLYQ",
+    "sequence": "QLYQ",
+    "length": 4,
+    "kind": "fragment_4mer",
+    "sdf_ok": true,
+    "mw": 512.309,
+    "n_heavy": 39
+  },
+  {
+    "name": "LR_4mer_pos5_LYQR",
+    "sequence": "LYQR",
+    "length": 4,
+    "kind": "fragment_4mer",
+    "sdf_ok": true,
+    "mw": 536.335,
+    "n_heavy": 41
+  }
+]

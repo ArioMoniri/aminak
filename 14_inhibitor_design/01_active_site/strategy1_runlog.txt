@@ -1,0 +1,101 @@
+Phase 14 Strategy 1 — started Mon May 18 13:31:37 2026
+13:31:37 
+=== A2 — verify CIDs against PubChem ===
+13:31:38   ✓ dUMP CID 65063: JSRLJPSBLDHEIO-SHYZEUOFSA-N
+13:31:39   ✓ 5-FdUMP CID 8642: HFEKDTCAMMOLQP-RRKCRQDMSA-N
+13:31:40   ✓ BrdUMP CID 93036: LHLHVDBXXZVYJT-RRKCRQDMSA-N
+13:31:41   ✓ Floxuridine (FdUR / 5-FdUrd) CID 5790: ODKNJVUHOIMIIZ-RRKCRQDMSA-N
+13:31:41   ✓ 5-FU (precursor sanity panel) CID 3385: GHASVSINZRGABV-UHFFFAOYSA-N
+13:31:42   ✓ Methotrexate (MTX) CID 126941: FBOZXECLQNJBKD-ZDUSSCGKSA-N
+13:31:43   ✓ Raltitrexed (D16, Tomudex) CID 104758: IVTVGDXNLFLDRM-HNNXBMFYSA-N
+13:31:44   ✓ Pemetrexed (S, Alimta) CID 135410875: WBXPDJSOTKVWSJ-ZDUSSCGKSA-N
+13:31:44   ✓ Nolatrexed (AG-337, Thymitaq) CID 135400184: XHWRWCSCBDLOLM-UHFFFAOYSA-N
+13:31:45   ✓ Plevitrexed (ZD9331, BGC9331) CID 135430970: IEJSCSAMMLUINT-NRFANRHFSA-N
+13:31:45 
+=== B — assemble compound set ===
+13:31:45   Strategy 1 Tier-1 anchors: 5
+13:31:48   Generating Tier-2 RDKit decoys against dUMP (anchor) …
+13:32:32   Got 7 decoys
+13:32:32   Wrote 12 compounds → /Users/ario/Downloads/aminak-inhibitor/14_inhibitor_design/01_active_site/compounds.json
+13:32:32 
+=== C — ligand prep (SDF → protonated → PDBQT) ===
+13:32:32 
+=== A0 — re-dock dUMP into 1HVY (gate: RMSD ≤ 2 Å) ===
+13:32:46   dUMP re-dock: top1=-8.777 kcal/mol wall=13.11s ok=True
+13:32:46   Pose RMSD vs crystal: 5.831 Å
+13:32:46 
+=== D — Vina dock (scoped: 12 compounds × 2 seeds × 2 states) ===
+13:32:59   [1/48] dUMP                           apo   seed= 42 top1=-8.777 wall=13.59s
+13:33:14   [2/48] dUMP                           apo   seed=  7 top1=-8.787 wall=15.12s
+13:33:40   [3/48] dUMP                           holo  seed= 42 top1=-7.504 wall=25.2s
+13:33:56   [4/48] dUMP                           holo  seed=  7 top1=-7.486 wall=16.32s
+13:34:10   [5/48] 5-FdUMP                        apo   seed= 42 top1=-9.037 wall=13.77s
+13:34:23   [6/48] 5-FdUMP                        apo   seed=  7 top1=-9.065 wall=13.76s
+13:34:42   [7/48] 5-FdUMP                        holo  seed= 42 top1=-7.942 wall=18.48s
+13:35:01   [8/48] 5-FdUMP                        holo  seed=  7 top1=-7.892 wall=19.62s
+13:35:22   [9/48] BrdUMP                         apo   seed= 42 top1=-8.896 wall=20.2s
+13:35:44   [10/48] BrdUMP                         apo   seed=  7 top1=-8.861 wall=22.34s
+13:36:16   [11/48] BrdUMP                         holo  seed= 42 top1=-6.645 wall=31.95s
+13:36:45   [12/48] BrdUMP                         holo  seed=  7 top1=-6.676 wall=28.58s
+13:36:59   [13/48] Floxuridine                    apo   seed= 42 top1=-7.481 wall=13.98s
+13:37:12   [14/48] Floxuridine                    apo   seed=  7 top1=-7.464 wall=13.34s
+13:37:36   [15/48] Floxuridine                    holo  seed= 42 top1=-6.682 wall=24.19s
+13:37:57   [16/48] Floxuridine                    holo  seed=  7 top1=-6.688 wall=21.36s
+13:38:01   [17/48] 5-FU                           apo   seed= 42 top1=-4.941 wall=3.24s
+13:38:04   [18/48] 5-FU                           apo   seed=  7 top1=-4.955 wall=3.19s
+13:38:08   [19/48] 5-FU                           holo  seed= 42 top1=-5.262 wall=4.41s
+13:38:12   [20/48] 5-FU                           holo  seed=  7 top1=-5.241 wall=4.12s
+13:38:12   [21/48] decoy_CID65349                 apo   seed= 42 top1=None wall=Nones
+13:38:13   [22/48] decoy_CID65349                 apo   seed=  7 top1=None wall=Nones
+13:38:13   [23/48] decoy_CID65349                 holo  seed= 42 top1=None wall=Nones
+13:38:13   [24/48] decoy_CID65349                 holo  seed=  7 top1=None wall=Nones
+13:38:13   [25/48] decoy_CID6149                  apo   seed= 42 top1=None wall=Nones
+13:38:13   [26/48] decoy_CID6149                  apo   seed=  7 top1=None wall=Nones
+13:38:13   [27/48] decoy_CID6149                  holo  seed= 42 top1=None wall=Nones
+13:38:13   [28/48] decoy_CID6149                  holo  seed=  7 top1=None wall=Nones
+13:38:30   [29/48] decoy_CID6253                  apo   seed= 42 top1=-6.137 wall=16.82s
+13:38:46   [30/48] decoy_CID6253                  apo   seed=  7 top1=-6.137 wall=16.66s
+13:39:13   [31/48] decoy_CID6253                  holo  seed= 42 top1=-5.644 wall=26.92s
+13:39:38   [32/48] decoy_CID6253                  holo  seed=  7 top1=-5.653 wall=25.04s
+13:39:38   [33/48] decoy_CID49846                 apo   seed= 42 top1=None wall=Nones
+13:39:38   [34/48] decoy_CID49846                 apo   seed=  7 top1=None wall=Nones
+13:39:38   [35/48] decoy_CID49846                 holo  seed= 42 top1=None wall=Nones
+13:39:39   [36/48] decoy_CID49846                 holo  seed=  7 top1=None wall=Nones
+13:39:54   [37/48] decoy_CID60750                 apo   seed= 42 top1=-6.664 wall=15.85s
+13:40:10   [38/48] decoy_CID60750                 apo   seed=  7 top1=-6.651 wall=15.27s
+13:40:30   [39/48] decoy_CID60750                 holo  seed= 42 top1=-5.279 wall=20.5s
+13:40:49   [40/48] decoy_CID60750                 holo  seed=  7 top1=-5.28 wall=19.27s
+13:40:49   [41/48] decoy_CID49846                 apo   seed= 42 top1=None wall=Nones
+13:40:50   [42/48] decoy_CID49846                 apo   seed=  7 top1=None wall=Nones
+13:40:50   [43/48] decoy_CID49846                 holo  seed= 42 top1=None wall=Nones
+13:40:50   [44/48] decoy_CID49846                 holo  seed=  7 top1=None wall=Nones
+13:41:02   [45/48] decoy_CID6035                  apo   seed= 42 top1=-7.466 wall=12.73s
+13:41:15   [46/48] decoy_CID6035                  apo   seed=  7 top1=-7.453 wall=12.88s
+13:41:33   [47/48] decoy_CID6035                  holo  seed= 42 top1=-5.225 wall=18.24s
+13:41:53   [48/48] decoy_CID6035                  holo  seed=  7 top1=-5.216 wall=19.52s
+13:41:53   → /Users/ario/Downloads/aminak-inhibitor/14_inhibitor_design/01_active_site/results_raw.csv
+13:41:53 
+=== G — aggregate (per-compound × state means, Δ vs dUMP) ===
+13:41:53   → /Users/ario/Downloads/aminak-inhibitor/14_inhibitor_design/01_active_site/results_summary.csv
+13:41:53 
+  Top by absolute Vina score per state:
+13:41:53   --- apo ---
+13:41:53     5-FdUMP                        top1=-9.05  Δ=-0.26900000000000013  tier=1
+13:41:53     BrdUMP                         top1=-8.88  Δ=-0.0965000000000007  tier=1
+13:41:53     dUMP                           top1=-8.78  Δ=0.0  tier=1
+13:41:53     Floxuridine                    top1=-7.47  Δ=1.3094999999999999  tier=1
+13:41:53     decoy_CID6035                  top1=-7.46  Δ=1.3224999999999998  tier=2
+13:41:53     decoy_CID60750                 top1=-6.66  Δ=2.1245000000000003  tier=2
+13:41:53     decoy_CID6253                  top1=-6.14  Δ=2.6450000000000005  tier=2
+13:41:53     5-FU                           top1=-4.95  Δ=3.8339999999999996  tier=1
+13:41:53   --- holo ---
+13:41:53     5-FdUMP                        top1=-7.92  Δ=-0.4220000000000006  tier=1
+13:41:53     dUMP                           top1=-7.49  Δ=0.0  tier=1
+13:41:53     Floxuridine                    top1=-6.69  Δ=0.8099999999999987  tier=1
+13:41:53     BrdUMP                         top1=-6.66  Δ=0.8344999999999994  tier=1
+13:41:53     decoy_CID6253                  top1=-5.65  Δ=1.846499999999999  tier=2
+13:41:53     decoy_CID60750                 top1=-5.28  Δ=2.2154999999999987  tier=2
+13:41:53     5-FU                           top1=-5.25  Δ=2.243499999999999  tier=1
+13:41:53     decoy_CID6035                  top1=-5.22  Δ=2.2744999999999997  tier=2
+13:41:53 
+=== DONE in 10.3 min ===

@@ -1,0 +1,41 @@
+
+=== A2 — verify CIDs against PubChem ===
+  ✓ dUMP CID 65063: JSRLJPSBLDHEIO-SHYZEUOFSA-N
+  ✓ 5-FdUMP CID 8642: HFEKDTCAMMOLQP-RRKCRQDMSA-N
+  ✓ BrdUMP CID 93036: LHLHVDBXXZVYJT-RRKCRQDMSA-N
+  ✓ Floxuridine (FdUR / 5-FdUrd) CID 5790: ODKNJVUHOIMIIZ-RRKCRQDMSA-N
+  ✓ 5-FU (precursor sanity panel) CID 3385: GHASVSINZRGABV-UHFFFAOYSA-N
+  ✓ Methotrexate (MTX) CID 126941: FBOZXECLQNJBKD-ZDUSSCGKSA-N
+  ✓ Raltitrexed (D16, Tomudex) CID 104758: IVTVGDXNLFLDRM-HNNXBMFYSA-N
+  ✓ Pemetrexed (S, Alimta) CID 135410875: WBXPDJSOTKVWSJ-ZDUSSCGKSA-N
+  ✓ Nolatrexed (AG-337, Thymitaq) CID 135400184: XHWRWCSCBDLOLM-UHFFFAOYSA-N
+  ✓ Plevitrexed (ZD9331, BGC9331) CID 135430970: IEJSCSAMMLUINT-NRFANRHFSA-N
+
+=== B — assemble compound set ===
+  Strategy 1 Tier-1 anchors: 5
+
+!!! ABORT: 'IsomericSMILES'
+Traceback (most recent call last):
+  File "/Users/ario/Downloads/aminak-inhibitor/scripts/v14/strategy1_active_site.py", line 280, in main
+    compounds = step_B()
+  File "/Users/ario/Downloads/aminak-inhibitor/scripts/v14/strategy1_active_site.py", line 81, in step_B
+    smi = a.get("smiles") or fetch_smiles(a["cid"])
+                             ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/ario/Downloads/aminak-inhibitor/scripts/v14/common.py", line 61, in fetch_smiles
+    return pubchem_get(url)["PropertyTable"]["Properties"][0]["IsomericSMILES"]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'IsomericSMILES'
+
+Traceback (most recent call last):
+  File "/Users/ario/Downloads/aminak-inhibitor/scripts/v14/strategy1_active_site.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/Users/ario/Downloads/aminak-inhibitor/scripts/v14/strategy1_active_site.py", line 280, in main
+    compounds = step_B()
+  File "/Users/ario/Downloads/aminak-inhibitor/scripts/v14/strategy1_active_site.py", line 81, in step_B
+    smi = a.get("smiles") or fetch_smiles(a["cid"])
+                             ~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/ario/Downloads/aminak-inhibitor/scripts/v14/common.py", line 61, in fetch_smiles
+    return pubchem_get(url)["PropertyTable"]["Properties"][0]["IsomericSMILES"]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'IsomericSMILES'

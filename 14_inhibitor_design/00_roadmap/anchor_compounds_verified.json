@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "source": "PubChem PUG REST",
+    "fetched_at": "2026-05-18T03:39:00Z",
+    "verifier": "Phase 14 corrector R2 (direct fetch)",
+    "verification_method": "name-search via /compound/name/<name>/cids + property lookup; cross-checked formula + IUPACName against literature",
+    "note": "Every CID below was verified by InChIKey + molecular formula match to the named compound. v0/v1 CIDs that resolved to wrong compounds are listed under wrong_cids_rejected for audit."
+  },
+  "anchors": [
+    {
+      "display_name": "dUMP",
+      "role": "active-site positive control (Strategy 1, re-dock RMSD gate)",
+      "cid": 65063,
+      "inchikey": "JSRLJPSBLDHEIO-SHYZEUOFSA-N",
+      "formula": "C9H13N2O8P",
+      "mw": 308.18,
+      "iupac": "[(2R,3S,5R)-5-(2,4-dioxopyrimidin-1-yl)-3-hydroxyoxolan-2-yl]methyl dihydrogen phosphate",
+      "smiles": "C1C(C(OC1N2C=CC(=O)NC2=O)COP(=O)(O)O)O",
+      "wrong_cids_rejected": [
+        {
+          "cid": 22848,
+          "actual_compound": "steroid C27H43NO8 (Solanum alkaloid)"
+        },
+        {
+          "cid": 13550,
+          "actual_compound": "propyl acrylate C6H10O2"
+        }
+      ]
+    },
+    {
+      "display_name": "5-FdUMP",
+      "role": "active-site canonical TYMS inhibitor (covalent ternary complex)",
+      "cid": 8642,
+      "inchikey": "HFEKDTCAMMOLQP-RRKCRQDMSA-N",
+      "formula": "C9H12FN2O8P",
+      "mw": 326.17,
+      "iupac": "[(2R,3S,5R)-5-(5-fluoro-2,4-dioxopyrimidin-1-yl)-3-hydroxyoxolan-2-yl]methyl dihydrogen phosphate",
+      "wrong_cids_rejected": [
+        {
+          "cid": 15718,
+          "actual_compound": "2-(4-tert-butylphenoxy)acetic acid C12H16O3"
+        },
+        {
+          "cid": 18632,
+          "actual_compound": "2,3-dimethyloxirane C4H8O"
+        }
+      ]
+    },
+    {
+      "display_name": "BrdUMP",
+      "role": "active-site halogenated dUMP mimic (Santi & McHenry 1972)",
+      "cid": 93036,
+      "inchikey": "LHLHVDBXXZVYJT-RRKCRQDMSA-N",
+      "formula": "C9H12BrN2O8P",
+      "mw": 387.08,
+      "iupac": "[(2R,3S,5R)-5-(5-bromo-2,4-dioxopyrimidin-1-yl)-3-hydroxyoxolan-2-yl]methyl dihydrogen phosphate",
+      "wrong_cids_rejected": [
+        {
+          "cid": 167671,
+          "actual_compound": "phosphatidylcholine fatty-acid C48H80NO8P"
+        },
+        {
+          "cid": 135398598,
+          "actual_compound": "GTP C10H12N5O13P3"
+        }
+      ]
+    },
+    {
+      "display_name": "Floxuridine (FdUR / 5-FdUrd)",
+      "role": "active-site nucleoside (weak control, no phosphate)",
+      "cid": 5790,
+      "inchikey": "ODKNJVUHOIMIIZ-RRKCRQDMSA-N",
+      "formula": "C9H11FN2O5",
+      "mw": 246.19,
+      "iupac": "5-fluoro-1-[(2R,4S,5R)-4-hydroxy-5-(hydroxymethyl)oxolan-2-yl]pyrimidine-2,4-dione"
+    },
+    {
+      "display_name": "5-FU (precursor sanity panel)",
+      "role": "active-site negative-like control (prodrug, expected to dock weakly)",
+      "cid": 3385,
+      "inchikey": "GHASVSINZRGABV-UHFFFAOYSA-N",
+      "formula": "C4H3FN2O2",
+      "mw": 130.08,
+      "iupac": "5-fluoro-1H-pyrimidine-2,4-dione"
+    },
+    {
+      "display_name": "Methotrexate (MTX)",
+      "role": "cofactor-site classical antifolate (cross-target control - primarily DHFR)",
+      "cid": 126941,
+      "inchikey": "FBOZXECLQNJBKD-ZDUSSCGKSA-N",
+      "formula": "C20H22N8O5",
+      "mw": 454.4,
+      "iupac": "(2S)-2-[[4-[(2,4-diaminopteridin-6-yl)methyl-methylamino]benzoyl]amino]pentanedioic acid"
+    },
+    {
+      "display_name": "Raltitrexed (D16, Tomudex)",
+      "role": "cofactor-site reference (also the species bound in the holo receptor)",
+      "cid": 104758,
+      "inchikey": "IVTVGDXNLFLDRM-HNNXBMFYSA-N",
+      "formula": "C21H22N4O6S",
+      "mw": 458.5,
+      "iupac": "(2S)-2-[[5-[methyl-[(2-methyl-4-oxo-1H-quinazolin-6-yl)methyl]amino]thiophene-2-carbonyl]amino]pentanedioic acid",
+      "note": "CID 135400182 is the 3H-quinazolin tautomer (same formula, slightly different IUPAC); both score identically in Vina but we use 104758 for InChIKey-match to canonical literature."
+    },
+    {
+      "display_name": "Pemetrexed (S, Alimta)",
+      "role": "cofactor-site multitarget antifolate (TYMS + DHFR + GARFT)",
+      "cid": 135410875,
+      "inchikey": "WBXPDJSOTKVWSJ-ZDUSSCGKSA-N",
+      "formula": "C20H21N5O6",
+      "mw": 427.4,
+      "iupac": "(2S)-2-[[4-[2-(2-amino-4-oxo-3,7-dihydropyrrolo[2,3-d]pyrimidin-5-yl)ethyl]benzoyl]amino]pentanedioic acid",
+      "note": "CID 60843 is the (2R) enantiomer (pemetrexed has S configuration in the clinic); we use 135410875. CID 446556 is another tautomer of the same S-isomer.",
+      "inchikey_source": "PubChem"
+    },
+    {
+      "display_name": "Nolatrexed (AG-337, Thymitaq)",
+      "role": "cofactor-site lipophilic non-classical antifolate (TYMS-specific, no glutamate tail)",
+      "cid": 135400184,
+      "inchikey": "XHWRWCSCBDLOLM-UHFFFAOYSA-N",
+      "formula": "C14H12N4OS",
+      "mw": 284.34,
+      "iupac": "2-amino-6-methyl-5-pyridin-4-ylsulfanyl-3H-quinazolin-4-one",
+      "wrong_cids_rejected": [
+        {
+          "cid": 60198,
+          "actual_compound": "steroid C20H24O2 (estrogen analog)"
+        }
+      ],
+      "inchikey_source": "PubChem"
+    },
+    {
+      "display_name": "Plevitrexed (ZD9331, BGC9331)",
+      "role": "cofactor-site non-polyglutamatable antifolate (TYMS-selective)",
+      "cid": 135430970,
+      "inchikey": "IEJSCSAMMLUINT-NRFANRHFSA-N",
+      "formula": "C26H25FN8O4",
+      "mw": 532.5,
+      "iupac": "(2S)-2-[[4-[(2,7-dimethyl-4-oxo-3H-quinazolin-6-yl)methyl-(prop-2-ynyl)amino]-2-fluorobenzoyl]amino]pentanedioic acid",
+      "wrong_cids_rejected": [
+        {
+          "cid": 122478,
+          "actual_compound": "imidazole dimer C46H36Cl2N4O4"
+        },
+        {
+          "cid": 123833,
+          "actual_compound": "glycolide/dioxanone C8H10O7"
+        }
+      ],
+      "inchikey_source": "PubChem"
+    },
+    {
+      "display_name": "LR octapeptide (Cardinale 2011 lead)",
+      "role": "dimer-interface positive control (peptide-based PPI disruptor)",
+      "cid": null,
+      "inchikey": null,
+      "formula": "RGD-style peptide, built from sequence",
+      "mw": null,
+      "note": "Build from sequence LSCQLYQR via RDKit Chem.MolFromSequence; verify against Cardinale 2011 (FEBS J 278:1487) supplementary table; **Strategy 3 docks via HPEPDOCK (>=6-mer) per R2 sign-off**."
+    }
+  ]
+}

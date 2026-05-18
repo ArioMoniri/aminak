@@ -1,0 +1,15 @@
+peptide,sequence,length,kind,seed,engine,top1,top3_mean,ok,wall_s,vina_peptide_unreliable_flag,mw,n_heavy
+LR8_LSCQLYQR,LSCQLYQR,8,canonical,42,Vina_fragment_decomp,89.85,91.07000000000001,True,264.13,True,938.6179999999999,70
+LR8_LSCQLYQR,LSCQLYQR,8,canonical,7,Vina_fragment_decomp,82.48,84.38666666666667,True,290.14,True,938.6179999999999,70
+LR8_scrambled_QLCRQSYL,QLCRQSYL,8,scrambled_control,42,Vina_fragment_decomp,89.12,90.05666666666666,True,284.04,True,938.6179999999999,70
+LR8_scrambled_QLCRQSYL,QLCRQSYL,8,scrambled_control,7,Vina_fragment_decomp,80.24,85.69666666666667,True,277.13,True,938.6179999999999,70
+LR_4mer_pos1_LSCQ,LSCQ,4,fragment_4mer,42,Vina_fragment_decomp,-4.325,-4.291333333333333,True,83.08,False,418.282,30
+LR_4mer_pos1_LSCQ,LSCQ,4,fragment_4mer,7,Vina_fragment_decomp,-5.006,-4.308333333333334,True,72.61,False,418.282,30
+LR_4mer_pos2_SCQL,SCQL,4,fragment_4mer,42,Vina_fragment_decomp,-4.796,-4.643666666666667,True,60.16,False,418.282,30
+LR_4mer_pos2_SCQL,SCQL,4,fragment_4mer,7,Vina_fragment_decomp,-4.582,-4.140333333333333,True,64.68,False,418.282,30
+LR_4mer_pos3_CQLY,CQLY,4,fragment_4mer,42,Vina_fragment_decomp,-3.951,-3.6483333333333334,True,134.39,False,490.34799999999996,36
+LR_4mer_pos3_CQLY,CQLY,4,fragment_4mer,7,Vina_fragment_decomp,-4.829,-4.730666666666667,True,122.78,False,490.34799999999996,36
+LR_4mer_pos4_QLYQ,QLYQ,4,fragment_4mer,42,Vina_fragment_decomp,-4.143,-3.6586666666666665,True,147.74,False,512.309,39
+LR_4mer_pos4_QLYQ,QLYQ,4,fragment_4mer,7,Vina_fragment_decomp,-4.504,-3.998333333333333,True,159.2,False,512.309,39
+LR_4mer_pos5_LYQR,LYQR,4,fragment_4mer,42,Vina_fragment_decomp,-3.613,-2.485,True,194.74,False,536.335,41
+LR_4mer_pos5_LYQR,LYQR,4,fragment_4mer,7,Vina_fragment_decomp,-4.622,-3.6923333333333335,True,171.95,False,536.335,41

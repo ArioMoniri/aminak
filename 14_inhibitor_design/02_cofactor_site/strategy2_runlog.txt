@@ -1,0 +1,74 @@
+Phase 14 Strategy 2 — started Mon May 18 13:53:33 2026
+13:53:33   cofactor box centre (from holo D16:A heavy-atom centroid) = (+0.401, +12.392, +17.766)
+13:53:33 
+=== B — assemble cofactor-site compound set ===
+13:53:33   Strategy 2 Tier-1 anchors: 5
+13:53:38   Generating RDKit decoys against raltitrexed …
+13:54:24   Got 4 decoys
+13:54:25 
+=== C — ligand prep ===
+13:54:25 
+=== A0 — re-dock raltitrexed into the holo cofactor box (sanity) ===
+13:55:04   raltitrexed top1=-9.08 (apo cofactor box)
+13:55:04 
+=== D — Vina dock (9 × 2 × 2 = 36 runs) ===
+13:55:27   [1/36] Methotrexate                   apo   s=42 top1=-9.127 23.4s
+13:55:52   [2/36] Methotrexate                   apo   s=7 top1=-10.06 25.45s
+13:56:28   [3/36] Methotrexate                   holo  s=42 top1=-6.882 35.69s
+13:57:02   [4/36] Methotrexate                   holo  s=7 top1=-6.754 33.69s
+13:57:24   [5/36] Raltitrexed                    apo   s=42 top1=-8.915 22.4s
+13:57:47   [6/36] Raltitrexed                    apo   s=7 top1=-9.352 22.32s
+13:58:17   [7/36] Raltitrexed                    holo  s=42 top1=-5.77 30.67s
+13:58:41   [8/36] Raltitrexed                    holo  s=7 top1=-6.783 23.58s
+13:58:57   [9/36] Pemetrexed                     apo   s=42 top1=-9.657 16.09s
+13:59:13   [10/36] Pemetrexed                     apo   s=7 top1=-9.781 16.42s
+13:59:37   [11/36] Pemetrexed                     holo  s=42 top1=-6.739 23.74s
+14:00:01   [12/36] Pemetrexed                     holo  s=7 top1=-6.679 24.05s
+14:00:06   [13/36] Nolatrexed                     apo   s=42 top1=-7.585 4.56s
+14:00:10   [14/36] Nolatrexed                     apo   s=7 top1=-7.562 4.54s
+14:00:15   [15/36] Nolatrexed                     holo  s=42 top1=-5.481 4.86s
+14:00:20   [16/36] Nolatrexed                     holo  s=7 top1=-5.5 4.9s
+14:00:50   [17/36] Plevitrexed                    apo   s=42 top1=-9.951 30.23s
+14:01:21   [18/36] Plevitrexed                    apo   s=7 top1=-10.07 30.63s
+14:02:07   [19/36] Plevitrexed                    holo  s=42 top1=-7.063 46.33s
+14:02:53   [20/36] Plevitrexed                    holo  s=7 top1=-6.989 45.79s
+14:03:08   [21/36] decoy_CID5212                  apo   s=42 top1=-9.366 15.07s
+14:03:23   [22/36] decoy_CID5212                  apo   s=7 top1=-9.318 15.03s
+14:03:43   [23/36] decoy_CID5212                  holo  s=42 top1=-5.523 20.33s
+14:04:03   [24/36] decoy_CID5212                  holo  s=7 top1=-6.449 20.07s
+14:04:20   [25/36] decoy_CID60843                 apo   s=42 top1=-9.805 16.22s
+14:04:36   [26/36] decoy_CID60843                 apo   s=7 top1=-9.461 16.13s
+14:05:00   [27/36] decoy_CID60843                 holo  s=42 top1=-6.852 24.55s
+14:05:25   [28/36] decoy_CID60843                 holo  s=7 top1=-6.831 24.84s
+14:05:38   [29/36] decoy_CID100049                apo   s=42 top1=-7.602 13.29s
+14:05:51   [30/36] decoy_CID100049                apo   s=7 top1=-7.523 13.0s
+14:06:07   [31/36] decoy_CID100049                holo  s=42 top1=-5.698 15.37s
+14:06:22   [32/36] decoy_CID100049                holo  s=7 top1=-5.7 15.38s
+14:06:36   [33/36] decoy_CID5359476               apo   s=42 top1=-9.009 13.98s
+14:06:47   [34/36] decoy_CID5359476               apo   s=7 top1=-8.973 10.52s
+14:07:03   [35/36] decoy_CID5359476               holo  s=42 top1=-6.791 16.09s
+14:07:18   [36/36] decoy_CID5359476               holo  s=7 top1=-6.775 15.56s
+14:07:18 
+=== G — aggregate (Δ vs raltitrexed) ===
+14:07:18   → /Users/ario/Downloads/aminak-inhibitor/14_inhibitor_design/02_cofactor_site/results_summary.csv
+14:07:18   --- apo ---
+14:07:18     Plevitrexed               top1=-10.01  Δralt=-0.8770000000000007  tier=1
+14:07:18     Pemetrexed                top1=-9.72  Δralt=-0.5855000000000015  tier=1
+14:07:18     decoy_CID60843            top1=-9.63  Δralt=-0.4994999999999994  tier=2
+14:07:18     Methotrexate              top1=-9.59  Δralt=-0.46000000000000085  tier=1
+14:07:18     decoy_CID5212             top1=-9.34  Δralt=-0.20849999999999902  tier=2
+14:07:18     Raltitrexed               top1=-9.13  Δralt=0.0  tier=1
+14:07:18     decoy_CID5359476          top1=-8.99  Δralt=0.14250000000000007  tier=2
+14:07:18     Nolatrexed                top1=-7.57  Δralt=1.5599999999999996  tier=1
+14:07:18     decoy_CID100049           top1=-7.56  Δralt=1.5709999999999997  tier=2
+14:07:18   --- holo ---
+14:07:18     Plevitrexed               top1=-7.03  Δralt=-0.7494999999999994  tier=1
+14:07:18     decoy_CID60843            top1=-6.84  Δralt=-0.5649999999999995  tier=2
+14:07:18     Methotrexate              top1=-6.82  Δralt=-0.5414999999999992  tier=1
+14:07:18     decoy_CID5359476          top1=-6.78  Δralt=-0.5065  tier=2
+14:07:18     Pemetrexed                top1=-6.71  Δralt=-0.4324999999999992  tier=1
+14:07:18     Raltitrexed               top1=-6.28  Δralt=0.0  tier=1
+14:07:18     decoy_CID5212             top1=-5.99  Δralt=0.29050000000000065  tier=2
+14:07:18     decoy_CID100049           top1=-5.70  Δralt=0.5775000000000006  tier=2
+14:07:18     Nolatrexed                top1=-5.49  Δralt=0.7860000000000005  tier=1
+14:07:18 === DONE in 13.8 min ===

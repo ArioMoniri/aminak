@@ -1,0 +1,64 @@
+Phase 14 Strategy 4 — started Mon May 18 14:46:19 2026
+14:46:19 
+=== A — FPocket on apo receptor ===
+14:46:19   fpocket rc=-11
+14:46:19   ! fpocket failed (arm64 Qhull/Voronoi bug per roadmap S3) — falling back to manual chain-A surface centroids
+14:46:20   cofactor centre = [ 0.37029412 12.30267647 17.79444118]
+14:46:20     cavity manual_chainA_res42: centre=[-20.76300048828125, 4.802000045776367, 9.331999778747559], d_site=21.4, d_cof=24.0, sasa=216.9
+14:46:20     cavity manual_chainA_res26: centre=[-12.991999626159668, 21.290000915527344, -8.496000289916992], d_site=31.9, d_cof=30.8, sasa=175.8
+14:46:20     cavity manual_chainA_res284: centre=[17.604999542236328, 26.892000198364258, -3.562999963760376], d_site=34.3, d_cof=31.1, sasa=167.7
+14:46:20 
+=== B — assemble fragment library ===
+14:46:33   ZINC15 unreachable: <urlopen error _ssl.c:1063: The handshake operation timed out> — falling back to PubChem fragment list
+14:47:00   → 20 fragments after MW/heavy-atom filter
+14:47:00 
+=== C — fragment prep ===
+14:47:03   ✓ frag_CID1983              → frag_CID1983.pdbqt (meeko)
+14:47:05   ✓ frag_CID2244              → frag_CID2244.pdbqt (meeko)
+14:47:07   ✓ frag_CID2519              → frag_CID2519.pdbqt (meeko)
+14:47:09   ✓ frag_CID3672              → frag_CID3672.pdbqt (meeko)
+14:47:11   ✓ frag_CID4173              → frag_CID4173.pdbqt (meeko)
+14:47:13   ✓ frag_CID5564              → frag_CID5564.pdbqt (meeko)
+14:47:16   ✓ frag_CID6202              → frag_CID6202.pdbqt (obabel_pdbqt_fallback)
+14:47:18   ✓ frag_CID6253              → frag_CID6253.pdbqt (meeko)
+14:47:20   ✓ frag_CID7032              → frag_CID7032.pdbqt (meeko)
+14:47:22   ✓ frag_CID8094              → frag_CID8094.pdbqt (meeko)
+14:47:25   ✓ frag_CID8654              → frag_CID8654.pdbqt (obabel_pdbqt_fallback)
+14:47:27   ✓ frag_CID9087              → frag_CID9087.pdbqt (meeko)
+14:47:29   ✓ frag_CID10257             → frag_CID10257.pdbqt (meeko)
+14:47:31   ✓ frag_CID13558             → frag_CID13558.pdbqt (meeko)
+14:47:34   ✓ frag_CID14888             → frag_CID14888.pdbqt (obabel_pdbqt_fallback)
+14:47:36   ✓ frag_CID22311             → frag_CID22311.pdbqt (meeko)
+14:47:38   ✓ frag_CID25245             → frag_CID25245.pdbqt (meeko)
+14:47:40   ✓ frag_CID35814             → frag_CID35814.pdbqt (meeko)
+14:47:44   ✓ frag_CID49846             → frag_CID49846.pdbqt (obabel_pdbqt_fallback)
+14:47:47   ✓ frag_CID60656             → frag_CID60656.pdbqt (obabel_pdbqt_fallback)
+14:47:47 
+=== D — dock fragments into top allosteric cavities ===
+14:47:47   --- cavity manual_chainA_res42 centre=[-20.76300048828125, 4.802000045776367, 9.331999778747559] ---
+14:47:50     [1/60] cavmanual_chainA_res42 frag_CID1983           top1=-4.527 2.47s
+14:47:53     [2/60] cavmanual_chainA_res42 frag_CID2244           top1=-4.638 2.91s
+14:47:54     [3/60] cavmanual_chainA_res42 frag_CID2519           top1=-4.776 1.5s
+14:48:23     [10/60] cavmanual_chainA_res42 frag_CID8094           top1=-3.991 3.9s
+14:48:52     [20/60] cavmanual_chainA_res42 frag_CID60656          top1=None Nones
+14:48:52   --- cavity manual_chainA_res26 centre=[-12.991999626159668, 21.290000915527344, -8.496000289916992] ---
+14:49:25     [30/60] cavmanual_chainA_res26 frag_CID8094           top1=-3.452 3.37s
+14:49:48     [40/60] cavmanual_chainA_res26 frag_CID60656          top1=None Nones
+14:49:48   --- cavity manual_chainA_res284 centre=[17.604999542236328, 26.892000198364258, -3.562999963760376] ---
+14:50:22     [50/60] cavmanual_chainA_res284 frag_CID8094           top1=-3.343 3.04s
+14:50:49     [60/60] cavmanual_chainA_res284 frag_CID60656          top1=None Nones
+14:50:49   → /Users/ario/Downloads/aminak-inhibitor/14_inhibitor_design/04_allosteric/results_raw.csv (60 rows)
+14:50:49 
+=== G — aggregate (absolute Vina ranking; no Δ ref for allosteric) ===
+14:50:49   Top 10 by absolute Vina score across all cavities:
+14:50:49     cavmanual_chainA_res42  frag_CID6253               top1=-5.52  d_site=21.440865835437695
+14:50:49     cavmanual_chainA_res284  frag_CID7032               top1=-5.42  d_site=34.33318277395246
+14:50:49     cavmanual_chainA_res42  frag_CID10257              top1=-5.30  d_site=21.440865835437695
+14:50:49     cavmanual_chainA_res26  frag_CID35814              top1=-5.19  d_site=31.871389196874834
+14:50:49     cavmanual_chainA_res284  frag_CID5564               top1=-5.17  d_site=34.33318277395246
+14:50:49     cavmanual_chainA_res284  frag_CID3672               top1=-5.06  d_site=34.33318277395246
+14:50:49     cavmanual_chainA_res42  frag_CID5564               top1=-5.02  d_site=21.440865835437695
+14:50:49     cavmanual_chainA_res26  frag_CID5564               top1=-5.01  d_site=31.871389196874834
+14:50:49     cavmanual_chainA_res26  frag_CID10257              top1=-4.99  d_site=31.871389196874834
+14:50:49     cavmanual_chainA_res42  frag_CID3672               top1=-4.92  d_site=21.440865835437695
+14:50:49 === DONE in 4.5 min ===

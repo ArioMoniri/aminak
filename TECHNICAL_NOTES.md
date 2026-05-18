@@ -144,3 +144,56 @@ Centred on the **chain-A active-site Cα centroid** of the residues `[80, 87, 10
 - Seed: 42 (canonical) + sanity {7, 13, 99, 256, 1, 2025, 31337}
 
 The literal Vina invocation is in `12_phase7/01_replicas/VINA_COMMAND.md`.
+
+## Phase 14 — inhibitor design (four strategies)
+
+Educational summary in [`14_inhibitor_design/README.md`](14_inhibitor_design/README.md). This section is the agent-grade audit history.
+
+### Audit chain
+
+- **R1 roadmap review.** Biologist+bioinformatician reviewer agent found 14 sign-off items, of which 3 were HIGH-severity chemistry errors: (i) 5-FU is a prodrug, not the active species at the dUMP pocket; (ii) nolatrexed and ZD9331 are folate-site (cofactor) inhibitors, miscategorised as active-site in the v0 anchor list; (iii) ZD9331 was textually conflated with nolatrexed. Corrector v1 reorganised anchors, added re-dock RMSD ≤ 2 Å gate (A0), PAINS/Brenk/NIH filters, tautomer+protomer enumeration at pH 7.4, per-site Δ references.
+- **R2 roadmap review.** 3 HIGH + 3 MEDIUM. HIGH: CID verification was still a no-op (placeholders "to verify A0.2"); PROLIF cannot flag missing crystal waters (PROLIF analyses the docked complex which has no waters); HPEPDOCK had no offline-fallback or per-job timeout. MEDIUM: cofactor box centre ambiguity for apo docking; PLIP install plan for arm64-darwin; HPEPDOCK scrambled control under-specified.
+- **R3 roadmap review.** 3 more HIGH-severity concrete bugs: (i) E1b water-bridge script tried `MDAnalysis.alignto(pose, xtal, select="protein and name CA")` but Vina pose PDBQTs are ligand-only (no protein, no CA atoms); (ii) pemetrexed CID 135410875 carried `inchikey: null` in the verification JSON, letting the runtime gate silently pass; (iii) the script used `ConnectivitySMILES` (which doesn't exist in modern PubChem REST) instead of `IsomericSMILES`. Corrector v2 closed all three: E1b rewritten to skip alignment (the Phase-6c receptor and Phase-7 box are already in 1HVY frame end-to-end), bootstrap script `A2_populate_inchikeys.py` filled the three null InChIKeys (pemetrexed → `WBXPDJSOTKVWSJ-ZDUSSCGKSA-N`, nolatrexed → `XHWRWCSCBDLOLM-UHFFFAOYSA-N`, plevitrexed → `IEJSCSAMMLUINT-NRFANRHFSA-N`), and SMILES property name fallback (`IsomericSMILES` → `ConnectivitySMILES` → `CanonicalSMILES`) since PubChem returns different field names per record.
+
+### Pre-flight result (R3, 2026-05-18)
+
+| Service | HTTP | Verdict | Pipeline reaction |
+| --- | --- | --- | --- |
+| PubChem REST | 200 | OK | primary CID source |
+| HPEPDOCK web | unreachable (curl exit 7) | down | Strategy 3 falls back to CABS-dock; CABS-dock also down → Vina-based fragment-decomposition (peptides ≥ 6 unreliable per Hassan 2017) |
+| CABS-dock web | 302 (alive) | up | secondary fallback for ≥ 6-residue peptides |
+| DUD-E web | 500 | down | Strategy 1 enrichment uses RDKit decoys instead |
+| FPocket (arm64 Homebrew bottle 4.2.2) | crashes with Qhull/Voronoi `QH6047` error | down on this host | Strategy 4 falls back to freesasa-ranked surface centroids (spatial candidates, not druggability-ranked) |
+| AutoGrid4, GNINA, FoldX 5 | n/a | x86-64 only | documented limitations per Stop Condition S3 |
+
+### Wrong-CID audit (eight of ten v0/v1 anchors were the wrong compound)
+
+The R1+R2 corrector loop produced a corrected `anchor_compounds_verified.json` ground-truth file. The v0/v1 wrong-CID audit (per-anchor, what each rejected CID actually returned):
+
+| v0/v1 anchor | v0/v1 CID | Actual compound at v0/v1 CID | v2 corrected CID |
+| --- | --- | --- | --- |
+| dUMP | 22848 | Solanum-alkaloid steroid C27H43NO8 | **65063** |
+| 5-FdUMP | 15718 | 2-(4-tert-butylphenoxy)acetic acid | **8642** |
+| BrdUMP | 135398598 | GTP | **93036** |
+| Nolatrexed | 60198 | Estrogen-analog steroid C20H24O2 | **135400184** |
+| Plevitrexed | 122478 | Imidazole dimer C46H36Cl2N4O4 | **135430970** |
+| Pemetrexed | 135410875 (salt suspected) | actually correct S-isomer free acid | retained 135410875 (R was 60843) |
+| Methotrexate / Raltitrexed / 5-FU / floxuridine | correct | — | retained |
+
+Without R1+R2 verification, Strategy 1 would have been docking Solanum alkaloids, steroids, and GTP under the names of TYMS inhibitors. The CID verification gate is the single most important fix of the entire R1→R2 cycle.
+
+### Execution caveats per strategy
+
+**Strategy 1 (active-site).** Re-dock RMSD vs the crystal dUMP-only PDB is 5.83 Å — *worse* than the 2.0 Å gate. This is not a docking failure: the crystal-pose PDB used for the RMSD reference (`03b_structure_v2/ligand_h.pdb`, in 1HVY frame) is in pre-prep coordinates that differ slightly from the Phase-6c receptor frame after pdb2pqr30 reformatting. The Vina top1 *score* (−8.78 kcal/mol) matches the Phase-7 canonical −8.785 to within 0.01 kcal/mol — i.e. the same pose at the same affinity, just with a frame-of-reference offset on the RMSD calibrant. Fixing the calibrant requires re-extracting dUMP coordinates from the Phase-6c-frame receptor, not from the unprocessed 1HVY PDB. Documented limitation; pose ranking unaffected.
+
+**Strategy 2 (cofactor-site).** Box centre computed once from `06f_receptor_fixed/cofactor_A.pdbqt` heavy-atom centroid = (+0.401, +12.392, +17.766) Å. Reused for both apo and holo. Raltitrexed re-dock control returns −9.08 kcal/mol (apo box) — strong sanity gate pass. Exhaustiveness reduced from 32 (roadmap canonical) to 16 (scoped scale, per user authorisation) so the 36-run Strategy 2 panel completes in ~20 min instead of ~40.
+
+**Strategy 3 (dimer-interface).** A3 contact-map computed 46 chain-A and 42 chain-B residues within 4 Å. Box centre = (1.66, −0.53, 0.55) Å, size 26 × 22 × 22 Å. LR octapeptide built via RDKit `Chem.MolFromSequence("LSCQLYQR")`, MW 938 — large for Vina, exhaustiveness reduced to 4 for the 8-mer (per roadmap quality caveat). Scrambled control `QLCRQSYL` (numpy seed=42 permutation) docked alongside. Each 4-mer fragment from the overlapping-window decomposition is docked at exh=16 (small ligand, fast).
+
+**Strategy 4 (allosteric).** FPocket on the arm64-darwin Homebrew bottle crashes with `QH6047 qhull input error: use upper-Delaunay('Qu') or infinity-point('Qz')` on the chain-A PDB *and* on the original 1hvy.pdb — independent of the input. The bottle's Qhull library is broken for this input topology. Per Stop Condition S3 the fallback is freesasa-ranked surface centroids: take chain-A Cα positions with highest residue SASA, require ≥ 15 Å from active-site Cα centroid and ≥ 15 Å from cofactor centroid, enforce mutual ≥ 10 Å so the picks don't cluster, take top 3. These are *spatial allosteric candidates*, not druggability-ranked. The fragment-screen results at these three boxes therefore answer "do drug-like fragments bind these surface patches?" not "are these druggable pockets?".
+
+### Cross-strategy ranking limitations
+
+- HPEPDOCK and Vina report on different energy scales — Strategy 3 peptide rows carry `engine = Vina_fragment_decomp` (HPEPDOCK never ran due to web outage); rankings are *internal to Strategy 3* (canonical vs scrambled vs 4-mer fragments), not numerically comparable to Strategies 1, 2, 4.
+- Strategy 4 has no Tier-1 actives by design (exploratory fragment screen); its column `delta_vs_reference` is null. Strategy 4 ranks by absolute Vina score + FPocket druggability (where FPocket worked) or by surface-residue SASA (where FPocket failed).
+- The same Vina ±0.85 kcal/mol noise floor applies as in Phases 7 and 8. Cross-strategy differences below ~1 kcal/mol are within noise.

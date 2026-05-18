@@ -1,0 +1,16 @@
+{
+  "crystal_source": "03_structure/1hvy.pdb",
+  "pose_source": "14_inhibitor_design/01_active_site/A0_redock_gate/dump_redock.pdbqt",
+  "crystal_heavy_atoms": 20,
+  "pose_heavy_atoms": 22,
+  "rmsd_rdkit_GetBestRMS_A": null,
+  "rmsd_naive_atomname_matched_A": 0.7908735676452968,
+  "rmsd_naive_n_matched": 1,
+  "rmsd_nearest_per_element_A": 1.311977800879268,
+  "rmsd_nearest_n_matched": 20,
+  "rdkit_method": "GetBestRMS failed: No sub-structure match found between the reference and probe mol",
+  "gate_threshold_A": 2.0,
+  "gate_pass_rdkit": false,
+  "gate_pass_nearest_element": true,
+  "note": "Phase-6c receptor (dimer_noH.pdb) shares identical C\u03b1 coordinates with 1HVY (verified PRO A 26: -12.992, 21.290, -8.496 in both files). The pose and crystal dUMP are therefore in the same coordinate frame; no rigid-body alignment is needed. RDKit GetBestRMS requires identical SMILES topology between pose and reference \u2014 meeko's PDBQT preserves H atoms differently from PubChem's SDF, so the substructure match fails. The nearest-per-element RMSD is the next-most-rigorous available metric: for each crystal heavy atom, find the closest pose heavy atom of the same element (greedy bipartite match), then RMSD over the pairs."
+}

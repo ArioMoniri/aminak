@@ -1,0 +1,42 @@
+HEADER
+HEADER This is a pdb format file writen by the programm fpocket.                 
+HEADER It represents the atoms contacted by the voronoi vertices of the pocket.  
+HEADER                                                                           
+HEADER Information about the pocket    11:
+HEADER 0  - Pocket Score                      : -0.0094
+HEADER 1  - Drug Score                        : 0.0001
+HEADER 2  - Number of alpha spheres           :    26
+HEADER 3  - Mean alpha-sphere radius          : 3.8337
+HEADER 4  - Mean alpha-sphere Solvent Acc.    : 0.5603
+HEADER 5  - Mean B-factor of pocket residues  : 0.0000
+HEADER 6  - Hydrophobicity Score              : -15.4444
+HEADER 7  - Polarity Score                    :     4
+HEADER 8  - Amino Acid based volume Score     : 3.6667
+HEADER 9  - Pocket volume (Monte Carlo)       : 289.0261
+HEADER 10 - Pocket volume (convex hull)       : 17.9865
+HEADER 11 - Charge Score                      :     0
+HEADER 12 - Local hydrophobic density Score   : 4.0000
+HEADER 13 - Number of apolar alpha sphere     :     5
+HEADER 14 - Proportion of apolar alpha sphere : 0.1923
+ATOM   2000   CA PRO A 250      -8.635  26.389   0.098  0.00  0.00           C 0
+ATOM   2003   CB PRO A 250      -8.543  27.688  -0.687  0.00  0.00           C 0
+ATOM     22  CD2 HIS A   3     -10.705  22.736  -0.097  0.00  0.00           C 0
+ATOM   2004   CG PRO A 250      -9.973  28.090  -0.774  0.00  0.00           C 0
+ATOM     16   CA HIS A   3     -11.477  20.099  -2.540  0.00  0.00           C 0
+ATOM     19   CB HIS A   3     -12.017  20.860  -1.324  0.00  0.00           C 0
+ATOM      4    O PRO A   1     -12.694  21.537  -6.124  0.29  4.29           O 0
+ATOM    357  OE2 GLU A  45      -5.070  20.811  -3.279  0.54  2.14           O 0
+ATOM     20   CG HIS A   3     -10.951  21.453  -0.456  0.00  0.00           C 0
+ATOM   2006    N PHE A 251      -6.699  24.970   0.310  0.00  0.00           N 0
+ATOM     24  NE2 HIS A   3      -9.616  22.723   0.739  0.00  0.00           N 0
+ATOM     25    N GLY A   4      -9.480  18.788  -2.067  0.00  0.00           N 0
+ATOM     21  ND1 HIS A   3      -9.992  20.689   0.172  0.00  0.00           N 0
+ATOM    356  OE1 GLU A  45      -4.972  22.053  -5.079  0.00  0.00           O 0
+ATOM     11    O PRO A   2     -11.209  18.827  -4.962  0.00  0.00           O 0
+ATOM   2009    O PHE A 251      -4.427  26.409  -0.182  0.65  3.21           O 0
+ATOM   2032   NZ LYS A 253      -2.279  28.247  -4.439  0.00  0.00           N 0
+ATOM   2013  CD1 PHE A 251      -5.795  20.922  -0.159  0.00  0.00           C 0
+ATOM    353   CB GLU A  45      -2.639  23.176  -3.511  0.00  0.00           C 0
+ATOM    344    O ASP A  44      -1.351  25.468  -5.206  0.30  2.14           O 0
+TER
+END

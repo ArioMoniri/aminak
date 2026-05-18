@@ -1,0 +1,43 @@
+HEADER
+HEADER This is a pdb format file writen by the programm fpocket.                 
+HEADER It represents the atoms contacted by the voronoi vertices of the pocket.  
+HEADER                                                                           
+HEADER Information about the pocket    46:
+HEADER 0  - Pocket Score                      : -0.0614
+HEADER 1  - Drug Score                        : 0.0010
+HEADER 2  - Number of alpha spheres           :    27
+HEADER 3  - Mean alpha-sphere radius          : 3.9698
+HEADER 4  - Mean alpha-sphere Solvent Acc.    : 0.5369
+HEADER 5  - Mean B-factor of pocket residues  : 0.2525
+HEADER 6  - Hydrophobicity Score              : 50.1000
+HEADER 7  - Polarity Score                    :     3
+HEADER 8  - Amino Acid based volume Score     : 5.0000
+HEADER 9  - Pocket volume (Monte Carlo)       : 310.5940
+HEADER 10 - Pocket volume (convex hull)       : 12.4714
+HEADER 11 - Charge Score                      :     2
+HEADER 12 - Local hydrophobic density Score   : 9.0000
+HEADER 13 - Number of apolar alpha sphere     :    10
+HEADER 14 - Proportion of apolar alpha sphere : 0.3704
+ATOM   7434  CD2 PHE D  80      71.459  52.688  26.127  0.00  0.00           C 0
+ATOM   8593  CD1 PHE D 225      67.599  49.983  28.717  0.00  0.00           C 0
+ATOM   8595  CE1 PHE D 225      67.591  50.891  27.662  0.00  0.00           C 0
+ATOM   7659  CG2 ILE D 108      69.093  49.631  23.542  0.00  0.00           C 0
+ATOM   7431   CB PHE D  80      71.891  52.403  28.586  0.00  0.00           C 0
+ATOM   7406   CD LYS D  77      74.678  46.287  34.575  0.00  0.00           C 0
+ATOM   9268    O ILE D 307      77.238  45.359  31.898  0.40  9.64           O 0
+ATOM   7412    O ARG D  78      74.582  50.985  33.098  0.56  6.43           O 0
+ATOM   9263  OG1 THR D 306      77.903  49.609  31.759  0.48  7.50           O 0
+ATOM   8564    O LEU D 221      68.816  44.848  30.696  0.51  4.29           O 0
+ATOM   7427    N PHE D  80      71.816  52.352  31.018  0.71  2.19           N 0
+ATOM   8567  CD1 LEU D 221      72.569  43.247  28.500  0.00  0.00           C 0
+ATOM   7425  CG1 VAL D  79      69.447  51.482  33.019  0.00  0.00           C 0
+ATOM   8566   CG LEU D 221      71.234  43.035  27.799  0.00  0.00           C 0
+ATOM   7407   CE LYS D  77      73.193  46.506  34.308  0.00  0.00           C 0
+ATOM   7408   NZ LYS D  77      72.649  45.539  33.295  0.67  4.37           N 0
+ATOM   8584   CB PRO D 224      68.520  46.697  34.640  0.00  0.00           C 0
+ATOM   7426  CG2 VAL D  79      70.551  50.480  35.023  0.00  0.00           C 0
+ATOM   8587    N PHE D 225      66.561  47.758  32.477  0.00  0.00           N 0
+ATOM   7421   CA VAL D  79      71.926  51.705  33.344  0.00  0.00           C 0
+ATOM   8591   CB PHE D 225      66.497  48.232  30.121  0.00  0.00           C 0
+TER
+END

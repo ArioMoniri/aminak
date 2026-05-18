@@ -1,0 +1,38 @@
+HEADER
+HEADER This is a pdb format file writen by the programm fpocket.                 
+HEADER It represents the atoms contacted by the voronoi vertices of the pocket.  
+HEADER                                                                           
+HEADER Information about the pocket    31:
+HEADER 0  - Pocket Score                      : -0.1188
+HEADER 1  - Drug Score                        : 0.0001
+HEADER 2  - Number of alpha spheres           :    16
+HEADER 3  - Mean alpha-sphere radius          : 4.0797
+HEADER 4  - Mean alpha-sphere Solvent Acc.    : 0.4460
+HEADER 5  - Mean B-factor of pocket residues  : 0.0000
+HEADER 6  - Hydrophobicity Score              : -21.7143
+HEADER 7  - Polarity Score                    :     4
+HEADER 8  - Amino Acid based volume Score     : 3.4286
+HEADER 9  - Pocket volume (Monte Carlo)       : 390.4817
+HEADER 10 - Pocket volume (convex hull)       : 27.4825
+HEADER 11 - Charge Score                      :     0
+HEADER 12 - Local hydrophobic density Score   : 2.0000
+HEADER 13 - Number of apolar alpha sphere     :     3
+HEADER 14 - Proportion of apolar alpha sphere : 0.1875
+ATOM    321   OG SER B  41     -16.629 -10.748  -0.632  0.00  0.00           O 0
+ATOM      5   CB PRO B   1     -22.793  -6.246  -4.049  0.00  0.00           C 0
+ATOM      6   CG PRO B   1     -23.759  -6.415  -2.916  0.00  0.00           C 0
+ATOM    320   CB SER B  41     -16.061  -9.895  -1.615  0.00  0.00           C 0
+ATOM     26   CA GLY B   4     -15.840  -7.472  -8.109  0.00  0.00           C 0
+ATOM    296    O ARG B  39     -13.112  -5.585  -4.003  0.55  8.57           O 0
+ATOM     11    O PRO B   2     -19.946  -6.630  -7.419  0.53  7.50           O 0
+ATOM     54  NE2 GLN B   7     -13.631  -4.910  -6.337  0.76  7.66           N 0
+ATOM     14   CD PRO B   2     -22.048  -3.878  -6.486  0.00  0.00           C 0
+ATOM     13   CG PRO B   2     -20.859  -3.399  -7.294  0.00  0.00           C 0
+ATOM    316    N SER B  41     -13.917  -9.161  -2.577  0.55  1.09           N 0
+ATOM    356  OE2 GLU B  45     -18.787 -12.736  -4.496  0.00  0.00           O 0
+ATOM      4    O PRO B   1     -23.285  -7.230  -7.150  0.00  0.00           O 0
+ATOM      7   CD PRO B   1     -24.860  -7.243  -3.554  0.00  0.00           C 0
+ATOM    357  OE1 GLU B  45     -16.999 -12.127  -5.610  0.52  2.14           O 0
+ATOM     25    N GLY B   4     -17.158  -7.936  -8.514  0.52  3.28           N 0
+TER
+END

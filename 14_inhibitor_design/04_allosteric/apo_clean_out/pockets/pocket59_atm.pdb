@@ -1,0 +1,42 @@
+HEADER
+HEADER This is a pdb format file writen by the programm fpocket.                 
+HEADER It represents the atoms contacted by the voronoi vertices of the pocket.  
+HEADER                                                                           
+HEADER Information about the pocket    59:
+HEADER 0  - Pocket Score                      : -0.1290
+HEADER 1  - Drug Score                        : 0.0011
+HEADER 2  - Number of alpha spheres           :    31
+HEADER 3  - Mean alpha-sphere radius          : 3.8871
+HEADER 4  - Mean alpha-sphere Solvent Acc.    : 0.5425
+HEADER 5  - Mean B-factor of pocket residues  : 0.5070
+HEADER 6  - Hydrophobicity Score              : -2.0000
+HEADER 7  - Polarity Score                    :     4
+HEADER 8  - Amino Acid based volume Score     : 3.2857
+HEADER 9  - Pocket volume (Monte Carlo)       : 334.4301
+HEADER 10 - Pocket volume (convex hull)       : 14.2903
+HEADER 11 - Charge Score                      :    -1
+HEADER 12 - Local hydrophobic density Score   : 10.0000
+HEADER 13 - Number of apolar alpha sphere     :    11
+HEADER 14 - Proportion of apolar alpha sphere : 0.3548
+ATOM   7214    O THR D  53      73.253  29.316  26.615  0.58  6.43           O 0
+ATOM   7218    N GLY D  54      71.045  29.219  26.218  0.63  1.09           N 0
+ATOM   7213    C THR D  53      72.282  29.586  25.914  0.00  0.00           C 0
+ATOM   7210    O GLY D  52      72.782  28.457  22.698  0.00  0.00           O 0
+ATOM   7180  OD2 ASP D  48      68.850  23.360  26.992  0.63  3.21           O 0
+ATOM   7163  NH2 ARG D  46      70.805  21.505  27.963  0.56  9.84           N 0
+ATOM   7219   CA GLY D  54      70.789  28.487  27.437  0.00  0.00           C 0
+ATOM   8861  CD2 LEU D 259      74.198  27.882  29.433  0.00  0.00           C 0
+ATOM   7160   NE ARG D  46      69.635  22.668  29.570  0.00  0.00           N 0
+ATOM   7158   CG ARG D  46      70.310  23.980  31.612  0.00  0.00           C 0
+ATOM   7177   CB ASP D  48      67.317  24.527  25.600  0.00  0.00           C 0
+ATOM   7174   CA ASP D  48      67.421  25.646  26.638  0.00  0.00           C 0
+ATOM   7181    N ASP D  49      66.857  27.505  25.177  0.00  0.00           N 0
+ATOM   7179  OD1 ASP D  48      68.208  22.376  25.130  0.00  0.00           O 0
+ATOM   7184    O ASP D  49      66.993  28.328  22.545  0.44  8.57           O 0
+ATOM   7208   CA GLY D  52      70.610  28.752  21.740  0.00  0.00           C 0
+ATOM   7161   CZ ARG D  46      70.577  21.787  29.241  0.00  0.00           C 0
+ATOM   7162  NH1 ARG D  46      71.284  21.178  30.186  0.61  4.37           N 0
+ATOM   7178   CG ASP D  48      68.188  23.336  25.932  0.00  0.00           C 0
+ATOM   7209    C GLY D  52      71.712  29.058  22.735  0.00  0.00           C 0
+TER
+END

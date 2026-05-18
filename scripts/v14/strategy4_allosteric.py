@@ -22,7 +22,10 @@ from common import (REPO, PHASE, RECEPTOR_APO, COFACTOR_A, BOX_ACTIVE_SITE,
 STRAT = PHASE / "04_allosteric"
 LOG = STRAT / "strategy4_runlog.txt"
 
-FPOCKET = shutil.which("fpocket")
+# Prefer self-compiled fpocket (the homebrew bottle 4.2.2 crashes with Qhull/Voronoi
+# QH6047 error on arm64-darwin; we compiled fpocket 4.0 from source — bin shipped in this folder)
+_SELF_BUILT_FP = Path(__file__).resolve().parent / "fpocket_arm64_built"
+FPOCKET = str(_SELF_BUILT_FP) if _SELF_BUILT_FP.exists() else shutil.which("fpocket")
 ACTIVE_SITE_CENTRE = np.array([BOX_ACTIVE_SITE["cx"], BOX_ACTIVE_SITE["cy"], BOX_ACTIVE_SITE["cz"]])
 
 # Fallback fragment-like PubChem CIDs (MW < 250, drug-like fragments) if ZINC15 unreachable

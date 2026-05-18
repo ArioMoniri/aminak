@@ -1,0 +1,43 @@
+HEADER
+HEADER This is a pdb format file writen by the programm fpocket.                 
+HEADER It represents the atoms contacted by the voronoi vertices of the pocket.  
+HEADER                                                                           
+HEADER Information about the pocket     6:
+HEADER 0  - Pocket Score                      : 0.1375
+HEADER 1  - Drug Score                        : 0.0009
+HEADER 2  - Number of alpha spheres           :    24
+HEADER 3  - Mean alpha-sphere radius          : 3.9990
+HEADER 4  - Mean alpha-sphere Solvent Acc.    : 0.6337
+HEADER 5  - Mean B-factor of pocket residues  : 0.2329
+HEADER 6  - Hydrophobicity Score              : 62.0000
+HEADER 7  - Polarity Score                    :     4
+HEADER 8  - Amino Acid based volume Score     : 5.7143
+HEADER 9  - Pocket volume (Monte Carlo)       : 458.9923
+HEADER 10 - Pocket volume (convex hull)       : 38.5047
+HEADER 11 - Charge Score                      :     1
+HEADER 12 - Local hydrophobic density Score   : 6.7273
+HEADER 13 - Number of apolar alpha sphere     :    11
+HEADER 14 - Proportion of apolar alpha sphere : 0.4583
+ATOM   6932   CB THR C 306      28.548  27.153  52.832  0.00  0.00           C 0
+ATOM   6933  OG1 THR C 306      28.222  28.328  52.078  0.00  0.00           O 0
+ATOM   5084   CG ARG C  78      31.292  23.582  50.264  0.00  0.00           C 0
+ATOM   5085   CD ARG C  78      30.102  22.730  50.708  0.00  0.00           C 0
+ATOM   5088  NH1 ARG C  78      31.500  20.344  50.106  0.00  0.00           N 0
+ATOM   6888   CB TYR C 301      36.767  18.083  49.210  0.00  0.00           C 0
+ATOM   6891  CD2 TYR C 301      35.274  20.112  48.940  0.00  0.00           C 0
+ATOM   6887    O TYR C 301      35.549  17.023  51.669  0.00  0.00           O 0
+ATOM   5093    O VAL C  79      32.828  24.376  46.508  0.61  2.14           O 0
+ATOM   5103  CD1 PHE C  80      28.568  25.372  43.600  0.00  0.00           C 0
+ATOM   5098   CA PHE C  80      31.268  25.860  44.712  0.00  0.00           C 0
+ATOM   5108    N TRP C  81      32.538  23.992  43.819  0.00  0.00           N 0
+ATOM   5082    O ARG C  78      32.053  26.891  49.573  0.45  5.36           O 0
+ATOM   5101   CB PHE C  80      30.382  27.011  44.204  0.00  0.00           C 0
+ATOM   6869  CG2 ILE C 298      37.382  17.600  45.746  0.00  0.00           C 0
+ATOM   6866    O ILE C 298      36.345  14.410  45.438  0.38  7.50           O 0
+ATOM   6867   CB ILE C 298      36.850  17.165  44.396  0.00  0.00           C 0
+ATOM   5097    N PHE C  80      32.202  26.384  45.702  0.61  2.19           N 0
+ATOM   5112   CB TRP C  81      33.815  21.932  43.402  0.00  0.00           C 0
+ATOM   5114  CD1 TRP C  81      33.869  19.913  41.819  0.00  0.00           C 0
+ATOM   6893  CE2 TYR C 301      35.041  21.493  48.967  0.00  0.00           C 0
+TER
+END

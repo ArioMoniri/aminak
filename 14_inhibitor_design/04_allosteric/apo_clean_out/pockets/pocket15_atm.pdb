@@ -1,0 +1,66 @@
+HEADER
+HEADER This is a pdb format file writen by the programm fpocket.                 
+HEADER It represents the atoms contacted by the voronoi vertices of the pocket.  
+HEADER                                                                           
+HEADER Information about the pocket    15:
+HEADER 0  - Pocket Score                      : 0.0259
+HEADER 1  - Drug Score                        : 0.0101
+HEADER 2  - Number of alpha spheres           :    74
+HEADER 3  - Mean alpha-sphere radius          : 3.9121
+HEADER 4  - Mean alpha-sphere Solvent Acc.    : 0.5017
+HEADER 5  - Mean B-factor of pocket residues  : 0.2335
+HEADER 6  - Hydrophobicity Score              : 20.8000
+HEADER 7  - Polarity Score                    :     7
+HEADER 8  - Amino Acid based volume Score     : 4.7333
+HEADER 9  - Pocket volume (Monte Carlo)       : 612.1654
+HEADER 10 - Pocket volume (convex hull)       : 135.2941
+HEADER 11 - Charge Score                      :     2
+HEADER 12 - Local hydrophobic density Score   : 22.3333
+HEADER 13 - Number of apolar alpha sphere     :    24
+HEADER 14 - Proportion of apolar alpha sphere : 0.3243
+ATOM   8101    C ARG D 163      42.647  55.812  28.509  0.00  0.00           C 0
+ATOM   8102    O ARG D 163      41.869  56.100  29.422  0.00  0.00           O 0
+ATOM   8138  OG1 THR D 167      39.877  55.176  31.107  0.67  9.64           O 0
+ATOM   8110    N VAL D 164      43.853  55.304  28.731  0.70  1.09           N 0
+ATOM   8108  NH1 ARG D 163      39.080  54.127  27.310  0.65  8.75           N 0
+ATOM   8111   CA VAL D 164      44.336  55.083  30.084  0.00  0.00           C 0
+ATOM   5983   CG PRO C 188      34.029  48.344  22.636  0.00  0.00           C 0
+ATOM   5947    O PRO C 184      38.831  47.384  23.107  0.67  3.21           O 0
+ATOM   8064  CG2 VAL D 158      40.550  50.102  20.354  0.00  0.00           C 0
+ATOM   5984   CD PRO C 188      35.048  47.786  23.596  0.00  0.00           C 0
+ATOM   8106   NE ARG D 163      38.715  54.035  25.032  0.67  5.47           N 0
+ATOM   5982   CB PRO C 188      33.032  48.969  23.548  0.00  0.00           C 0
+ATOM   8109  NH2 ARG D 163      36.958  54.385  26.483  0.00  0.00           N 0
+ATOM   5978    N PRO C 188      34.194  47.282  24.689  0.00  0.00           N 0
+ATOM   5979   CA PRO C 188      32.878  47.930  24.658  0.00  0.00           C 0
+ATOM   8063  CG1 VAL D 158      41.628  51.307  22.255  0.00  0.00           C 0
+ATOM   8105   CD ARG D 163      40.119  53.799  24.679  0.00  0.00           C 0
+ATOM   8103   CB ARG D 163      41.686  54.750  26.441  0.00  0.00           C 0
+ATOM   5976  CD1 LEU C 187      39.029  47.384  27.135  0.00  0.00           C 0
+ATOM   5948   CB PRO C 184      42.209  47.055  23.351  0.00  0.00           C 0
+ATOM   8193  OD1 ASP D 174      36.986  52.112  34.877  0.58  9.64           O 0
+ATOM   8107   CZ ARG D 163      38.254  54.185  26.273  0.00  0.00           C 0
+ATOM   8212   CD ARG D 176      36.362  47.960  33.636  0.00  0.00           C 0
+ATOM   6019   CG PRO C 193      35.199  45.602  30.960  0.00  0.00           C 0
+ATOM   8215  NH1 ARG D 176      33.634  47.894  32.936  0.63  8.75           N 0
+ATOM   5974   CB LEU C 187      36.856  46.716  26.180  0.00  0.00           C 0
+ATOM   5972    C LEU C 187      34.477  46.338  25.600  0.00  0.00           C 0
+ATOM   5973    O LEU C 187      33.654  45.975  26.436  0.75  4.29           O 0
+ATOM   5954    O ARG C 185      36.486  46.386  20.385  0.50  6.43           O 0
+ATOM   8194  OD2 ASP D 174      38.950  51.185  34.564  0.68  2.14           O 0
+ATOM   8228    O ILE D 178      44.736  49.352  28.848  0.66  9.64           O 0
+ATOM   8076    O GLN D 160      45.217  53.913  26.779  0.00  0.00           O 0
+ATOM   8116  CG2 VAL D 164      45.647  52.958  29.805  0.00  0.00           C 0
+ATOM   8074   CA GLN D 160      45.034  52.584  24.794  0.00  0.00           C 0
+ATOM   8210   CB ARG D 176      38.857  48.272  33.403  0.00  0.00           C 0
+ATOM   5935  CH2 TRP C 182      40.212  45.827  30.707  0.00  0.00           C 0
+ATOM   5930  NE1 TRP C 182      42.680  45.547  27.969  0.00  0.00           N 0
+ATOM   8080  OE1 GLN D 160      45.613  48.153  25.417  0.64  1.07           O 0
+ATOM   8078   CG GLN D 160      45.144  50.120  24.130  0.00  0.00           C 0
+ATOM   8077   CB GLN D 160      45.718  51.230  24.981  0.00  0.00           C 0
+ATOM   8209    O ARG D 176      41.180  49.161  32.105  0.63  7.50           O 0
+ATOM   8225    N ILE D 178      44.025  49.376  31.684  0.00  0.00           N 0
+ATOM   8218   CA ILE D 177      42.979  50.773  33.356  0.00  0.00           C 0
+ATOM   5933  CZ2 TRP C 182      41.039  46.301  29.719  0.00  0.00           C 0
+TER
+END

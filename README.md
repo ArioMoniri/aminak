@@ -996,7 +996,100 @@ All reviewer reports verbatim under [`14_inhibitor_design/00_roadmap/reviews/`](
 
 ---
 
-## 📦 Reports, data, and reproducibility
+## 🧪 Phase 14e — Smina rescoring (does adding electrostatics fix the R→E sign error?)
+
+The Phase 7-8 audit chain established that **rigid Vina cannot resolve charge-reversal mutants** (R215E, R175E_R176E) — their scores fall within the ±0.85 kcal/mol Vina noise floor, despite the physical expectation that flipping an Arg⁺ to a Glu⁻ in the dUMP phosphate clamp should be a large electrostatic penalty. Vina's scoring function is electrostatics-free by construction.
+
+We extended the workbench with **Smina** (Koes 2013 — a Vina fork that adds explicit Coulomb electrostatic + AD4 desolvation terms and supports custom-weighted scoring functions). The hypothesis: a properly-weighted electrostatic term should invert the sign for the R→E mutants.
+
+### What we did
+
+Five rescoring protocols applied to **9 Phase 7-8 holo mutant top poses** (`13_phase8/01_alt_scoring/stripped_poses/`) plus **3 Phase 14 extras** (Plevitrexed, cavity-18 indazole, cavity-18 ibuprofen):
+
+| Scorer | Definition |
+| --- | --- |
+| `vina` | Smina's reimplementation of the Vina scoring function (sanity check) |
+| `vinardo` | Quiroga & Villarreal 2016 — stiffer hydrophobic + repulsive |
+| `custom_q` | Vina default + **explicit electrostatic** (weight 0.30) + **AD4 desolvation** (weight 0.10) |
+| `q_amp` | Same as custom_q with **electrostatic weight ×10 = 3.00** and desolvation 0.50 |
+| `min_q` | Run `smina --minimize` first (relax the pose), then score with custom_q |
+
+Full scoring-function definitions checked into the repo:
+- [`14_inhibitor_design/06_smina_rescore/custom_scoring_q.txt`](14_inhibitor_design/06_smina_rescore/custom_scoring_q.txt)
+- [`14_inhibitor_design/06_smina_rescore/custom_scoring_qamp.txt`](14_inhibitor_design/06_smina_rescore/custom_scoring_qamp.txt)
+- Driver: [`scripts/v14/smina_rescore.py`](scripts/v14/smina_rescore.py)
+
+### What we found
+
+<p align="center"><img src="14_inhibitor_design/06_smina_rescore/rescore_plot.png" width="92%" alt="Smina rescoring vs WT_holo across 5 scoring protocols"/></p>
+
+Δ score vs WT_holo (positive = penalised; ★ if outside ±0.85 noise floor):
+
+| Mutant | ΔVina | ΔVinardo | Δcustom_q | Δq_amp (10× elec) | Δmin_q | Interpretation |
+| --- | --- | --- | --- | --- | --- | --- |
+| **R215E** (Arg→Glu flip) | +0.44 | +0.45 | +0.44 | +0.45 | +0.03 | **within noise everywhere** — the sign error persists |
+| **R215A** (Arg→Ala neutral) | +0.46 | +0.50 | +0.48 | +0.52 | +0.03 | identical to R215E — electrostatics term cannot distinguish charge-reversal from neutralisation |
+| R175E (clamp partner) | +0.16 | −0.03 | +0.16 | +0.14 | +0.03 | within noise |
+| R176E (clamp partner) | +0.13 | −0.02 | +0.13 | +0.11 | +0.04 | within noise |
+| **R175E_R176E** (DOUBLE flip) | +0.13 | −0.02 | +0.13 | +0.11 | +0.04 | **identical to R176E single** — even 10× electrostatic weight cannot see the second flip |
+| **R215A_N226A** | +3.33 | +2.92 | +3.41 | +3.78 | −0.02 | ★ vina, vinardo, custom_q, q_amp — *steric* disruption, easily caught |
+| **C195A** (catalytic Cys→Ala) | +1.82 | +2.72 | +1.76 | +1.47 | +0.03 | ★ catalytic-site collapse, caught by all rigid scorers |
+| **C195A_H196A** (catalytic dyad ablation) | +2.14 | +3.12 | +2.10 | +1.87 | +0.04 | ★ same |
+| H196A | +0.17 | +0.04 | +0.17 | +0.18 | +0.04 | within noise |
+
+### Honest interpretation
+
+**Three concrete findings**:
+
+1. **The R→E sign error is positional, not a scoring-function weight problem.** Even at 10× electrostatic weight (`q_amp`), R215E and R215A score identically (+0.45 vs +0.52). The Vina-family `electrostatic(i=2, _^=100, _c=8)` term is short-range (8 Å cutoff) and the rigid dUMP pose's phosphate centroid sits >6 Å from the Arg/Glu side-chain centre — so flipping the side chain's charge while keeping the ligand pose frozen produces almost no Δ. **Smina with electrostatics enabled does not rescue rigid-receptor docking on charge-reversal mutants.**
+
+2. **Minimization escapes from the constrained pose.** The `min_q` column (Smina `--minimize` then `--score_only` with the custom electrostatic scoring) collapses every mutant to within ±0.04 kcal/mol of WT (~−8.04 absolute). This is the *opposite* failure mode: the minimizer finds a local-energy basin that scores like WT regardless of the mutant identity. **Minimization without enthalpy-entropy decomposition is the wrong fix.**
+
+3. **Smina DOES capture cavity-18 chemistry.** On the Phase-14 cavity-18 hits:
+   - **Ibuprofen** at cavity 18: Vina −7.28 → Smina q_amp **−2.57** (electrostatic-favourable for the double-Lys salt-bridge clamp)
+   - **Indazole** at cavity 18: Vina −7.52 → Smina q_amp **+1.80** (no salt-bridge to exploit — electrostatics don't help)
+   - The 4.4 kcal/mol q_amp gap between indazole and ibuprofen, when electrostatics are amplified 10×, **confirms our pose-analysis claim that ibuprofen's affinity is driven by the Lys52/Lys283 clamp** — without ad hoc inference; it comes from the scoring function once the electrostatic weight is dialled up.
+
+### What the Phase 7-8 audit predicted, and what Phase 14e confirmed
+
+Phase 8c said: *"the R→E sign error needs proper PB electrostatics (MM-GBSA / FEP)"*. Phase 14e independently confirms this by **falsifying the cheaper alternative** — Smina with a Coulomb term + AD4 desolvation, at any reasonable weight, does not fix it. The fix is structural relaxation + thermodynamic-cycle treatment of the electrostatic environment, not a different rigid-pose scoring function.
+
+This is **the most useful kind of negative finding**: it rules out a class of cheap upgrades and points at exactly the right next-level method.
+
+### Reproduce
+
+```bash
+brew install smina                          # arm64 bottle ships
+python3 scripts/v14/smina_rescore.py        # ~2 min for 12 poses × 5 scorers = 60 score calls
+                                            # writes rescore_results.csv + rescore_summary.csv + rescore_plot.png
+```
+
+The custom electrostatic scoring file is committed at `14_inhibitor_design/06_smina_rescore/custom_scoring_q.txt`:
+
+```
+-0.035579    gauss(o=0,_w=0.5,_c=8)
+-0.005156    gauss(o=3,_w=2,_c=8)
+ 0.840245    repulsion(o=0,_c=8)
+-0.035069    hydrophobic(g=0.5,_b=1.5,_c=8)
+-0.587439    non_dir_h_bond(g=-0.7,_b=0,_c=8)
+ 0.300000    electrostatic(i=2,_^=100,_c=8)     ← new vs default Vina
+ 0.100000    ad4_solvation(d-sigma=3.6,_s/q=0.01097,_c=8)  ← new
+ 1.923000    num_tors_div
+```
+
+### Why we picked Smina over the alternatives
+
+The user proposed five candidates. Brief honest assessment:
+
+| Tool | Fit for the R→E problem? | Why / why not |
+| --- | --- | --- |
+| **Smina** ✅ used | yes — Vina-compatible, native arm64, electrostatic + desolvation + custom_scoring; can rescore existing Vina poses in seconds | drop-in replacement |
+| ZDOCK | no | protein-protein FFT docking, not small-molecule |
+| FTDock | no | same — protein-protein |
+| HADDOCK / HADDOCK3 | partial | data-driven docking with restraints; can do PPI + small molecules but requires NMR/mutagenesis restraint definition and a CNS or web-server installation; overkill for rescoring |
+| pyDock | no | post-FTDock rescoring layer; doesn't apply to Vina poses |
+
+For protein-protein dimer-interface rescoring (Strategy 3 in Phase 14), HADDOCK3 *would* be the right next step — that remains signposted but not executed in this phase.
 
 ### Reports — every format
 

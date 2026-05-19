@@ -1,0 +1,14 @@
+pose,category,ligand,vina,vinardo,custom_q,q_amp,min_q,comment
+WT_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/WT_holo/wt_holo_top.pdbqt,-7.5395,-6.72817,-6.1255,-0.39152,-8.06834,baseline (reference)
+R215E_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/R215E_holo/R215E_holo_top.pdbqt,-7.10236,-6.28255,-5.6841,0.05597,-8.03536,Arg+1 → Glu−1 charge reversal (clamp residue)
+R175E_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/R175E_holo/R175E_holo_top.pdbqt,-7.38315,-6.75942,-5.97,-0.24961,-8.03432,"Arg+1 → Glu−1 single (clamp residue, partner chain)"
+R176E_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/R176E_holo/R176E_holo_top.pdbqt,-7.41371,-6.75063,-5.99948,-0.28154,-8.03317,Arg+1 → Glu−1 single (clamp residue)
+R175E_R176E_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/R175E_R176E_holo/R175E_R176E_holo_top.pdbqt,-7.41371,-6.75063,-5.99948,-0.28154,-8.03317,DOUBLE charge reversal (max electrostatic penalty)
+R215A_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/R215A_holo/R215A_holo_top.pdbqt,-7.0782,-6.2274,-5.64931,0.12708,-8.03526,"Arg+1 → Ala neutral (loss of clamp, no flip)"
+R215A_N226A_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/R215A_N226A_holo/R215A_N226A_holo_top.pdbqt,-4.21177,-3.80554,-2.71558,3.38575,-8.08978,Arg→Ala + Asn→Ala (clamp + orient)
+C195A_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/C195A_holo/C195A_holo_top.pdbqt,-5.71886,-4.00612,-4.36817,1.0811,-8.03607,catalytic Cys→Ala (the v3 illusion case)
+C195A_H196A_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/C195A_H196A_holo/C195A_H196A_holo_top.pdbqt,-5.39527,-3.6106,-4.02795,1.48073,-8.03327,double catalytic ablation
+H196A_holo,phase7_mutant,13_phase8/01_alt_scoring/stripped_poses/H196A_holo/H196A_holo_top.pdbqt,-7.37037,-6.69037,-5.95149,-0.20837,-8.03267,catalytic His→Ala
+plevitrexed_apo,phase14_extra,14_inhibitor_design/02_cofactor_site/docked/Plevitrexed_apo_seed42.pdbqt,235.10122,306.86919,237.83601,248.01185,45.52604,S2 above-noise hit
+indazole_cav18,phase14_extra,14_inhibitor_design/04_allosteric/docked/cav18_frag_CID7032_seed42.pdbqt,-7.52109,-6.86409,-5.65778,1.80289,-5.64649,S4 cavity-18 top hit
+ibuprofen_cav18,phase14_extra,14_inhibitor_design/04_allosteric/docked/cav18_frag_CID3672_seed42.pdbqt,-7.27634,-7.07966,-6.36059,-2.56815,-6.38924,S4 cavity-18 #2

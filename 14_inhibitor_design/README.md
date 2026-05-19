@@ -220,6 +220,27 @@ Generation:
 python3 scripts/v14/render_top_hits.py    # PyMOL ray-trace + contact analyzer
 ```
 
+### Phase 14e — Smina rescoring (electrostatic + desolvation)
+
+After Phase 14's rigid Vina pipeline, we re-scored the Phase 7-8 holo mutant top poses (and the Phase 14 cavity-18 + Plevitrexed hits) with **Smina** (Koes 2013), using three scoring functions plus minimization:
+
+- `vina`     — Vina default (sanity)
+- `vinardo`  — Quiroga 2016
+- `custom_q` — Vina + electrostatic (0.30) + AD4 desolvation (0.10)
+- `q_amp`    — same with electrostatic weight ×10 = 3.00
+- `min_q`    — Smina `--minimize` then score with custom_q
+
+| Path | What |
+| --- | --- |
+| [`scripts/v14/smina_rescore.py`](../scripts/v14/smina_rescore.py) | driver |
+| [`06_smina_rescore/custom_scoring_q.txt`](06_smina_rescore/custom_scoring_q.txt) | electrostatic-enabled scoring file |
+| [`06_smina_rescore/custom_scoring_qamp.txt`](06_smina_rescore/custom_scoring_qamp.txt) | 10× electrostatic amplification |
+| [`06_smina_rescore/rescore_results.csv`](06_smina_rescore/rescore_results.csv) | full long table (pose × scorer) |
+| [`06_smina_rescore/rescore_summary.csv`](06_smina_rescore/rescore_summary.csv) | wide pivot with Δ vs WT_holo |
+| [`06_smina_rescore/rescore_plot.png`](06_smina_rescore/rescore_plot.png) | 5-scorer bar comparison |
+
+**Headline**: even at 10× electrostatic weight, Smina cannot distinguish R215E from R215A (both +0.45 vs WT, within Vina noise). The R→E sign error is **positional, not a scoring-function weight problem** — confirms Phase 8c's prediction that proper PB electrostatics (MM-GBSA / FEP) is needed. Useful negative finding that rules out a class of cheap upgrades. *However*, Smina with 10× electrostatic weight **does** capture the cavity-18 ibuprofen double-Lys salt-bridge (Δ q_amp = −4.4 kcal/mol better than indazole at the same pocket), independently validating the salt-bridge story we inferred from contact analysis.
+
 ### Cavity 18 — full evidence package
 
 Built by [`scripts/v14/cavity18_evidence.py`](../scripts/v14/cavity18_evidence.py); artefacts under [`04_allosteric/cavity18_evidence/`](04_allosteric/cavity18_evidence/).

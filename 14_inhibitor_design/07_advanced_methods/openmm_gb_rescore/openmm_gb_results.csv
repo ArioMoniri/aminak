@@ -1,0 +1,7 @@
+label,comment,receptor,E_receptor_kcalmol,n_atoms,wall_s,delta_E_vs_WT
+WT_holo,baseline (uses apo dimer + cofactor),06f_receptor_fixed/dimer_noH.pdb,-21422.32,9226,94.1,0.0
+R215E_holo,Arg+ → Glu- (charge reversal),07d_mut_docking_v4/R215E/R215E_mut_h.pdb,-21264.55,9239,104.1,157.77
+R215A_holo,"Arg+ → Ala (loss of clamp, no flip)",07d_mut_docking_v4/R215A/R215A_mut_h.pdb,-21257.62,9234,105.9,164.7
+R175E_R176E_holo,double charge reversal,07d_mut_docking_v4/R175E_R176E/R175E_R176E_mut_h.pdb,-21094.39,9230,91.2,327.93
+R175E_holo,single charge reversal,07d_mut_docking_v4/R175E/R175E_mut_h.pdb,-21290.21,9239,98.2,132.11
+C195A_holo,catalytic Cys ablation (steric),07d_mut_docking_v4/C195A/C195A_mut_h.pdb,-21361.52,9247,86.6,60.8

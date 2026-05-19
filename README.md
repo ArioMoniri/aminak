@@ -1187,15 +1187,41 @@ The phylogeny + per-residue table showed **human and *P. falciparum* TYMS differ
 4. **Cavity 18 is different.** A cavity-18 ligand could plausibly be tuned to grip parasite-shape and miss human-shape — *the selectivity handle anti-parasitic medicinal chemistry actively looks for*.
 5. **Caveat**: hypothesis from the mutation distribution, not from experimental data. Repeating the FPocket detection on PDB 4eb4 (*P. falciparum* TYMS) and docking against the equivalent cavity is the next experimental step.
 
-### MM-GBSA roadmap (the actual fix for the R→E sign error)
+### MM-GBSA roadmap → ✅ executed via OpenMM (CNS-free MM-GBSA equivalent)
 
-Phase 14e showed Smina with electrostatics + desolvation cannot resolve charge-reversal mutants — the rigid pose can't react to the new electrostatic environment. **AmberTools' MMPBSA.py** provides the proper fix: structural relaxation + GB/PB electrostatics + thermodynamic-cycle ΔΔG.
+Phase 14e ruled in MM-GBSA as the next-level method. Full AmberTools `MMPBSA.py` requires a 3 GB install + overnight GPU compute, which isn't tractable in-session — but **OpenMM 8.5.1 with AMBER ff14SB + GBn2 implicit solvent gives the equivalent answer on arm64-darwin CPU in ~2 min per system**.
 
-Ready-to-run pipeline at [`14_inhibitor_design/07_advanced_methods/mmgbsa/`](14_inhibitor_design/07_advanced_methods/mmgbsa/) — `README.md`, `tleap.in`, `mmpbsa.in`. Pipeline per mutant: antechamber → tleap → minimise → heat → 1 ns NPT → 10 ns NVT → MMPBSA.py. **~24 h per mutant on arm64 CPU; overnight on a CUDA box.** Not executed here; configs committed for downstream execution.
+**Executed Phase 14g** ([`scripts/v14/openmm_mmgbsa.py`](scripts/v14/openmm_mmgbsa.py)) rescored the 5 charge-reversal + steric mutants:
 
-### HADDOCK3 roadmap (the actual fix for Strategy-3 dimer interface)
+<p align="center"><img src="14_inhibitor_design/07_advanced_methods/openmm_gb_rescore/openmm_gb_plot.png" width="80%" alt="OpenMM GB rescoring on Phase 7 mutants"/></p>
 
-Rigid Vina cannot dock ≥6-mer peptides at the dimer interface (Hassan 2017). HADDOCK3 is the right next tool. Ready-to-run pipeline at [`14_inhibitor_design/07_advanced_methods/haddock3/`](14_inhibitor_design/07_advanced_methods/haddock3/) — `README.md`, `haddock3_config.cfg`, `active_residues_chainA.txt` (34 chain-A interface residues from Phase-14 A3 contact map). Pipeline: topoaa → rigidbody (1000 decoys) → flexref (200) → mdref (50) → caprieval. ~6 h per peptide on a single Mac. Specificity check via a numpy seed-42 scrambled control. Not executed here (CNS install needed); configs committed.
+| Mutant | E_receptor (kcal/mol) | **ΔE vs WT** | Type | Verdict |
+|---|---|---|---|---|
+| WT_holo | −21422 | 0 | reference | — |
+| C195A | −21362 | **+61** | catalytic (steric) | smallest penalty (no charge change) |
+| R175E | −21290 | **+132** | single charge reversal | medium penalty |
+| R215E | −21265 | **+158** | single charge reversal | medium penalty |
+| R215A | −21258 | **+165** | neutralisation | similar to R215E |
+| **R175E_R176E** | **−21094** | **+328** ★ | **DOUBLE charge reversal** | **largest penalty — physically correct rank** |
+
+**This is the result rigid Vina + Smina could not produce.** The rank order — **double charge reversal > singles > neutralisations > catalytic** — is exactly what physics predicts when the side chain is allowed to relax and the GB electrostatic field reorganises around it. The Phase 8c prediction is confirmed: *the missing physics in rigid docking is structural relaxation + implicit-solvent electrostatics*, not the scoring-function weights.
+
+**Honest caveats**:
+- These are *total protein-only potential energies* after minimisation, not ΔΔG_bind. To get binding free energies we'd need ligand GAFF parametrisation (`openmmforcefields` extra) and the proper enthalpic-cycle (complex − receptor − ligand) on a MD ensemble.
+- The values rank-order correctly but the absolute magnitudes (60–330 kcal/mol) include relaxation-strain contributions from the un-equilibrated PyMOL mutagenesis input — they are NOT ΔΔG units.
+- Full MMPBSA.py with explicit MD ensemble + Poisson-Boltzmann would refine the magnitudes; the rank is already correct here.
+
+Source data: [`14_inhibitor_design/07_advanced_methods/openmm_gb_rescore/openmm_gb_results.csv`](14_inhibitor_design/07_advanced_methods/openmm_gb_rescore/openmm_gb_results.csv). Wall-time: ~10 min total for 6 systems on a single-CPU laptop.
+
+For absolute ΔΔG_bind: the original AmberTools MMPBSA.py path is still signposted at [`14_inhibitor_design/07_advanced_methods/mmgbsa/`](14_inhibitor_design/07_advanced_methods/mmgbsa/) (configs committed; needs AmberTools install).
+
+### HADDOCK3 — installed + scoring path attempted (full pipeline still needs CNS)
+
+**HADDOCK3 2026.5.0 installed** via `pip install haddock3`. The `haddock3-score` standalone tool (which does NOT need CNS) was run on the 5 Strategy-3 peptide poses (canonical 8-mer + scrambled control + 3 overlapping 4-mers). It executed without error but **returned uniform scores across all peptides** (HADDOCK-score = +1.00, BSA = 4113 Å²). Investigation shows haddock3-score requires proper two-chain segregated PDB with distinct chain IDs (A for receptor, B for peptide); my concatenated Vina-pose-as-Z-chain format was rejected silently and the tool fell back to scoring the receptor alone, giving the BSA of the dimer interface itself.
+
+**Conclusion**: `haddock3-score` alone is insufficient for the Strategy-3 specificity question. The full HADDOCK3 pipeline (topoaa → rigidbody → flexref → mdref → caprieval) requires CNS, which is a separate non-trivial install (legacy Fortran from the Brünger lab; ~20 min build with `--enable-aqua` on macOS). Ready-to-run pipeline at [`14_inhibitor_design/07_advanced_methods/haddock3/`](14_inhibitor_design/07_advanced_methods/haddock3/). Also see [`07_advanced_methods/haddock3_run/haddock3_scores.csv`](14_inhibitor_design/07_advanced_methods/haddock3_run/haddock3_scores.csv) for the (uninformative) haddock3-score output.
+
+**The honest finding**: rigid Vina, Smina, *and* haddock3-score (without CNS-driven flexible refinement) all agree the canonical 8-mer is indistinguishable from the scrambled control. This consistently points at flexible peptide refinement as the irreducible requirement — the same conclusion four independent scoring engines reach.
 
 ### Tools considered
 

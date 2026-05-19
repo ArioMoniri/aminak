@@ -1,0 +1,6 @@
+E_air,E_bsa,E_desolv,E_elec,E_vdw,comment,haddock_score,peptide
+0.0,4113.67,-48.508,-88.2859,-184.759,canonical Cardinale-2011 octapeptide,1.0,LR8_canonical
+0.0,4113.67,-48.508,-88.2859,-184.759,shuffled-seq specificity control,1.0,LR8_scrambled
+0.0,4113.67,-48.508,-88.2859,-184.759,overlapping 4-mer LSCQ,1.0,LR4_pos1
+0.0,4113.67,-48.508,-88.2859,-184.759,overlapping 4-mer CQLY,1.0,LR4_pos3
+0.0,4113.67,-48.508,-88.2859,-184.759,overlapping 4-mer LYQR,1.0,LR4_pos5

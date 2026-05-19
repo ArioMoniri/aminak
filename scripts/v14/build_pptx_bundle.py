@@ -59,6 +59,9 @@ INCLUDE = [
     "14_inhibitor_design/07_advanced_methods/ppi_per_residue_bsa.csv",
     "14_inhibitor_design/07_advanced_methods/ppi_summary.json",
     "14_inhibitor_design/07_advanced_methods/smina_full_panel.csv",
+    "14_inhibitor_design/07_advanced_methods/openmm_gb_rescore/openmm_gb_results.csv",
+    "14_inhibitor_design/07_advanced_methods/openmm_gb_rescore/openmm_gb_plot.png",
+    "14_inhibitor_design/07_advanced_methods/haddock3_run/haddock3_scores.csv",
     "14_inhibitor_design/07_advanced_methods/modeller_vs_alphafold.csv",
     # README files for navigation
     "README.md",

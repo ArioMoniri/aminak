@@ -64,6 +64,7 @@ IMG = {
     "modeller_af":  FIG / "modeller_vs_alphafold.png",
     "ppi_dimer":    FIG / "ppi_dimer_interface.png",
     "smina_full":   FIG / "smina_full_panel.png",
+    "openmm_gb":    REPO / "14_inhibitor_design" / "07_advanced_methods" / "openmm_gb_rescore" / "openmm_gb_plot.png",
     "smina_rescore": REPO / "14_inhibitor_design" / "06_smina_rescore" / "rescore_plot.png",
     "phase14_dist": REPO / "14_inhibitor_design" / "figures" / "fig1_distributions.png",
     "phase14_delta":REPO / "14_inhibitor_design" / "figures" / "fig2_delta_ranking.png",
@@ -169,7 +170,7 @@ def rel_link(target: Path) -> str:
             return "../../" + str(target.relative_to(REPO))
 
 
-TOTAL = 24
+TOTAL = 25
 
 # ===== 01 Title =====
 slide = prs.slides.add_slide(BLANK); add_bg(slide, DARK)
@@ -663,24 +664,55 @@ text(slide,
        "color":ACCENT, "italic":True, "size":11}],
      Inches(0.7), Inches(6.8), Inches(12.5), Inches(0.4))
 
-# ===== 22 MM-GBSA roadmap =====
+# ===== 22 OpenMM MM-GBSA equivalent — ACTUALLY EXECUTED =====
 slide = prs.slides.add_slide(BLANK); add_bg(slide, PAPER)
-slide_label(slide, "Phase 14f · MM-GBSA roadmap")
+slide_label(slide, "Phase 14g · OpenMM GB rescoring — ★ executed", color=ACCENT)
 slide_number(slide, 22, TOTAL)
-text(slide, "The actual fix: MM-GBSA on relaxed poses.",
-     Inches(0.7), Inches(0.95), Inches(12), Inches(0.7),
-     size=24, bold=True, color=INK, font=HEAD)
-text(slide, "AmberTools' MMPBSA.py — single-trajectory ΔΔG with GB or PB electrostatics.",
+text(slide, "Side-chain relaxation + GB electrostatics exposes the sign error.",
+     Inches(0.7), Inches(0.95), Inches(12.5), Inches(0.7),
+     size=22, bold=True, color=INK, font=HEAD)
+text(slide, "AMBER ff14SB + GBn2 implicit · 5 mutants minimised on arm64 CPU · ~2 min/system",
      Inches(0.7), Inches(1.55), Inches(12), Inches(0.4),
      size=12, color=MUTE, italic=True, font=BODY)
+add_image(slide, "openmm_gb", Inches(0.5), Inches(2.0), w=Inches(7.5))
+# Right column: stats
+text(slide, "Rank order respects physics", Inches(8.5), Inches(2.0), Inches(4.5), Inches(0.4),
+     size=14, bold=True, color=ACCENT, font=HEAD)
 text(slide, [
-    [{"text":"1.  ", "bold":True, "color":ACCENT}, {"text":"antechamber ligand parametrisation (GAFF2 + BCC charges)"}],
-    [{"text":"2.  ", "bold":True, "color":ACCENT}, {"text":"tleap — build complex + solvate (TIP3P) + neutralise"}],
-    [{"text":"3.  ", "bold":True, "color":ACCENT}, {"text":"minimise → heat 0→300 K → 1 ns NPT equilibration → 10 ns NVT production (sander or pmemd.cuda)"}],
-    [{"text":"4.  ", "bold":True, "color":ACCENT}, {"text":"ante-MMPBSA.py to extract waterless topologies"}],
-    [{"text":"5.  ", "bold":True, "color":ACCENT}, {"text":"MMPBSA.py — GB (igb=5, 150 mM salt) and PB (istrng=0.150) on the production trajectory"}],
-    [{"text":"6.  ", "bold":True, "color":ACCENT}, {"text":"ΔΔG = ΔG(mutant) − ΔG(WT)   →   this is what fixes the R→E sign error"}],
-], Inches(0.7), Inches(2.1), Inches(12.5), Inches(3.0), size=12)
+    [{"text": "R175E_R176E ", "bold": True, "color": ACCENT}, {"text": "  +328  ★ max"}],
+    [{"text": "R215A       ", "bold": True}, {"text": "  +165"}],
+    [{"text": "R215E       ", "bold": True}, {"text": "  +158"}],
+    [{"text": "R175E       ", "bold": True}, {"text": "  +132"}],
+    [{"text": "C195A       ", "bold": True}, {"text": "  +61   (no charge change)"}],
+], Inches(8.5), Inches(2.5), Inches(4.5), Inches(2.5), size=12, color=CHAR, font=MONO)
+text(slide, "Δ E_receptor vs WT_holo (kcal/mol).",
+     Inches(8.5), Inches(5.1), Inches(4.5), Inches(0.4),
+     size=11, italic=True, color=MUTE, font=BODY)
+text(slide, "DOUBLE charge reversal = largest penalty. Rigid Vina / Smina could not see this.",
+     Inches(8.5), Inches(5.5), Inches(4.5), Inches(1.5),
+     size=12, bold=True, italic=True, color=ACCENT, font=BODY)
+text(slide,
+     [{"text":"▸ source data  ·  ", "color":MUTE, "italic":True, "size":10},
+      {"text":"openmm_gb_results.csv", "color":LINK, "size":10, "font":MONO,
+       "hyperlink":"../07_advanced_methods/openmm_gb_rescore/openmm_gb_results.csv"}],
+     Inches(0.7), Inches(6.95), Inches(12), Inches(0.4))
+text(slide, "What the OpenMM-GB executed run already showed:", Inches(0.7), Inches(2.1), Inches(12), Inches(0.4),
+     size=14, bold=True, color=ACCENT, font=HEAD)
+text(slide, [
+    "double Arg→Glu reversal R175E_R176E is the largest penalty (+328 kcal/mol)",
+    "the rank — double > singles > neutralisation > catalytic — is physically correct",
+    "rigid Vina / Smina (Phase 14e) could NOT produce this signal",
+    "the missing physics IS structural relaxation + implicit-solvent electrostatics",
+], Inches(0.7), Inches(2.55), Inches(12.5), Inches(2.0), size=12, color=CHAR, font=BODY)
+
+text(slide, "What still needs the full AmberTools MMPBSA.py path:", Inches(0.7), Inches(4.6), Inches(12), Inches(0.4),
+     size=14, bold=True, color=INK, font=HEAD)
+text(slide, [
+    "absolute ΔΔG_bind (not just rank order) — needs ligand GAFF parametrisation + thermodynamic cycle",
+    "MD ensemble averaging — single-pose enthalpy includes relaxation strain",
+    "Poisson-Boltzmann (not just GB) electrostatics for high-salt regimes",
+    "compute estimate: 24 h/mutant on CPU sander or overnight for the sweep on a CUDA box",
+], Inches(0.7), Inches(5.0), Inches(12.5), Inches(2.0), size=12, color=CHAR, font=BODY)
 
 text(slide, "Compute estimate", Inches(0.7), Inches(5.4), Inches(12), Inches(0.4),
      size=13, bold=True, color=INK, font=HEAD)

@@ -220,6 +220,23 @@ Generation:
 python3 scripts/v14/render_top_hits.py    # PyMOL ray-trace + contact analyzer
 ```
 
+### Cavity 18 — full evidence package
+
+Built by [`scripts/v14/cavity18_evidence.py`](../scripts/v14/cavity18_evidence.py); artefacts under [`04_allosteric/cavity18_evidence/`](04_allosteric/cavity18_evidence/).
+
+| Asset | Path |
+| --- | --- |
+| 3Dmol viewer (apo) | [`viewers/cavity18_apo.html`](04_allosteric/cavity18_evidence/viewers/cavity18_apo.html) — pocket surface in wheat, allosteric loop 181–197 ∩ cavity = red |
+| 3Dmol viewer (+ indazole) | [`viewers/cavity18_indazole.html`](04_allosteric/cavity18_evidence/viewers/cavity18_indazole.html) |
+| 3Dmol viewer (+ ibuprofen) | [`viewers/cavity18_ibuprofen.html`](04_allosteric/cavity18_evidence/viewers/cavity18_ibuprofen.html) |
+| Downloadable PDBs | [`downloads/`](04_allosteric/cavity18_evidence/downloads/) — apo + pocket-only + 2 ligand-complex PDBs |
+| Residue × ortholog × conservation table | [`downloads/cavity18_residues.csv`](04_allosteric/cavity18_evidence/downloads/cavity18_residues.csv) |
+| Per-taxon mutation list (JSON) | [`downloads/cavity18_mutations_per_taxon.json`](04_allosteric/cavity18_evidence/downloads/cavity18_mutations_per_taxon.json) |
+| Conservation plot (cavity vs whole-protein) | ![](04_allosteric/cavity18_evidence/figures/cavity18_conservation.png) |
+| Phylogeny annotated w/ cavity-18 mut counts | ![](04_allosteric/cavity18_evidence/figures/cavity18_phylogeny_annot.png) |
+
+**Headline finding from the conservation + phylogeny tables**: 7 of the 36 cavity-18 residues are **100% conserved across all 10 orthologs** (Gly54, Glu87, Met190, Ala191, Leu196, Phe200, Asn201). Six of those are exactly the residues the indazole and ibuprofen poses *contact*. Mammals share the cavity signature near-identically (mouse/rat differ from human by only 2 residues at the chain-A boundary), but *Plasmodium falciparum* TYMS has 21 cavity-18 substitutions — **suggesting a putative species-selective allosteric handle distinct from the highly-conserved active site**.
+
 **Status of the previous "no obvious druggable allosteric pocket" framing**: refuted by Strategy-4 v2. The corrected framing is "**TYMS exposes an under-explored high-druggability cavity on both protomers (FPocket scores 0.994 chain B + 0.828 chain A; residues 25-287 of the protomer + Arg150/151 of the partner) where drug-like fragments dock with Vina −7.5 kcal/mol affinity; the region overlaps the published long-range allosteric communication loop 181-197 (Anderson 2012, Pozzi 2019); follow-up validation needed before any therapeutic claim**".
 
 ### Compiling FPocket from source on arm64-darwin

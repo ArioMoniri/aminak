@@ -48,13 +48,19 @@ OUT_REPO = REPO / "14_inhibitor_design" / "presentation" / "aminak_phase14_summa
 OUT_USER = Path("/Users/ario/Downloads/Aminak Phase 14 Summary.pptx")
 FIG = REPO / "14_inhibitor_design" / "presentation" / "figures"
 
+# Absolute GitHub URLs so hyperlinks survive when the PPTX is downloaded
+# separately from the bundle (user's feedback).
+GH_RAW   = "https://github.com/ArioMoniri/aminak/raw/main"   # binary/text downloads
+GH_PAGES = "https://ariomoniri.github.io/aminak"             # interactive HTML viewers
+GH_BLOB  = "https://github.com/ArioMoniri/aminak/blob/main"  # browse-on-github
+
 # Image inventory — including the new clean renders + analysis batch outputs
 IMG = {
     "workflow":     REPO / "workflow_diagram_v3.png",
     "conservation_multipanel": FIG / "conservation_multipanel.png",
-    "dimer_overview_clean": FIG / "dimer_overview_clean.png",
-    "dimer_activesite_clean": FIG / "dimer_activesite_clean.png",
-    "cavity18_carve_clean": FIG / "cavity18_carve_clean.png",
+    "dimer_overview_clean": FIG / "dimer_overview_v3.png",
+    "dimer_activesite_clean": FIG / "dimer_activesite_v3.png",
+    "cavity18_carve_clean": FIG / "cavity18_carve_v3.png",
     "holo_dump_cofactor": FIG / "holo_dump_cofactor_clean.png",
     "delta_apo":    REPO / "08d_analysis_v4" / "delta_vina_apo_holo.png",
     "phase8_flex":  REPO / "13_phase8" / "02_flexres" / "flex_vs_rigid.png",
@@ -265,7 +271,7 @@ text(slide,
        "color": MUTE, "size": 10, "italic": True},
       {"text": "06f_receptor_fixed/protein_dimer_apo_fixed.pdbqt",
        "color": LINK, "size": 10, "font": MONO,
-       "hyperlink": "../../06f_receptor_fixed/protein_dimer_apo_fixed.pdbqt"}],
+       "hyperlink": f"{GH_RAW}/06f_receptor_fixed/protein_dimer_apo_fixed.pdbqt"}],
      Inches(0.7), Inches(6.6), Inches(12), Inches(0.4),
      align=PP_ALIGN.CENTER)
 
@@ -505,7 +511,7 @@ text(slide, [
 text(slide,
      [{"text":"▸ ready-to-run config & restraints  ·  ", "color":MUTE, "italic":True, "size":10},
       {"text":"14_inhibitor_design/07_advanced_methods/haddock3/", "color":LINK, "size":10, "font":MONO,
-       "hyperlink":"../07_advanced_methods/haddock3/README.md"}],
+       "hyperlink":f"{GH_BLOB}/14_inhibitor_design/07_advanced_methods/haddock3/README.md"}],
      Inches(0.7), Inches(6.95), Inches(12), Inches(0.4))
 
 # ===== 16 S4 cavity 18 headline =====
@@ -556,7 +562,7 @@ text(slide, [
 text(slide,
      [{"text":"▸ open 3D viewer  ·  ", "color":MUTE, "italic":True, "size":10},
       {"text":"cavity18_indazole.html", "color":LINK, "size":10, "font":MONO,
-       "hyperlink":"../04_allosteric/cavity18_evidence/viewers/cavity18_indazole.html"}],
+       "hyperlink":f"{GH_PAGES}/14_inhibitor_design/04_allosteric/cavity18_evidence/viewers/cavity18_indazole.html"}],
      Inches(8.5), Inches(6.3), Inches(4.5), Inches(0.4))
 text(slide, "3 of 10 contact residues are on the published allosteric communication loop (Anderson 2012, Pozzi 2019).",
      Inches(8.5), Inches(6.7), Inches(4.5), Inches(0.7),
@@ -586,7 +592,7 @@ text(slide, [
 text(slide,
      [{"text":"▸ open 3D viewer  ·  ", "color":MUTE, "italic":True, "size":10},
       {"text":"cavity18_ibuprofen.html", "color":LINK, "size":10, "font":MONO,
-       "hyperlink":"../04_allosteric/cavity18_evidence/viewers/cavity18_ibuprofen.html"}],
+       "hyperlink":f"{GH_PAGES}/14_inhibitor_design/04_allosteric/cavity18_evidence/viewers/cavity18_ibuprofen.html"}],
      Inches(8.5), Inches(6.3), Inches(4.5), Inches(0.4))
 text(slide, "Double-lysine salt-bridge clamps the deprotonated carboxylate at pH 7.4.",
      Inches(8.5), Inches(6.7), Inches(4.5), Inches(0.7),
@@ -659,7 +665,7 @@ add_image(slide, "smina_rescore", Inches(0.5), Inches(2.0), w=Inches(12.3))
 text(slide,
      [{"text":"▸ details + custom scoring files  ·  ", "color":MUTE, "italic":True, "size":10},
       {"text":"06_smina_rescore/", "color":LINK, "size":10, "font":MONO,
-       "hyperlink":"../06_smina_rescore/"},
+       "hyperlink":f"{GH_BLOB}/14_inhibitor_design/06_smina_rescore/"},
       {"text":"   ★ Smina DOES capture cavity-18 ibuprofen salt-bridge (q_amp Δ = −4.4 vs indazole)",
        "color":ACCENT, "italic":True, "size":11}],
      Inches(0.7), Inches(6.8), Inches(12.5), Inches(0.4))
@@ -694,7 +700,7 @@ text(slide, "DOUBLE charge reversal = largest penalty. Rigid Vina / Smina could 
 text(slide,
      [{"text":"▸ source data  ·  ", "color":MUTE, "italic":True, "size":10},
       {"text":"openmm_gb_results.csv", "color":LINK, "size":10, "font":MONO,
-       "hyperlink":"../07_advanced_methods/openmm_gb_rescore/openmm_gb_results.csv"}],
+       "hyperlink":f"{GH_RAW}/14_inhibitor_design/07_advanced_methods/openmm_gb_rescore/openmm_gb_results.csv"}],
      Inches(0.7), Inches(6.95), Inches(12), Inches(0.4))
 text(slide, "What the OpenMM-GB executed run already showed:", Inches(0.7), Inches(2.1), Inches(12), Inches(0.4),
      size=14, bold=True, color=ACCENT, font=HEAD)
@@ -723,7 +729,7 @@ text(slide, [
 text(slide,
      [{"text":"▸ ready-to-run scripts  ·  ", "color":MUTE, "italic":True, "size":10},
       {"text":"07_advanced_methods/mmgbsa/", "color":LINK, "size":10, "font":MONO,
-       "hyperlink":"../07_advanced_methods/mmgbsa/README.md"}],
+       "hyperlink":f"{GH_BLOB}/14_inhibitor_design/07_advanced_methods/mmgbsa/README.md"}],
      Inches(0.7), Inches(6.95), Inches(12), Inches(0.4))
 
 # ===== 23 Full Smina panel (showing the negative finding) =====

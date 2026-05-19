@@ -1,0 +1,3 @@
+# Don't commit CNS intermediate output - hundreds of MB
+run_canonical/haddock_run/
+run_scrambled/haddock_run/

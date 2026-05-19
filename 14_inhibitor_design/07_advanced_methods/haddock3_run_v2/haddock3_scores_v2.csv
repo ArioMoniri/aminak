@@ -1,0 +1,6 @@
+comment,haddock_score,peptide,sequence
+Cardinale-2011 octapeptide,,LR8_canonical,LSCQLYQR
+shuffled-seq control,,LR8_scrambled,QLCRQSYL
+4-mer LSCQ,,LR4_pos1,LSCQ
+4-mer CQLY,,LR4_pos3,CQLY
+4-mer LYQR,,LR4_pos5,LYQR

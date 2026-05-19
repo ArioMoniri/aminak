@@ -1,0 +1,16 @@
+{
+  "canonical": {
+    "return_code": 1,
+    "wall_s": 25.491615056991577,
+    "sequence": "LSCQLYQR",
+    "capri": null,
+    "log_tail": "run\n    step.execute()\n    ~~~~~~~~~~~~^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/libs/libworkflow.py\", line 185, in execute\n    self.module.run()  # type: ignore\n    ~~~~~~~~~~~~~~~^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/modules/base_cns_module.py\", line 61, in run\n    self._run()\n    ~~~~~~~~~^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/modules/sampling/rigidbody/__init__.py\", line 278, in _run\n    self.export_io_models(faulty_tolerance=self.params[\"tolerance\"])\n    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/modules/__init__.py\", line 314, in export_io_models\n    self.finish_with_error(_msg)\n    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/modules/__init__.py\", line 322, in finish_with_error\n    raise RuntimeError(reason)\nRuntimeError: 100.00% of output was not generated for this module and tolerance was set to 5.00%.\n[2026-05-19 17:05:15,982 libutil ERROR] 100.00% of output was not generated for this module and tolerance was set to 5.00%.\n[2026-05-19 17:05:15,982 libutil ERROR] An error has occurred, see log file. And contact the developers if needed.\n[2026-05-19 17:05:15,982 libutil INFO] Finished at 19/05/2026 17:05:15. For any help contact us at https://github.com/haddocking/haddock3/issues. Do widzenia! Good bye! Mandi!.\n"
+  },
+  "scrambled": {
+    "return_code": 1,
+    "wall_s": 21.69295382499695,
+    "sequence": "QLCRQSYL",
+    "capri": null,
+    "log_tail": "step.execute()\n    ~~~~~~~~~~~~^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/libs/libworkflow.py\", line 185, in execute\n    self.module.run()  # type: ignore\n    ~~~~~~~~~~~~~~~^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/modules/base_cns_module.py\", line 61, in run\n    self._run()\n    ~~~~~~~~~^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/modules/sampling/rigidbody/__init__.py\", line 278, in _run\n    self.export_io_models(faulty_tolerance=self.params[\"tolerance\"])\n    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/modules/__init__.py\", line 314, in export_io_models\n    self.finish_with_error(_msg)\n    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"/Users/ario/Library/Python/3.14/lib/python/site-packages/haddock/modules/__init__.py\", line 322, in finish_with_error\n    raise RuntimeError(reason)\nRuntimeError: 100.00% of output was not generated for this module and tolerance was set to 5.00%.\n[2026-05-19 17:05:38,698 libutil ERROR] 100.00% of output was not generated for this module and tolerance was set to 5.00%.\n[2026-05-19 17:05:38,698 libutil ERROR] An error has occurred, see log file. And contact the developers if needed.\n[2026-05-19 17:05:38,698 libutil INFO] Finished at 19/05/2026 17:05:38. For any help contact us at https://github.com/haddocking/haddock3/issues. Ad\u00e9u-siau! At\u00e9 logo! Auf Wiedersehen!.\n"
+  }
+}

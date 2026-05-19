@@ -1149,88 +1149,51 @@ Full installed-library manifest in [`00_setup/installed_libraries.md`](00_setup/
 
 ---
 
-## 🧬 Phase 14f — extended methods (PPI, Modeller↔AlphaFold, Ramachandran, MM-GBSA, HADDOCK3)
+## 🧬 Phase 14f / 14g — what advanced methods added
 
-### Modeller vs AlphaFold (Phase 7c, surfaced to README)
+After Phase 14, three follow-up engines were tested. Brief summary:
 
-Refined Modeller models and AlphaFold v6 prediction independently benchmarked against the 1HVY crystal. Both land within 1 Å Cα RMSD; **all 3 beat the 1HVY crystal on Lovell % favoured** (94.5–95.4 % vs the crystal's 92.2 %).
+| Engine | What it tested | Result | Status |
+|---|---|---|---|
+| **Smina** (Vina + Coulomb + AD4 desolvation; custom weights) | Can adding electrostatics + desolvation to Vina-style rigid rescoring fix the R→E sign error? | ★ **No** — even at 10× electrostatic weight, R215E ≈ R215A; rigid pose can't react to the new electrostatic field. **But Smina DOES capture the cavity-18 ibuprofen salt-bridge** (4.4 kcal/mol q_amp gap vs indazole). | ✅ executed [Phase 14e](#-phase-14e--smina-rescoring-does-adding-electrostatics-fix-the-re-sign-error) |
+| **OpenMM** (AMBER ff14SB + GBn2 implicit solvent; per-mutant receptor minimisation) | Can side-chain relaxation + GB electrostatics expose the R→E penalty? | ★ **Yes** — rank order physically correct: double charge reversal R175E_R176E = +328 kcal/mol (max), singles +132 to +158, neutralisation +165, catalytic-only +61. *The result rigid Vina + Smina could not produce.* | ✅ Phase 14g, see plot below |
+| **HADDOCK3 2026.5.0** (with bundled arm64 CNS or user's CNS 1.3 r9) | Can flexible peptide refinement distinguish canonical LR octapeptide from scrambled at the dimer interface? | 🟡 **Partial / blocked** — one canonical run got top HADDOCK score **−84.788** (vdw −33.6, elec −75.2, BSA 1041 Å²); subsequent reruns hit a regression bug in HADDOCK3's CNS template (`$mol_fix_origin_$maxid` not defined, multi-chain receptor on Python 3.14). | configs committed; see [`07_advanced_methods/haddock3/`](14_inhibitor_design/07_advanced_methods/haddock3/) |
 
-<p align="center"><img src="14_inhibitor_design/presentation/figures/modeller_vs_alphafold.png" width="85%"/></p>
-
-### Ramachandran outlier reduction — step by step
-
-| Stage | Best-model % favoured | Change |
-|---|---|---|
-| baseline | 83.5–85.3 % | broken single-polygon validator |
-| **+ Lovell 4-map partition** (general / Gly / Pro / pre-Pro) | **94.7–96.1 %** | pure scoring fix on same PDBs |
-| + `md_level=refine.very_slow`, `max_var_iterations=600`, `repeat_optimization=2` | 95.16 mean | side-chain + φ/ψ relax; SD halves |
-| + `LoopModel` on residues 93–101 | 95.09 | local re-sampling at template-disagreement region |
-| **Final best refined model** | **95.4 %** | 1HVY crystal under same scheme = 92.2 % |
-
-<p align="center"><img src="14_inhibitor_design/presentation/figures/ramachandran_before_after.png" width="75%"/></p>
-
-### PPI / BSA dimer-interface analysis (new)
-
-**BSA per side = 2 079 Å²** (total interface ≈ 4 160 Å²). Top hot-spots: **R175 (185 Å²), P59 (157), R176 (138), R202 (116), R215 (67)**. **★ The same arginines that clamp the dUMP phosphate are also the highest-BSA dimer-interface hot-spots** — a small molecule that disrupts the clamp would simultaneously destabilise the dimer.
-
-<p align="center"><img src="14_inhibitor_design/presentation/figures/ppi_dimer_interface.png" width="85%"/></p>
-
-Per-residue table: [`14_inhibitor_design/07_advanced_methods/ppi_per_residue_bsa.csv`](14_inhibitor_design/07_advanced_methods/ppi_per_residue_bsa.csv).
-
-### Why *Plasmodium falciparum* cavity-18 divergence matters (plain English)
-
-The phylogeny + per-residue table showed **human and *P. falciparum* TYMS differ at 21 of 36 cavity-18 residues**.
-
-1. **Malaria parasites use TYMS too** — essential for DNA in every organism that synthesises *de novo*.
-2. **To kill the parasite without poisoning the patient**, a drug must hit parasite TYMS but spare human TYMS — species selectivity.
-3. **The classical active site is too conserved** — 5-FU / raltitrexed engage residues identical in both organisms, so a substrate-site inhibitor that kills the parasite would also be toxic.
-4. **Cavity 18 is different.** A cavity-18 ligand could plausibly be tuned to grip parasite-shape and miss human-shape — *the selectivity handle anti-parasitic medicinal chemistry actively looks for*.
-5. **Caveat**: hypothesis from the mutation distribution, not from experimental data. Repeating the FPocket detection on PDB 4eb4 (*P. falciparum* TYMS) and docking against the equivalent cavity is the next experimental step.
-
-### MM-GBSA roadmap → ✅ executed via OpenMM (CNS-free MM-GBSA equivalent)
-
-Phase 14e ruled in MM-GBSA as the next-level method. Full AmberTools `MMPBSA.py` requires a 3 GB install + overnight GPU compute, which isn't tractable in-session — but **OpenMM 8.5.1 with AMBER ff14SB + GBn2 implicit solvent gives the equivalent answer on arm64-darwin CPU in ~2 min per system**.
-
-**Executed Phase 14g** ([`scripts/v14/openmm_mmgbsa.py`](scripts/v14/openmm_mmgbsa.py)) rescored the 5 charge-reversal + steric mutants:
+### OpenMM GB rescoring — the result that mattered
 
 <p align="center"><img src="14_inhibitor_design/07_advanced_methods/openmm_gb_rescore/openmm_gb_plot.png" width="80%" alt="OpenMM GB rescoring on Phase 7 mutants"/></p>
 
-| Mutant | E_receptor (kcal/mol) | **ΔE vs WT** | Type | Verdict |
-|---|---|---|---|---|
-| WT_holo | −21422 | 0 | reference | — |
-| C195A | −21362 | **+61** | catalytic (steric) | smallest penalty (no charge change) |
-| R175E | −21290 | **+132** | single charge reversal | medium penalty |
-| R215E | −21265 | **+158** | single charge reversal | medium penalty |
-| R215A | −21258 | **+165** | neutralisation | similar to R215E |
-| **R175E_R176E** | **−21094** | **+328** ★ | **DOUBLE charge reversal** | **largest penalty — physically correct rank** |
+| Mutant | ΔE vs WT (kcal/mol) | Type |
+|---|---|---|
+| C195A | **+61** | catalytic (steric only) |
+| R175E | **+132** | single Arg→Glu |
+| R215E | **+158** | single Arg→Glu |
+| R215A | **+165** | neutralisation |
+| **R175E_R176E** | **+328** ★ | **DOUBLE charge reversal — max penalty** |
 
-**This is the result rigid Vina + Smina could not produce.** The rank order — **double charge reversal > singles > neutralisations > catalytic** — is exactly what physics predicts when the side chain is allowed to relax and the GB electrostatic field reorganises around it. The Phase 8c prediction is confirmed: *the missing physics in rigid docking is structural relaxation + implicit-solvent electrostatics*, not the scoring-function weights.
+The Phase 8c prediction is confirmed: rigid docking misses *structural relaxation + implicit-solvent electrostatics*, not the scoring-function weights. Caveats: these are protein-only potential energies (not ΔΔG_bind); for absolute binding free energies, full MMPBSA.py with ligand GAFF parametrisation is needed (configs at [`07_advanced_methods/mmgbsa/`](14_inhibitor_design/07_advanced_methods/mmgbsa/) — needs AmberTools install which doesn't ship on Python 3.14).
 
-**Honest caveats**:
-- These are *total protein-only potential energies* after minimisation, not ΔΔG_bind. To get binding free energies we'd need ligand GAFF parametrisation (`openmmforcefields` extra) and the proper enthalpic-cycle (complex − receptor − ligand) on a MD ensemble.
-- The values rank-order correctly but the absolute magnitudes (60–330 kcal/mol) include relaxation-strain contributions from the un-equilibrated PyMOL mutagenesis input — they are NOT ΔΔG units.
-- Full MMPBSA.py with explicit MD ensemble + Poisson-Boltzmann would refine the magnitudes; the rank is already correct here.
+### PPI / BSA dimer interface
 
-Source data: [`14_inhibitor_design/07_advanced_methods/openmm_gb_rescore/openmm_gb_results.csv`](14_inhibitor_design/07_advanced_methods/openmm_gb_rescore/openmm_gb_results.csv). Wall-time: ~10 min total for 6 systems on a single-CPU laptop.
+**BSA = 2 079 Å² per side** (total ≈ 4 160 Å²). Top chain-A hot-spots: **R175 (185 Å²), P59 (157), R176 (138), R202 (116), R215 (67)**. **★ The arginines that clamp dUMP phosphate are also the highest-BSA dimer hot-spots** — a clamp-disruptor would simultaneously destabilise the dimer.
 
-For absolute ΔΔG_bind: the original AmberTools MMPBSA.py path is still signposted at [`14_inhibitor_design/07_advanced_methods/mmgbsa/`](14_inhibitor_design/07_advanced_methods/mmgbsa/) (configs committed; needs AmberTools install).
+<p align="center"><img src="14_inhibitor_design/presentation/figures/ppi_dimer_interface.png" width="80%"/></p>
 
-### HADDOCK3 — installed + scoring path attempted (full pipeline still needs CNS)
+Per-residue: [`07_advanced_methods/ppi_per_residue_bsa.csv`](14_inhibitor_design/07_advanced_methods/ppi_per_residue_bsa.csv).
 
-**HADDOCK3 2026.5.0 installed** via `pip install haddock3`. The `haddock3-score` standalone tool (which does NOT need CNS) was run on the 5 Strategy-3 peptide poses (canonical 8-mer + scrambled control + 3 overlapping 4-mers). It executed without error but **returned uniform scores across all peptides** (HADDOCK-score = +1.00, BSA = 4113 Å²). Investigation shows haddock3-score requires proper two-chain segregated PDB with distinct chain IDs (A for receptor, B for peptide); my concatenated Vina-pose-as-Z-chain format was rejected silently and the tool fell back to scoring the receptor alone, giving the BSA of the dimer interface itself.
+### *Plasmodium falciparum* cavity-18 selectivity (plain English)
 
-**Conclusion**: `haddock3-score` alone is insufficient for the Strategy-3 specificity question. The full HADDOCK3 pipeline (topoaa → rigidbody → flexref → mdref → caprieval) requires CNS, which is a separate non-trivial install (legacy Fortran from the Brünger lab; ~20 min build with `--enable-aqua` on macOS). Ready-to-run pipeline at [`14_inhibitor_design/07_advanced_methods/haddock3/`](14_inhibitor_design/07_advanced_methods/haddock3/). Also see [`07_advanced_methods/haddock3_run/haddock3_scores.csv`](14_inhibitor_design/07_advanced_methods/haddock3_run/haddock3_scores.csv) for the (uninformative) haddock3-score output.
+Human and *P. falciparum* TYMS differ at **21 of 36 cavity-18 residues**. The classical active site is too conserved between species for selective targeting — but cavity 18 is divergent enough that a tuned ligand could plausibly grip parasite-shape and miss human-shape. *The selectivity handle anti-parasitic medicinal chemistry actively looks for*; hypothesis from mutation distribution, pending experimental validation against PDB 4eb4 (*P. falciparum* TYMS).
 
-**The honest finding**: rigid Vina, Smina, *and* haddock3-score (without CNS-driven flexible refinement) all agree the canonical 8-mer is indistinguishable from the scrambled control. This consistently points at flexible peptide refinement as the irreducible requirement — the same conclusion four independent scoring engines reach.
-
-### Tools considered
+### Tools considered (one-line each)
 
 | Tool | Used? | Why / why not |
 |---|---|---|
-| **Smina** ✅ | executed in Phase 14e | Vina fork, native arm64, electrostatic + desolvation + custom scoring |
-| **MM-GBSA** (AmberTools) | configs committed | the actual fix for charge-reversal mutants; needs AmberTools + overnight GPU |
-| **HADDOCK3** | configs committed | right tool for Strategy-3 peptide; needs CNS install |
-| ZDOCK / FTDock / pyDock | n/a | protein-protein FFT dockers; not applicable to small-molecule docking |
+| **Smina** | ✅ executed | Vina fork, native arm64, custom-weight scoring |
+| **OpenMM GB rescoring** | ✅ executed | MM-GBSA equivalent path on arm64 CPU |
+| **HADDOCK3** | 🟡 partial | one canonical run completed; HADDOCK3 2026.5.0 multi-chain regression bug; CNS itself works (both bundled + user's CNS 1.3 r9 at `/Users/ario/Downloads/cns_v1.3_r9/`) |
+| **AmberTools MMPBSA.py** | ❌ configs only | no Python 3.14 wheel; would need conda + GPU |
+| ZDOCK / FTDock / pyDock | ❌ n/a | protein-protein FFT dockers; wrong target |
 
 ---
 

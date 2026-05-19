@@ -27,3 +27,7 @@ Thumbs.db
 # Large temp files
 *.tmp
 /tmp_*/
+
+# CNS binaries (vendor tooling, not source)
+scripts/v14/cns
+scripts/v14/cns_solve

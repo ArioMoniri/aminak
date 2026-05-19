@@ -69,8 +69,8 @@ except Exception:
     have_tree = False
 
 # ---- figure ----
-fig = plt.figure(figsize=(17, 9.5))
-gs = gridspec.GridSpec(2, 2, height_ratios=[1, 1.4], width_ratios=[1, 2.4], hspace=0.45, wspace=0.18)
+fig = plt.figure(figsize=(17, 10.5))
+gs = gridspec.GridSpec(2, 2, height_ratios=[1, 1.6], width_ratios=[1, 2.4], hspace=0.40, wspace=0.18)
 
 # Top: spans both columns — JSD plot
 ax_top = fig.add_subplot(gs[0, :])
@@ -133,10 +133,10 @@ for pos, wt, mut, cons, dev, cls in table_rows:
     cell_text.append([pos, wt, mut, cons, dev, cls])
 
 tbl = ax_tbl.table(cellText=cell_text, colLabels=header,
-                    cellLoc="left", loc="upper center",
-                    colWidths=[0.07, 0.05, 0.13, 0.27, 0.34, 0.14])
-tbl.auto_set_font_size(False); tbl.set_fontsize(8.5)
-tbl.scale(1.0, 2.6)
+                    cellLoc="left", loc="center",
+                    colWidths=[0.08, 0.05, 0.15, 0.22, 0.36, 0.14])
+tbl.auto_set_font_size(False); tbl.set_fontsize(9)
+tbl.scale(1.0, 1.8)
 # style: header dark, alternating zebra
 for (r, c), cell in tbl.get_celld().items():
     cell.set_linewidth(0.4)

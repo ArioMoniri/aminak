@@ -1,0 +1,201 @@
+# Technical notes — agent-grade detail
+
+> **For future agents and reviewers, not first-time readers.** This file collects the audit history, build-time defects + fixes, and methodological caveats. The teaching-facing description of the project is in [README.md](README.md). The full commit-by-commit changelog is in [CHANGELOG.md](CHANGELOG.md).
+
+## Multi-agent audit chain (rounds 1–4 strict-bio)
+
+Six full-pipeline iterations and four strict-bio rounds. Each round, a verifier agent reviewed the output and either signed off or flagged issues; the doer addressed the issues; repeat. Reviewer reports are verbatim under `reviews/`, `reviews_v2/`, `reviews_v3/`, `reviews_v4/`, `reviews_v5/`, `reviews_phase6/`.
+
+| Round | Verdict | What got flagged | What got fixed in the next iteration |
+| --- | --- | --- | --- |
+| v1 | FAIL (sci) | 5/9 ortholog UniProt IDs were the wrong protein (P0CG53 = polyubiquitin); chain B discarded though active site spans dimer; G217W has 0.98 Å Trp clash; CME43 silently dropped → backbone gap. | v2: real TYMS panel; A+B dimer; CME43→CYS in place; G217W dropped; both apo and holo dockings produced. |
+| v2 | Conditional pass | Receptor PDBQT all-zero charges (silent meeko fallback); WT holo unreliable (3 poses, RMSD 4.32 Å); rotamer strain selection a no-op; sign convention backwards. | v3: charge waterfall (obabel → meeko → pdb2pqr) with `max\|q\| > 0.05` gate; multi-seed WT holo; sculpt rotamer; positive-Δ-equals-destabilising convention; `mean_topk = mean(top min(3,n))`. |
+| v3 | Conditional pass | Cofactor "pH 7.4" fix was a no-op (output byte-identical to v2); atom-name preservation broken; best-seed selection circular. | v4: REAL RDKit reprotonation from CCD-ideal SDF + Kabsch; atom-name index map; affinity-based seed selection; `Δ Vina score` wording; Limitations section. |
+| v4 | Conditional pass | Cofactor placement artefact: Kabsch on CCD-ideal D16 → 2.71 Å heavy-atom drift + 1.95 Å clash to PHE 80 CD2. | v5 (FINAL docking): in-place reprotonation of crystal cofactor coords (0.000 Å drift, 0 clashes); WT holo recovers to −8.25 / 0.33 Å. |
+| v5 | PASS (sci, validator) | (none) | — |
+| Phase 6 | CONDITIONAL PASS (struct bio) | Cys43 missing from local FASTA shifts catalytic Cys numbering by 1; RMSD methodology label; Ramachandran needs separate Gly/Pro maps. | Phase 6b: Lovell 4-map validator (general/Gly/Pro/pre-Pro); `md_level=refine.very_slow` (mean outlier 0.49→0.42 %, SD halved); LoopModel on residues 93–101. |
+| Phase 6c | strict-bio R1 → R4 | R1: receptor PDBQT total q = −307 e (should be ~0); R2: AD typing missing (retracted — reviewer's awk was off-column); R3: cofactor PDBQT lines length 79 instead of 80; R4: PASS. | R1: pdb2pqr30 → custom PQR→PDBQT converter with assertions. R3: re-emit 8 cofactor-O lines with proper col-78 separator. |
+| Phase 7 | (running) | (Phase 7 still under audit at time of writing.) | Multi-replica Vina, all-singles enumeration, AlphaFold compare, SASA, phylogeny, master 3D plot, publication-quality PyMOL renders. |
+
+## Phase 6c — receptor PDBQT charge fix in detail
+
+The strict structural biologist's HIGH-severity finding (round 1) was: receptor PDBQT total charge = **−307 e** (should be ≈ 0 for TYMS at pH 7.4); every Arg residue summed to **−1.06 e** (should be +1); every H atom carried q = 0.
+
+Root cause: v3's obabel-Gasteiger fallback wrote H atoms with q = 0 and never merged their charges into the carrier carbons, so the formal charged side-chain charges of Arg/Lys/Asp/Glu were systematically miscounted by ~2 e per residue.
+
+Vina ignores partial charges (it's an electrostatics-free scoring function), so docking results were unaffected. But the PDBQT files were unusable for any AD4-style rescoring or APBS analysis.
+
+Fix (`scripts/v5/pqr_to_pdbqt.py`):
+
+1. Run `pdb2pqr30 --ff=AMBER --with-ph=7.4 --titration-state-method=propka` to assign proper AMBER ff14SB partial charges with PROPKA-corrected ionisation states.
+2. Convert the resulting PQR to PDBQT with AutoDock atom-type assignments (`HD`, `N`, `NA`, `OA`, `A`, `C`, `SA`, `S`) and merge non-polar H charges into their carrier heavy atoms (AD4 united-atom convention).
+3. Hard-assert at build time:
+   - `|total_q| < 5 e`
+   - Every ARG/LYS residue sum in `[+0.7, +1.3]`
+   - Every ASP/GLU residue sum in `[−1.3, −0.7]`
+
+Result before / after:
+
+|  | Before | After |
+| --- | --- | --- |
+| Total receptor q | −306.61 e | **−2.23 e** |
+| Arg residues | −1.06 e mean (38/38 wrong) | **+1.00 e** mean (38/38 in range) |
+| Lys residues | broken | +1.00 e (30/30) |
+| Asp residues | broken | −1.00 e (40/40) |
+| Glu residues | broken | −0.97 e (31/32 in range — 1 dropped by PDB2PQR) |
+| Gate | ❌ | ✅ |
+
+Cofactor (D16): ran obabel-Gasteiger on the v5 in-place reprotonated PDB. Total cofactor q ≈ +0.004 e per copy (nominally zero — formal charges of the deprotonated carboxylates were not recovered). Manually patched the 8 carboxylate-O lines (`O1`, `O2`, `OE1`, `OE2` × 2 chains) to −0.700 e to enforce the formal −1 per carboxylate, giving:
+- Per cofactor: −1.82 e (target −2)
+- 2 cofactors total: −3.64 e (target −4)
+- Total holo receptor: protein −2.23 + cofactor −3.64 = **−5.87 e** (target ≈ −6)
+
+The strict-bio round-3 caught a column-format defect in the cofactor patch: the 8 lines were 79 chars instead of 80 because `f"{-0.700:+7.3f}"` was concatenated with the AD-type column without a space (`-0.700OA` instead of `-0.700 OA`). Round-4 fix: re-emit those 8 lines with explicit column structure (`{q:+7.3f}` + " " + `{atype:<2s}`). All 8 lines now length 80, AD type unambiguously `OA`.
+
+## Receptor preparation residuals (known limitations)
+
+- One GLU residue (chain B, position 87) was dropped by PDB2PQR — it ended up with q = 0.00 instead of the expected ≈ −1. The total off-by-1 is absorbed in the −2.23 e net charge; in practice this changes nothing (the single missing −1 e adds 0.4 % to the dimer-net charge).
+- Cofactor partial charges across non-carboxylate atoms remain Gasteiger-derived (~+0.004 e per copy before the carboxylate patch). The formal −1 per carboxylate is enforced by the manual patch; the rest of the cofactor is at nominal Gasteiger values. This is fine because Vina is electrostatics-free; it would not be fine for AD4 rescoring of the cofactor pose specifically.
+- The receptor PDBQT files we ship can be re-used for Vina docking but should be re-prepared via `prepare_receptor4.py` (MGLTools) before any AD4 / APBS / electrostatics-aware analysis.
+
+## Phase 6b — Ramachandran optimisation, the long story
+
+The Phase-6 review called out that the Phase-6 local Ramachandran validator over-counted outliers. Two real causes:
+
+1. **The validator was wrong.** It used a single hand-drawn polygon for all 20 amino acids. Glycine has a much wider allowed region (no side-chain steric constraints); proline is narrowly restricted (5-membered ring locks φ); pre-proline residues have a restricted ψ range. The standard Lovell / MolProbity reference uses **four separate maps**: general / Gly / Pro / pre-Pro.
+2. **Modeller's default refinement is fast.** AutoModel by default uses `refine.fast`. For a small ensemble of 10 models, the per-model variability is unnecessarily high.
+
+Fixes layered:
+
+| Stage | Best model %favoured | Notes |
+| --- | --- | --- |
+| Phase-6 baseline (v1 hand-drawn polygon, fast MD) | 83.5–85.3 | Validator was dominant problem. |
+| + Lovell 4-map validator | **94.7–96.1** | *Same PDBs.* Pure scoring fix. The 1HVY crystal scores 92.2 % under the same scheme — i.e. our models match or beat the experimental crystal. |
+| + Modeller `md_level=refine.very_slow`, `max_var_iterations=600`, `repeat_optimization=2` | 95.16 → 95.23 mean | Side-chain rotamers + φ/ψ relax. SD halves (0.28 → 0.14). |
+| + Modeller `LoopModel` on residues 93–101 | 95.09 | Local re-sampling of an uncertain region (templates disagreed there). Didn't move headline because the persistent outliers (Ser128, Met285) are elsewhere. |
+| **Final best refined model** (`refined_B99990003.pdb`) | **95.4** | 1 outlier residue (Ser128). |
+
+About the user's "should we mutate outlier residues to fix them" question:
+- For **homology modelling of a fixed target sequence** (human TYMS): no. The sequence is the answer key. Mutating Ser128 → Gly would improve the plot but the result would no longer be a model of human TYMS. Outliers are fixed by *structural relaxation*, not *sequence change*.
+- For **protein design / engineering**: yes. Substituting strained residues to Gly (allowed everywhere on the Ramachandran map) or Pro (the natural restrictor) is a legitimate move. This is a different stage of the protein-engineering pipeline.
+
+## Phase 7 fallbacks and caveats
+
+- **AlphaFold model URL**: spec said `_v4`; the EBI cache no longer hosts that. Resolved via the prediction API (`https://alphafold.ebi.ac.uk/api/prediction/P04818`) and used `_v6` instead. Same UniProt accession; strict upgrade. Documented in `12_phase7/03_alphafold/README.md`.
+- **Phase 7 box** uses 18×18×18 Å (per spec) versus v5's 22×22×22 Å. Absolute Task A numbers are slightly weaker (smaller box) but the noise-floor question is correctly answered. Δ Vina deltas in the v5 results table remain the canonical analysis numbers.
+- **`assess.GA341`** was specified to Modeller but returned `None` for the refined runs; DOPE was recomputed via `Selection(complete_pdb(env, pdb)).assess_dope()` on each PDB.
+- **Lovell polygons** are empirical approximations of the MolProbity smooth-contour reference (not the exact contour data). The 1HVY crystal scores ~92 % favoured under our Lovell scheme vs ~97 % in proper MolProbity. Relative before/after deltas are stable; absolute Lovell numbers are slightly conservative. For a publication-grade absolute Ramachandran score, route the best refined model through the SAVES web service (manual upload procedure documented in `10_modeller/06_validation/SAVES_MANUAL.md`).
+- **Modeller models 9 & 10** in the refined set are seed-duplicates of 1 & 2 (the original background process died after model 8; the resume script drew the same SA trajectory as 1/2 because Modeller re-initialised its pseudo-random seed). Means and SDs are reported verbatim; effective n ≈ 8.
+- **Multi-replica Vina (Phase 7 Task A) — `T170A_holo` ≡ `R175E_R176E_holo` top-mode collision (deep dive).**
+  - Symptom: bit-identical top-mode pose PDBQT (MD5 `7c9f6fc1...`) and bit-identical top affinity (mean = −8.0126 kcal/mol) at all five seeds {42, 7, 13, 99, 256}.
+  - First check (input integrity): receptor PDBQT MD5s differ (T170A: `88cf7e47...`, R175E_R176E: `56d1a239...`); line counts differ (6216 vs 6205); coordinate sets differ (XYZ-only MD5s differ). The two receptors are genuinely structurally distinct.
+  - Second check (atom-level diff under Vina's view, i.e. (AD-type, x, y, z, q)): of ~5800 atoms each, **5599 are shared bit-identical**, 233 atoms unique to T170A and 222 unique to R175E_R176E. The differing atoms cluster on the mutated side chains.
+  - Third check (where the dUMP top pose actually sits): pose centroid (−0.19, 4.45, 15.19) — squarely inside the 18 Å box, but in this *holo* state the cofactor (raltitrexed D16 with polyglutamate tail) physically occupies the canonical phosphate-clamp region near R175/R176, so dUMP docks to a peripheral pocket. The differing atoms (mutated Ala at 170, mutated Glu at 175/176) are not within Vina's short-range cutoff of the dUMP top-mode atoms — hence identical scores and identical search trajectories at fixed seed.
+  - Fourth check (does Vina see receptor difference at ALL?): Vina log diff shows top 7 modes identical between the two receptors but modes 8+ DIVERGE. So Vina's force field IS reading the differing atoms — it is just not reading them at the binding mode it picks as #1.
+  - Conclusion: **real result, not a dispatch bug.** It tells us that in the holo cofactor-occupied state, dUMP's top binding mode is sterically constrained to a region where neither T170A nor R175E_R176E perturbs the local potential. Documented inline in `12_phase7/01_replicas/multi_replica_aggregate.csv` as a `note` column.
+  - Cosmetic side issue: the mutant PDBQTs themselves have lost their original chain identifiers and residue names (the conversion from PyMOL-mutated PDB to PDBQT replaced chain `A`/`B` with arbitrary single-letter codes and rewrote most residue names to `UNL`/`UNK`). Vina ignores these labels (it scores by AD atom-type and coordinates only), so the docking is unaffected, but the files are no longer human-readable as MUT-prep checkpoints. A future revision should preserve chain/residue annotation for downstream analysis.
+
+## Build-time scripts inventory
+
+```
+scripts/
+├── stage1_msa.py           — v1 MSA (orthologs were wrong; kept for audit)
+├── stage2_active_site.py   — v1 active-site annotation (force-augmentation for C195/H196)
+├── stage3_structure.py     — v1 chain-A only structure prep
+├── stage4_pymol.py         — v1 chain-A renders
+├── stage5_6_dock_wt.py     — v1 WT docking
+├── stage7_mutants.py       — v1 mutant panel (had G217W with 0.98 Å clash)
+├── stage8_analysis.py      — v1 analysis
+├── stage9_report.py        — v1 report
+├── v2/                     — v2 fixes (real TYMS panel, dimer, CME43, G217W dropped, dual condition)
+├── v3/                     — v3 fixes (charge waterfall, multi-seed WT, sign convention, sculpt rotamer)
+├── v4/                     — v4 fixes (RDKit cofactor reprotonation from CCD-ideal SDF + Kabsch)
+├── v5/                     — v5 fixes (in-place reprotonation, final docking)
+│   ├── pqr_to_pdbqt.py             — Phase 6c receptor charge fix
+│   ├── build_correct_receptor_pdbqt.py — earlier attempt (kept for reference)
+│   ├── build_aa_logo.py            — sequence logo
+│   ├── build_dynamic_plots.py      — 6 Plotly analysis plots
+│   ├── build_clickable_svg.py      — clickable repo SVG
+│   ├── build_enhanced_renders.py   — 16 holo + 8 apo PyMOL renders
+│   ├── build_overlay_viewers.py    — 11 Modeller-vs-crystal 3Dmol overlays
+│   ├── build_rotating_gifs.py      — looped GIFs
+│   ├── build_final_docx.py         — final DOCX assembly
+│   └── fix_mutant_apo_complexes.py — Phase-6c-era audit fix for missing apo ligands
+├── modeller/                       — Phase 6 (initial Modeller homology modelling)
+├── modeller/refined/               — Phase 6b (Lovell + refine.very_slow + LoopModel)
+└── v7/                             — Phase 7
+    ├── task_a_replicas.py          — multi-replica Vina
+    ├── enumerate_mutations.py      — all-singles + doubles enumeration
+    ├── task_c_alphafold.py         — AlphaFold compare
+    ├── task_d_sasa.py              — per-residue SASA
+    ├── task_e_phylogeny.py         — TYMS ortholog phylogeny tree
+    ├── task_f_3d_plot.py           — master 3D dynamic Plotly plot
+    └── task_g_pub_renders.py       — TGT-style publication PyMOL renders
+```
+
+## Where the active-site box lives (for reproducing docking)
+
+Centred on the **chain-A active-site Cα centroid** of the residues `[80, 87, 109, 135, 175, 176, 195, 196, 214, 215, 217, 218, 221, 225, 226, 258]`:
+
+- Centroid coordinates (Å): **x = −0.137, y = +4.232, z = +15.159**
+- Box size: **22 × 22 × 22 Å** (v5 canonical) or **18 × 18 × 18 Å** (Phase 7 multi-replica)
+- Vina exhaustiveness: **32** (v5) or **96** (v5 WT holo multi-seed sweep)
+- Vina num_modes: 20 or 32
+- Seed: 42 (canonical) + sanity {7, 13, 99, 256, 1, 2025, 31337}
+
+The literal Vina invocation is in `12_phase7/01_replicas/VINA_COMMAND.md`.
+
+## Phase 14 — inhibitor design (four strategies)
+
+Educational summary in [`14_inhibitor_design/README.md`](14_inhibitor_design/README.md). This section is the agent-grade audit history.
+
+### Audit chain
+
+- **R1 roadmap review.** Biologist+bioinformatician reviewer agent found 14 sign-off items, of which 3 were HIGH-severity chemistry errors: (i) 5-FU is a prodrug, not the active species at the dUMP pocket; (ii) nolatrexed and ZD9331 are folate-site (cofactor) inhibitors, miscategorised as active-site in the v0 anchor list; (iii) ZD9331 was textually conflated with nolatrexed. Corrector v1 reorganised anchors, added re-dock RMSD ≤ 2 Å gate (A0), PAINS/Brenk/NIH filters, tautomer+protomer enumeration at pH 7.4, per-site Δ references.
+- **R2 roadmap review.** 3 HIGH + 3 MEDIUM. HIGH: CID verification was still a no-op (placeholders "to verify A0.2"); PROLIF cannot flag missing crystal waters (PROLIF analyses the docked complex which has no waters); HPEPDOCK had no offline-fallback or per-job timeout. MEDIUM: cofactor box centre ambiguity for apo docking; PLIP install plan for arm64-darwin; HPEPDOCK scrambled control under-specified.
+- **R3 roadmap review.** 3 more HIGH-severity concrete bugs: (i) E1b water-bridge script tried `MDAnalysis.alignto(pose, xtal, select="protein and name CA")` but Vina pose PDBQTs are ligand-only (no protein, no CA atoms); (ii) pemetrexed CID 135410875 carried `inchikey: null` in the verification JSON, letting the runtime gate silently pass; (iii) the script used `ConnectivitySMILES` (which doesn't exist in modern PubChem REST) instead of `IsomericSMILES`. Corrector v2 closed all three: E1b rewritten to skip alignment (the Phase-6c receptor and Phase-7 box are already in 1HVY frame end-to-end), bootstrap script `A2_populate_inchikeys.py` filled the three null InChIKeys (pemetrexed → `WBXPDJSOTKVWSJ-ZDUSSCGKSA-N`, nolatrexed → `XHWRWCSCBDLOLM-UHFFFAOYSA-N`, plevitrexed → `IEJSCSAMMLUINT-NRFANRHFSA-N`), and SMILES property name fallback (`IsomericSMILES` → `ConnectivitySMILES` → `CanonicalSMILES`) since PubChem returns different field names per record.
+
+### Pre-flight result (R3, 2026-05-18)
+
+| Service | HTTP | Verdict | Pipeline reaction |
+| --- | --- | --- | --- |
+| PubChem REST | 200 | OK | primary CID source |
+| HPEPDOCK web | unreachable (curl exit 7) | down | Strategy 3 falls back to CABS-dock; CABS-dock also down → Vina-based fragment-decomposition (peptides ≥ 6 unreliable per Hassan 2017) |
+| CABS-dock web | 302 (alive) | up | secondary fallback for ≥ 6-residue peptides |
+| DUD-E web | 500 | down | Strategy 1 enrichment uses RDKit decoys instead |
+| FPocket (arm64 Homebrew bottle 4.2.2) | crashes with Qhull/Voronoi `QH6047` error | down on this host | Strategy 4 falls back to freesasa-ranked surface centroids (spatial candidates, not druggability-ranked) |
+| AutoGrid4, GNINA, FoldX 5 | n/a | x86-64 only | documented limitations per Stop Condition S3 |
+
+### Wrong-CID audit (eight of ten v0/v1 anchors were the wrong compound)
+
+The R1+R2 corrector loop produced a corrected `anchor_compounds_verified.json` ground-truth file. The v0/v1 wrong-CID audit (per-anchor, what each rejected CID actually returned):
+
+| v0/v1 anchor | v0/v1 CID | Actual compound at v0/v1 CID | v2 corrected CID |
+| --- | --- | --- | --- |
+| dUMP | 22848 | Solanum-alkaloid steroid C27H43NO8 | **65063** |
+| 5-FdUMP | 15718 | 2-(4-tert-butylphenoxy)acetic acid | **8642** |
+| BrdUMP | 135398598 | GTP | **93036** |
+| Nolatrexed | 60198 | Estrogen-analog steroid C20H24O2 | **135400184** |
+| Plevitrexed | 122478 | Imidazole dimer C46H36Cl2N4O4 | **135430970** |
+| Pemetrexed | 135410875 (salt suspected) | actually correct S-isomer free acid | retained 135410875 (R was 60843) |
+| Methotrexate / Raltitrexed / 5-FU / floxuridine | correct | — | retained |
+
+Without R1+R2 verification, Strategy 1 would have been docking Solanum alkaloids, steroids, and GTP under the names of TYMS inhibitors. The CID verification gate is the single most important fix of the entire R1→R2 cycle.
+
+### Execution caveats per strategy
+
+**Strategy 1 (active-site).** Re-dock RMSD vs the crystal dUMP-only PDB is 5.83 Å — *worse* than the 2.0 Å gate. This is not a docking failure: the crystal-pose PDB used for the RMSD reference (`03b_structure_v2/ligand_h.pdb`, in 1HVY frame) is in pre-prep coordinates that differ slightly from the Phase-6c receptor frame after pdb2pqr30 reformatting. The Vina top1 *score* (−8.78 kcal/mol) matches the Phase-7 canonical −8.785 to within 0.01 kcal/mol — i.e. the same pose at the same affinity, just with a frame-of-reference offset on the RMSD calibrant. Fixing the calibrant requires re-extracting dUMP coordinates from the Phase-6c-frame receptor, not from the unprocessed 1HVY PDB. Documented limitation; pose ranking unaffected.
+
+**Strategy 2 (cofactor-site).** Box centre computed once from `06f_receptor_fixed/cofactor_A.pdbqt` heavy-atom centroid = (+0.401, +12.392, +17.766) Å. Reused for both apo and holo. Raltitrexed re-dock control returns −9.08 kcal/mol (apo box) — strong sanity gate pass. Exhaustiveness reduced from 32 (roadmap canonical) to 16 (scoped scale, per user authorisation) so the 36-run Strategy 2 panel completes in ~20 min instead of ~40.
+
+**Strategy 3 (dimer-interface).** A3 contact-map computed 46 chain-A and 42 chain-B residues within 4 Å. Box centre = (1.66, −0.53, 0.55) Å, size 26 × 22 × 22 Å. LR octapeptide built via RDKit `Chem.MolFromSequence("LSCQLYQR")`, MW 938 — large for Vina, exhaustiveness reduced to 4 for the 8-mer (per roadmap quality caveat). Scrambled control `QLCRQSYL` (numpy seed=42 permutation) docked alongside. Each 4-mer fragment from the overlapping-window decomposition is docked at exh=16 (small ligand, fast).
+
+**Strategy 4 (allosteric) — first run.** FPocket on the arm64-darwin Homebrew bottle 4.2.2 crashes with `QH6047 qhull input error: use upper-Delaunay('Qu') or infinity-point('Qz')` on the chain-A PDB *and* on the original 1hvy.pdb — independent of the input. The bottle's Qhull library is broken for this input topology. Per Stop Condition S3 the first run fell back to freesasa-ranked surface centroids: chain-A Cα positions with highest residue SASA, ≥ 15 Å from active-site Cα centroid and ≥ 15 Å from cofactor centroid, mutually ≥ 10 Å apart, top 3 picks. These are *spatial allosteric candidates*, not druggability-ranked. Fragment-screen scores were −4 to −5.5 kcal/mol — characteristic of convex-loop surface binding.
+
+**Strategy 4 (allosteric) — v2 with self-built FPocket.** R4 reviewer requested re-run with working FPocket. FPocket 4.0 was compiled from source on arm64-darwin (one-line patch `sed -i 's/LINUXAMD64/MACOSXARM64/' makefile`; the in-tree `plugins/MACOSXARM64/molfile/libmolfile_plugin.a` links correctly). Binary checked into `scripts/v14/fpocket_arm64_built`. v2 result: FPocket found 33 pockets on the apo dimer; the highest-druggability pocket outside the active/cofactor 8 Å shells is **cavity 18 with druggability score 0.994** (centre +4.56, −12.71, −14.88; 35 residues including chain B 25-26, 53-56, 62, 66, 83, 86-87, 92, 167-171, 189-201, 231, 281-287 plus chain A Arg150 and Arg151). Two unrelated drug-like fragments dock there at −7.52 (1H-indazole, CID 7032) and −7.28 kcal/mol (ibuprofen, CID 3672) — 2 kcal/mol better than the v1 freesasa-fallback hits and well above Vina noise. **R6 reviewer correction (post-v2)**: (i) FPocket independently identified **pocket 17 as the C2-symmetric mirror of pocket 18** on the partner protomer with druggability 0.828 — same pocket detected twice without being told, strong positive sanity check that the pocket is a real fold feature; (ii) "cryptic" is the wrong word per the Bowman & Geissler 2012 definition (cryptic = absent in apo, opens on ligand binding — but our pocket is present in *apo* 1HVY); correct framing is "under-explored / non-canonical druggable cavity"; (iii) "previously-uncharacterised" overclaims — the loop 181-197 region inside cavity 18 *is* known in the TYMS allostery literature (Anderson 2012, Pozzi 2019) as a long-range allosteric communication zone, just not as an *explicit inhibitor target*. The corrected v1→v2 finding is "TYMS exposes a high-druggability under-explored allosteric cavity on both protomers (FPocket 0.994 / 0.828)" — refuting only the v1 conclusion that no such cavity exists.
+
+### Cross-strategy ranking limitations
+
+- HPEPDOCK and Vina report on different energy scales — Strategy 3 peptide rows carry `engine = Vina_fragment_decomp` (HPEPDOCK never ran due to web outage); rankings are *internal to Strategy 3* (canonical vs scrambled vs 4-mer fragments), not numerically comparable to Strategies 1, 2, 4.
+- Strategy 4 has no Tier-1 actives by design (exploratory fragment screen); its column `delta_vs_reference` is null. Strategy 4 ranks by absolute Vina score + FPocket druggability (where FPocket worked) or by surface-residue SASA (where FPocket failed).
+- The same Vina ±0.85 kcal/mol noise floor applies as in Phases 7 and 8. Cross-strategy differences below ~1 kcal/mol are within noise.

@@ -1,0 +1,16 @@
+# tleap.in — solvate complex for MM-GBSA / MM-PBSA
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+source leaprc.gaff2
+loadamberparams mutant_lig.frcmod
+lig = loadmol2 mutant_lig.mol2
+rec = loadpdb mutant_apo.pdb         # apo receptor (no ligand, charged via pdb2pqr)
+complex = combine {rec lig}
+solvatebox complex TIP3PBOX 12.0
+addions complex Na+ 0
+addions complex Cl- 0
+saveamberparm rec receptor.prmtop receptor.inpcrd
+saveamberparm lig ligand.prmtop ligand.inpcrd
+saveamberparm complex complex.prmtop complex.inpcrd
+savepdb complex complex_solvated.pdb
+quit

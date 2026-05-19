@@ -1,0 +1,10 @@
+# mmpbsa.in — GB + PB single-trajectory protocol
+&general
+  startframe=1, endframe=1000, interval=10, verbose=2,
+&end
+&gb
+  igb=5, saltcon=0.150,         # generalised Born, 150 mM physiological salt
+&end
+&pb
+  istrng=0.150, fillratio=4.0,  # Poisson-Boltzmann at 150 mM
+&end

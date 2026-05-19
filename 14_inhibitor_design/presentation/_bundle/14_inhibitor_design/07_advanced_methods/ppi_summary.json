@@ -1,0 +1,131 @@
+{
+  "sasa_chainA_alone_A2": 13490.4,
+  "sasa_chainB_alone_A2": 13380.5,
+  "sasa_dimer_A2": 22712.6,
+  "bsa_per_side_A2": 2079.2,
+  "bsa_total_A2": 4158.4,
+  "top_a_resids": [
+    {
+      "resid": 175,
+      "delta_sasa": 184.5
+    },
+    {
+      "resid": 59,
+      "delta_sasa": 156.7
+    },
+    {
+      "resid": 176,
+      "delta_sasa": 137.9
+    },
+    {
+      "resid": 202,
+      "delta_sasa": 116.3
+    },
+    {
+      "resid": 47,
+      "delta_sasa": 96.1
+    },
+    {
+      "resid": 184,
+      "delta_sasa": 84.5
+    },
+    {
+      "resid": 213,
+      "delta_sasa": 83.4
+    },
+    {
+      "resid": 182,
+      "delta_sasa": 74.3
+    },
+    {
+      "resid": 173,
+      "delta_sasa": 72.2
+    },
+    {
+      "resid": 215,
+      "delta_sasa": 66.9
+    },
+    {
+      "resid": 62,
+      "delta_sasa": 66.9
+    },
+    {
+      "resid": 185,
+      "delta_sasa": 63.9
+    },
+    {
+      "resid": 178,
+      "delta_sasa": 62.4
+    },
+    {
+      "resid": 200,
+      "delta_sasa": 61.7
+    },
+    {
+      "resid": 211,
+      "delta_sasa": 56.8
+    }
+  ],
+  "top_b_resids": [
+    {
+      "resid": 175,
+      "delta_sasa": 185.1
+    },
+    {
+      "resid": 59,
+      "delta_sasa": 154.7
+    },
+    {
+      "resid": 176,
+      "delta_sasa": 133.3
+    },
+    {
+      "resid": 202,
+      "delta_sasa": 111.2
+    },
+    {
+      "resid": 47,
+      "delta_sasa": 98.9
+    },
+    {
+      "resid": 185,
+      "delta_sasa": 94.0
+    },
+    {
+      "resid": 213,
+      "delta_sasa": 84.3
+    },
+    {
+      "resid": 184,
+      "delta_sasa": 79.6
+    },
+    {
+      "resid": 182,
+      "delta_sasa": 74.7
+    },
+    {
+      "resid": 173,
+      "delta_sasa": 72.8
+    },
+    {
+      "resid": 215,
+      "delta_sasa": 67.0
+    },
+    {
+      "resid": 62,
+      "delta_sasa": 64.7
+    },
+    {
+      "resid": 178,
+      "delta_sasa": 61.8
+    },
+    {
+      "resid": 200,
+      "delta_sasa": 61.1
+    },
+    {
+      "resid": 211,
+      "delta_sasa": 57.3
+    }
+  ]
+}

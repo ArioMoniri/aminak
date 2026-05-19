@@ -1149,6 +1149,78 @@ Full installed-library manifest in [`00_setup/installed_libraries.md`](00_setup/
 
 ---
 
+## 🧬 Phase 14f — extended methods (PPI, Modeller↔AlphaFold, Ramachandran, MM-GBSA, HADDOCK3)
+
+### Modeller vs AlphaFold (Phase 7c, surfaced to README)
+
+Refined Modeller models and AlphaFold v6 prediction independently benchmarked against the 1HVY crystal. Both land within 1 Å Cα RMSD; **all 3 beat the 1HVY crystal on Lovell % favoured** (94.5–95.4 % vs the crystal's 92.2 %).
+
+<p align="center"><img src="14_inhibitor_design/presentation/figures/modeller_vs_alphafold.png" width="85%"/></p>
+
+### Ramachandran outlier reduction — step by step
+
+| Stage | Best-model % favoured | Change |
+|---|---|---|
+| baseline | 83.5–85.3 % | broken single-polygon validator |
+| **+ Lovell 4-map partition** (general / Gly / Pro / pre-Pro) | **94.7–96.1 %** | pure scoring fix on same PDBs |
+| + `md_level=refine.very_slow`, `max_var_iterations=600`, `repeat_optimization=2` | 95.16 mean | side-chain + φ/ψ relax; SD halves |
+| + `LoopModel` on residues 93–101 | 95.09 | local re-sampling at template-disagreement region |
+| **Final best refined model** | **95.4 %** | 1HVY crystal under same scheme = 92.2 % |
+
+<p align="center"><img src="14_inhibitor_design/presentation/figures/ramachandran_before_after.png" width="75%"/></p>
+
+### PPI / BSA dimer-interface analysis (new)
+
+**BSA per side = 2 079 Å²** (total interface ≈ 4 160 Å²). Top hot-spots: **R175 (185 Å²), P59 (157), R176 (138), R202 (116), R215 (67)**. **★ The same arginines that clamp the dUMP phosphate are also the highest-BSA dimer-interface hot-spots** — a small molecule that disrupts the clamp would simultaneously destabilise the dimer.
+
+<p align="center"><img src="14_inhibitor_design/presentation/figures/ppi_dimer_interface.png" width="85%"/></p>
+
+Per-residue table: [`14_inhibitor_design/07_advanced_methods/ppi_per_residue_bsa.csv`](14_inhibitor_design/07_advanced_methods/ppi_per_residue_bsa.csv).
+
+### Why *Plasmodium falciparum* cavity-18 divergence matters (plain English)
+
+The phylogeny + per-residue table showed **human and *P. falciparum* TYMS differ at 21 of 36 cavity-18 residues**.
+
+1. **Malaria parasites use TYMS too** — essential for DNA in every organism that synthesises *de novo*.
+2. **To kill the parasite without poisoning the patient**, a drug must hit parasite TYMS but spare human TYMS — species selectivity.
+3. **The classical active site is too conserved** — 5-FU / raltitrexed engage residues identical in both organisms, so a substrate-site inhibitor that kills the parasite would also be toxic.
+4. **Cavity 18 is different.** A cavity-18 ligand could plausibly be tuned to grip parasite-shape and miss human-shape — *the selectivity handle anti-parasitic medicinal chemistry actively looks for*.
+5. **Caveat**: hypothesis from the mutation distribution, not from experimental data. Repeating the FPocket detection on PDB 4eb4 (*P. falciparum* TYMS) and docking against the equivalent cavity is the next experimental step.
+
+### MM-GBSA roadmap (the actual fix for the R→E sign error)
+
+Phase 14e showed Smina with electrostatics + desolvation cannot resolve charge-reversal mutants — the rigid pose can't react to the new electrostatic environment. **AmberTools' MMPBSA.py** provides the proper fix: structural relaxation + GB/PB electrostatics + thermodynamic-cycle ΔΔG.
+
+Ready-to-run pipeline at [`14_inhibitor_design/07_advanced_methods/mmgbsa/`](14_inhibitor_design/07_advanced_methods/mmgbsa/) — `README.md`, `tleap.in`, `mmpbsa.in`. Pipeline per mutant: antechamber → tleap → minimise → heat → 1 ns NPT → 10 ns NVT → MMPBSA.py. **~24 h per mutant on arm64 CPU; overnight on a CUDA box.** Not executed here; configs committed for downstream execution.
+
+### HADDOCK3 roadmap (the actual fix for Strategy-3 dimer interface)
+
+Rigid Vina cannot dock ≥6-mer peptides at the dimer interface (Hassan 2017). HADDOCK3 is the right next tool. Ready-to-run pipeline at [`14_inhibitor_design/07_advanced_methods/haddock3/`](14_inhibitor_design/07_advanced_methods/haddock3/) — `README.md`, `haddock3_config.cfg`, `active_residues_chainA.txt` (34 chain-A interface residues from Phase-14 A3 contact map). Pipeline: topoaa → rigidbody (1000 decoys) → flexref (200) → mdref (50) → caprieval. ~6 h per peptide on a single Mac. Specificity check via a numpy seed-42 scrambled control. Not executed here (CNS install needed); configs committed.
+
+### Tools considered
+
+| Tool | Used? | Why / why not |
+|---|---|---|
+| **Smina** ✅ | executed in Phase 14e | Vina fork, native arm64, electrostatic + desolvation + custom scoring |
+| **MM-GBSA** (AmberTools) | configs committed | the actual fix for charge-reversal mutants; needs AmberTools + overnight GPU |
+| **HADDOCK3** | configs committed | right tool for Strategy-3 peptide; needs CNS install |
+| ZDOCK / FTDock / pyDock | n/a | protein-protein FFT dockers; not applicable to small-molecule docking |
+
+---
+
+## 🎁 PPTX deck + bundle
+
+| Asset | Link | Size | Notes |
+|---|---|---|---|
+| **PPTX deck v3** | [`presentation/aminak_phase14_summary.pptx`](14_inhibitor_design/presentation/aminak_phase14_summary.pptx) | 5.5 MB | 24 slides · Inter font · 17+ embedded figures · deep-link hyperlinks on key text |
+| **Downloadable bundle** | [`presentation/aminak_phase14_bundle.zip`](14_inhibitor_design/presentation/aminak_phase14_bundle.zip) | 6.7 MB | PPTX + 40 linked files (PDB, HTML viewers, CSV, configs); unzip and click |
+
+Direct GitHub raw links:
+- PPTX: https://github.com/ArioMoniri/aminak/raw/main/14_inhibitor_design/presentation/aminak_phase14_summary.pptx
+- Bundle: https://github.com/ArioMoniri/aminak/raw/main/14_inhibitor_design/presentation/aminak_phase14_bundle.zip
+
+---
+
 ## 🤝 Multi-agent audit
 
 The full audit history (5 doer↔verifier rounds + Phase 6 audit) is in [**`CHANGELOG.md`**](CHANGELOG.md). Reviewer reports are verbatim in [`reviews/`](reviews/) (round 1), [`reviews_v2/`](reviews_v2/), [`reviews_v3/`](reviews_v3/), [`reviews_v4/`](reviews_v4/), [`reviews_v5/`](reviews_v5/), and [`reviews_phase6/`](reviews_phase6/).
